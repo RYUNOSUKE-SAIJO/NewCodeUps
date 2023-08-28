@@ -1,0 +1,33 @@
+@use "global" as *;
+
+.section-title {
+    display: inline-block;
+    width: 100%;
+}
+
+.section-title__main {
+    text-align: center;
+    font-size: myrem(32);
+    color: $navy;
+    line-height : calc( 40 / 32);
+    font-family: $english;
+    @include mq('md') {
+        font-size: myrem(40);
+        line-height : calc( 40 / 40);
+    }
+}
+
+.initial-blue {
+    color: $blue;
+    text-transform: uppercase;
+}
+
+.section-title__sub {
+    margin-top: myrem(8);
+    text-align: center;
+    font-size: myrem(12);
+    color: $blue;
+    line-height : calc( 18 / 12);
+    font-family: $japanese;
+    font-weight: regular;
+}

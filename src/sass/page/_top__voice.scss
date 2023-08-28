@@ -1,0 +1,218 @@
+@use "global" as *;
+
+.voice {
+    padding-top: myrem(80);
+    padding-bottom: myrem(80);
+    @include mq('md') {
+        position: relative;
+        padding: myrem(140) 12.5%;
+    }
+}
+
+.voice__inner {
+
+}
+
+.section-title.voice__section-title {
+    
+}
+
+.section-title__main {
+
+}
+
+.initial-blue {
+
+}
+
+.section-title__sub {
+
+}
+
+.voice__cards {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    @include mq('md') {
+        display: flex;
+        gap: myrem(40);
+    }
+
+}
+
+.voice__card {
+    margin-top: myrem(40);
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: myrem(15);
+    padding-right: myrem(16);
+    padding-bottom: myrem(24);
+    padding-left: myrem(16);
+    width: calc(100% * (345 / 375));
+    box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
+    @include mq('md') {
+        margin-top: myrem(30);
+        padding: myrem(24);
+        width: 96.3%;
+    }
+}
+
+.voice__card_header {
+    display: flex;
+    gap: myrem(13);
+    @include mq('md') {
+        gap: 0;
+    }
+}
+
+.voice__card_header-left {
+    width: 50%;
+    @include mq('md') {
+        margin-top: myrem(30);
+        width: calc(100% * (276 / 456));
+    }
+}
+
+.voice__card_top {
+    @include mq('md') {
+        display: flex;
+    }
+}
+
+.voice__card_gender {
+    @include mq('md') {
+        margin-top: myrem(10);
+    }
+}
+
+.voice__card_gender p {
+    font-size: myrem(12);
+    color: $navy;
+    line-height : calc(18 / 12);
+    font-family: $japanese;
+    font-weight: 400;
+}
+
+.voice__card_tag {
+    display: inline-block;
+    padding: myrem(4) myrem(12);
+    border: solid myrem(1) $blue;
+    @include mq('md') {
+        margin-left: auto;
+        padding: myrem(6) myrem(16);
+    }
+}
+
+.voice__card_tag p {
+    font-size: myrem(12);
+    color: $blue;
+    line-height : calc(22 / 12);
+    font-family: $japanese;
+    font-weight: 400;
+}
+
+.voice__card_title {
+    margin-top: myrem(4);
+    @include mq('md') {
+        margin-top: myrem(8);
+    }
+}
+
+.voice__card_title p {
+    font-size: myrem(16);
+    color: $navy;
+    line-height : normal;
+    font-family: $japanese;
+    font-weight: 500;
+    @include mq('md') {
+        font-size: myrem(24);
+        line-height: 1.25;
+    }
+}
+
+.voice__card_line {
+    margin-top: myrem(4);
+    width: 100%;
+    height: myrem(1);
+    background-color: $blue;
+}
+
+.voice__card_header-right {
+    width: 50%;
+    @include mq('md') {
+        width: calc(100% * (180 / 456));
+        margin-left: myrem(16);
+    }
+}
+
+.voice_card_img {
+    margin-top: myrem(9);
+    aspect-ratio: 151 / 117;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    @include mq('md') {
+        aspect-ratio: 180 / 140;
+        margin-top: 0;
+    }
+}
+
+.voice_card_img img {
+    display: inline-block;
+    //height: 100%;
+}
+
+.voice__card_body {
+    margin-top: myrem(16);
+    @include mq('md') {
+        margin-top: myrem(40);
+    }
+}
+
+.voice__card_text {
+
+}
+
+.voice__card_text p {
+    font-size: myrem(16);
+    color: $black;
+    line-height : calc(24 / 16);
+    font-family: $japanese;
+    font-weight: 400;
+
+}
+
+.voice__btn {
+    margin-top: myrem(40);
+    text-align: center;
+    @include mq('md') {
+        margin-top: myrem(80);
+    }
+}
+
+.btn {
+
+}
+
+.voice__fish {
+    display: none;
+    @include mq('md') {
+        width: calc(100% * (301 / 1440));
+        position: absolute;
+        top: myrem(20);
+        left: myrem(100);
+        display: block;
+    }
+}
+
+.voice__seahorse {
+    display: none;
+    @include mq('md') {
+        width: calc(100% * (71 / 1440));
+        position: absolute;
+        bottom: myrem(73);
+        right: myrem(180);
+        display: block;
+    }
+}
+

@@ -1,0 +1,145 @@
+@use "global" as *;
+
+.about {
+
+}
+
+.about_inner {
+    padding-top: 0;
+    padding-right: 4%;
+    padding-bottom: myrem(80);
+    padding-left: 4%;
+    @include mq('md') {
+        position: relative;
+        padding-top: 0;
+        padding-right: 12.5%;
+        padding-bottom: myrem(140);
+        padding-left: 12.5%;
+    }
+}
+
+.about__view {
+    position: relative;
+    margin-top: myrem(50);
+    @include mq('md') {
+        margin-top: myrem(120);
+    }
+}
+
+.about__view_vertical {
+    position: absolute;
+    z-index: 20;
+    top: myrem(-26);
+    left: 0;
+    aspect-ratio: 128 / 194;
+    object-fit: cover;
+    width: 37.1%;
+    height: 100%;
+    @include mq('md') {
+        top: myrem(-80);
+        aspect-ratio: 400 / 606;
+        object-fit: cover;
+        width: 37.1%;
+        height: 100%;
+    }
+}
+
+.about__view_vertical img {
+
+}
+
+.about__view_side {
+    margin-left: auto;
+    aspect-ratio: 281 / 186;
+    object-fit: cover;
+    width: 81.4%;
+}
+
+.about__view_side  img {
+
+}
+
+.about__main-title {
+    margin-top: myrem(40);
+    @include mq('md') {
+        position: absolute;
+        top: 10%;
+        left: 9%;
+        z-index: 50;
+    }
+    @include mq('xl') {
+        top: 20.6%;
+        left: 18.5%;
+        z-index: 50;
+    }
+}
+
+.about__main-title h3 {
+    font-size: myrem(40);
+    color: $blue;
+    line-height : 1;
+    font-family: $english;
+    font-weight: 400;
+    @include mq('md') {
+        font-size: myrem(80);
+        color: $white;
+        line-height : 1.25;
+    }
+}
+
+.about__description {
+    margin-top: myrem(16);
+    @include mq('md') {
+        position: absolute;
+        top: 10%;
+        right: 2%;
+        z-index: 50;
+        width: 37%;
+    }
+    @include mq('xl') {
+        top: 20.6%;
+        right: 3.7%;
+        z-index: 50;
+        width: 37%;
+    }
+}
+
+.about__description p {
+    font-size: myrem(16);
+    color: $navy;
+    line-height : calc(24 / 16);
+    font-family: $japanese;
+    font-weight: 400;
+    @include mq('md') {
+        color: $white;
+    }
+}
+
+.about__btn {
+    margin-top: myrem(40);
+    text-align: center;
+    @include mq('md') {
+        position: absolute;
+        top: 52.3%;
+        right: 6%;
+        z-index: 50;
+    }
+    @include mq('xl') {
+        top: 52.3%;
+        right: 12.7%;
+        z-index: 50;
+    }
+}
+
+.about__sango　{
+    display: none;
+    @include mq('md') {
+        display: block;
+        position: absolute;
+        aspect-ratio: 194 / 181;
+        object-fit: cover;
+        width: 13.4%;
+        bottom: 2.6%;
+        right: 5.7%;
+    }
+}

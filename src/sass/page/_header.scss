@@ -1,0 +1,143 @@
+@use "global" as *;
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    height: myrem(80);
+    background: rgba(13, 41, 54, 0.68);
+    transition: 0.6s;
+    @include mq('md') {
+        height: myrem(90);
+    }
+}
+
+.js-header.is-active {
+    background: rgba(0, 0, 0, 0);
+}
+
+.header__inner {
+    height: inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 myrem(15);
+    @include mq('md') {
+        padding: 0 myrem(40);
+    }
+}
+
+.header__logo {
+    background: url(/assets/images/common/header-logo-sp.png) no-repeat center center / contain;
+    max-width: myrem(102);
+    width: 100%;
+    height: myrem(38);
+    @include mq('md') {
+        background: url(/assets/images/common/header-logo.png) no-repeat center center / contain;
+        max-width: myrem(133);
+        width: 100%;
+        height: myrem(50);
+    }
+}
+
+
+// hamburger //
+
+.hamburger {
+    position: relative;
+    width: myrem(32);
+    height: myrem(24);
+    @include mq('md') {
+        display: none;
+    }
+}
+
+.hamburger span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: myrem(2);
+    background-color: $white;
+    transition: all .5s;
+}
+
+.hamburger span:nth-child(1) {
+    top: 0;
+}
+
+.hamburger span:nth-child(2) {
+    top: myrem(12);
+}
+
+.hamburger span:nth-child(3) {
+    top: myrem(24);
+}
+
+// クリックされて”is-active”が付与された時の指定//
+.hamburger.is-active span:nth-child(1) {
+    transform: translateY(myrem(12)) rotate(45deg);
+}
+
+.hamburger.is-active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.is-active span:nth-child(3) {
+    transform: translateY(myrem(-12)) rotate(-45deg);
+}
+
+// header-nav //
+
+.header-nav {
+    display: none;
+    height: inherit;
+    @include mq('md') {
+        display: block;
+    }
+}
+
+.header-nav__inner {
+    height: inherit;
+}
+
+.header-nav__items {
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-nav__item {
+    padding: 0 myrem(20);
+}
+
+.header-nav__item:nth-child(8) {
+    padding: 0  0  0 myrem(20);
+}
+
+.header-nav__item_link {
+
+}
+
+.header-nav__item_link p {
+    text-align: center;
+    font-size: myrem(18);
+    color: $white;
+    line-height : 1;
+    font-family: $english;
+    font-weight: 400;
+}
+
+.header-nav__item_link .header-nav__item_ruby {
+    text-align: center;
+    margin-top: myrem(4);
+    font-size: myrem(10);
+    color: $white;
+    line-height : 1;
+    font-family: $japanese;
+    font-weight: 400;
+}
+
