@@ -12,7 +12,7 @@
     height: 60%;
     z-index: -1;
     @include mq('md') {
-        background: url(/assets/images/common/blog__bg.jpg) no-repeat center center / cover;
+        background: url(../images/common/blog__bg.jpg) no-repeat center center / cover;
     }
 }
 
@@ -43,10 +43,6 @@
     @include mq('md') {
         color: $white;
     }
-}
-
-.blog__container {
-
 }
 
 .blog__cards {
@@ -87,10 +83,6 @@
     line-height : calc(18 / 12);
     font-family: $english;
     font-weight: 400;
-}
-
-.blog__card_title {
-
 }
 
 .blog__card_title p {

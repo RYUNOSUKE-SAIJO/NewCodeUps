@@ -18,22 +18,6 @@
     }
 }
 
-.section-title {
-
-}
-
-.section-title__main {
-
-}
-
-.initial-blue {
-
-}
-
-.section-title__sub {
-
-}
-
 .price__container {
     margin-top: myrem(26);
     @include mq('md') {
@@ -72,10 +56,6 @@
     }
 }
 
-.price__index {
-
-}
-
 .price__index p {
     font-size: myrem(16);
     color: $navy;
@@ -89,10 +69,6 @@
     width: 100%;
     height: myrem(1);
     background-color: $blue;
-}
-
-.price__content {
-
 }
 
 .price__content_block {
@@ -121,10 +97,6 @@
     @include mq('md') {
         margin-top: myrem(80);
     }
-}
-
-.btn {
-
 }
 
 .price__fish {

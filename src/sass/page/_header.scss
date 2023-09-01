@@ -30,12 +30,12 @@
 }
 
 .header__logo {
-    background: url(/assets/images/common/header-logo-sp.png) no-repeat center center / contain;
+    background: url(../images/common/header-logo-sp.png) no-repeat center center / contain;
     max-width: myrem(102);
     width: 100%;
     height: myrem(38);
     @include mq('md') {
-        background: url(/assets/images/common/header-logo.png) no-repeat center center / contain;
+        background: url(../images/common/header-logo.png) no-repeat center center / contain;
         max-width: myrem(133);
         width: 100%;
         height: myrem(50);
@@ -118,10 +118,6 @@
     padding: 0  0  0 myrem(20);
 }
 
-.header-nav__item_link {
-
-}
-
 .header-nav__item_link p {
     text-align: center;
     font-size: myrem(18);
@@ -168,3 +164,4 @@
 .header-nav__item_link:hover::after {
     transform: scale(1, 1)
 }
+

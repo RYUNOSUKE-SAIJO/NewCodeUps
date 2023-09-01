@@ -1,9 +1,5 @@
 @use "global" as *;
 
-.about {
-
-}
-
 .about_inner {
     padding-top: 0;
     padding-right: 4%;
@@ -46,19 +42,11 @@
     }
 }
 
-.about__view_vertical img {
-
-}
-
 .about__view_side {
     margin-left: auto;
     aspect-ratio: 281 / 186;
     object-fit: cover;
     width: 81.4%;
-}
-
-.about__view_side  img {
-
 }
 
 .about__main-title {

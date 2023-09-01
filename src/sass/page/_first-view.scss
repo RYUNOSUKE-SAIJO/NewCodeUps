@@ -9,10 +9,6 @@
     position: relative;
     width: 100%;
     height: inherit;
-    background: url(/assets/images/common/first-view-sp.jpg) no-repeat center center / cover;
-    @include mq('md') {
-        background: url(/assets/images/common/first-view.jpg) no-repeat center center / cover;
-    }
 }
 
 .first-view__title {
@@ -23,7 +19,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 10;
+    z-index: 100;
     @include mq('md') {
         top: 51%;
         padding-left: myrem(42);
@@ -56,6 +52,20 @@
     @include mq('md') {
         padding-right: myrem(43);
         padding-top: 0;
+    }
+}
+
+.slide-img{
+    height: 100vh;
+}
+
+.slide-img img {
+    aspect-ratio: 375 / 667;
+    object-fit: cover;
+    height: 100vh;
+    width: 100%;
+    @include mq('md') {
+        aspect-ratio: 1440 / 768;
     }
 }
 

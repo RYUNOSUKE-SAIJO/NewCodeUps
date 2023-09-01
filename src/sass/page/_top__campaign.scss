@@ -27,12 +27,8 @@
     }
 }
 
-.swiper {
-
-}
-
 .campaign__card {
-    margin: myrem(4) 0;
+    margin: myrem(4) myrem(2);
     box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
 }
 
@@ -204,8 +200,7 @@
     display: block;
     width: myrem(80);
     height: myrem(80);
-    //content: url(/assets/images/common/campaign-right.png);
-    background: url(/assets/images/common/campaign-right.png) no-repeat center center / contain;
+    background: url(../images/common/campaign-right.png) no-repeat center center / contain;
 }
 
 .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
@@ -213,6 +208,5 @@
     display: block;
     width: myrem(80);
     height: myrem(80);
-    //content: url(/assets/images/common/campaign-left.png);
-    background: url(/assets/images/common/campaign-left.png) no-repeat center center / contain;
+    background: url(../images/common/campaign-left.png) no-repeat center center / contain;
 }

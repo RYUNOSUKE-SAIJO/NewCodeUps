@@ -1,9 +1,5 @@
 @use "global" as *;
 
-.voice {
-
-}
-
 .voice__inner {
     padding-top: myrem(84);
     padding-bottom: myrem(80);
@@ -17,23 +13,6 @@
         padding-left: myrem(25);
         padding-bottom: myrem(140);
     }
-
-}
-
-.section-title.voice__section-title {
-    
-}
-
-.section-title__main {
-
-}
-
-.initial-blue {
-
-}
-
-.section-title__sub {
-
 }
 
 .voice__cards {
@@ -179,10 +158,6 @@
     }
 }
 
-.voice__card_text {
-
-}
-
 .voice__card_text p {
     font-size: myrem(16);
     color: $black;
@@ -198,10 +173,6 @@
     @include mq('md') {
         margin-top: myrem(80);
     }
-}
-
-.btn {
-
 }
 
 .voice__fish {

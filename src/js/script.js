@@ -1,13 +1,24 @@
 
 jQuery(function ($) { // この中であればWordpressでも「$」が使用可能になる
     $(".js-hamburger,.js-drawer, .js-drawer a").click(function () {
-        $(".js-hamburger,.js-header").toggleClass("is-active");
+        $(".js-hamburger,.js-header,body").toggleClass("is-active");
         $(".js-drawer").fadeToggle(600);
         event.stopPropagation();
     });
 
-    // swiper //
-    var swiper = new Swiper(".mySwiper", {
+    // FV swiper //
+    var swiper = new Swiper(".fv__swiper", {
+        loop: true,
+        effect: 'fade',
+        speed: 1000,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+    });
+
+    // campaign swiper //
+    var swiper = new Swiper(".campaign__swiper", {
         loop: true,
         spaceBetween: 24,
         slidesPerView: "1",
@@ -24,12 +35,12 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
                 width: 333,
             },
         },
-        // 前後の矢印
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
         },
     });
+
 
     // 画像アニメーション //
     var box = $('.information__left_img,.voice_card_img,.price__img'),
