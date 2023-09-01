@@ -1,0 +1,28 @@
+@use "global" as *;
+
+.to-top {
+	position: fixed;
+	right: myrem(16);
+	bottom: myrem(16);
+	display: none;
+	z-index: 10;
+	@include mq('md') {
+		right: myrem(20);
+		bottom: myrem(20);
+	}
+}
+
+.to-top img {
+    width: myrem(48);
+    height: myrem(48);
+	display: block;
+    opacity: 1;
+	@include mq('md') {
+		width: myrem(80);
+		height: myrem(80);
+	}
+}
+
+.to-top a:hover {
+	opacity: 1;
+}

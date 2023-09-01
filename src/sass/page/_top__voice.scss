@@ -1,15 +1,22 @@
 @use "global" as *;
 
 .voice {
-    padding-top: myrem(80);
-    padding-bottom: myrem(80);
-    @include mq('md') {
-        position: relative;
-        padding: myrem(140) 12.5%;
-    }
+
 }
 
 .voice__inner {
+    padding-top: myrem(84);
+    padding-bottom: myrem(80);
+    @include mq('md') {
+        max-width: myrem(1130);
+        margin: 0 auto;
+        position: relative;
+        padding: myrem(140) myrem(25);
+        padding-top: myrem(144);
+        padding-right: myrem(25);
+        padding-left: myrem(25);
+        padding-bottom: myrem(140);
+    }
 
 }
 
@@ -41,10 +48,10 @@
 }
 
 .voice__card {
-    margin-top: myrem(40);
+    margin-top: myrem(42);
     margin-right: auto;
     margin-left: auto;
-    padding-top: myrem(15);
+    padding-top: myrem(12);
     padding-right: myrem(16);
     padding-bottom: myrem(24);
     padding-left: myrem(16);
@@ -131,10 +138,13 @@
 }
 
 .voice__card_line {
-    margin-top: myrem(4);
+    margin-top: myrem(2);
     width: 100%;
     height: myrem(1);
     background-color: $blue;
+    @include mq('md') {
+        margin-top: myrem(4);
+    }
 }
 
 .voice__card_header-right {
@@ -208,11 +218,31 @@
 .voice__seahorse {
     display: none;
     @include mq('md') {
-        width: calc(100% * (71 / 1440));
+        width: myrem(71);
         position: absolute;
-        bottom: myrem(73);
-        right: myrem(180);
+        bottom: myrem(66);
+        right: myrem(25);
         display: block;
     }
 }
 
+// animation //
+
+div.voice_card_img {
+    position: relative;
+}
+
+div.voice_card_img div.color {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: #408F95;
+}
+
+div.voice_card_img  img {
+    display: block;
+    width: 100%;
+}

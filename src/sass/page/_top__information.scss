@@ -5,8 +5,13 @@
 }
 
 .information__inner {
-    padding: myrem(80) myrem(15);
+    padding-top: myrem(80);
+    padding-right: myrem(15);
+    padding-bottom: myrem(84);
+    padding-left: myrem(15);
     @include mq('md') {
+        max-width: myrem(2000);
+        margin: 0 auto;
         padding: myrem(100) myrem(180);
     }
 }
@@ -34,7 +39,7 @@
     margin-top: myrem(24);
     @include mq('md') {
         margin-top: 0;
-        padding-top: myrem(27);
+        padding-top: myrem(64);
         width: 45%;
     }
 }
@@ -88,4 +93,24 @@
     margin-top: myrem(40);
 }
 
+// animation //
+
+div.information__left_img {
+    position: relative;
+}
+
+div.information__left_img div.color {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: #408F95;
+}
+
+div.information__left_img img {
+    display: block;
+    width: 100%;
+}
 

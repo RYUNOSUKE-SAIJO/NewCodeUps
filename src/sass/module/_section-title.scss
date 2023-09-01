@@ -23,11 +23,14 @@
 }
 
 .section-title__sub {
-    margin-top: myrem(8);
+    margin-top: myrem(4);
     text-align: center;
     font-size: myrem(12);
     color: $blue;
     line-height : calc( 18 / 12);
     font-family: $japanese;
-    font-weight: regular;
+    font-weight: 400;
+    @include mq('md') {
+        margin-top: myrem(4);
+    }
 }

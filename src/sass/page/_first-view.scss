@@ -19,10 +19,15 @@
     position: absolute;
     width: 100%;
     text-align: center;
+    padding-left: myrem(20);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
+    @include mq('md') {
+        top: 51%;
+        padding-left: myrem(42);
+    }
 }
 
 .first-view__title_main {
@@ -33,6 +38,7 @@
     font-weight: 400;
     line-height: 1;
     text-transform: uppercase;
+    padding-top: 5px;
     @include mq('md') {
         font-size: myrem(80);
         letter-spacing: myrem(43.2);
@@ -45,5 +51,11 @@
     font-family: $english;
     font-weight: 400;
     line-height: 1;
+    padding-right: myrem(20);
+    padding-top: myrem(7);
+    @include mq('md') {
+        padding-right: myrem(43);
+        padding-top: 0;
+    }
 }
 

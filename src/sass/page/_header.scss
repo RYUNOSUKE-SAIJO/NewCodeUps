@@ -57,7 +57,7 @@
 .hamburger span {
     position: absolute;
     top: 0;
-    left: 0;
+    right: 0;
     width: 100%;
     height: myrem(2);
     background-color: $white;
@@ -76,7 +76,7 @@
     top: myrem(24);
 }
 
-// クリックされて”is-active”が付与された時の指定//
+// is-active //
 .hamburger.is-active span:nth-child(1) {
     transform: translateY(myrem(12)) rotate(45deg);
 }
@@ -141,3 +141,30 @@
     font-weight: 400;
 }
 
+// under line //
+
+.header-nav__item_link {
+    position: relative;
+    display: inline-block;
+}
+
+.header-nav__item_link:hover {
+    color: $white;
+}
+
+.header-nav__item_link::after {
+    content: '';
+    position: absolute;
+    bottom: myrem(-12);
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background:$white;
+    transition: all .3s;
+    transform: scale(0, 1);
+    transform-origin: center top;
+}
+
+.header-nav__item_link:hover::after {
+    transform: scale(1, 1)
+}

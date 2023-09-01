@@ -23,14 +23,15 @@
   <!----- Google Font ----->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Gotu&family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Gotu&family=Lato:wght@700&family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
   <!-- css -->
   <link href="URL/ディレクトリ/css/all.css" rel="stylesheet">
-  <link　rel="stylesheet"　href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"　/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"　/>
   <link rel="stylesheet" href="./assets/css/style.css" />
   <!-- JavaScript -->
   <script src="https://kit.fontawesome.com/66a0693602.js" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="/assets/js/jquery.inview.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   <script defer src="./assets/js/script.js"></script>
 </head>
@@ -46,14 +47,14 @@
       <div class="header-nav js-header-nav">
         <div class="header-nav__inner">
           <ul class="header-nav__items">
-            <li class="header-nav__item"><a class="header-nav__item_link"　href="#campaign"><p>Campaign</p><p class="header-nav__item_ruby">キャンペーン</p></a></li>
-            <li class="header-nav__item"><a class="header-nav__item_link"　href="#about"><p>About us</p><p class="header-nav__item_ruby">私たちについて</p></a></li>
-            <li class="header-nav__item"><a class="header-nav__item_link"　href="#information"><p>Information</p><p class="header-nav__item_ruby">ブログ</p></a></li>
-            <li class="header-nav__item"><a class="header-nav__item_link"　href="#blog"><p>Blog</p><p class="header-nav__item_ruby">ブログ</p></a></li>
-            <li class="header-nav__item"><a class="header-nav__item_link"　href="#voice"><p>Voice</p><p class="header-nav__item_ruby">お客様の声</p></a></li>
-            <li class="header-nav__item"><a class="header-nav__item_link"　href="#price"><p>Price</p><p class="header-nav__item_ruby">料金一覧</p></a></li>
-            <li class="header-nav__item"><a class="header-nav__item_link"　href="#faq"><p>FAQ</p><p class="header-nav__item_ruby">よくある質問</p></a></li>
-            <li class="header-nav__item"><a class="header-nav__item_link"　href="#contact"><p>Contact</p><p class="header-nav__item_ruby">お問合せ</p></a></li>
+            <li class="header-nav__item"><a class="header-nav__item_link" href="#campaign"><p>Campaign</p><p class="header-nav__item_ruby">キャンペーン</p></a></li>
+            <li class="header-nav__item"><a class="header-nav__item_link" href="#about"><p>About us</p><p class="header-nav__item_ruby">私たちについて</p></a></li>
+            <li class="header-nav__item"><a class="header-nav__item_link" href="#information"><p>Information</p><p class="header-nav__item_ruby">ダイビング情報</p></a></li>
+            <li class="header-nav__item"><a class="header-nav__item_link" href="#blog"><p>Blog</p><p class="header-nav__item_ruby">ブログ</p></a></li>
+            <li class="header-nav__item"><a class="header-nav__item_link" href="#voice"><p>Voice</p><p class="header-nav__item_ruby">お客様の声</p></a></li>
+            <li class="header-nav__item"><a class="header-nav__item_link" href="#price"><p>Price</p><p class="header-nav__item_ruby">料金一覧</p></a></li>
+            <li class="header-nav__item"><a class="header-nav__item_link" href="#faq"><p>FAQ</p><p class="header-nav__item_ruby">よくある質問</p></a></li>
+            <li class="header-nav__item"><a class="header-nav__item_link" href="#contact"><p>Contact</p><p class="header-nav__item_ruby">お問合せ</p></a></li>
           </ul>
         </div>
       </div>
@@ -139,11 +140,139 @@
     </section>
 
     <section class="campaign">
+      <div class="section-title campaign__section-title">
+        <h2 class="section-title__main"><span class="initial-blue">c</span>ampaign</h2>
+        <p class="section-title__sub">キャンペーン</p>
+      </div>
       <div class="campaign__inner">
-        <div class="section-title campaign__section-title">
-          <h2 class="section-title__main"><span class="initial-blue">c</span>ampaign</h2>
-          <p class="section-title__sub">キャンペーン</p>
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="campaign__card">
+                <img class="campaign__card_img" src="/assets/images/common/campaign1.jpg" alt="鮮やかな魚群">
+                <div class="campaign__card_body">
+                  <div class="campaign__card_tag"><p>ライセンス講習</p></div>
+                  <div class="campaign__card_title"><p>ライセンス取得</p></div>
+                  <div class="campaign__card_line"></div>
+                  <div class="campaign__card_content">
+                    <div class="content__description"><p>全部コミコミ(お一人様)</p></div>
+                    <div class="content__price">
+                      <div class="content__price_left">¥56,000</div>
+                      <div class="content__price_right">¥46,000</div>
+                    </div>
+                  </div>
+                </div>
+              </div> 
+            </div>
+            <div class="swiper-slide">
+              <div class="campaign__card">
+                <img class="campaign__card_img" src="/assets/images/common/campaign2.jpg" alt="透き通る海に浮かぶ船">
+                <div class="campaign__card_body">
+                  <div class="campaign__card_tag"><p>体験ダイビング</p></div>
+                  <div class="campaign__card_title"><p>貸切体験ダイビング</p></div>
+                  <div class="campaign__card_line"></div>
+                  <div class="campaign__card_content">
+                    <div class="content__description"><p>全部コミコミ(お一人様)</p></div>
+                    <div class="content__price">
+                      <div class="content__price_left">¥24,000</div>
+                      <div class="content__price_right">¥18,000</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="campaign__card">
+                <img class="campaign__card_img" src="/assets/images/common/campaign3.jpg" alt="暗い海を漂うクラゲ">
+                <div class="campaign__card_body">
+                  <div class="campaign__card_tag"><p>体験ダイビング</p></div>
+                  <div class="campaign__card_title"><p>ナイトダイビング</p></div>
+                  <div class="campaign__card_line"></div>
+                  <div class="campaign__card_content">
+                    <div class="content__description"><p>全部コミコミ(お一人様)</p></div>
+                    <div class="content__price">
+                      <div class="content__price_left">¥1,0000</div>
+                      <div class="content__price_right">¥8,000</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="campaign__card">
+                <img class="campaign__card_img" src="/assets/images/common/campaign4.jpg" alt="海面に顔を出すダイバーたち">
+                <div class="campaign__card_body">
+                  <div class="campaign__card_tag"><p>ファンダイビング</p></div>
+                  <div class="campaign__card_title"><p>貸切ファンダイビング</p></div>
+                  <div class="campaign__card_line"></div>
+                  <div class="campaign__card_content">
+                    <div class="content__description"><p>全部コミコミ(お一人様)</p></div>
+                    <div class="content__price">
+                      <div class="content__price_left">¥20,000</div>
+                      <div class="content__price_right">¥16,000</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="campaign__card">
+                <img class="campaign__card_img" src="/assets/images/common/campaign1.jpg" alt="鮮やかな魚群">
+                <div class="campaign__card_body">
+                  <div class="campaign__card_tag"><p>ライセンス講習</p></div>
+                  <div class="campaign__card_title"><p>ライセンス取得</p></div>
+                  <div class="campaign__card_line"></div>
+                  <div class="campaign__card_content">
+                    <div class="content__description"><p>全部コミコミ(お一人様)</p></div>
+                    <div class="content__price">
+                      <div class="content__price_left">¥56,000</div>
+                      <div class="content__price_right">¥46,000</div>
+                    </div>
+                  </div>
+                </div>
+              </div> 
+            </div>
+            <div class="swiper-slide">
+              <div class="campaign__card">
+                <img class="campaign__card_img" src="/assets/images/common/campaign2.jpg" alt="透き通る海に浮かぶ船">
+                <div class="campaign__card_body">
+                  <div class="campaign__card_tag"><p>体験ダイビング</p></div>
+                  <div class="campaign__card_title"><p>貸切体験ダイビング</p></div>
+                  <div class="campaign__card_line"></div>
+                  <div class="campaign__card_content">
+                    <div class="content__description"><p>全部コミコミ(お一人様)</p></div>
+                    <div class="content__price">
+                      <div class="content__price_left">¥24,000</div>
+                      <div class="content__price_right">¥18,000</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="campaign__card">
+                <img class="campaign__card_img" src="/assets/images/common/campaign3.jpg" alt="暗い海を漂うクラゲ">
+                <div class="campaign__card_body">
+                  <div class="campaign__card_tag"><p>体験ダイビング</p></div>
+                  <div class="campaign__card_title"><p>ナイトダイビング</p></div>
+                  <div class="campaign__card_line"></div>
+                  <div class="campaign__card_content">
+                    <div class="content__description"><p>全部コミコミ(お一人様)</p></div>
+                    <div class="content__price">
+                      <div class="content__price_left">¥1,0000</div>
+                      <div class="content__price_right">¥8,000</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+      <div class="campaign__btn">
+        <a href="#" class="btn">View more <span></span></a>
       </div>
     </section>
 
@@ -164,8 +293,7 @@
             <h3>Dive&nbsp;into<br>the&nbsp;Ocean</h3>
           </div>
           <div class="about__description">
-            <p>ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-              ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキスト</p>
+            <p>ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキスト</p>
           </div>
           <div class="about__btn">
             <a href="#" class="btn">View more <span></span></a>
@@ -196,8 +324,7 @@
               </div>
               <div class="information__right_line"></div>
               <div class="information__right_text">
-                <p>当店はダイビングライセンス（Cカード）世界最大の教育機関PADIの「正規店」として店舗登録されています。
-                  正規登録店として、安心安全に初めての方でも安心安全にライセンス取得をサポート致します。
+                <p>当店はダイビングライセンス（Cカード）世界最大の教育機関PADIの「正規店」として店舗登録されています。<br>正規登録店として、安心安全に初めての方でも安心安全にライセンス取得をサポート致します。
                 </p>
               </div>
               <div class="information__right_btn">
@@ -220,52 +347,46 @@
           <div class="blog__cards">
             <div class="blog__card">
               <div class="blog_card_img">
-                <img src="/assets/images/common/blog-1.jpg" alt="珊瑚礁">
+                <a href="#"><img src="/assets/images/common/blog-1.jpg" alt="珊瑚礁"></a>
               </div>
               <div class="blog__card_body">
-                <time class="blog__card_date" datetime="2023-11-27">2023.11.27</time>
+                <time class="blog__card_date" datetime="2023-11-27">2023.11.17</time>
                 <div class="blog__card_title">
                   <p>ライセンス取得</p>
                 </div>
                 <div class="blog__card_line"></div>
                 <div class="blog__card_text">
-                  <p>
-                    ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-                    ここにテキストが入ります。ここにテキストが入ります。ここにテキスト</p>
+                  <p>ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>ここにテキストが入ります。ここにテキストが入ります。ここにテキスト</p>
                 </div>
               </div>
             </div>
             <div class="blog__card">
               <div class="blog_card_img">
-                <img src="/assets/images/common/blog-2.jpg" alt="ウミガメ">
+                <a href="#"><img src="/assets/images/common/blog-2.jpg" alt="ウミガメ"></a>
               </div>
               <div class="blog__card_body">
-                <time class="blog__card_date" datetime="2023-11-27">2023.11.27</time>
+                <time class="blog__card_date" datetime="2023-11-27">2023.11.17</time>
                 <div class="blog__card_title">
                   <p>ウミガメと泳ぐ</p>
                 </div>
                 <div class="blog__card_line"></div>
                 <div class="blog__card_text">
-                  <p>
-                    ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-                    ここにテキストが入ります。ここにテキストが入ります。ここにテキスト</p>
+                  <p>ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>ここにテキストが入ります。ここにテキストが入ります。ここにテキスト</p>
                 </div>
               </div>
             </div>
             <div class="blog__card">
               <div class="blog_card_img">
-                <img src="/assets/images/common/blog-3.jpg" alt="カクレクマノミ">
+                <a href="#"><img src="/assets/images/common/blog-3.jpg" alt="カクレクマノミ"></a>
               </div>
               <div class="blog__card_body">
-                <time class="blog__card_date" datetime="2023-11-27">2023.11.27</time>
+                <time class="blog__card_date" datetime="2023-11-27">2023.11.17</time>
                 <div class="blog__card_title">
                   <p>カクレクマノミ</p>
                 </div>
                 <div class="blog__card_line"></div>
                 <div class="blog__card_text">
-                  <p>
-                    ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-                    ここにテキストが入ります。ここにテキストが入ります。ここにテキスト</p>
+                  <p>ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>ここにテキストが入ります。ここにテキストが入ります。ここにテキスト</p>
                 </div>
               </div>
             </div>
@@ -305,10 +426,7 @@
             </div>
             <div class="voice__card_body">
               <div class="voice__card_text">
-                <p>
-                  ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-                  ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-                  ここにテキストが入ります。ここにテキストが入ります。</p>
+                <p>ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>ここにテキストが入ります。ここにテキストが入ります。</p>
               </div>
             </div>
           </div>
@@ -330,10 +448,7 @@
             </div>
             <div class="voice__card_body">
               <div class="voice__card_text">
-                <p>
-                  ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-                  ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-                  ここにテキストが入ります。ここにテキストが入ります。</p>
+                <p>ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>ここにテキストが入ります。ここにテキストが入ります。</p>
               </div>
             </div>
           </div>
@@ -464,7 +579,11 @@
                 <p>営業時間:8:30-19:00</p>
                 <p>定休日:毎週火曜日</p>
               </div>
-              <div class="contact__block_right"></div>
+              <div class="contact__block_right">
+                <div class="iframe-wrap">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3578.9840673359845!2d127.69933508324004!3d26.229707229979176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34e56be7db5cbe23%3A0x90ba6df02740ef48!2z44CSOTAyLTAwNjEg5rKW57iE55yM6YKj6KaH5biC5Y-k5bO277yR5LiB55uu!5e0!3m2!1sja!2sjp!4v1693311687571!5m2!1sja!2sjp" width="546" height="296" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+              </div>
             </div>
           </div>
           <div class="contact__right">
@@ -472,7 +591,7 @@
             <div class="contact__right_wrap">
               <div class="section-title section-title__contact">
                 <h2 class="section-title__main contact__main"><span class="initial-blue">c</span>ontact</h2>
-                <p class="section-title__sub contact__sub">お問い合わせ</p>
+                <p class="section-title__sub contact__sub">お問合せ</p>
               </div>
               <div class="contact__right_text">
                 <p>ご予約・お問い合わせはコチラ</p>
@@ -488,6 +607,10 @@
         <img src="assets/images/common/contact-fish.png" alt="魚群の装飾">
       </div>
     </section>
+
+    <div class="to-top js-to-top">
+      <a href="#"><img src="/assets/images/common/go-top.png" alt="トップへボタン"></a>
+    </div>
 
   </main>
   <footer>
@@ -509,7 +632,7 @@
         <div class="footer__container">
           <div class="footer__sp_left">
             <ul class="footer__items">
-              <li class="footer__item footer__title">
+              <li class="footer__item footer__title footer__title_top footer__title_top-sp">
                 <a href="#campaign" class="footer__link footer__title_link">キャンペーン</a>
               </li>
               <li class="footer__item">
@@ -525,8 +648,8 @@
                 <a href="#about" class="footer__link footer__title_link">私たちについて</a>
               </li>
             </ul>
-            <ul class="footer__items">
-              <li class="footer__item footer__title">
+            <ul class="footer__items footer__items_second">
+              <li class="footer__item footer__title footer__title_top">
                 <a href="#information" class="footer__link footer__title_link">ダイビング情報</a>
               </li>
               <li class="footer__item">
@@ -545,7 +668,7 @@
           </div>
           <div class="footer__sp_right">
             <ul class="footer__items">
-              <li class="footer__item footer__title">
+              <li class="footer__item footer__title footer__title_top footer__title_top-sp">
                 <a href="#voice" class="footer__link footer__title_link">お客様の声</a>
               </li>
               <li class="footer__item footer__title">
@@ -562,7 +685,7 @@
               </li>
             </ul>
             <ul class="footer__items">
-              <li class="footer__item footer__title">
+              <li class="footer__item footer__title footer__title_top">
                 <a href="#blog" class="footer__link footer__title_link">よくある質問</a>
               </li>
               <li class="footer__item footer__title">
@@ -579,9 +702,9 @@
         </div>
       </div>
       <div class="footer__copy-right_wrap">
-        <small class="footer__copy-right">
+        <p class="footer__copy-right">
           Copyright&nbsp;&copy;&nbsp;2021&nbsp;-&nbsp;2023&nbsp;CodeUps&nbsp;LLC.&nbsp;All&nbsp;Rights&nbsp;Reserved.
-        </small>
+        </p>
       </div>
     </div>
   </footer>

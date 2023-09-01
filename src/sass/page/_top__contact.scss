@@ -5,9 +5,17 @@
 }
 
 .contact__inner {
-    padding: myrem(80) myrem(40) myrem(100);
+    padding-top: myrem(80);
+    padding-right: myrem(40);
+    padding-bottom: myrem(103);
+    padding-left: myrem(40);
     @include mq('md') {
-        padding: myrem(140) myrem(180) myrem(160);
+        max-width: myrem(1130);
+        margin: 0 auto;
+        padding-top: myrem(140);
+        padding-right: auto;
+        padding-bottom: myrem(160);
+        padding-left: auto;
     }
 }
 
@@ -15,8 +23,11 @@
     text-align: center;
     @include mq('md') {
         display: flex;
-        padding: myrem(80) myrem(112) myrem(80) myrem(50);
         box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.25);
+        padding-top: myrem(70);
+        padding-right: myrem(96);
+        padding-bottom: myrem(80);
+        padding-left: myrem(34);
     }
 }
 
@@ -39,7 +50,7 @@
     width: 100%;
     height: myrem(1);
     background-color: $blue;
-    margin-top: myrem(6);
+    margin-top: myrem(2);
     @include mq('md') {
         margin-top: myrem(8);
     }
@@ -67,7 +78,7 @@
 .contact__block_left p {
     font-size: myrem(16);
     color: $navy;
-    line-height : calc(24 / 16);
+    line-height : 1.7;
     font-family: $japanese;
     font-weight: 400;
 }
@@ -76,13 +87,24 @@
     margin: myrem(16) auto 0;
     width: myrem(295);
     height: myrem(160);
-    background-color: #D9D9D9;
     @include mq('md') {
         margin-top: 0;
         margin-left: myrem(21);
         width: myrem(273);
         height: myrem(148);
     }
+}
+.iframe-wrap {
+    position: relative;
+    width: 100%;
+    padding-top: 54.2%;
+}
+.iframe-wrap iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .contact__right {
@@ -97,7 +119,7 @@
         width: myrem(1);
         height: myrem(255);
         background-color: $blue;
-        margin-left: myrem(30);
+        margin-left: myrem(64);
         margin-right: myrem(10);
     }
 }
@@ -111,7 +133,7 @@
 .section-title.section-title__contact {
     margin-top: myrem(40);
     @include mq('md') {
-        margin-top: myrem(20);
+        margin-top: myrem(28);
     }
 }
 
@@ -121,6 +143,7 @@
     line-height : 1;
     font-family: $english;
     font-weight: 400;
+    margin-left: -8px;
 }
 
 .initial-blue {
@@ -130,9 +153,10 @@
 .section-title__sub.contact__sub {
     font-size: myrem(12);
     color: $blue;
-    line-height : 1.5;
+    line-height : 1;
     font-family: $japanese;
     font-weight: 400;
+    margin-top: -4px
 }
 
 .contact__right_text {

@@ -7,9 +7,11 @@
 .about_inner {
     padding-top: 0;
     padding-right: 4%;
-    padding-bottom: myrem(80);
+    padding-bottom: myrem(76);
     padding-left: 4%;
     @include mq('md') {
+        max-width: myrem(2000);
+        margin: 0 auto;
         position: relative;
         padding-top: 0;
         padding-right: 12.5%;
@@ -66,6 +68,7 @@
         top: 10%;
         left: 9%;
         z-index: 50;
+        margin-top: 0;
     }
     @include mq('xl') {
         top: 20.6%;
@@ -95,6 +98,7 @@
         right: 2%;
         z-index: 50;
         width: 37%;
+        margin-top: 0;
     }
     @include mq('xl') {
         top: 20.6%;
@@ -116,22 +120,24 @@
 }
 
 .about__btn {
-    margin-top: myrem(40);
     text-align: center;
+    margin-top: myrem(52);
+    padding-right: myrem(14);
     @include mq('md') {
         position: absolute;
         top: 52.3%;
         right: 6%;
         z-index: 50;
+        margin-top: 0;
     }
     @include mq('xl') {
-        top: 52.3%;
-        right: 12.7%;
+        top: 52.6%;
+        right: 11.6%;
         z-index: 50;
     }
 }
 
-.about__sango　{
+.about__sango {
     display: none;
     @include mq('md') {
         display: block;
@@ -139,7 +145,7 @@
         aspect-ratio: 194 / 181;
         object-fit: cover;
         width: 13.4%;
-        bottom: 2.6%;
+        bottom: 5%;
         right: 5.7%;
     }
 }
