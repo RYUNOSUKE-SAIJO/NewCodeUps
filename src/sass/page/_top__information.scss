@@ -40,6 +40,16 @@
     }
 }
 
+.information__left_img {
+    aspect-ratio: 540 / 365;
+    width: 100%;
+}
+
+.information__left_img img {
+    height: 100%;
+    object-fit: cover;
+}
+
 .information__right {
     margin-top: myrem(24);
     @include mq('md') {

@@ -37,14 +37,17 @@
 .price__img {
     margin-top: myrem(24);
     aspect-ratio: 345 / 227;
-    object-fit: cover;
-    width: 100%;
     @include mq('md') {
         margin-top: myrem(0);
         aspect-ratio: 746 / 492;
-        object-fit: cover;
         width: 50%;
     }
+}
+
+.price__img img {
+    object-fit: cover;
+    max-height: myrem(746);
+    width: 100%;
 }
 
 .price_body {
@@ -95,6 +98,7 @@
 
 .price__content_price {
     margin-left: auto;
+    padding-left: myrem(16);
 }
 
 .price__btn {

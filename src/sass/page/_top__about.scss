@@ -16,6 +16,7 @@
     padding-top: 0;
     padding-bottom: myrem(76);
     @include mq('md') {
+        position: relative;
         max-width: $inner;
         padding-top: 0;
         padding-bottom: myrem(140);
@@ -55,13 +56,31 @@
     width: 81.4%;
 }
 
+.about__content {
+    @include mq('md') {
+        display: flex;
+        justify-content: center;
+        top: 35%;
+        left: 18.5%;
+        position: absolute;
+        z-index: 50;
+        gap: myrem(40);
+    }
+}
+
+.about__content_left {
+
+}
+
+.about__content_right {
+    @include mq('md') {
+        width: 37%;
+    }
+}
+
 .about__main-title {
     margin-top: myrem(40);
     @include mq('md') {
-        position: absolute;
-        top: 20.6%;
-        left: 18.5%;
-        z-index: 50;
         margin-top: 0;
     }
 }
@@ -82,12 +101,6 @@
 .about__description {
     margin-top: myrem(16);
     @include mq('md') {
-        position: absolute;
-        width: 37%;
-        margin-top: 0;
-        top: 20.6%;
-        right: 3.7%;
-        z-index: 50;
     }
 }
 
@@ -107,11 +120,6 @@
     margin-top: myrem(52);
     padding-right: myrem(14);
     @include mq('md') {
-        position: absolute;
-        margin-top: 0;
-        top: 52.6%;
-        right: 11.6%;
-        z-index: 50;
     }
 }
 
