@@ -3,18 +3,24 @@
 .price {
     position: relative;
     background-color: #DDF0F1;
+    padding-right: $padding-sp;
+    padding-left: $padding-sp;
+    @include mq('md') {
+        padding-right: $padding-pc;
+        padding-left: $padding-pc;
+    }
 }
 
 .price__inner {
+    max-width: myrem(600);
+    margin: 0 auto;
     padding-top: myrem(80);
-    padding-right: myrem(15);
     padding-bottom: myrem(82);
-    padding-left: myrem(15);
     @include mq('md') {
-        max-width: myrem(1126);
+        max-width: $inner;
         width: 100%;
-        margin: 0 auto;
-        padding: myrem(108) myrem(25);
+        padding-top: myrem(108);
+        padding-bottom: myrem(108);
     }
 }
 
@@ -105,8 +111,8 @@
         display: block;
         position: absolute;
         bottom: myrem(60);
-        left: myrem(100);
-        width: myrem(437);
+        left: calc(50% - min(50vw,650px));
+        max-width: myrem(437);
     }
 }
 

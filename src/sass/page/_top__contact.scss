@@ -2,20 +2,23 @@
 
 .contact {
     position: relative;
+    padding-right: $padding-sp;
+    padding-left: $padding-sp;
+    @include mq('md') {
+        padding-right: $padding-pc;
+        padding-left: $padding-pc;
+    }
 }
 
 .contact__inner {
+    max-width: myrem(600);
+    margin: 0 auto;
     padding-top: myrem(80);
-    padding-right: myrem(40);
     padding-bottom: myrem(103);
-    padding-left: myrem(40);
     @include mq('md') {
-        max-width: myrem(1130);
-        margin: 0 auto;
+        max-width: $inner;
         padding-top: myrem(140);
-        padding-right: auto;
         padding-bottom: myrem(160);
-        padding-left: auto;
     }
 }
 
@@ -179,7 +182,7 @@
     @include mq('md') {
         width: myrem(301);
         top: myrem(100);
-        right: myrem(50);
+        right: calc(50% - min(50vw,650px));
     }
 }
 

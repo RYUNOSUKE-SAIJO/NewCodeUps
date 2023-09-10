@@ -33,13 +33,17 @@
     background: url(../images/common/header-logo-sp.png) no-repeat center center / contain;
     max-width: myrem(102);
     width: 100%;
-    height: myrem(38);
+    height: inherit;
     @include mq('md') {
         background: url(../images/common/header-logo.png) no-repeat center center / contain;
         max-width: myrem(133);
         width: 100%;
-        height: myrem(50);
     }
+}
+
+.header__logo a {
+    display: block;
+    height: inherit;
 }
 
 
@@ -112,10 +116,21 @@
 
 .header-nav__item {
     padding: 0 myrem(20);
+    height: inherit;
 }
 
 .header-nav__item:nth-child(8) {
     padding: 0  0  0 myrem(20);
+}
+
+.header-nav__item_link {
+    position: relative;
+    display: flex;
+    height: inherit;
+    align-items: center;
+}
+
+.item__link_wrap{
 }
 
 .header-nav__item_link p {
@@ -137,21 +152,20 @@
     font-weight: 400;
 }
 
-// under line //
-
-.header-nav__item_link {
-    position: relative;
-    display: inline-block;
+.header-nav__item_ruby {
+    white-space: nowrap;
 }
 
-.header-nav__item_link:hover {
+// under line //
+
+.header-nav__item:hover {
     color: $white;
 }
 
 .header-nav__item_link::after {
     content: '';
     position: absolute;
-    bottom: myrem(-12);
+    bottom: myrem(16);
     left: 0;
     width: 100%;
     height: 2px;

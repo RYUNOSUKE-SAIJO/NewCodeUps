@@ -1,16 +1,23 @@
 @use "global" as *;
 
+.voice {
+    padding-right: $padding-sp;
+    padding-left: $padding-sp;
+    @include mq('md') {
+        position: relative;
+        padding-right: $padding-pc;
+        padding-left: $padding-pc;
+    }
+}
+
 .voice__inner {
+    max-width: myrem(600);
+    margin: 0 auto;
     padding-top: myrem(84);
     padding-bottom: myrem(80);
     @include mq('md') {
-        max-width: myrem(1130);
-        margin: 0 auto;
-        position: relative;
-        padding: myrem(140) myrem(25);
+        max-width: $inner;
         padding-top: myrem(144);
-        padding-right: myrem(25);
-        padding-left: myrem(25);
         padding-bottom: myrem(140);
     }
 }
@@ -178,22 +185,22 @@
 .voice__fish {
     display: none;
     @include mq('md') {
-        width: calc(100% * (301 / 1440));
+        max-width: myrem(301);
         position: absolute;
         top: myrem(20);
-        left: myrem(100);
         display: block;
+        left: calc(50% - min(50vw,650px));
     }
 }
 
 .voice__seahorse {
     display: none;
     @include mq('md') {
-        width: myrem(71);
+        max-width: myrem(71);
         position: absolute;
         bottom: myrem(66);
-        right: myrem(25);
         display: block;
+        right: calc(50% - min(50vw, 520px));
     }
 }
 

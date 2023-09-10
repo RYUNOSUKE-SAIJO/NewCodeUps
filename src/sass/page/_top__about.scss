@@ -1,18 +1,24 @@
 @use "global" as *;
 
-.about_inner {
-    padding-top: 0;
-    padding-right: 4%;
-    padding-bottom: myrem(76);
-    padding-left: 4%;
+.about {
+    padding-right: $padding-sp;
+    padding-left: $padding-sp;
     @include mq('md') {
-        max-width: myrem(2000);
-        margin: 0 auto;
+        padding-right: $padding-pc;
+        padding-left: $padding-pc;
         position: relative;
+    }
+}
+
+.about_inner {
+    max-width: myrem(600);
+    margin: 0 auto;
+    padding-top: 0;
+    padding-bottom: myrem(76);
+    @include mq('md') {
+        max-width: $inner;
         padding-top: 0;
-        padding-right: 12.5%;
         padding-bottom: myrem(140);
-        padding-left: 12.5%;
     }
 }
 
@@ -53,15 +59,10 @@
     margin-top: myrem(40);
     @include mq('md') {
         position: absolute;
-        top: 10%;
-        left: 9%;
-        z-index: 50;
-        margin-top: 0;
-    }
-    @include mq('xl') {
         top: 20.6%;
         left: 18.5%;
         z-index: 50;
+        margin-top: 0;
     }
 }
 
@@ -82,17 +83,11 @@
     margin-top: myrem(16);
     @include mq('md') {
         position: absolute;
-        top: 10%;
-        right: 2%;
-        z-index: 50;
         width: 37%;
         margin-top: 0;
-    }
-    @include mq('xl') {
         top: 20.6%;
         right: 3.7%;
         z-index: 50;
-        width: 37%;
     }
 }
 
@@ -113,12 +108,7 @@
     padding-right: myrem(14);
     @include mq('md') {
         position: absolute;
-        top: 52.3%;
-        right: 6%;
-        z-index: 50;
         margin-top: 0;
-    }
-    @include mq('xl') {
         top: 52.6%;
         right: 11.6%;
         z-index: 50;
@@ -132,8 +122,8 @@
         position: absolute;
         aspect-ratio: 194 / 181;
         object-fit: cover;
-        width: 13.4%;
-        bottom: 5%;
-        right: 5.7%;
+        max-width: myrem(180);
+        bottom: myrem(70);
+        right: calc(50% - min(50vw,650px));
     }
 }

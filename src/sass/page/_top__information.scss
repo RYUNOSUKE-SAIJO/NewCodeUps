@@ -2,17 +2,22 @@
 
 .information {
     background-color: #DDF0F1;
+    padding-left: $padding-sp;
+    padding-right: $padding-sp;
+    @include mq('md') {
+        padding-left: $padding-pc;
+        padding-right: $padding-pc;
+    }
 }
 
 .information__inner {
+    max-width: myrem(600);
+    margin: 0 auto;
     padding-top: myrem(80);
-    padding-right: myrem(15);
     padding-bottom: myrem(84);
-    padding-left: myrem(15);
     @include mq('md') {
-        max-width: myrem(2000);
-        margin: 0 auto;
-        padding: myrem(100) myrem(180);
+        max-width: $inner;
+        padding: myrem(100) myrem(0);
     }
 }
 
