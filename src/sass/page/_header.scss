@@ -25,7 +25,8 @@
     align-items: center;
     padding: 0 myrem(15);
     @include mq('md') {
-        padding: 0 myrem(40);
+        padding-left: myrem(40);
+        padding-right: myrem(20);
     }
 }
 
@@ -115,22 +116,15 @@
 }
 
 .header-nav__item {
-    padding: 0 myrem(20);
     height: inherit;
 }
 
-.header-nav__item:nth-child(8) {
-    padding: 0  0  0 myrem(20);
-}
-
 .header-nav__item_link {
+    padding: 0 myrem(20);
     position: relative;
     display: flex;
     height: inherit;
     align-items: center;
-}
-
-.item__link_wrap{
 }
 
 .header-nav__item_link p {

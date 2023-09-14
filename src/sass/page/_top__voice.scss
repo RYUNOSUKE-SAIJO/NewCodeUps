@@ -1,25 +1,15 @@
 @use "global" as *;
 
 .voice {
-    padding-right: $padding-sp;
-    padding-left: $padding-sp;
+    margin-top: myrem(80);
     @include mq('md') {
         position: relative;
-        padding-right: $padding-pc;
-        padding-left: $padding-pc;
+        margin-top: myrem(140);
     }
 }
 
 .voice__inner {
     max-width: myrem(600);
-    margin: 0 auto;
-    padding-top: myrem(84);
-    padding-bottom: myrem(80);
-    @include mq('md') {
-        max-width: $inner;
-        padding-top: myrem(144);
-        padding-bottom: myrem(140);
-    }
 }
 
 .voice__cards {
@@ -40,13 +30,12 @@
     padding-right: myrem(16);
     padding-bottom: myrem(24);
     padding-left: myrem(16);
-    width: calc(100% * (345 / 375));
+    width: 100%;
     box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
     @include mq('md') {
         max-width: myrem(520);
         margin-top: myrem(30);
         padding: myrem(24);
-        width: 96.3%;
     }
 }
 
@@ -189,9 +178,9 @@
     @include mq('md') {
         max-width: myrem(301);
         position: absolute;
-        top: myrem(20);
+        top: myrem(-140);
         display: block;
-        left: calc(50% - min(50vw,650px));
+        left: calc(50% - min(50vw,myrem(650)));
     }
 }
 
@@ -200,9 +189,9 @@
     @include mq('md') {
         max-width: myrem(71);
         position: absolute;
-        bottom: myrem(66);
+        bottom: myrem(-80);
         display: block;
-        right: calc(50% - min(50vw, 520px));
+        right: calc(50% - min(50vw, myrem(520)));
     }
 }
 

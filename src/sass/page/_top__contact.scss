@@ -2,24 +2,14 @@
 
 .contact {
     position: relative;
-    padding-right: $padding-sp;
-    padding-left: $padding-sp;
+    margin-top: myrem(80);
     @include mq('md') {
-        padding-right: $padding-pc;
-        padding-left: $padding-pc;
+        margin-top: myrem(140);
     }
 }
 
 .contact__inner {
     max-width: myrem(600);
-    margin: 0 auto;
-    padding-top: myrem(80);
-    padding-bottom: myrem(103);
-    @include mq('md') {
-        max-width: $inner;
-        padding-top: myrem(140);
-        padding-bottom: myrem(160);
-    }
 }
 
 .contact__container {
@@ -97,11 +87,13 @@
         height: myrem(148);
     }
 }
+
 .iframe-wrap {
     position: relative;
     width: 100%;
     padding-top: 54.2%;
 }
+
 .iframe-wrap iframe {
     position: absolute;
     top: 0;
@@ -176,13 +168,13 @@
 
 .contact__fish {
     position: absolute;
-    top: myrem(54);
+    top: myrem(-40);
     right: myrem(15);
     width: myrem(109);
     @include mq('md') {
         width: myrem(301);
-        top: myrem(100);
-        right: calc(50% - min(50vw,650px));
+        top: myrem(-40);
+        right: calc(50% - min(50vw,myrem(650)));
     }
 }
 

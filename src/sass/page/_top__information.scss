@@ -1,24 +1,18 @@
 @use "global" as *;
 
 .information {
+    margin-top: myrem(76);
     background-color: #DDF0F1;
-    padding-left: $padding-sp;
-    padding-right: $padding-sp;
+    padding-top: myrem(80);
+    padding-bottom: myrem(84);
     @include mq('md') {
-        padding-left: $padding-pc;
-        padding-right: $padding-pc;
+        margin-top: myrem(140);
+        padding: myrem(100) myrem(0);
     }
 }
 
 .information__inner {
     max-width: myrem(600);
-    margin: 0 auto;
-    padding-top: myrem(80);
-    padding-bottom: myrem(84);
-    @include mq('md') {
-        max-width: $inner;
-        padding: myrem(100) myrem(0);
-    }
 }
 
 .information__container {

@@ -2,24 +2,18 @@
 
 footer {
     background-color: #408F95;
-    padding-right: $padding-sp;
-    padding-left: $padding-sp;
+    margin-top: myrem(100);
+    padding-top: myrem(48);
+    padding-bottom: myrem(56);
     @include mq('md') {
-        padding-right: $padding-pc;
-        padding-left: $padding-pc;
+        margin-top: myrem(160);
+        padding-top: myrem(80);
+        padding-bottom: myrem(80);
     }
 }
 
 .footer__inner {
     max-width: myrem(600);
-    margin: 0 auto;
-    padding-top: myrem(48);
-    padding-bottom: myrem(56);
-    @include mq('md') {
-        max-width: $inner;
-        padding-top: myrem(80);
-        padding-bottom: myrem(80);
-    }
 }
 
 .footer__header {

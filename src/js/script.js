@@ -21,14 +21,14 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     var swiper = new Swiper(".campaign__swiper", {
         loop: true,
         spaceBetween: 24,
-        slidesPerView: "1",
-        speed: 1000,
+        speed: 2000,
+        loopedSlides: 8,
         loopAdditionalSlides: 2,
         width: 280,
-        //autoplay: {
-            //delay: 0,
-            //disableOnInteraction: false,
-        //},
+        autoplay: {
+            delay: 2000,
+            disableOnInteraction: false,
+        },
         breakpoints: { //ブレークポイントの設定 小さい順に設定する！！
             768: {
                 spaceBetween: 40,
