@@ -2,6 +2,9 @@
 
 .contact {
     position: relative;
+}
+
+.contact-layout {
     margin-top: myrem(80);
     @include mq('md') {
         margin-top: myrem(140);
@@ -18,17 +21,14 @@
         display: flex;
         box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.25);
         padding-top: myrem(70);
-        padding-right: myrem(96);
+        padding-right: myrem(112);
         padding-bottom: myrem(80);
-        padding-left: myrem(34);
+        padding-left: myrem(50);
     }
 }
 
 .contact__left {
-    @include mq('md') {
-        width: 50%;
-        padding-right: myrem(20);
-    }
+
 }
 
 .contact__logo {
@@ -103,20 +103,27 @@
 }
 
 .contact__right {
+    position: relative;
     @include mq('md') {
         display: flex;
         width: 100%;
     }
 }
 
-.contact__right_line {
+.contact__right::before {
     @include mq('md') {
+        position: absolute;
+        content: "";
         width: myrem(1);
         height: myrem(255);
         background-color: $blue;
-        margin-left: myrem(64);
-        margin-right: myrem(10);
+        top: myrem(6);
+        left: myrem(80);
     }
+}
+
+.contact__right_line {
+
 }
 
 .contact__right_wrap {
@@ -174,7 +181,7 @@
     @include mq('md') {
         width: myrem(301);
         top: myrem(-40);
-        right: calc(50% - min(50vw,myrem(650)));
+        right: calc(50% - min(48vw,myrem(650)));
     }
 }
 

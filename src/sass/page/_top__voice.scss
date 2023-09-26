@@ -1,6 +1,10 @@
 @use "global" as *;
 
 .voice {
+
+}
+
+.voice-layout {
     margin-top: myrem(80);
     @include mq('md') {
         position: relative;
@@ -15,15 +19,16 @@
 .voice__cards {
     width: 100%;
     display: grid;
+    margin-top: myrem(42);
     @include mq('md') {
         gap: myrem(40);
         grid-template-columns: repeat(2,auto);
+        margin-top: myrem(30);
     }
 
 }
 
 .voice__card {
-    margin-top: myrem(42);
     margin-right: auto;
     margin-left: auto;
     padding-top: myrem(12);
@@ -34,7 +39,6 @@
     box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
     @include mq('md') {
         max-width: myrem(520);
-        margin-top: myrem(30);
         padding: myrem(24);
     }
 }
@@ -180,7 +184,7 @@
         position: absolute;
         top: myrem(-140);
         display: block;
-        left: calc(50% - min(50vw,myrem(650)));
+        left: calc(50% - min(48vw,myrem(650)));
     }
 }
 
@@ -191,7 +195,7 @@
         position: absolute;
         bottom: myrem(-80);
         display: block;
-        right: calc(50% - min(50vw, myrem(520)));
+        right: calc(50% - min(48vw, myrem(520)));
     }
 }
 

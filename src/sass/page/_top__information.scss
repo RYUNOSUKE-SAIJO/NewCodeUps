@@ -1,8 +1,13 @@
 @use "global" as *;
 
 .information {
-    margin-top: myrem(76);
     background-color: #DDF0F1;
+    position: relative;
+    z-index: -2;
+}
+
+.information-layout {
+    margin-top: myrem(76);
     padding-top: myrem(80);
     padding-bottom: myrem(84);
     @include mq('md') {
