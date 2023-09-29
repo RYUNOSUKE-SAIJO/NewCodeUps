@@ -47,7 +47,7 @@
     width: 100%;
 }
 
-.price_body {
+.price__body {
     margin-top: myrem(40);
     @include mq('md') {
         width: 50%;
@@ -62,6 +62,21 @@
     }
 }
 
+.price__index {
+    position: relative;
+}
+
+.price__index::after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    top: myrem(30);
+    left: 0;
+    width: 100%;
+    height: myrem(1);
+    background-color: $blue;
+}
+
 .price__index p {
     font-size: myrem(16);
     color: $navy;
@@ -70,14 +85,11 @@
     font-weight: 700;
 }
 
-.price__line {
-    margin-top: myrem(4);
-    width: 100%;
-    height: myrem(1);
-    background-color: $blue;
+.price__content {
+    margin-top: myrem(12);
 }
 
-.price__content_block {
+.price__content-block {
     display: flex;
     margin-top: myrem(8);
 }
@@ -93,7 +105,7 @@
     }
 }
 
-.price__content_price {
+.price__content-price {
     margin-left: auto;
     padding-left: myrem(16);
 }

@@ -39,17 +39,18 @@
     }
 }
 
-.information__left_img {
+.information__left-img {
     aspect-ratio: 540 / 365;
     width: 100%;
 }
 
-.information__left_img img {
+.information__left-img img {
     height: 100%;
     object-fit: cover;
 }
 
 .information__right {
+    position: relative;
     margin-top: myrem(24);
     @include mq('md') {
         margin-top: 0;
@@ -58,7 +59,21 @@
     }
 }
 
-.information__right_title p {
+.information__right::after {
+    content: "";
+    position: absolute;
+    top: myrem(32);
+    left: 0;
+    display: inline-block;
+    width: 100%;
+    height: myrem(1);
+    background-color: $blue;
+    @include mq('md') {
+        top: myrem(96);
+    }
+}
+
+.information__right-title p {
     font-size: myrem(20);
     line-height : 1.2;
     @include mq('md') {
@@ -70,21 +85,14 @@
     }
 }
 
-.information__right_line {
-    margin-top: myrem(4);
-    width: 100%;
-    height: myrem(1);
-    background-color: $blue;
+.information__right-text {
     @include mq('md') {
-        margin-top: myrem(8);
+        margin-top: myrem(12);
     }
+    margin-top: myrem(16);
 }
 
-.information__right_text {
-    margin-top: myrem(8);
-}
-
-.information__right_text p {
+.information__right-text p {
     @include mq('md') {
         font-size: myrem(16);
         color: $black;
@@ -94,18 +102,18 @@
     }
 }
 
-.information__right_btn {
+.information__right-btn {
     text-align: center;
     margin-top: myrem(40);
 }
 
 // animation //
 
-div.information__left_img {
+div.information__left-img {
     position: relative;
 }
 
-div.information__left_img div.color {
+div.information__left-img div.color {
     position: absolute;
     top: 0;
     right: 0;
@@ -115,7 +123,7 @@ div.information__left_img div.color {
     background-color: #408F95;
 }
 
-div.information__left_img img {
+div.information__left-img img {
     display: block;
     width: 100%;
 }

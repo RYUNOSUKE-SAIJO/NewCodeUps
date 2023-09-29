@@ -11,9 +11,6 @@
     }
 }
 
-.campaign__inner {
-}
-
 .campaign__cards {
     margin-top: myrem(24);
     @include mq('md') {
@@ -29,7 +26,7 @@
     height: auto;
 }
 
-.campaign__card {
+.campaign-card {
     width: myrem(280);
     height: 98%;
     margin: myrem(4) myrem(2);
@@ -41,7 +38,7 @@
     }
 }
 
-.campaign__card_img {
+.campaign-card__img {
     aspect-ratio: 280 / 188;
     object-fit: cover;
     @include mq('md') {
@@ -49,28 +46,29 @@
     }
 }
 
-.campaign__card_img img {
+.campaign-card__img img {
     width: 100%;
     height: auto;
     object-fit: cover;
 }
 
-.campaign__card_body {
+.campaign-card__body {
     padding: myrem(16) myrem(16) myrem(0) myrem(16);
     @include mq('md') {
         padding: myrem(24) myrem(16) myrem(0) myrem(16);
     }
 }
 
-.campaign__card_info {
-    margin-top: auto;
+.campaign-card__info {
+    margin-top: myrem(16);
     padding: myrem(0) myrem(16) myrem(24) myrem(16);
     @include mq('md') {
+        margin-top: myrem(24);
         padding: myrem(0) myrem(16) myrem(40) myrem(16);
     }
 }
 
-.campaign__card_tag {
+.campaign-card__tag {
     display: inline-block;
     padding: myrem(4) myrem(12);
     border: 1px solid $blue;
@@ -79,7 +77,7 @@
     }
 }
 
-.campaign__card_tag p {
+.campaign-card__tag p {
     font-size: myrem(12);
     color: $blue;
     line-height : 1.5;
@@ -87,11 +85,26 @@
     font-weight: 400;
 }
 
-.campaign__card_title {
+.campaign-card__title {
+    position: relative;
     margin-top: myrem(4);
 }
 
-.campaign__card_title p {
+.campaign-card__title::after {
+    position: absolute;
+    display: inline-block;
+    top: myrem(32);
+    left: 0;
+    content: "";
+    width: 100%;
+    height: myrem(1);
+    background-color: $blue;
+    @include mq('md') {
+        top: myrem(36);
+    }
+}
+
+.campaign-card__title p {
     font-size: myrem(16);
     color: $black;
     line-height : calc(24 / 16);
@@ -99,28 +112,11 @@
     font-weight: 500;
 }
 
-.campaign__card_line {
-    margin-top: myrem(8);
-    width: 100%;
-    height: myrem(1);
-    background-color: $blue;
-    @include mq('md') {
-        width: 100%;
-    }
-}
-
-.campaign__card_content {
-    margin-top: myrem(8);
-    @include mq('md') {
-        margin-top: myrem(16);
-    }
-}
-
-.content__description  {
+.campaign-card__description  {
     text-align: center;
 }
 
-.content__description p {
+.campaign-card__description p {
     font-size: myrem(14);
     color: $navy;
     line-height :  calc(24 / 14);
@@ -132,7 +128,7 @@
     }
 }
 
-.content__price {
+.campaign-card__price {
     justify-content: center;
     margin-top: myrem(8);
     display: flex;
@@ -143,7 +139,7 @@
     }
 }
 
-.content__price_left {
+.campaign-card__price-left {
     position: relative;
     font-size: myrem(20);
     color: $navy;
@@ -156,7 +152,7 @@
     }
 }
 
-.content__price_left::after {
+.campaign-card__price-left::after {
     display: inline-block;
     content: "";
     position: absolute;
@@ -171,7 +167,7 @@
     }
 }
 
-.content__price_right {
+.campaign-card__price-right {
     font-size: myrem(32);
     color: $blue;
     line-height : 1;
@@ -183,7 +179,7 @@
     }
 }
 
-.campaign__btn{
+.campaign__btn {
     margin-top: myrem(38);
     text-align: center;
     @include mq('md') {
@@ -193,7 +189,7 @@
 
 // swiper-button  //
 
-.swiper__button_wrap {
+.swiper__button-wrap {
     position: absolute;
     top: myrem(24);
     right: calc(50% - min(30vw, myrem(410)));
@@ -209,26 +205,26 @@
     }
 }
 
-.swiper-button-next {
-    margin-right: myrem(40);
-}
-
 .swiper-button-prev {
     margin-left: myrem(40);
 }
 
-.swiper-button-next:after, .swiper-button-prev:after {
-    content: "";
-    display: block;
-    width: myrem(80);
-    height: myrem(80);
-    background: url(../images/common/campaign-left.png) no-repeat center center / contain;
+.swiper-button-next {
+    margin-right: myrem(40);
 }
 
-.swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
+.swiper-button-prev:after, .swiper-button-next:after {
     content: "";
     display: block;
     width: myrem(80);
     height: myrem(80);
     background: url(../images/common/campaign-right.png) no-repeat center center / contain;
+}
+
+.swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
+    content: "";
+    display: block;
+    width: myrem(80);
+    height: myrem(80);
+    background: url(../images/common/campaign-left.png) no-repeat center center / contain;
 }

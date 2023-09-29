@@ -12,7 +12,7 @@
     }
 }
 
-.about_inner {
+.about__inner {
     max-width: myrem(600);
     @include mq('md') {
         position: relative;
@@ -27,7 +27,7 @@
     }
 }
 
-.about__view_vertical {
+.about__view-vertical {
     position: absolute;
     z-index: 20;
     top: myrem(-26);
@@ -39,7 +39,7 @@
     }
 }
 
-.about__view_vertical img {
+.about__view-vertical img {
     aspect-ratio: 128 / 194;
     object-fit: cover;
     height: 100%;
@@ -48,7 +48,7 @@
     }
 }
 
-.about__view_side {
+.about__view-side {
     margin-left: auto;
     aspect-ratio: 281 / 186;
     object-fit: cover;
@@ -67,11 +67,11 @@
     }
 }
 
-.about__content_left {
+.about__content-left {
 
 }
 
-.about__content_right {
+.about__content-right {
     @include mq('md') {
         width: 37%;
     }

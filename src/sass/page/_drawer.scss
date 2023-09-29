@@ -10,6 +10,7 @@
     height: 100vh;
     background-color: rgba($color: $blue, $alpha: 1.0);
     overflow: scroll;
+    padding-bottom: myrem(100);
     @include mq('md') {
         display: none;
     }
@@ -18,7 +19,6 @@
 .drawer__inner {
     display: flex;
     width: 100%;
-    height: inherit;
 }
 
 .drawer__items {
@@ -26,7 +26,7 @@
     justify-content: center;
     gap: myrem(30);
     width: 100%;
-    margin-top: myrem(64);
+    margin-top: myrem(80);
 }
 
 .drawer__item {
@@ -35,21 +35,22 @@
 
 .drawer__link {
     display: inline-block;
+    width: 100%;
     color: $white;
     font-family: $japanese;
     font-size: myrem(16);
     font-weight: 400;
     line-height: 1.125;
-    margin-top: myrem(20);
+    padding: myrem(12) 0;
 }
 
-.drawer__link.drawer__title_link {
+.drawer__link.drawer__title-link {
     position: relative;
     font-weight: 700;
-    margin-top: myrem(39);
+    padding: myrem(20) 0;
 }
 
-.drawer__link.drawer__title_link::before {
+.drawer__link.drawer__title-link::before {
     content: "";
     position: absolute;
     top: 50%;

@@ -21,7 +21,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     var swiper = new Swiper(".campaign__swiper", {
         loop: true,
         spaceBetween: 24,
-        speed: 2000,
+        speed: 1000,
         loopedSlides: 8,
         loopAdditionalSlides: 2,
         width: 280,

@@ -47,19 +47,10 @@ footer {
     }
 }
 
-.footer__body {
-    margin-top: myrem(6);
-    padding-left: myrem(4);
-    @include mq('md') {
-        margin-top: 0;
-        padding-left: myrem(20);
-    }
-}
-
 .footer__container {
     display: flex;
     justify-content: center;
-    gap: myrem(22);
+    gap: myrem(36);
     width: 100%;
     padding-left: myrem(20);
     @include mq('md') {
@@ -68,6 +59,39 @@ footer {
     }
 }
 
+.footer__sp-left {
+    margin-top: myrem(12);
+    margin-left: auto;
+    margin-right: auto;
+    @include mq('md') {
+        display: flex;
+        width: 100%;
+        margin-top: 0;
+    }
+}
+
+.footer__sp-right {
+    margin-top: myrem(12);
+    margin-left: auto;
+    margin-right: auto;
+    @include mq('md') {
+        display: flex;
+        width: 100%;
+        margin-top: 0;
+    }
+}
+
+.footer__items {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    @include mq('md') {
+        padding-left: myrem(36);
+    }
+}
+
+// footer-item //
+
 .footer__item {
     display: inline-block;
     color: $white;
@@ -75,17 +99,12 @@ footer {
     font-size: myrem(16);
     font-weight: 400;
     line-height: 1.125;
-    margin-top: myrem(24);
-    @include mq('md') {
-        margin-top: myrem(24);
-    }
 }
 
-.footer__title {
-    margin-top: myrem(32);
-    @include mq('md') {
-        margin-top: myrem(40);
-    }
+.footer__link {
+    display: inline-block;
+    padding: myrem(12) 0;
+    width: 100%;
 }
 
 .footer__link:hover {
@@ -98,7 +117,13 @@ footer {
     }
 }
 
-.footer__link.footer__title_link::before {
+.footer__link.footer__title-link {
+    position: relative;
+    font-weight: 700;
+    margin-top: myrem(16);
+}
+
+.footer__link.footer__title-link::before {
     content: "";
     position: absolute;
     top: 50%;
@@ -110,45 +135,11 @@ footer {
     height: myrem(18);
 }
 
-.footer__title_link {
-
-}
-
-.footer__link.footer__title_link {
-    position: relative;
-    font-weight: 700;
-}
-
-.footer__sp_left {
-    margin: 0 auto;
-    @include mq('md') {
-        display: flex;
-        width: 95%;
-    }
-}
-
-.footer__sp_right {
-    margin: 0 auto;
-    @include mq('md') {
-        display: flex;
-        width: 100%;
-    }
-}
-
-.footer__items {
-    display: flex;
-    flex-direction: column;
-    @include mq('md') {
-        width: 46%;
-    }
-}
-
-.footer__copy-right_wrap {
+.footer__copy-right-wrap {
     text-align: center;
-    margin-top: myrem(34);
+    margin-top: myrem(22);
     @include mq('md') {
         margin-top: myrem(72);
-        margin-right: myrem(84);
     }
 }
 
@@ -161,24 +152,5 @@ footer {
     font-weight: 400;
     @include mq('md') {
         letter-spacing: myrem(1);
-    }
-}
-
-.footer__item.footer__title.footer__title_top {
-    @include mq('md') {
-        margin-top: myrem(30);
-    }
-}
-
-.footer__items.footer__items_second {
-    @include mq('md') {
-        margin-left: myrem(30);
-    }
-}
-
-.footer__item.footer__title.footer__title_top.footer__title_top-sp {
-    margin-top: myrem(32);
-    @include mq('md') {
-        margin-top: myrem(30);
     }
 }

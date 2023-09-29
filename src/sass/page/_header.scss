@@ -15,7 +15,7 @@
 }
 
 .js-header.is-active {
-    background: rgba(0, 0, 0, 0);
+    background-color: $blue;
 }
 
 .header__inner {
@@ -119,15 +119,15 @@
     height: inherit;
 }
 
-.header-nav__item_link {
-    padding: 0 myrem(20);
+.header-nav__item-link {
+    padding: 0 1.4vw;
     position: relative;
     display: flex;
     height: inherit;
     align-items: center;
 }
 
-.header-nav__item_link p {
+.header-nav__item-link p {
     text-align: center;
     font-size: myrem(18);
     color: $white;
@@ -136,7 +136,7 @@
     font-weight: 400;
 }
 
-.header-nav__item_link .header-nav__item_ruby {
+.header-nav__item-link .header-nav__item-ruby {
     text-align: center;
     margin-top: myrem(4);
     font-size: myrem(10);
@@ -146,7 +146,7 @@
     font-weight: 400;
 }
 
-.header-nav__item_ruby {
+.header-nav__item-ruby {
     white-space: nowrap;
 }
 

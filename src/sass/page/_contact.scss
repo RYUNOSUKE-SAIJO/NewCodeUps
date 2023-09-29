@@ -28,7 +28,20 @@
 }
 
 .contact__left {
+    position: relative;
+}
 
+.contact__left::before {
+    content: "";
+    top: myrem(74);
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: myrem(1);
+    background-color: $blue;
+    @include mq('md') {
+        top: myrem(86);
+    }
 }
 
 .contact__logo {
@@ -39,36 +52,26 @@
     }
 }
 
-.contact__left＿line {
-    width: 100%;
-    height: myrem(1);
-    background-color: $blue;
-    margin-top: myrem(2);
-    @include mq('md') {
-        margin-top: myrem(8);
-    }
-}
-
 .contact__block {
-    margin-top: myrem(16);
+    margin-top: myrem(22);
     @include mq('md') {
-        margin-top: myrem(24);
+        margin-top: myrem(32);
         display: flex;
     }
 }
 
-.contact__block_left:not(:first-child) {
+.contact__block-left:not(:first-child) {
     margin-top: myrem(4);
 }
 
-.contact__block_left {
+.contact__block-left {
     margin-top: myrem(4);
     @include mq('md') {
         white-space: nowrap;
     }
 }
 
-.contact__block_left p {
+.contact__block-left p {
     font-size: myrem(16);
     color: $navy;
     line-height : 1.7;
@@ -76,7 +79,7 @@
     font-weight: 400;
 }
 
-.contact__block_right {
+.contact__block-right {
     margin: myrem(16) auto 0;
     width: myrem(295);
     height: myrem(160);
@@ -122,11 +125,7 @@
     }
 }
 
-.contact__right_line {
-
-}
-
-.contact__right_wrap {
+.contact__right-wrap {
     @include mq('md') {
         margin-left: auto;
     }
@@ -157,11 +156,11 @@
     margin-top: -4px
 }
 
-.contact__right_text {
+.contact__right-text {
     margin-top: myrem(8);
 }
 
-.contact__right_text p {
+.contact__right-text p {
     font-size: myrem(14);
     color: $blue;
     line-height : calc(18 / 14);

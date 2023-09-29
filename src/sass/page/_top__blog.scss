@@ -29,19 +29,19 @@
     max-width: myrem(600);
 }
 
-.section-title.blog_section-title {
+.section-title.blog__section-title {
     @include mq('md') {
         color: $white;
     }
 }
 
-.section-title__main.blog__section-title_main {
+.section-title__main.blog__section-title-main {
     @include mq('md') {
         color: $white;
     }
 }
 
-.section-title__sub.blog__section-title_sub {
+.section-title__sub.blog__section-title-sub {
     @include mq('md') {
         color: $white;
     }
@@ -70,11 +70,11 @@
     }
 }
 
-.blog__card_link {
+.blog__card-link {
     display: block;
 }
 
-.blog_card_img img {
+.blog__card-img img {
     object-fit: cover;
     width: 100%;
     height: 100%;
@@ -86,17 +86,17 @@
     cursor: pointer;
 }
 
-.blog_card_img {
+.blog__card-img {
     aspect-ratio: 301 / 201;
     width: 100%;
 }
 
 
-.blog__card_body {
+.blog__card-body {
     margin-top: myrem(16);
 }
 
-.blog__card_date {
+.blog__card-date {
     font-size: myrem(12);
     color: $navy;
     line-height : calc(18 / 12);
@@ -104,7 +104,22 @@
     font-weight: 400;
 }
 
-.blog__card_title p {
+.blog__card-title {
+    position: relative;
+}
+
+.blog__card-title::after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    top: myrem(30);
+    left: 0;
+    width: 100%;
+    height: myrem(1);
+    background-color: $blue;
+}
+
+.blog__card-title p {
     font-size: myrem(16);
     color: $navy;
     line-height : calc(24 / 16);
@@ -112,19 +127,11 @@
     font-weight: 500;
 }
 
-.blog__card_line {
-    margin-top: myrem(4);
-    width: 100%;
-    height: myrem(1);
-    background-color: $blue;
+.blog__card-text {
+    margin-top: myrem(20);
 }
 
-.blog__card_text {
-    margin-top: myrem(16);
-    padding-right: myrem(2);
-}
-
-.blog__card_text p {
+.blog__card-text p {
     font-size: myrem(16);
     color: $navy;
     line-height : calc(24 / 16);
