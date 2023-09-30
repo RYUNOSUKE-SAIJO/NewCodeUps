@@ -73,7 +73,7 @@
     }
 }
 
-.information__right-title p {
+.information__title p {
     font-size: myrem(20);
     line-height : 1.2;
     @include mq('md') {
@@ -85,14 +85,14 @@
     }
 }
 
-.information__right-text {
+.information__text {
     @include mq('md') {
         margin-top: myrem(12);
     }
     margin-top: myrem(16);
 }
 
-.information__right-text p {
+.information__text p {
     @include mq('md') {
         font-size: myrem(16);
         color: $black;
@@ -102,7 +102,7 @@
     }
 }
 
-.information__right-btn {
+.information__btn {
     text-align: center;
     margin-top: myrem(40);
 }

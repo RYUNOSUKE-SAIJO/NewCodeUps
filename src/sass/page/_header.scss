@@ -31,20 +31,23 @@
 }
 
 .header__logo {
-    background: url(../images/common/header-logo-sp.png) no-repeat center center / contain;
     max-width: myrem(102);
     width: 100%;
     height: inherit;
     @include mq('md') {
-        background: url(../images/common/header-logo.png) no-repeat center center / contain;
         max-width: myrem(133);
-        width: 100%;
     }
 }
 
-.header__logo a {
+.header__logo-link {
     display: block;
     height: inherit;
+}
+
+.header__logo-img {
+    display: flex;
+    height: inherit;
+    align-items: center;
 }
 
 

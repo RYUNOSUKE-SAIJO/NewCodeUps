@@ -7,28 +7,28 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     });
 
     // FV swiper //
-    var swiper = new Swiper(".fv__swiper", {
+    var swiper = new Swiper(".js-fv-swiper", {
         loop: true,
         effect: 'fade',
         speed: 1000,
-        autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,
-        },
+        // autoplay: {
+        //     delay: 5000,
+        //     disableOnInteraction: false,
+        // },
     });
 
     // campaign swiper //
-    var swiper = new Swiper(".campaign__swiper", {
+    var swiper = new Swiper(".js-campaign-swiper", {
         loop: true,
         spaceBetween: 24,
         speed: 1000,
         loopedSlides: 8,
         loopAdditionalSlides: 2,
         width: 280,
-        autoplay: {
-            delay: 2000,
-            disableOnInteraction: false,
-        },
+        // autoplay: {
+        //     delay: 2000,
+        //     disableOnInteraction: false,
+        // },
         breakpoints: { //ブレークポイントの設定 小さい順に設定する！！
             768: {
                 spaceBetween: 40,

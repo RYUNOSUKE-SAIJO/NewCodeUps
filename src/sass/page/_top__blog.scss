@@ -29,114 +29,35 @@
     max-width: myrem(600);
 }
 
-.section-title.blog__section-title {
+.blog__section-title {
     @include mq('md') {
         color: $white;
     }
 }
 
-.section-title__main.blog__section-title-main {
+.section-title__main.section-title__main--white {
     @include mq('md') {
         color: $white;
     }
 }
 
-.section-title__sub.blog__section-title-sub {
+.section-title__main.section-title__main--white::first-letter {
+    @include mq('md') {
+        color: $white;
+    }
+}
+
+.section-title__sub.section-title__sub--white {
     @include mq('md') {
         color: $white;
     }
 }
 
 .blog__cards {
-    display: grid;
-    grid-gap: myrem(38);
-    grid-template-columns: repeat(auto-fit,minmax(myrem(301),1fr));
     margin-top: myrem(30);
     @include mq('md') {
         margin-top: myrem(84);
     }
-}
-
-.blog__card {
-    display: inline-block;
-    padding-top: myrem(16);
-    padding-right: myrem(16);
-    padding-bottom: myrem(24);
-    padding-left: myrem(16);
-    box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
-    background-color: #fff;
-    @include mq('md') {
-        max-width: myrem(333);
-    }
-}
-
-.blog__card-link {
-    display: block;
-}
-
-.blog__card-img img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-}
-
-.blog__card:hover {
-    opacity: 0.7;
-    transition: 0.3s;
-    cursor: pointer;
-}
-
-.blog__card-img {
-    aspect-ratio: 301 / 201;
-    width: 100%;
-}
-
-
-.blog__card-body {
-    margin-top: myrem(16);
-}
-
-.blog__card-date {
-    font-size: myrem(12);
-    color: $navy;
-    line-height : calc(18 / 12);
-    font-family: $english;
-    font-weight: 400;
-}
-
-.blog__card-title {
-    position: relative;
-}
-
-.blog__card-title::after {
-    content: "";
-    position: absolute;
-    display: inline-block;
-    top: myrem(30);
-    left: 0;
-    width: 100%;
-    height: myrem(1);
-    background-color: $blue;
-}
-
-.blog__card-title p {
-    font-size: myrem(16);
-    color: $navy;
-    line-height : calc(24 / 16);
-    font-family: $japanese;
-    font-weight: 500;
-}
-
-.blog__card-text {
-    margin-top: myrem(20);
-}
-
-.blog__card-text p {
-    font-size: myrem(16);
-    color: $navy;
-    line-height : calc(24 / 16);
-    font-family: $japanese;
-    font-weight: 400;
 }
 
 .blog__btn {
@@ -157,4 +78,3 @@
         left: calc(50% - min(48vw,myrem(650)))
     }
 }
-

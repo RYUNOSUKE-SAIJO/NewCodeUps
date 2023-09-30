@@ -131,14 +131,14 @@
     }
 }
 
-.section-title.section-title__contact {
+.contact__section-title {
     margin-top: myrem(40);
     @include mq('md') {
         margin-top: myrem(28);
     }
 }
 
-.section-title__main.contact__main {
+.section-title__main.section-title__main--contact {
     font-size: myrem(80);
     color: $navy;
     line-height : 1;
@@ -147,7 +147,7 @@
     margin-left: -8px;
 }
 
-.section-title__sub.contact__sub {
+.section-title__sub.section-title__sub--contact {
     font-size: myrem(12);
     color: $blue;
     line-height : 1;
