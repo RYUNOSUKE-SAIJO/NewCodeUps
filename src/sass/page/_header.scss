@@ -159,12 +159,12 @@
     color: $white;
 }
 
-.header-nav__item_link::after {
+.header-nav__item-link::after {
     content: '';
     position: absolute;
     bottom: myrem(16);
-    left: 0;
-    width: 100%;
+    left: 15%;
+    width: 70%;
     height: 2px;
     background:$white;
     transition: all .3s;
@@ -172,7 +172,7 @@
     transform-origin: center top;
 }
 
-.header-nav__item_link:hover::after {
+.header-nav__item-link:hover::after {
     transform: scale(1, 1)
 }
 
