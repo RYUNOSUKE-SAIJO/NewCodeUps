@@ -1,0 +1,70 @@
+@use "global" as *;
+
+.sub-first-view {
+  width: 100vw;
+  height: myrem(548);
+}
+
+.sub-first-view__inner {
+  position: relative;
+  width: 100%;
+  height: inherit;
+}
+
+.sub-first-view__slide-img {
+  height: inherit;
+}
+
+.sub-first-view__slide-img::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: inherit;
+  background: rgba(64, 143, 149, 0.30);
+}
+
+.sub-first-view__slide-img img {
+  aspect-ratio: 375 / 460;
+  object-fit: cover;
+  height: inherit;
+  width: 100%;
+  @include mq('md') {
+      aspect-ratio: 1440 / 548;
+  }
+}
+
+.sub-first-view__title-wrap {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  @include mq('md') {
+    top: 59%;
+
+  }
+}
+
+.sub-first-view__main-title {
+  font-size: myrem(40);
+  color: $white;
+  font-family: $english-2;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: myrem(-1);
+  @include mq('md') {
+      font-size: myrem(80);
+      line-height: calc(80 / 100);
+  }
+}
+
+.sub-first-view__main-title::first-letter {
+  text-transform: uppercase;
+}
+
+
