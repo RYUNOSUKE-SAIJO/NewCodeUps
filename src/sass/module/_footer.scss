@@ -2,11 +2,9 @@
 
 footer {
     background-color: #408F95;
-    margin-top: myrem(100);
     padding-top: myrem(48);
     padding-bottom: myrem(56);
     @include mq('md') {
-        margin-top: myrem(160);
         padding-top: myrem(80);
         padding-bottom: myrem(80);
     }
@@ -101,29 +99,30 @@ footer {
     line-height: 1.125;
 }
 
-.footer__link {
+.footer__item a {
     display: inline-block;
     padding: myrem(12) 0;
     width: 100%;
 }
 
-.footer__link:hover {
+.footer__item a:hover {
     opacity: 0.7;
     transition: 0.3;
 }
-.footer__link span {
+
+.footer__item a span {
     @include mq('md') {
         display: none;
     }
 }
 
-.footer__link.footer__title-link {
+.footer__item--bold a {
     position: relative;
     font-weight: 700;
     margin-top: myrem(16);
 }
 
-.footer__link.footer__title-link::before {
+.footer__item--bold a::before {
     content: "";
     position: absolute;
     top: 50%;

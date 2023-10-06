@@ -1,18 +1,11 @@
 @use "global" as *;
 
-.voice-layout {
-    margin-top: myrem(80);
-    @include mq('md') {
-        position: relative;
-        margin-top: myrem(140);
-    }
-}
-
 .voice__inner {
     max-width: myrem(600);
 }
 
 .voice__cards {
+    width: 100%;
     margin-top: myrem(42);
     @include mq('md') {
         margin-top: myrem(30);
@@ -22,6 +15,10 @@
 .voice__card {
     margin-right: auto;
     margin-left: auto;
+    width: 100%;
+    @include mq('md') {
+        max-width: myrem(520);
+    }
 }
 
 .voice__card:not(:first-child) {

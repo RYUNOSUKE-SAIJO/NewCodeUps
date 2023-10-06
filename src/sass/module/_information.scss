@@ -5,18 +5,13 @@
     position: relative;
 }
 
-.information-layout {
-    margin-top: myrem(76);
+.information__inner {
+    max-width: myrem(600);
     padding-top: myrem(80);
     padding-bottom: myrem(84);
     @include mq('md') {
-        margin-top: myrem(140);
         padding: myrem(100) myrem(0);
     }
-}
-
-.information__inner {
-    max-width: myrem(600);
 }
 
 .information__container {

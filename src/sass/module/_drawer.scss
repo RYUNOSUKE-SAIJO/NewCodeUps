@@ -44,13 +44,13 @@
     padding: myrem(12) 0;
 }
 
-.drawer__item.drawer__item--bold a {
+.drawer__item--bold a {
     position: relative;
     font-weight: 700;
     padding: myrem(20) 0;
 }
 
-.drawer__item.drawer__item--bold a::before {
+.drawer__item--bold a::before {
     content: "";
     position: absolute;
     top: 50%;
@@ -62,7 +62,3 @@
     height: myrem(18);
 }
 
-body.is-active {
-    height: 100%;
-    overflow: hidden;
-}

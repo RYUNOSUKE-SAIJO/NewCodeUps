@@ -4,13 +4,6 @@
     position: relative;
 }
 
-.campaign-layout {
-    margin-top: myrem(40);
-    @include mq('md') {
-        margin-top: myrem(120);
-    }
-}
-
 .campaign__cards {
     margin-top: myrem(24);
     @include mq('md') {
@@ -18,12 +11,11 @@
     }
 }
 
-.campaign__swiper {
-    margin-right: calc(50% - 50vw);
-}
-
-.swiper-slide {
-    height: auto;
+.campaign__card {
+    width: myrem(280);
+    @include mq('md') {
+        width: myrem(333);
+    }
 }
 
 .campaign__btn {
@@ -34,7 +26,15 @@
     }
 }
 
-// swiper-button  //
+.campaign__swiper {
+    margin-right: calc(50% - 50vw);
+}
+
+// swiper  //
+
+.swiper-slide {
+    height: auto;
+}
 
 .swiper__button-wrap {
     position: absolute;

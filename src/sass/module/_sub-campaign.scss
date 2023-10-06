@@ -1,0 +1,37 @@
+@use "global" as *;
+
+.sub-campaign__tab-area {
+  display: grid;
+  grid-template-columns: repeat(2,myrem(162));
+  gap: myrem(21) myrem(16);
+  justify-content: center;
+  @include mq('md') {
+    grid-template-columns: repeat(4,myrem(162));
+    gap: 0 myrem(32);
+    justify-content: normal;
+  }
+}
+
+.sub-campaign__tab {
+  padding: myrem(6) 0;
+  border: myrem(1) solid $blue;
+  text-align: center;
+}
+
+.sub-campaign__tab p {
+  color: $blue;
+  font-family: $japanese;
+  font-size: myrem(14);
+  font-style: normal;
+  font-weight: 400;
+  line-height: calc(22 / 14);
+  text-transform: uppercase;
+}
+
+.sub-campaign__cards {
+  margin-top: myrem(40);
+}
+
+.sub-campaign__card {
+
+}

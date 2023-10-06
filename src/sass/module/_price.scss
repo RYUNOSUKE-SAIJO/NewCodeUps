@@ -5,19 +5,14 @@
     background-color: #DDF0F1;
 }
 
-.price-layout{
-    margin-top: myrem(80);
+.price__inner {
+    max-width: myrem(600);
     padding-top: myrem(80);
     padding-bottom: myrem(100);
     @include mq('md') {
-        margin-top: myrem(140);
         padding-top: myrem(100);
         padding-bottom: myrem(100);
     }
-}
-
-.price__inner {
-    max-width: myrem(600);
 }
 
 .price__container {
