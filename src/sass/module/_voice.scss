@@ -1,5 +1,9 @@
 @use "global" as *;
 
+.voice {
+    position: relative;
+}
+
 .voice__inner {
     max-width: myrem(600);
 }

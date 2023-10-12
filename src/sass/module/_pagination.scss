@@ -1,0 +1,43 @@
+@use "global" as *;
+
+.pagination {
+}
+
+.pagination__items {
+  display: flex;
+  justify-content: center;
+}
+
+.pagination__item {
+  margin: 0 myrem(6);
+  border: myrem(1) solid $blue;
+  color: $blue;
+  padding: myrem(6) myrem(13);
+  font-family: $english-2;
+  font-size: myrem(16);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.pagination__item--prev {
+  margin-right: myrem(34);
+  padding: myrem(6) myrem(10);
+}
+
+.pagination__item--next {
+  margin-left: myrem(34);
+  padding: myrem(6) myrem(10);
+}
+
+.pagination__item--sp-none {
+  display: none;
+  @include mq('md') {
+    display: block;
+  }
+}
+
+.pagination__item.is-active {
+  background-color: $blue;
+  color: $white;
+}

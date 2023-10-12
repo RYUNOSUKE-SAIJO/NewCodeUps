@@ -13,7 +13,7 @@
     @include mq('md') {
         display: flex;
         box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.25);
-        padding-top: myrem(70);
+        padding-top: myrem(76);
         padding-right: myrem(112);
         padding-bottom: myrem(80);
         padding-left: myrem(50);
@@ -26,14 +26,17 @@
 
 .contact__left::before {
     content: "";
-    top: myrem(74);
-    left: 0;
+    top: myrem(72);
     position: absolute;
     width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: myrem(295);
     height: myrem(1);
     background-color: $blue;
     @include mq('md') {
         top: myrem(86);
+        max-width: myrem(440);
     }
 }
 
@@ -58,9 +61,9 @@
 }
 
 .contact__block-left {
-    margin-top: myrem(4);
     @include mq('md') {
         white-space: nowrap;
+        text-align: left;
     }
 }
 
@@ -131,10 +134,6 @@
     }
 }
 
-.contact__right-text {
-    margin-top: myrem(8);
-}
-
 .contact__right-text p {
     font-size: myrem(14);
     color: $blue;
@@ -154,8 +153,7 @@
     width: myrem(109);
     @include mq('md') {
         width: myrem(301);
-        top: myrem(-40);
-        right: calc(50% - min(48vw,myrem(650)));
+        right: calc(50% - min(48vw,myrem(670)));
     }
 }
 

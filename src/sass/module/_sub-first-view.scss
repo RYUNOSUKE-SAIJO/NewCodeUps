@@ -2,7 +2,10 @@
 
 .sub-first-view {
   width: 100vw;
-  height: myrem(548);
+  height: myrem(460);
+  @include mq('md') {
+    height: myrem(548);
+  }
 }
 
 .sub-first-view__inner {
@@ -67,4 +70,14 @@
   text-transform: uppercase;
 }
 
-
+.sub-first-view-fish {
+  max-width: myrem(120);
+  position: absolute;
+  top: myrem(516);
+  display: block;
+  left: calc(50% - min(46vw,myrem(620)));
+  @include mq('md') {
+    max-width: myrem(301);
+    top: myrem(654);
+  }
+}

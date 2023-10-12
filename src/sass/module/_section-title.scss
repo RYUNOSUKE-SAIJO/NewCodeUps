@@ -53,13 +53,12 @@
     }
 }
 
-.section-title__main--contact {
+.section-title__main.section-title__main--contact {
     font-size: myrem(80);
     color: $navy;
     line-height : 1;
     font-family: $english;
     font-weight: 400;
-    margin-left: -8px;
 }
 
 .section-title__sub--contact {
@@ -68,5 +67,4 @@
     line-height : 1;
     font-family: $japanese;
     font-weight: 400;
-    margin-top: -4px
 }
