@@ -46,20 +46,20 @@
     max-width: myrem(600);
 }
 
-.sub-campaign__panel {
-  display: none;
-}
+// .sub-campaign__card {
+//   display: none;
+// }
 
-// is-active //
+// // is-active //
 
-.sub-campaign__tab.is-active {
-  background-color: $blue;
-  color: $white;
-}
+// .sub-campaign__tab.is-active {
+//   background-color: $blue;
+//   color: $white;
+// }
 
-.sub-campaign__panel.is-active {
-  display: block;
-}
+// .sub-campaign__card.is-active {
+//   display: block;
+// }
 
 // pagination //
 

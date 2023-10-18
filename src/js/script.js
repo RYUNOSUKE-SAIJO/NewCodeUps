@@ -6,6 +6,21 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         event.stopPropagation();
     });
 
+    // リサイズ処理 //
+    $(window).resize(function () {
+        if (window.matchMedia("(min-width: 768px)").matches) {
+            closeDrawer();
+        }
+
+        function closeDrawer() {
+            $(".js-drawer,.js-hamburger").fadeOut();
+            $(".js-header").removeClass("is-active");
+        }
+    });
+
+
+
+
     // FV swiper //
     var swiper = new Swiper(".js-fv-swiper", {
         loop: true,
@@ -16,6 +31,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         //     disableOnInteraction: false,
         // },
     });
+
 
     // campaign swiper //
     var swiper = new Swiper(".js-campaign-swiper", {
@@ -86,6 +102,26 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         $("body,html").animate({ scrollTop: 0 }, 800);
         return false;
     });
+
+
+    // modal window //
+    $(".gallery__item > img").click(function () {
+        var src = $(this).attr("src");
+        var cap = $(this).attr("alt");
+        $(".js-gallery__modal-block").fadeIn().css("display", "flex");
+        $("#popup").attr("src", src);
+    });
+    
+    $(".js-gallery__modal-block").click(function (e) {
+        // モーダルの外側をクリックした場合にのみモーダルを閉じる
+        if (e.target === this) {
+        $(this).css("display", "none");
+        }
+    });
+
+
+
+
 
 
 

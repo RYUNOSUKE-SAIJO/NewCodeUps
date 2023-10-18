@@ -23,7 +23,6 @@
 }
 
 .section-title__sub {
-    margin-top: myrem(4);
     text-align: center;
     font-size: myrem(12);
     color: $blue;
@@ -45,6 +44,10 @@
     @include mq('md') {
         color: $white;
     }
+}
+
+.section-title__main--indent {
+    text-indent: 0.3em;
 }
 
 .section-title__sub--white {

@@ -49,7 +49,7 @@
 }
 
 .contact__block {
-    margin-top: myrem(22);
+    margin-top: myrem(18);
     @include mq('md') {
         margin-top: myrem(32);
         display: flex;
@@ -134,6 +134,13 @@
     }
 }
 
+.contact__right-text {
+    margin-top: myrem(4);
+    @include mq('md') {
+        margin-top: 0;
+    }
+}
+
 .contact__right-text p {
     font-size: myrem(14);
     color: $blue;
@@ -148,10 +155,11 @@
 
 .contact__fish {
     position: absolute;
-    top: myrem(-40);
+    top: myrem(-26);
     right: myrem(15);
     width: myrem(109);
     @include mq('md') {
+        top: myrem(-40);
         width: myrem(301);
         right: calc(50% - min(48vw,myrem(670)));
     }

@@ -217,10 +217,7 @@
     </div>
 
     <main>
-      <section
-        id="sub-campaign"
-        class="sub-campaign__first-view sub-first-view"
-      >
+      <section id="sub-about" class="sub-about__first-view sub-first-view">
         <div class="sub-first-view__inner">
           <picture class="sub-first-view__slide-img">
             <source
@@ -243,7 +240,7 @@
         </picture>
       </section>
 
-      <section id="about" class="sub-about about sub-about-layout">
+      <section class="sub-about about sub-about-layout">
         <div class="about__inner inner">
           <div class="about__view">
             <div class="about__view-vertical about__view-vertical--none">
@@ -270,37 +267,46 @@
             </div>
           </div>
         </div>
+        <div class="sub-about__fish">
+          <img src="./assets/images/common/sub-about-fish.png" alt="魚群の装飾" />
+        </div>
       </section>
 
-      <section id="about" class="sub-about__gallery gallery sub-gallery-layout">
+      <section class="sub-about__gallery gallery gallery-layout">
         <div class="gallery__inner inner">
           <div class="gallery__section-title section-title">
-            <p class="section-title__main"> gallery</p>
+            <p class="section-title__main section-title__main--indent">gallery</p>
             <h2 class="section-title__sub">フォト</h2>
           </div>
-          <div class="gallery__container">
-            <ul class="gallery__items">
-              <li class="gallery__item gallery__item-1 gallery__item--large">
-                <img src="./assets/images/common/gallery1.webp" alt="">
+          <div class="gallery__wrap">
+            <ul class="gallery__container">
+              <li class="gallery__item gallery__item--large gallery__item--large-1">
+                <img src="./assets/images/common/gallery1.webp" alt="赤い熱帯魚群">
               </li>
-              <li class="gallery__item gallery__item-2 gallery__item--small">
-                <img src="./assets/images/common/gallery2.webp" alt="">
+              <li class="gallery__item gallery__item--small">
+                <img src="./assets/images/common/gallery2.webp" alt="透き通った海に浮かぶ船">
               </li>
-              <li class="gallery__item gallery__item-3 gallery__item--small">
-                <img src="./assets/images/common/gallery3.webp" alt="">
-              </li>
-              <li class="gallery__item gallery__item-4 gallery__item--small">
-                <img src="./assets/images/common/gallery4.webp" alt="">
-              </li>
-              <li class="gallery__item gallery__item-5 gallery__item--small">
-                <img src="./assets/images/common/gallery5.webp" alt="">
-              </li>
-              <li class="gallery__item gallery__item-6 gallery__item--large">
-                <img src="./assets/images/common/gallery6.webp" alt="">
+              <li class="gallery__item gallery__item--small">
+                <img src="./assets/images/common/gallery3.webp" alt="鮮やかな縞模様の熱帯魚">
               </li>
             </ul>
+            <ul class="gallery__container">
+              <li class="gallery__item gallery__item--small">
+                <img src="./assets/images/common/gallery4.webp" alt="黄色の熱帯魚">
+              </li>
+              <li class="gallery__item gallery__item--small">
+                <img src="./assets/images/common/gallery5.webp" alt="白い熱帯魚群">
+              </li>
+              <li class="gallery__item gallery__item--large gallery__item--large-2">
+                <img src="./assets/images/common/gallery6.webp" alt="珊瑚礁の周囲を泳ぐ黄色の熱帯魚">
+              </li>
+            </ul>
+            <div class="gallery__modal-block js-gallery__modal-block">
+              <div class="gallery__modal-img">
+                <img id="popup" src="#">
+              </div>
+            </div>
           </div>
-
         </div>
       </section>
 

@@ -1,0 +1,13 @@
+@use "global" as *;
+
+.sub-about__fish {
+  display: none;
+  @include mq('md') {
+    display: block;
+    right: calc(50% - min(46vw,myrem(640)));
+    max-width: myrem(120);
+    position: absolute;
+    max-width: myrem(301);
+    top: myrem(620);
+  }
+}

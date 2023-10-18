@@ -1,29 +1,59 @@
 @use "global" as *;
 
-.gallery__container {
+.gallery__inner {
+  max-width: myrem(600);
+}
+
+.gallery__wrap {
   margin-top: myrem(40);
   @include mq('md') {
     margin-top: myrem(80);
   }
 }
 
-.gallery__items {
+.gallery__wrap {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  grid-column-gap: 8px;
-  grid-row-gap: 8px;
+  gap: myrem(8);
+  grid-auto-flow: dense;
 }
 
-.gallery__item-1 { grid-area: 1 / 1 / 3 / 2; }
-.gallery__item-2 { grid-area: 1 / 2 / 2 / 3; }
-.gallery__item-3 { grid-area: 2 / 2 / 3 / 3; }
-.gallery__item-4 { grid-area: 3 / 1 / 4 / 2; }
-.gallery__item-5 { grid-area: 4 / 1 / 5 / 2; }
-.gallery__item-6 { grid-area: 3 / 2 / 5 / 3; }
+.gallery__container {
+  display: grid;
+  grid-column-gap: myrem(8);
+  grid-row-gap: myrem(8);
+  @include mq('md') {
+    grid-template-columns: 45.5% 53.7%;
+    grid-template-rows: repeat(2,49.4%);
+  }
+}
+
+.gallery__container:nth-child(2n) {
+  display: grid;
+  grid-column-gap: myrem(8);
+  grid-row-gap: myrem(8);
+  @include mq('md') {
+    grid-template-columns: 53.7% 45.5%;
+    grid-template-rows: repeat(2,49.4%);
+  }
+}
+
+
+.gallery__item--large {
+  @include mq('md') {
+    grid-row: 1 / 3;
+    grid-column: 1 / 2;
+  }
+}
+
+.gallery__item--large-2 {
+  @include mq('md') {
+    grid-row: 1 / 3;
+    grid-column: 2 / 3;
+  }
+}
 
 .gallery__item--large img {
-  aspect-ratio: 746 / 492;
+  aspect-ratio: 492 / 746;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -34,4 +64,41 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+// modal //
+
+.gallery__modal-block {
+  display: none;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.gallery__modal-img {
+  width: 63.8vw;
+  position: relative;
+  margin: 0 auto;
+  @include mq('md') {
+    height: 76.3vh;
+  }
+
+}
+
+.gallery__modal-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  @include mq('md') {
+    object-fit: cover;
+    aspect-ratio: 920 / 586;
+  }
 }
