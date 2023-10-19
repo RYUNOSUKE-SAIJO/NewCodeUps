@@ -71,6 +71,8 @@
 }
 
 .sub-first-view-fish {
+  position: static;
+  z-index: -1;
   max-width: myrem(120);
   position: absolute;
   top: myrem(516);
