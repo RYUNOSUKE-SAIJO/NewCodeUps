@@ -11,56 +11,59 @@
   }
 }
 
-.gallery__wrap {
+.gallery__container {
   display: grid;
   gap: myrem(8);
   grid-auto-flow: dense;
-}
-
-.gallery__container {
-  display: grid;
-  grid-column-gap: myrem(8);
-  grid-row-gap: myrem(8);
   @include mq('md') {
-    grid-template-columns: 45.5% 53.7%;
-    grid-template-rows: repeat(2,49.4%);
+    grid-template-columns: repeat(11,1fr);
   }
 }
 
-.gallery__container:nth-child(2n) {
-  display: grid;
-  grid-column-gap: myrem(8);
-  grid-row-gap: myrem(8);
+.gallery__item:hover {
+  cursor: pointer;
+}
+
+.gallery__item:nth-child(6n+1) {
+  grid-row: span 2;
   @include mq('md') {
-    grid-template-columns: 53.7% 45.5%;
-    grid-template-rows: repeat(2,49.4%);
+    grid-column: span 5;
   }
 }
 
-
-.gallery__item--large {
+.gallery__item:nth-child(6n+2),
+.gallery__item:nth-child(6n+3) {
+  grid-row: span 1;
   @include mq('md') {
-    grid-row: 1 / 3;
-    grid-column: 1 / 2;
+    grid-column: span 6;
   }
 }
 
-.gallery__item--large-2 {
+.gallery__item:nth-child(6n+4),
+.gallery__item:nth-child(6n+5) {
+  grid-row: span 1;
   @include mq('md') {
-    grid-row: 1 / 3;
-    grid-column: 2 / 3;
+    grid-column: span 6;
   }
 }
 
-.gallery__item--large img {
-  aspect-ratio: 492 / 746;
+.gallery__item:nth-child(6n+6) {
+  grid-row: span 2;
+  @include mq('md') {
+    grid-column: span 5;
+  }
+}
+
+.gallery__item img {
+  aspect-ratio: 580 / 369;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.gallery__item--small img {
-  aspect-ratio: 580 / 369;
+.gallery__item:nth-child(6n+1) img,
+.gallery__item:nth-child(6n+6) img {
+  aspect-ratio: 492 / 746;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -83,6 +86,8 @@
   background-color: rgba(0, 0, 0, 0.8);
 }
 
+// object-fit: cover;の場合
+
 .gallery__modal-img {
   width: 63.8vw;
   position: relative;
@@ -90,7 +95,6 @@
   @include mq('md') {
     height: 76.3vh;
   }
-
 }
 
 .gallery__modal-img img {
@@ -102,3 +106,19 @@
     aspect-ratio: 920 / 586;
   }
 }
+
+// object-fit: contain;の場合
+
+// .gallery__modal-img {
+//   position: relative;
+//   margin: 0 auto;
+// }
+
+// .gallery__modal-img img {
+//   width: 100%;
+//   height: 100%;
+//   object-fit: contain;
+//   @include mq('md') {
+//     aspect-ratio: 920 / 586;
+//   }
+// }

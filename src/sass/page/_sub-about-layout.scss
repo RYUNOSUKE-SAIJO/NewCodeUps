@@ -1,9 +1,9 @@
 @use "global" as *;
 
-.sub-about-layout {
+.sub-about-layout  {
+  margin-top: myrem(58);
   position: relative;
-  margin-top: myrem(80);
   @include mq('md') {
-    margin-top: myrem(260);
+    margin-top: myrem(230);
   }
 }

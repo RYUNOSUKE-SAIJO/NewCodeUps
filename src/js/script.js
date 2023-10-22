@@ -1,7 +1,7 @@
 
 jQuery(function ($) { // この中であればWordpressでも「$」が使用可能になる
     $(".js-hamburger,.js-drawer, .js-drawer a").click(function () {
-        $(".js-hamburger,.js-header,body").toggleClass("is-active");
+        $(".js-header,.js-hamburger").toggleClass("is-active");
         $(".js-drawer").fadeToggle(600);
         event.stopPropagation();
     });
@@ -111,14 +111,16 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         $(".js-gallery__modal-block").fadeIn().css("display", "flex");
         $("#popup").attr("src", src);
     });
-    
+
     $(".js-gallery__modal-block").click(function (e) {
         // モーダルの外側をクリックした場合にのみモーダルを閉じる
         if (e.target === this) {
-        $(this).css("display", "none");
+            $(this).fadeOut(); // フェードアウトさせる
         }
     });
 
+
+    // タブ切替 //
     $('.sub-information__tab').on('click', function() {
         $('.sub-information__tab,.sub-information__panel').removeClass('is-active');
     

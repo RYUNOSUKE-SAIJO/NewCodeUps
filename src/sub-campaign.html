@@ -32,7 +32,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Gotu&family=Lato:wght@700&family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Gotu&family=Lato:wght@400;wght700&family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap"
       rel="stylesheet"
     />
     <!-- css -->
@@ -53,33 +53,35 @@
   </head>
 
   <body>
-    <header class="header js-header">
+    <header class="header js-header header-layout">
       <div class="header__inner">
         <div class="header__logo">
-          <a class="header__logo-link" href="#first-view">
+          <a class="header__logo-link" href="index.html">
             <picture class="header__logo-img">
               <source
-                srcset="./assets/images/common/header-logo-sp.png"
-                alt="ヘッダーロゴ"
+                srcset="./assets/images/common/header-logo-sp.svg"
+                alt="CodeUps"
                 media="(max-width: 768px)"
               />
               <img
-                src="./assets/images/common/header-logo.png"
-                alt="ヘッダーロゴ"
+                src="./assets/images/common/header-logo.svg"
+                alt="CodeUps"
               />
             </picture>
           </a>
         </div>
         <div class="header__hamburger hamburger js-hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
+          <div class="hamburger__container">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
         <nav class="header__nav header-nav">
           <div class="header-nav__inner">
             <ul class="header-nav__items">
               <li class="header-nav__item">
-                <a class="header-nav__item-link" href="#campaign">
+                <a class="header-nav__item-link" href="sub-campaign.html">
                   <div class="header-nav__item-wrap">
                     <p>Campaign</p>
                     <p class="header-nav__item-ruby">キャンペーン</p>
@@ -87,7 +89,7 @@
                 </a>
               </li>
               <li class="header-nav__item">
-                <a class="header-nav__item-link" href="#about">
+                <a class="header-nav__item-link" href="sub-about.html">
                   <div class="header-nav__item-wrap">
                     <p>About us</p>
                     <p class="header-nav__item-ruby">私たちについて</p>
@@ -95,7 +97,7 @@
                 </a>
               </li>
               <li class="header-nav__item">
-                <a class="header-nav__item-link" href="#information">
+                <a class="header-nav__item-link" href="sub-information.html">
                   <div class="header-nav__item-wrap">
                     <p>Information</p>
                     <p class="header-nav__item-ruby">ダイビング情報</p>
@@ -103,7 +105,7 @@
                 </a>
               </li>
               <li class="header-nav__item">
-                <a class="header-nav__item-link" href="#blog">
+                <a class="header-nav__item-link" href="sub-blog.html">
                   <div class="header-nav__item-wrap">
                     <p>Blog</p>
                     <p class="header-nav__item-ruby">ブログ</p>
@@ -111,7 +113,7 @@
                 </a>
               </li>
               <li class="header-nav__item">
-                <a class="header-nav__item-link" href="#voice">
+                <a class="header-nav__item-link" href="sub-voice.html">
                   <div class="header-nav__item-wrap">
                     <p>Voice</p>
                     <p class="header-nav__item-ruby">お客様の声</p>
@@ -119,7 +121,7 @@
                 </a>
               </li>
               <li class="header-nav__item">
-                <a class="header-nav__item-link" href="#price">
+                <a class="header-nav__item-link" href="sub-price.html">
                   <div class="header-nav__item-wrap">
                     <p>Price</p>
                     <p class="header-nav__item-ruby">料金一覧</p>
@@ -127,7 +129,7 @@
                 </a>
               </li>
               <li class="header-nav__item">
-                <a class="header-nav__item-link" href="#contact">
+                <a class="header-nav__item-link" href="sub-faq.html">
                   <div class="header-nav__item-wrap">
                     <p>FAQ</p>
                     <p class="header-nav__item-ruby">よくある質問</p>
@@ -135,7 +137,7 @@
                 </a>
               </li>
               <li class="header-nav__item">
-                <a class="header-nav__item-link" href="#contact">
+                <a class="header-nav__item-link" href="sub-contact.html">
                   <div class="header-nav__item-wrap">
                     <p>Contact</p>
                     <p class="header-nav__item-ruby">お問合せ</p>
@@ -146,81 +148,77 @@
           </div>
         </nav>
       </div>
-    </header>
-
-    <div class="drawer js-drawer">
-      <div class="drawer__inner">
-        <div class="drawer__items">
-          <ul class="drawer__items-left">
-            <li class="drawer__item drawer__item--bold">
-              <a href="#campaign">キャンペーン</a>
-            </li>
-            <li class="drawer__item">
-              <a href="#campaign">ライセンス取得</a>
-            </li>
-            <li class="drawer__item">
-              <a href="#campaign">貸切体験ダイビング</a>
-            </li>
-            <li class="drawer__item">
-              <a href="#campaign">ナイトダイビング</a>
-            </li>
-            <li class="drawer__item drawer__item--bold">
-              <a href="#about">私たちについて</a>
-            </li>
-            <li class="drawer__item drawer__item--bold">
-              <a href="#information">ダイビング情報</a>
-            </li>
-            <li class="drawer__item">
-              <a href="#information">ライセンス講習</a>
-            </li>
-            <li class="drawer__item">
-              <a href="#information">体験ダイビング</a>
-            </li>
-            <li class="drawer__item">
-              <a href="#information">ファンダイビング</a>
-            </li>
-            <li class="drawer__item drawer__item--bold">
-              <a href="#blog">ブログ</a>
-            </li>
-          </ul>
-          <ul class="drawer__items-right">
-            <li class="drawer__item drawer__item--bold">
-              <a href="#voice">お客様の声</a>
-            </li>
-            <li class="drawer__item drawer__item--bold">
-              <a href="#price">料金一覧</a>
-            </li>
-            <li class="drawer__item">
-              <a href="#price">ライセンス講習</a>
-            </li>
-            <li class="drawer__item">
-              <a href="#price">体験ダイビング</a>
-            </li>
-            <li class="drawer__item">
-              <a href="#price">ファンダイビング</a>
-            </li>
-            <li class="drawer__item drawer__item--bold">
-              <a href="#faq">よくある質問</a>
-            </li>
-            <li class="drawer__item drawer__item--bold">
-              <a href="#contact">プライバシー<br />ポリシー</a>
-            </li>
-            <li class="drawer__item drawer__item--bold">
-              <a href="#contact">利用規約</a>
-            </li>
-            <li class="drawer__item drawer__item--bold">
-              <a href="#contact">お問い合わせ</a>
-            </li>
-          </ul>
+      <div class="header__drawer drawer js-drawer">
+        <div class="drawer__inner">
+          <div class="drawer__items">
+            <ul class="drawer__items-left">
+              <li class="drawer__item drawer__item--bold">
+                <a href="#campaign">キャンペーン</a>
+              </li>
+              <li class="drawer__item">
+                <a href="#campaign">ライセンス取得</a>
+              </li>
+              <li class="drawer__item">
+                <a href="#campaign">貸切体験ダイビング</a>
+              </li>
+              <li class="drawer__item">
+                <a href="#campaign">ナイトダイビング</a>
+              </li>
+              <li class="drawer__item drawer__item--bold">
+                <a href="#about">私たちについて</a>
+              </li>
+              <li class="drawer__item drawer__item--bold">
+                <a href="#information">ダイビング情報</a>
+              </li>
+              <li class="drawer__item">
+                <a href="#information">ライセンス講習</a>
+              </li>
+              <li class="drawer__item">
+                <a href="#information">体験ダイビング</a>
+              </li>
+              <li class="drawer__item">
+                <a href="#information">ファンダイビング</a>
+              </li>
+              <li class="drawer__item drawer__item--bold">
+                <a href="#blog">ブログ</a>
+              </li>
+            </ul>
+            <ul class="drawer__items-right">
+              <li class="drawer__item drawer__item--bold">
+                <a href="#voice">お客様の声</a>
+              </li>
+              <li class="drawer__item drawer__item--bold">
+                <a href="#price">料金一覧</a>
+              </li>
+              <li class="drawer__item">
+                <a href="#price">ライセンス講習</a>
+              </li>
+              <li class="drawer__item">
+                <a href="#price">体験ダイビング</a>
+              </li>
+              <li class="drawer__item">
+                <a href="#price">ファンダイビング</a>
+              </li>
+              <li class="drawer__item drawer__item--bold">
+                <a href="#faq">よくある質問</a>
+              </li>
+              <li class="drawer__item drawer__item--bold">
+                <a href="#contact">プライバシー<br />ポリシー</a>
+              </li>
+              <li class="drawer__item drawer__item--bold">
+                <a href="#contact">利用規約</a>
+              </li>
+              <li class="drawer__item drawer__item--bold">
+                <a href="#contact">お問い合わせ</a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
+    </header>
 
     <main>
-      <section
-        id="sub-campaign"
-        class="sub-campaign__first-view sub-first-view"
-      >
+      <section class="sub-first-view">
         <div class="sub-first-view__inner">
           <picture class="sub-first-view__slide-img">
             <source
@@ -243,7 +241,13 @@
         </picture>
       </section>
 
-      <section class="sub-campaign sub-campaign-layout">
+      <div class="breadcrumb breadcrumb-layout">
+        <div class="breadcrumb__inner inner">
+          <p class="breadcrumb__text">TOP&nbsp;&nbsp;>&nbsp;私たち</p>
+        </div>
+      </div>
+
+      <div class="sub-campaign sub-campaign-layout">
         <div class="sub-campaign__inner inner">
           <ul class="sub-campaign__tab-area">
             <li class="sub-campaign__tab is-active"><p>all</p></li>
@@ -411,23 +415,21 @@
           </div>
           <div class="sub-campaign__pagination pagination">
             <ul class="pagination__items">
-              <li class="pagination__item pagination__item--prev">＜</li>
-              <li class="pagination__item is-active">1</li>
-              <li class="pagination__item">2</li>
-              <li class="pagination__item">3</li>
-              <li class="pagination__item">4</li>
-              <li class="pagination__item pagination__item--sp-none">5</li>
-              <li class="pagination__item pagination__item--sp-none">6</li>
-              <li class="pagination__item pagination__item--next">＞</li>
+              <li class="pagination__item is-active"><a href="#">1</a></li>
+              <li class="pagination__item"><a href="#">2</a></li>
+              <li class="pagination__item"><a href="#">3</a></li>
+              <li class="pagination__item"><a href="#">4</a></li>
+              <li class="pagination__item pagination__item--sp-none"><a href="#">5</a></li>
+              <li class="pagination__item pagination__item--sp-none"><a href="#">6</a></li>
             </ul>
           </div>
         </div>
-      </section>
+      </div>
 
-      <section id="contact" class="sub-campaign__contact contact sub-contact-layout">
+      <section class="sub-contact contact sub-contact-layout">
         <div class="contact__inner inner">
           <div class="contact__container">
-            <div class="contact__left">
+            <div class="contact__address">
               <div class="contact__logo">
                 <img
                   src="./assets/images/common/contact-logo.png"
@@ -456,8 +458,8 @@
                 </div>
               </div>
             </div>
-            <div class="contact__right">
-              <div class="contact__right-wrap">
+            <div class="contact__info">
+              <div class="contact__info-wrap">
                 <div class="contact__section-title section-title">
                   <p class="section-title__main section-title__main--contact">
                     contact
@@ -466,11 +468,11 @@
                     お問合せ
                   </h2>
                 </div>
-                <div class="contact__right-text">
+                <div class="contact__info-text">
                   <p>ご予約・お問い合わせはコチラ</p>
                 </div>
                 <div class="contact__btn">
-                  <a href="#" class="btn"><span>Contact us</span></a>
+                  <a href="sub-contact.html" class="btn"><span>Contact us</span></a>
                 </div>
               </div>
             </div>
@@ -517,7 +519,7 @@
         </div>
         <div class="footer__body">
           <div class="footer__container">
-            <div class="footer__sp-left">
+            <div class="footer__left">
               <ul class="footer__items">
                 <li class="footer__item footer__item--bold">
                   <a href="#campaign">キャンペーン</a>
@@ -553,7 +555,7 @@
                 </li>
               </ul>
             </div>
-            <div class="footer__sp-right">
+            <div class="footer__right">
               <ul class="footer__items">
                 <li class="footer__item footer__item--bold">
                   <a href="#voice">お客様の声</a>
@@ -591,9 +593,9 @@
           </div>
         </div>
         <div class="footer__copy-right-wrap">
-          <p class="footer__copy-right">
+          <small class="footer__copy-right">
             Copyright&nbsp;&copy;&nbsp;2021&nbsp;-&nbsp;2023&nbsp;CodeUps&nbsp;LLC.&nbsp;All&nbsp;Rights&nbsp;Reserved.
-          </p>
+          </small>
         </div>
       </div>
     </footer>

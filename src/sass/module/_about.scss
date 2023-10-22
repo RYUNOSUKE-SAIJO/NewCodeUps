@@ -1,7 +1,6 @@
 @use "global" as *;
 
 .about__inner {
-    max-width: myrem(600);
     @include mq('md') {
         position: relative;
     }
@@ -9,6 +8,7 @@
 
 .about__view {
     margin-top: myrem(50);
+    position: relative;
     @include mq('md') {
         margin-top: myrem(120);
     }

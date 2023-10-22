@@ -20,11 +20,11 @@
     }
 }
 
-.contact__left {
+.contact__address {
     position: relative;
 }
 
-.contact__left::before {
+.contact__address::before {
     content: "";
     top: myrem(72);
     position: absolute;
@@ -101,7 +101,7 @@
     height: 100%;
 }
 
-.contact__right {
+.contact__info {
     position: relative;
     @include mq('md') {
         display: flex;
@@ -109,7 +109,7 @@
     }
 }
 
-.contact__right::before {
+.contact__info::before {
     @include mq('md') {
         position: absolute;
         content: "";
@@ -121,7 +121,7 @@
     }
 }
 
-.contact__right-wrap {
+.contact__info-wrap {
     @include mq('md') {
         margin-left: auto;
     }
@@ -134,14 +134,14 @@
     }
 }
 
-.contact__right-text {
+.contact__info-text {
     margin-top: myrem(4);
     @include mq('md') {
         margin-top: 0;
     }
 }
 
-.contact__right-text p {
+.contact__info-text p {
     font-size: myrem(14);
     color: $blue;
     line-height : calc(18 / 14);
@@ -156,7 +156,7 @@
 .contact__fish {
     position: absolute;
     top: myrem(-26);
-    right: myrem(15);
+    right: calc(50% - min(48vw,myrem(172)));
     width: myrem(109);
     @include mq('md') {
         top: myrem(-40);

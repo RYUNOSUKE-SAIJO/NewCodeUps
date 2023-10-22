@@ -1,0 +1,14 @@
+@use "global" as *;
+
+.breadcrumb {
+  padding-top: myrem(8);
+}
+
+.breadcrumb__text {
+  color: $navy;
+  font-family: $japanese;
+  font-size: myrem(14);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

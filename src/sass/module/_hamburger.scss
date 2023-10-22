@@ -1,12 +1,19 @@
 @use "global" as *;
 
 .hamburger {
-  position: relative;
+  display: flex;
+  align-items: center;
   width: myrem(32);
-  height: myrem(24);
+  height: inherit;
   @include mq('md') {
       display: none;
   }
+}
+
+.hamburger__container {
+  position: relative;
+  width: inherit;
+  height: myrem(24);
 }
 
 .hamburger span {
