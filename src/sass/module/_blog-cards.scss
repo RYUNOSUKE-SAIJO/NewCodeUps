@@ -2,6 +2,14 @@
 
 .blog-cards {
     display: grid;
-    grid-gap: myrem(38);
-    grid-template-columns: repeat(auto-fit,minmax(myrem(301),1fr));
+    grid-gap: myrem(40);
+    grid-template-columns: repeat(auto-fit,minmax(myrem(333),1fr));
+    justify-content: center;
+}
+
+.blog-cards.blog-cards--two-column {
+    display: grid;
+    grid-gap: myrem(80) myrem(40);
+    grid-template-columns: repeat(2,minmax(myrem(333),1fr));
+    justify-content: center;
 }

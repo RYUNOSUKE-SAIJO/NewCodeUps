@@ -250,7 +250,7 @@
       <div class="sub-blog  sub-blog-layout">
         <div class="sub-blog__inner inner">
           <div class="sub-blog__main-contents">
-            <ul class="sub-blog__cards blog-cards">
+            <ul class="sub-blog__cards blog-cards blog-cards--two-column">
               <li class="blog-cards__card blog-card">
                 <a href="#" class="blog-card__link">
                   <div class="blog-card__img">
@@ -490,39 +490,43 @@
           <div class="sub-blog__side-contents side-contents">
             <div class="side-contents__inner">
               <div class="side-contents__article">
-                <h3 class="side-contents__header side-contents-heaader">人気記事</h3>
+                <div class="side-contents__header side-contents-header">
+                  <h3 class="side-contents-header__title">人気記事</h3>
+                </div>
                 <ul class="side-contents__article-items">
                   <li class="side-contents__article-item">
                     <div class="side-contents__article-left">
                       <img src="./assets/images/common/blog-4.jpg" alt="黄色の熱帯魚">
                     </div>
                     <div class="side-contents__article-right">
-                      <div class="side-contents__article-date">2023.11/17</div>
+                      <time class="news__item_date" datetime="2023-11-17">2023.11.17</time>                    
+                      <p class="side-contents__article-title">ライセンス取得</p>
                     </div>
-                    <p class="side-contents__article-title">ライセンス取得</p>
                   </li>
                   <li class="side-contents__article-item">
                     <div class="side-contents__article-left">
                       <img src="./assets/images/common/blog-2.jpg" alt="ウミガメと泳ぐ">
                     </div>
                     <div class="side-contents__article-right">
-                      <div class="side-contents__article-date">2023.11/17</div>
+                      <time class="news__item_date" datetime="2023-11-17">2023.11.17</time>                    
+                      <p class="side-contents__article-title">ライセンス取得</p>
                     </div>
-                    <p class="side-contents__article-title">ライセンス取得</p>
                   </li>
                   <li class="side-contents__article-item">
                     <div class="side-contents__article-left">
                       <img src="./assets/images/common/blog-3.jpg" alt="カクレクマノミ">
                     </div>
                     <div class="side-contents__article-right">
-                      <div class="side-contents__article-date">2023.11/17</div>
+                      <time class="news__item_date" datetime="2023-11-17">2023.11.17</time>                    
+                      <p class="side-contents__article-title">ライセンス取得</p>
                     </div>
-                    <p class="side-contents__article-title">ライセンス取得</p>
                   </li>
                 </ul>
               </div>
               <div class="side-contents__voice">
-                <h3 class="side-contents__header side-contents-heaader">口コミ</h3>
+                <div class="side-contents__header side-contents-header">
+                  <h3 class="side-contents-header__title">口コミ</h3>
+                </div>
                 <div class="side-contents__voice-container">
                   <div class="side-contents__voice-img">
                     <img src="./assets/images/common/side-contents__voice.jpg" alt="カップル">
@@ -535,7 +539,9 @@
                 </div>
               </div>
               <div class="side-contents__campaign">
-                <h3 class="side-contents__header side-contents-heaader">キャンペーン</h3>
+                <div class="side-contents__header side-contents-header">
+                  <h3 class="side-contents-header__title">キャンペーン</h3>
+                </div>
                 <div class="side-contents__campaign-card campaign-card">
                   <img
                     class="campaign-card__img"
@@ -590,7 +596,9 @@
                 </div>
               </div>
               <div class="side-contents__archive">
-                <h3 class="side-contents__header side-contents-heaader">アーカイブ</h3>
+                <div class="side-contents__header side-contents-header">
+                  <h3 class="side-contents-header__title">アーカイブ</h3>
+                </div>
                 <ul class="side-contents__archive-years">
                   <li class="side-contents__archive-year">
                     <details>
@@ -642,10 +650,6 @@
           </div>
         </div>
       </div>
-
-
-
-
 
       <section class="sub-contact contact sub-contact-layout">
         <div class="contact__inner inner">

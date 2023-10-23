@@ -5,7 +5,10 @@
 }
 
 .sub-blog__inner {
-
+  @include mq('md') {
+    display: flex;
+    gap: myrem(80);
+  }
 }
 
 .sub-blog__main-contents {
@@ -17,7 +20,7 @@
 }
 
 .sub-blog__pagination {
-
+  margin-top: myrem(80);
 }
 
 .sub-blog__side-contents {

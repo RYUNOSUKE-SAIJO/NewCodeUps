@@ -1,5 +1,29 @@
 @use "global" as *;
 
-.side-contents-heaader {
+.side-contents-header {
+  position: relative;
+  padding-top: myrem(9);
+  padding-right: 0;
+  padding-left: myrem(74);
+  padding-bottom: myrem(6);
+  border-left: myrem(8) $blue solid;
+}
 
+.side-contents-header__title {
+  color: $navy;
+  font-family: $japanese;
+  font-size: myrem(24);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.side-contents-header::before {
+  content: "";
+  background: url(../images/common/side-contents-header.webp) no-repeat center center / contain;
+  position: absolute;
+  width: myrem(50);
+  height: myrem(50);
+  top: 0;
+  left: myrem(18);
 }
