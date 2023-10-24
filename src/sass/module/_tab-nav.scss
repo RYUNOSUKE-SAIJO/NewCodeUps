@@ -1,0 +1,35 @@
+@use "global" as *;
+
+.tab-nav__tab-area {
+  display: grid;
+  grid-template-columns: repeat(2,myrem(162));
+  gap: myrem(12) myrem(16);
+  justify-content: center;
+  @include mq('md') {
+    grid-template-columns: repeat(4,myrem(162));
+    gap: 0 myrem(32);
+    justify-content: normal;
+  }
+}
+
+.tab-nav__tab {
+  padding: myrem(5) 0;
+  border: myrem(1) solid $blue;
+  text-align: center;
+  color: $blue;
+  background-color: $white;
+}
+
+.tab-nav__tab p {
+  font-family: $japanese;
+  font-size: myrem(14);
+  font-style: normal;
+  font-weight: 400;
+  line-height: calc(22 / 14);
+  text-transform: uppercase;
+}
+
+.tab-nav__tab.is-active {
+  background-color: $blue;
+  color: $white;
+}

@@ -7,3 +7,10 @@
         grid-template-columns: repeat(2,auto);
     }
 }
+
+.voice-cards.voice-cards--wide-gap {
+    gap: myrem(40);
+    @include mq('md') {
+        gap: myrem(80) myrem(40);
+    }
+}

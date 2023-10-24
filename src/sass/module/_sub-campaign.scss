@@ -1,34 +1,5 @@
 @use "global" as *;
 
-.sub-campaign__tab-area {
-  display: grid;
-  grid-template-columns: repeat(2,myrem(162));
-  gap: myrem(12) myrem(16);
-  justify-content: center;
-  @include mq('md') {
-    grid-template-columns: repeat(4,myrem(162));
-    gap: 0 myrem(32);
-    justify-content: normal;
-  }
-}
-
-.sub-campaign__tab {
-  padding: myrem(5) 0;
-  border: myrem(1) solid $blue;
-  text-align: center;
-  color: $blue;
-  background-color: $white;
-}
-
-.sub-campaign__tab p {
-  font-family: $japanese;
-  font-size: myrem(14);
-  font-style: normal;
-  font-weight: 400;
-  line-height: calc(22 / 14);
-  text-transform: uppercase;
-}
-
 .sub-campaign__cards {
   margin-top: myrem(38);
   display: grid;
@@ -49,13 +20,6 @@
 // .sub-campaign__card {
 //   display: none;
 // }
-
-// // is-active //
-
-.sub-campaign__tab.is-active {
-  background-color: $blue;
-  color: $white;
-}
 
 // .sub-campaign__card.is-active {
 //   display: block;

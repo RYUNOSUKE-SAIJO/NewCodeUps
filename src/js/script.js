@@ -121,13 +121,13 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
 
 
     // タブ切替 //
-    $('.sub-information__tab').on('click', function() {
-        $('.sub-information__tab,.sub-information__panel').removeClass('is-active');
+    $('.tab-contents__tab').on('click', function() {
+        $('.tab-contents__tab,.tab-contents__panel').removeClass('is-active');
     
         $(this).addClass('is-active');
 
-        var index = $('.sub-information__tab').index(this);
-        $('.sub-information__panel').eq(index).addClass('is-active');
+        var index = $('.tab-contents__tab').index(this);
+        $('.tab-contents__panel').eq(index).addClass('is-active');
     });
 
 

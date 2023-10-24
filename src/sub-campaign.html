@@ -249,12 +249,14 @@
 
       <div class="sub-campaign sub-campaign-layout">
         <div class="sub-campaign__inner inner">
-          <ul class="sub-campaign__tab-area">
-            <li class="sub-campaign__tab is-active"><p>all</p></li>
-            <li class="sub-campaign__tab"><p>ライセンス講習</p></li>
-            <li class="sub-campaign__tab"><p>ファンダイビング</p></li>
-            <li class="sub-campaign__tab"><p>体験ダイビング</p></li>
-          </ul>
+          <div class="sub-campaign__tab-nav tab-nav">
+            <ul class="tab-nav__tab-area">
+              <li class="tab-nav__tab is-active"><p>all</p></li>
+              <li class="tab-nav__tab"><p>ライセンス講習</p></li>
+              <li class="tab-nav__tab"><p>ファンダイビング</p></li>
+              <li class="tab-nav__tab"><p>体験ダイビング</p></li>
+            </ul>
+          </div>
           <div class="sub-campaign__cards campaign-cards">
             <div class="sub-campaign__card campaign-card campaign-card--wide">
               <img
@@ -415,12 +417,14 @@
           </div>
           <div class="sub-campaign__pagination pagination">
             <ul class="pagination__items">
-              <li class="pagination__item is-active"><a href="#">1</a></li>
-              <li class="pagination__item"><a href="#">2</a></li>
-              <li class="pagination__item"><a href="#">3</a></li>
-              <li class="pagination__item"><a href="#">4</a></li>
-              <li class="pagination__item pagination__item--sp-none"><a href="#">5</a></li>
-              <li class="pagination__item pagination__item--sp-none"><a href="#">6</a></li>
+              <li class="pagination__item pagination__item--prev"><a href="#"><img src="./assets/images/common/pagenation-prev.webp" alt="矢印"></a></li>
+              <li class="pagination__item pagination__item--number is-active"><a href="#">1</a></li>
+              <li class="pagination__item pagination__item--number"><a href="#">2</a></li>
+              <li class="pagination__item pagination__item--number"><a href="#">3</a></li>
+              <li class="pagination__item pagination__item--number"><a href="#">4</a></li>
+              <li class="pagination__item pagination__item--number pagination__item--sp-none"><a href="#">5</a></li>
+              <li class="pagination__item pagination__item--number pagination__item--sp-none"><a href="#">6</a></li>
+              <li class="pagination__item pagination__item--next"><a href="#"><img src="./assets/images/common/pagenation-next.webp" alt="矢印"></a></li>
             </ul>
           </div>
         </div>

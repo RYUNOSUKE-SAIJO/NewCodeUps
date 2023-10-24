@@ -9,7 +9,9 @@
 
 .blog-cards.blog-cards--two-column {
     display: grid;
-    grid-gap: myrem(80) myrem(40);
-    grid-template-columns: repeat(2,minmax(myrem(333),1fr));
     justify-content: center;
+    @include mq('md') {
+        grid-gap: myrem(80) myrem(40);
+        grid-template-columns: repeat(2,minmax(myrem(333),1fr));
+    }
 }
