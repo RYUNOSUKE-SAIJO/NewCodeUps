@@ -1,0 +1,7 @@
+@use "global" as *;
+
+.sub-faq__accordion {
+    width: 100%;
+    max-width: myrem(700);
+    margin-inline: auto;
+}

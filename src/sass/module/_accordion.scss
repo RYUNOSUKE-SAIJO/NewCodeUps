@@ -1,0 +1,93 @@
+@use "global" as *;
+
+.accordion {
+  width: 100%;
+}
+
+.accordion__container {
+}
+
+.accordion__list {
+  display: flex;
+  flex-direction: column;
+  gap: myrem(40);
+}
+
+.accordion__item {
+}
+
+.accordion__item:not(:first-child) {
+  margin-top: 10px;
+}
+
+//  ＋ボタンをつくるために、relativeにして尚且つ、padding-rightに距離をだしている　//
+.accordion__title {
+  position: relative;
+  padding: myrem(16);
+  cursor: pointer;
+  background-color: $blue;
+  text-align: left;
+  @include mq('md') {
+    padding: myrem(26) myrem(40);
+  }
+}
+
+.accordion__title-text {
+  color: $white;
+  font-family: $japanese;
+  font-size: myrem(16);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  @include mq('md') {
+      font-size: myrem(20);
+  }
+}
+
+// ＋ボタン (before:横線、after:縦線)　//
+.accordion__title::before,
+.accordion__title::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: myrem(16);
+  width: myrem(28);
+  height: myrem(2);
+  background-color: $white;
+  transition: 0.8s transform, 0.3s opacity;
+  @include mq('md') {
+      width: myrem(32);
+      right: myrem(40);
+  }
+}
+
+//縦線にするために回転//
+.accordion__title::after {
+  transform: rotate(90deg);
+}
+
+//jsが作動したら縦線が消える//
+.accordion__title.is-open::after {
+  opacity: 0;
+}
+
+//最初は消しておく、jsの方で（display:block;）が付与される//
+.accordion__content {
+  border: myrem(1) solid $blue;
+  margin-inline: auto;
+  padding: myrem(24) myrem(16);
+  display: none;
+  @include mq("md") {
+    margin-top: myrem(16);
+    padding: myrem(40);
+  }
+}
+
+.accordion__content-text {
+  color: $navy;
+  font-family: $japanese;
+  font-size: myrem(16);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

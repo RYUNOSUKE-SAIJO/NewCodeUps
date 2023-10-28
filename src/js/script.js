@@ -131,6 +131,28 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     });
 
 
+    // アコーディオン //
+
+    $(function () {
+      //アイテムとコンテンツを開きっぱなしにする記述//
+        $(".js-accordion__item .js-accordion__content").css(
+        "display",
+        "block"
+        );
+      //開きっぱなしのアイテムの＋ボタンの記述//
+        $(".js-accordion__item .js-accordion__title").addClass(
+        "is-open"
+        ) ;
+      //クリックしたら..//
+        $(".js-accordion__title").on("click", function () {
+        //"is-open"が付与されて＋ボタンがーボタンに//
+        $(this).toggleClass("is-open");
+        //クリックされた要素の直後の要素を300ミリ秒でスライド表示する//
+        $(this).next().slideToggle(300);
+        });
+    });
+
+
 
 
 
