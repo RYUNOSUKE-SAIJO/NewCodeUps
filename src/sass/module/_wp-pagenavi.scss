@@ -1,0 +1,66 @@
+@use "global" as *;
+
+.wp-pagenavi {
+  display: flex;
+  justify-content: center;
+}
+
+.page-numbers.current {
+  position: relative;
+  display: inline-block;
+  margin: 0 myrem(6);
+  border: myrem(1) solid $blue;
+  padding: myrem(8.5) myrem(12);
+  font-family: $english-2;
+  font-size: myrem(16);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  background-color: $blue;
+  color: $white;
+}
+
+.page-numbers {
+  position: relative;
+  display: inline-block;
+  margin: 0 myrem(6);
+  border: myrem(1) solid $blue;
+  color: $blue;
+  padding: myrem(8.5) myrem(12);
+  font-family: $english-2;
+  font-size: myrem(16);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.page-numbers.sp-none {
+  display: none;
+  @include mq('md') {
+    display: block;
+  }
+}
+
+.page-numbers.prev {
+  width: myrem(38);
+  height: myrem(38);
+  border: none;
+  padding: 0;
+  margin-right: auto;
+  margin-left: 0;
+  @include mq('md') {
+      margin-right: myrem(34);
+  }
+}
+
+.page-numbers.next {
+  width: myrem(38);
+  height: myrem(38);
+  border: none;
+  padding: 0;
+  margin-left: auto;
+  margin-right: 0;
+  @include mq('md') {
+      margin-left: myrem(34);
+  }
+}

@@ -8,6 +8,7 @@
 }
 
 .blog-cards.blog-cards--two-column {
+    position: relative;
     display: grid;
     justify-content: center;
     @include mq('md') {
@@ -15,3 +16,12 @@
         grid-template-columns: repeat(2,minmax(myrem(333),1fr));
     }
 }
+
+// .blog-cards.blog-cards--two-column::after {
+//     content: "";
+//     position: absolute;
+//     background: url(../images/common/side-contents-波線.webp);
+//     width: 100%;
+//     height: 100%;
+//     bottom: 100px;
+// }

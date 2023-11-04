@@ -4,11 +4,13 @@
   padding-top: myrem(8);
 }
 
-.breadcrumb__text {
+.breadcrumb__item {
+  display: inline;
   color: $navy;
   font-family: $japanese;
   font-size: myrem(14);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  letter-spacing: myrem(0.5);
 }

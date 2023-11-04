@@ -1,0 +1,153 @@
+@use "global" as *;
+
+// アイテムのスタイル
+
+.form__item {
+  display: flex;
+  flex-direction: column;
+  padding: myrem(24) 0;
+  border-bottom: $blue myrem(2) dotted;
+  @include mq('md') {
+    flex-direction: row;
+    padding: myrem(40) 0;
+  }
+}
+
+// ラベルのスタイル
+.form__label {
+  color: $navy;
+  font-family: $japanese;
+  font-size: myrem(16);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.Form__Label-required {
+  margin-left: myrem(8);
+  padding: myrem(2) myrem(16);
+  display: inline-block;
+  text-align: center;
+  background-color: #C94800;
+  color: $white;
+  font-size: myrem(12);
+  font-family: $japanese;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: myrem(4.8);
+}
+
+// テキスト入力とテキストエリアのスタイル
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    width: 100%;
+    padding: myrem(8) myrem(16);
+    border: 1px solid $blue;
+    margin-top: myrem(16);
+    @include mq('md') {
+      margin-left: auto;
+      margin-top: 0;
+      width: 68.5%;
+    }
+}
+
+input::placeholder {
+  color: #DDF0F1;
+}
+
+// エラーの表示
+
+.form__item.is-active input {
+  color: $white;
+  border: 1px solid #C94800;
+  background: rgba(201, 72, 0, 0.20);
+}
+
+.form__item.is-active input::placeholder  {
+  color: $white;
+}
+
+// キャンペーンのスタイル
+
+.form__item--campaign {
+    position: relative;
+}
+
+.form__item--campaign input::placeholder {
+  color: $black;
+}
+
+.form__item--campaign span {
+  position: absolute;
+  display: block;
+  background: url(../images/common/form__item--campaign-arrow.webp) no-repeat center center / contain;
+  top: myrem(78);
+  right: myrem(8);
+  width: myrem(12);
+  height: myrem(12);
+  @include mq('md') {
+      top: 46%;
+  }
+}
+
+// お問い合わせ項目のスタイル
+
+.form__contact-container {
+  display: flex;
+  flex-direction: column;
+  gap: myrem(4);
+  margin-top: myrem(16);
+    @include mq('md') {
+      margin-left: auto;
+      margin-top: 0;
+      width: 68.5%;
+  }
+}
+
+.form__contact-checkbox {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: left;
+}
+
+.form__contact-checkbox input {
+  color: $navy;
+  font-family: $japanese;
+  font-size: myrem(16);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+// checkboxのスタイル
+
+.form__checkbox {
+  text-align: left;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  position: relative;
+  margin-top: myrem(40);
+  cursor: pointer;
+  user-select: none;
+  @include mq('md') {
+      text-align: center;
+      margin-top: myrem(80);
+  }
+}
+
+// ボタンのスタイル
+
+.form__btn {
+  text-align: center;
+  margin-top: myrem(24);
+  @include mq('md') {
+    margin-top: myrem(40);
+  }
+}
+
+
+

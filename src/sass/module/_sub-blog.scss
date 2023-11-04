@@ -1,10 +1,7 @@
 @use "global" as *;
 
-.sub-blog {
-
-}
-
 .sub-blog__inner {
+  padding: 0 myrem(20);
   @include mq('md') {
     display: flex;
     gap: myrem(80);
@@ -12,19 +9,20 @@
 }
 
 .sub-blog__main-contents {
-
+  @include mq('md') {
+      max-width: myrem(706);
+  }
 }
 
-.sub-blog__cards {
-
-}
-
-.sub-blog__pagination {
+.sub-blog__pagenavi {
   margin-top: myrem(80);
+  @include mq('md') {
+    margin-top: myrem(89);
+  }
 }
 
 .sub-blog__side-contents {
-  margin-top: myrem(80);
+  margin-top: myrem(77);
   @include mq('md') {
     margin-top: 0;
   }

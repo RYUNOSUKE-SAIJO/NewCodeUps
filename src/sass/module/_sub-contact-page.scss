@@ -1,1 +1,48 @@
 @use "global" as *;
+
+.sub-contact-page {
+}
+
+.sub-contact-page-layout {
+}
+
+.sub-contact-page__inner {
+}
+
+.sub-contact-page__error-message {
+  text-align: left;
+  color: #c94800;
+  font-family: $japanese;
+  font-size: myrem(14);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  @include mq('md') {
+      text-align: center;
+  }
+}
+
+.sub-contact-page__form {
+  max-width: myrem(700);
+  margin-inline: auto;
+}
+
+.sub-contact-page__thanks-message {
+
+}
+
+.sub-contact-page__thanks-message-title,
+.sub-contact-page__thanks-message-text {
+  color: $navy;
+  text-align: center;
+  font-family: $japanese;
+  font-size: myrem(16);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.sub-contact-page__thanks-message-text {
+  margin-top: myrem(40);
+}
+

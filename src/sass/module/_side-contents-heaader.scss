@@ -7,6 +7,9 @@
   padding-left: myrem(74);
   padding-bottom: myrem(6);
   border-left: myrem(8) $blue solid;
+  @include mq('md') {
+    padding-left: myrem(74);
+  }
 }
 
 .side-contents-header__title {
@@ -26,4 +29,16 @@
   height: myrem(50);
   top: 0;
   left: myrem(18);
+}
+
+.side-contents-header {
+  position: relative;
+  padding-top: myrem(9);
+  padding-right: 0;
+  padding-left: myrem(74);
+  padding-bottom: myrem(6);
+  border-left: myrem(8) $blue solid;
+  @include mq('md') {
+    padding-left: myrem(74);
+  }
 }

@@ -105,7 +105,7 @@
   left: myrem(-30);
 }
 
-.sub-blog-detail__pagination {
+.sub-blog-detail__pagenavi {
   margin-top: myrem(40);
   @include mq('md') {
     margin-top: myrem(80);

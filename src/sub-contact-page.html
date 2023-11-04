@@ -217,12 +217,76 @@
 
     <div class="breadcrumb breadcrumb-layout">
       <div class="breadcrumb__inner inner">
-        <p class="breadcrumb__text">TOP&nbsp;&nbsp;>&nbsp;お問い合わせ</p>
+        <ul class="breadcrumb__list">
+          <li class="breadcrumb__item"><a href="#">TOP&nbsp;&nbsp;></a></li>
+          <li class="breadcrumb__item"><a href="#">&nbsp;お問い合わせ</a></li>
+        </ul>
       </div>
     </div>
 
     <div class="sub-contact-page sub-contact-page-layout">
       <div class="sub-contact-page__inner inner">
+        <form class="sub-contact-page__form form" action="submit_form.php" method="post">
+          <ul class="form__item-list">
+            <li class="form__item form__item--name">
+              <label class="form__label" for="name">
+                お名前<span class="Form__Label-required">必須</span>
+              </label>
+              <input type="text" id="name" name="name" placeholder="沖縄 太郎" required>
+            </li>
+            <li class="form__item form__item--email">
+              <label class="form__label" for="email">
+                メールアドレス<span class="Form__Label-required">必須</span>
+              </label>
+              <input type="email" id="email" name="email" placeholder="aaa000@ggmail.com" required>
+            </li>
+            <li class="form__item form__item--phone">
+              <label class="form__label" for="phone">
+                電話番号<span class="Form__Label-required">必須</span>
+              </label>
+              <input type="tel" id="phone" name="phone" placeholder="000-0000-0000" required>
+            </li>
+            <li class="form__item form__item--contact">
+              <label class="form__label">
+                お問い合わせ項目<span class="Form__Label-required">必須</span>
+              </label>
+              <div class="form__contact-container">
+                <label class="form__contact-checkbox checkbox">
+                  <input type="checkbox" name="term" value="accept">ダイビング講習について
+                  <span class="checkbox__checkmark"></span>
+                </label>
+                <label class="form__contact-checkbox checkbox">
+                  <input type="checkbox" name="term" value="accept">ファンデイビングについて
+                  <span class="checkbox__checkmark"></span>
+                </label>
+                <label class="form__contact-checkbox checkbox">
+                  <input type="checkbox" name="term" value="accept">体験ダイビングについて
+                  <span class="checkbox__checkmark"></span>
+                </label>
+              </div>
+            </li>
+            <li class="form__item form__item--campaign">
+              <label class="form__label" for="campaign">キャンペーン</label>
+              <input type="text" id="campaign" name="campaign" placeholder="キャンペーン内容を選択">
+              <span></span>
+            </li>
+            <li class="form__item form__item--message">
+              <label class="form__label" for="message">
+                お問い合わせ内容<span class="Form__Label-required">必須</span>
+              </label>
+              <textarea id="message" name="message" rows="4" cols="50" required></textarea>
+            </li>
+          </ul>
+          <label class="form__checkbox checkbox">
+            <input type="checkbox" name="term" value="accept">個人情報の取り扱いについて同意のうえ送信します。
+            <span class="checkbox__checkmark"></span>
+          </label>
+
+          <div class="form__btn">
+            <a href="sub-contact-page.html" class="btn"><span>Send</span></a>
+          </div>
+        </form>
+
       </div>
     </div>
 
@@ -241,10 +305,10 @@
         </div>
         <div class="footer__sns-logo">
           <div class="footer__facebook">
-            <a href="#"><img src="./assets/images/common/footer-Facebook.png" alt="Facebookのロゴ" /></a>
+            <a href="#" rel="noopener noreferrer" target="_blank"><img src="./assets/images/common/footer-Facebook.png" alt="Facebookのロゴ" /></a>
           </div>
           <div class="footer__instagram">
-            <a href="#"><img src="./assets/images/common/footer-Instagram.png" alt="instagramのロゴ" /></a>
+            <a href="#" rel="noopener noreferrer" target="_blank"><img src="./assets/images/common/footer-Instagram.png" alt="instagramのロゴ" /></a>
           </div>
         </div>
       </div>
@@ -252,9 +316,9 @@
         <div class="footer__container">
           <div class="footer__left">
             <ul class="footer__items">
-              <li class="footer__item footer__item--bold">
+              <div class="footer__item footer__item--bold">
                 <a href="#campaign">キャンペーン</a>
-              </li>
+              </div>
               <li class="footer__item">
                 <a href="#campaign">ライセンス取得</a>
               </li>
