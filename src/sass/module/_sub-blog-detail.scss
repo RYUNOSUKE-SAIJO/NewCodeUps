@@ -7,7 +7,7 @@
 .sub-blog-detail__inner {
   @include mq('md') {
     display: flex;
-    gap: myrem(86);
+    gap: myrem(80);
   }
 }
 
@@ -92,7 +92,7 @@
   font-size: myrem(16);
   font-style: normal;
   font-weight: 400;
-  line-height : 1.5;
+  line-height : 1.68;
 }
 
 .sub-blog-detail__list-item::before {
@@ -107,6 +107,7 @@
 
 .sub-blog-detail__pagenavi {
   margin-top: myrem(40);
+  padding-inline: myrem(94);
   @include mq('md') {
     margin-top: myrem(80);
   }

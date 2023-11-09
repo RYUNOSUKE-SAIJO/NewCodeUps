@@ -1,8 +1,8 @@
 @use "global" as *;
 
 .sub-voice-layout {
-  margin-top: myrem(52);
+  margin-top: myrem(50);
   @include mq('md') {
-    margin-top: myrem(150);
+    margin-top: myrem(146);
   }
 }

@@ -6,3 +6,17 @@
     margin-top: myrem(140);
   }
 }
+
+.sub-contact-layout.sub-contact-layout--site-map {
+  margin-top: myrem(92);
+  @include mq('md') {
+    margin-top: myrem(128);
+  }
+}
+
+.sub-contact-layout.sub-contact-layout--privacy-policy {
+  margin-top: myrem(135);
+  @include mq('md') {
+    margin-top: myrem(140);
+  }
+}

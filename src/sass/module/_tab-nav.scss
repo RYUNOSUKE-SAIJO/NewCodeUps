@@ -3,7 +3,7 @@
 .tab-nav__tab-area {
   display: grid;
   grid-template-columns: repeat(2,myrem(162));
-  gap: myrem(12) myrem(16);
+  gap: myrem(16) myrem(22);
   justify-content: center;
   @include mq('md') {
     grid-template-columns: repeat(4,myrem(162));

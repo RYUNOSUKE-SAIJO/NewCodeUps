@@ -171,3 +171,19 @@
   margin-top: 3px;
 }
 
+// sub-blog-detail //
+
+.side-contents__inner.side-contents__inner--narrow {
+  padding-inline: myrem(26);
+  @include mq('md') {
+    padding-inline: myrem(0);
+  }
+}
+
+.side-contents__campaign.side-contents__campaign--margin {
+  margin-top: myrem(86);
+}
+
+.side-contents__campaign-cards.side-contents__campaign-cards--gap {
+  gap: myrem(44);
+}

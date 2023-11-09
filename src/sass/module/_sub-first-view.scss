@@ -60,13 +60,18 @@
   font-weight: 400;
   line-height: normal;
   letter-spacing: myrem(-1);
+  text-transform: capitalize;
   @include mq('md') {
       font-size: myrem(80);
       line-height: calc(80 / 100);
   }
 }
 
-.sub-first-view__main-title::first-letter {
+.sub-first-view__main-title.sub-first-view__main-title--uppercace {
+  text-transform: none;
+}
+
+.sub-first-view__main-title.sub-first-view__main-title--uppercace::first-letter {
   text-transform: uppercase;
 }
 
@@ -82,4 +87,14 @@
     max-width: myrem(301);
     top: myrem(654);
   }
+}
+
+// sub-faq //
+.sub-first-view__main-title.sub-first-view__main-title--uppercase {
+  text-transform: uppercase;
+}
+
+// terms-of-service //
+.sub-first-view__main-title span {
+  text-transform: lowercase;
 }

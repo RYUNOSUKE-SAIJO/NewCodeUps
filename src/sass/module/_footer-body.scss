@@ -1,50 +1,5 @@
 @use "global" as *;
 
-footer {
-  background-color: #408f95;
-  padding-top: myrem(48);
-  padding-bottom: myrem(56);
-  @include mq("md") {
-    padding-top: myrem(80);
-    padding-bottom: myrem(80);
-  }
-}
-
-.footer__inner {
-  max-width: myrem(600);
-}
-
-.footer__header {
-  @include mq("md") {
-    display: flex;
-  }
-}
-
-.footer__logo {
-  width: myrem(120);
-  @include mq("md") {
-    width: myrem(200);
-  }
-}
-
-.footer__sns-logo {
-  display: flex;
-  gap: myrem(17);
-  margin-top: myrem(17);
-  @include mq("md") {
-    margin-left: myrem(40);
-    align-items: end;
-  }
-}
-
-.footer__facebook,
-.footer__instagram {
-  width: myrem(22);
-  @include mq("md") {
-    width: myrem(32);
-  }
-}
-
 .footer__container {
   display: flex;
   justify-content: center;
@@ -159,22 +114,4 @@ footer {
   @include mq("md") {
     letter-spacing: myrem(1);
   }
-}
-
-// site-map //
-
-.footer__item.footer__item--navy {
-  color: $navy;
-}
-
-.footer__item.footer__item--navy a::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: myrem(-20);
-  display: block;
-  background: url(../images/common/sub-site-map-hitode.png) no-repeat center center / contain;
-  width: myrem(18);
-  height: myrem(18);
 }

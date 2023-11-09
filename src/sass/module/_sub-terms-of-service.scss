@@ -1,0 +1,47 @@
+@use "global" as *;
+
+.sub-terms-of-service {
+
+}
+
+.sub-terms-of-service__inner.inner {
+  max-width: myrem(848);
+}
+
+.sub-terms-of-service__header {
+  color: $navy;
+  font-family: $japanese;
+  font-size: myrem(24);
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  @include mq('md') {
+    font-size: myrem(32);
+  }
+}
+
+.sub-terms-of-service__container {
+  margin-top: myrem(38);
+}
+
+.sub-terms-of-service__box:not(:first-child) {
+  margin-top: myrem(32);
+}
+
+.sub-terms-of-service__text {
+  display: inline-block;
+  color: $navy;
+  font-family: $japanese;
+  font-size: myrem(16);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2;
+  letter-spacing: 0;
+}
+
+.sub-terms-of-service__text.sub-terms-of-service__number {
+  letter-spacing: myrem(0.4);
+  text-indent: -0.7em;
+  padding-left: 1em;
+}
+

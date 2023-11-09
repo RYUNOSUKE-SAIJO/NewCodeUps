@@ -5,11 +5,11 @@
 .form__item {
   display: flex;
   flex-direction: column;
-  padding: myrem(24) 0;
+  padding: myrem(22) 0;
   border-bottom: $blue myrem(2) dotted;
   @include mq('md') {
     flex-direction: row;
-    padding: myrem(40) 0;
+    padding: myrem(38) 0;
   }
 }
 
@@ -25,7 +25,7 @@
 
 .Form__Label-required {
   margin-left: myrem(8);
-  padding: myrem(2) myrem(16);
+  padding: myrem(2) myrem(14);
   display: inline-block;
   text-align: center;
   background-color: #C94800;
@@ -93,6 +93,11 @@ input::placeholder {
   }
 }
 
+.form__input.form__input--campaign {
+  padding: myrem(9) myrem(8);
+  font-size: myrem(12);
+}
+
 // お問い合わせ項目のスタイル
 
 .form__contact-container {
@@ -122,6 +127,19 @@ input::placeholder {
   line-height: normal;
 }
 
+// textareaのスタイル
+
+.form__textarea {
+  resize: auto;
+  max-height: 100%;
+  width: myrem(345);
+  height: myrem(200);
+  @include mq('md') {
+    width: myrem(480);
+    height: myrem(200);
+  }
+}
+
 // checkboxのスタイル
 
 .form__checkbox {
@@ -133,10 +151,21 @@ input::placeholder {
   margin-top: myrem(40);
   cursor: pointer;
   user-select: none;
+  padding-inline: myrem(30);
   @include mq('md') {
       text-align: center;
       margin-top: myrem(80);
+      padding-inline: myrem(0);
   }
+}
+
+.form__checkbox-text {
+  color: $navy;
+  font-family: $japanese;
+  font-size: myrem(14);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
 }
 
 // ボタンのスタイル

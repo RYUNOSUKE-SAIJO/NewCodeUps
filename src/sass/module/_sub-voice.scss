@@ -18,6 +18,9 @@
 
 .sub-voice__pagenavi {
   text-align: center;
-  margin-top: myrem(78);
+  margin-top: myrem(82);
+  @include mq('md') {
+    margin-top: myrem(72);
+  }
 }
 

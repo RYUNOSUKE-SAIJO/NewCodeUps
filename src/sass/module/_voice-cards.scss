@@ -9,7 +9,7 @@
 }
 
 .voice-cards.voice-cards--wide-gap {
-    gap: myrem(40);
+    gap: myrem(42);
     @include mq('md') {
         gap: myrem(80) myrem(40);
     }

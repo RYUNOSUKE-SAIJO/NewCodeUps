@@ -1,0 +1,47 @@
+@use "global" as *;
+
+.sub-privacy-policy {
+
+}
+
+.sub-privacy-policy__inner.inner {
+  max-width: myrem(848);
+}
+
+.sub-privacy-policy__header {
+  color: $navy;
+  font-family: $japanese;
+  font-size: myrem(24);
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  @include mq('md') {
+    font-size: myrem(32);
+  }
+}
+
+.sub-privacy-policy__container {
+  margin-top: myrem(38);
+}
+
+.sub-privacy-policy__box:not(:first-child) {
+  margin-top: myrem(32);
+}
+
+.sub-privacy-policy__text {
+  display: inline-block;
+  color: $navy;
+  font-family: $japanese;
+  font-size: myrem(16);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2;
+  letter-spacing: 0;
+}
+
+.sub-privacy-policy__text.sub-privacy-policy__number {
+  letter-spacing: myrem(0.4);
+  text-indent: -0.7em;
+  padding-left: 1em;
+}
+

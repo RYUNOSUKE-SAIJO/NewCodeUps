@@ -184,7 +184,7 @@
               <a href="#faq">よくある質問</a>
             </li>
             <li class="drawer__item drawer__item--bold">
-              <a href="#contact">プライバシー<br />ポリシー</a>
+              <a href="sub-privacy-policy.html">プライバシー<br />ポリシー</a>
             </li>
             <li class="drawer__item drawer__item--bold">
               <a href="#contact">利用規約</a>
@@ -226,6 +226,7 @@
 
     <div class="sub-blog-detail  sub-blog-detail-layout">
       <div class="sub-blog-detail__inner inner">
+        <!----- main-contents ----->
         <div class="sub-blog-detail__main-contents">
           <time class="sub-blog-detail__date" datetime="2023-11-17">2023.11.17</time>
           <h3 class="sub-blog-detail__header">ライセンス取得</h3>
@@ -255,10 +256,11 @@
             <a class="page-numbers next" href="#"><img src="./assets/images/common/pagenation-next.png" alt="矢印"></a>
           </div>
         </div>
+        <!----- side-contents ----->
         <div class="sub-blog__side-contents side-contents">
           <div class="side-contents__inner">
             <div class="side-contents__article">
-              <div class="side-contents__header side-contents-header">
+              <div class="side-contents__header side-contents-header side-contents-header--article">
                 <h3 class="side-contents-header__title">人気記事</h3>
               </div>
               <ul class="side-contents__article-items">
@@ -268,7 +270,7 @@
                       <img src="./assets/images/common/blog-4.jpg" alt="黄色の熱帯魚">
                     </div>
                     <div class="side-contents__article-right">
-                      <time class="news__item_date" datetime="2023-11-17">2023.11.17</time>
+                      <time datetime="2023-11-17">2023/11/17</time>
                       <p class="side-contents__article-title">ライセンス取得</p>
                     </div>
                   </li>
@@ -279,8 +281,8 @@
                       <img src="./assets/images/common/blog-2.jpg" alt="ウミガメと泳ぐ">
                     </div>
                     <div class="side-contents__article-right">
-                      <time class="news__item_date" datetime="2023-11-17">2023.11.17</time>
-                      <p class="side-contents__article-title">ライセンス取得</p>
+                      <time datetime="2023-11-17">2023/11/17</time>
+                      <p class="side-contents__article-title">ウミガメと泳ぐ</p>
                     </div>
                   </li>
                 </a>
@@ -290,15 +292,15 @@
                       <img src="./assets/images/common/blog-3.jpg" alt="カクレクマノミ">
                     </div>
                     <div class="side-contents__article-right">
-                      <time class="news__item_date" datetime="2023-11-17">2023.11.17</time>
-                      <p class="side-contents__article-title">ライセンス取得</p>
+                      <time datetime="2023-11-17">2023/11/17</time>
+                      <p class="side-contents__article-title">カクレクマノミ</p>
                     </div>
                   </li>
                 </a>
               </ul>
             </div>
             <div class="side-contents__voice">
-              <div class="side-contents__header side-contents-header">
+              <div class="side-contents__header side-contents-header side-contents-header--voice">
                 <h3 class="side-contents-header__title">口コミ</h3>
               </div>
               <div class="side-contents__voice-container">
@@ -313,29 +315,27 @@
               </div>
             </div>
             <div class="side-contents__campaign">
-              <div class="side-contents__header side-contents-header">
+              <div class="side-contents__header side-contents-header side-contents-header--campaign">
                 <h3 class="side-contents-header__title">キャンペーン</h3>
               </div>
               <ul class="side-contents__campaign-cards">
                 <a href="#" class="side-contents__card-link">
-                  <li class="side-contents__campaign-card campaign-card">
-                    <img class="campaign-card__img" src="./assets/images/common/campaign1.jpg" alt="鮮やかな魚群" />
-                    <div class="campaign-card__body">
-                      <div class="campaign-card__tag">
-                        <p>ライセンス講習</p>
-                      </div>
-                      <div class="campaign-card__title">
+                  <li class="side-contents__campaign-card campaign-card campaign-card--resize">
+                    <img class="campaign-card__img campaign-card__img--resize" src="./assets/images/common/campaign1.jpg"
+                      alt="鮮やかな魚群" />
+                    <div class="campaign-card__body campaign-card__body--resize">
+                      <div class="campaign-card__title campaign-card__title--center">
                         <p>ライセンス取得</p>
                       </div>
                     </div>
-                    <div class="campaign-card__info">
+                    <div class="campaign-card__info campaign-card__info--shrink">
                       <div class="campaign-card__content">
-                        <div class="campaign-card__description">
+                        <div class="campaign-card__description campaign-card__description--letter-spacing">
                           <p>全部コミコミ(お一人様)</p>
                         </div>
                         <div class="campaign-card__price">
-                          <div class="campaign-card__price-left">¥56,000</div>
-                          <div class="campaign-card__price-right">¥46,000</div>
+                          <div class="campaign-card__price-left campaign-card__price-left--resize">¥56,000</div>
+                          <div class="campaign-card__price-right campaign-card__price-right--resize">¥46,000</div>
                         </div>
                       </div>
                     </div>
@@ -343,32 +343,33 @@
                 </a>
                 <a href="#" class="side-contents__card-link">
                   <li class="side-contents__campaign-card campaign-card">
-                    <img class="campaign-card__img" src="./assets/images/common/campaign2.jpg" alt="透き通る海に浮かぶ船" />
-                    <div class="campaign-card__body">
-                      <div class="campaign-card__tag">
-                        <p>体験ダイビング</p>
-                      </div>
-                      <div class="campaign-card__title">
+                    <img class="campaign-card__img campaign-card__img--resize" src="./assets/images/common/campaign2.jpg"
+                      alt="透き通る海に浮かぶ船" />
+                    <div class="campaign-card__body campaign-card__body--resize">
+                      <div class="campaign-card__title campaign-card__title--center">
                         <p>貸切体験ダイビング</p>
                       </div>
                     </div>
-                    <div class="campaign-card__info">
+                    <div class="campaign-card__info campaign-card__info--shrink">
                       <div class="campaign-card__content">
-                        <div class="campaign-card__description">
+                        <div class="campaign-card__description campaign-card__description--letter-spacing">
                           <p>全部コミコミ(お一人様)</p>
                         </div>
                         <div class="campaign-card__price">
-                          <div class="campaign-card__price-left">¥24,000</div>
-                          <div class="campaign-card__price-right">¥18,000</div>
+                          <div class="campaign-card__price-left campaign-card__price-left--resize">¥24,000</div>
+                          <div class="campaign-card__price-right campaign-card__price-right--resize">¥18,000</div>
                         </div>
                       </div>
                     </div>
                   </li>
                 </a>
               </ul>
+              <div class="side-contents__campaign-btn">
+                <a href="#" class="btn"><span>View more</span></a>
+              </div>
             </div>
             <div class="side-contents__archive">
-              <div class="side-contents__header side-contents-header">
+              <div class="side-contents__header side-contents-header side-contents-header--archive">
                 <h3 class="side-contents-header__title">アーカイブ</h3>
               </div>
               <ul class="side-contents__archive-years">
@@ -553,7 +554,7 @@
                 <a href="#blog">よくある質問</a>
               </li>
               <li class="footer__item footer__item--bold">
-                <a href="#contact">プライバシー<span><br /></span>ポリシー</a>
+                <a href="sub-privacy-policy.html">プライバシー<span><br /></span>ポリシー</a>
               </li>
               <li class="footer__item footer__item--bold">
                 <a href="#blog">利用規約</a>

@@ -26,7 +26,11 @@
   font-size: myrem(16);
   font-style: normal;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.42;
+  @include mq('md') {
+    padding-left: myrem(14);
+    line-height: 1.4;
+  }
 }
 
 .sub-price-table__header {
@@ -71,6 +75,7 @@
   text-align: center;
   width: 100% * calc(240 / 345);
   @include mq('md') {
+    text-align: left;
     width: 100% * calc(340 / 500);
   }
 }

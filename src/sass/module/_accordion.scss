@@ -10,7 +10,10 @@
 .accordion__list {
   display: flex;
   flex-direction: column;
-  gap: myrem(40);
+  gap: myrem(30);
+  @include mq('md') {
+    gap: myrem(22);
+  }
 }
 
 .accordion__item {
@@ -75,7 +78,7 @@
 .accordion__content {
   border: myrem(1) solid $blue;
   margin-inline: auto;
-  padding: myrem(24) myrem(16);
+  padding: myrem(19);
   display: none;
   @include mq("md") {
     margin-top: myrem(16);

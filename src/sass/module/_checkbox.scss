@@ -7,16 +7,47 @@
 .checkbox__checkmark {
   position: relative;
   display: block;
+  height: myrem(14);
+  width: myrem(14);
+  border: solid myrem(2) $blue;
+  box-sizing: border-box;
+  margin-right: myrem(10);
+  margin-top: myrem(4);
+  flex-shrink: 0;
+  @include mq('md') {
+      margin-right: myrem(16);
+  }
+}
+
+.checkbox__checkmark.checkbox__checkmark--big {
+  position: relative;
+  display: block;
   height: myrem(22);
   width: myrem(22);
   border: solid myrem(2) $blue;
   box-sizing: border-box;
-  margin-right: myrem(16);
+  margin-right: myrem(10);
   margin-top: myrem(2);
   flex-shrink: 0;
+  @include mq('md') {
+      margin-right: myrem(16);
+  }
 }
 
 .checkbox__checkmark:after {
+  content: "";
+  position: absolute;
+  border: solid $blue;
+  border-width: 0 2px 2px 0;
+  left: myrem(2);
+  top: myrem(-1);
+  width: myrem(6);
+  height: myrem(10);
+  transform: rotate(45deg);
+  opacity: 0;
+}
+
+.checkbox__checkmark.checkbox__checkmark--big:after {
   content: "";
   position: absolute;
   border: solid $blue;
