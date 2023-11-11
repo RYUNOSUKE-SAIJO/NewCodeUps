@@ -1,18 +1,10 @@
 @use "global" as *;
 
-.sub-blog-detail {
-
-}
-
 .sub-blog-detail__inner {
   @include mq('md') {
     display: flex;
     gap: myrem(80);
   }
-}
-
-.sub-blog-detail__main-contents {
-
 }
 
 .sub-blog-detail__date {
@@ -48,23 +40,20 @@
   background-color: $blue;
 }
 
-.sub-blog-detail__img {
-  margin-top: myrem(24);
-  @include mq('md') {
-    margin-top: myrem(40);
-  }
-}
+// WP想定 //
 
-.sub-blog-detail__img img {
+.sub-blog-detail__content-area img {
+  margin-top: myrem(24);
   aspect-ratio: 345 / 231;
   object-fit: cover;
   width: 100%;
   @include mq('md') {
+    margin-top: myrem(40);
     aspect-ratio: 700 / 468;
   }
 }
 
-.sub-blog-detail__text {
+.sub-blog-detail__content-area p {
   margin-top: myrem(24);
   color: $navy;
   font-family: $japanese;
@@ -77,15 +66,15 @@
   }
 }
 
-.sub-blog-detail__list {
-  padding-left: myrem(27);
+.sub-blog-detail__content-area ul {
+    padding-left: myrem(27);
   margin-top: myrem(24);
   @include mq('md') {
     margin-top: myrem(40);
   }
 }
 
-.sub-blog-detail__list-item {
+.sub-blog-detail__content-area li {
   position: relative;
   color: $navy;
   font-family: $japanese;
@@ -95,7 +84,7 @@
   line-height : 1.68;
 }
 
-.sub-blog-detail__list-item::before {
+.sub-blog-detail__content-area li::before  {
   content: "";
   position: absolute;
   background: url(../images/common/sub-blog-detail-list.webp) no-repeat center center / contain;
@@ -104,6 +93,8 @@
   top: myrem(2);
   left: myrem(-30);
 }
+
+// pagenavi //
 
 .sub-blog-detail__pagenavi {
   margin-top: myrem(40);

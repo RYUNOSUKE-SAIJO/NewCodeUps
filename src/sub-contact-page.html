@@ -121,7 +121,7 @@
               <a class="header-nav__item-link" href="sub-contact-page.html">
                 <div class="header-nav__item-wrap">
                   <p>Contact</p>
-                  <p class="header-nav__item-ruby">お問合せ</p>
+                  <p class="header-nav__item-ruby">お問い合わせ</p>
                 </div>
               </a>
             </li>
@@ -134,63 +134,63 @@
         <div class="drawer__items">
           <ul class="drawer__items-left">
             <li class="drawer__item drawer__item--bold">
-              <a href="#campaign">キャンペーン</a>
+              <a href="sub-campaign.html">キャンペーン</a>
             </li>
             <li class="drawer__item">
-              <a href="#campaign">ライセンス取得</a>
+              <a href="sub-campaign.html">ライセンス取得</a>
             </li>
             <li class="drawer__item">
-              <a href="#campaign">貸切体験ダイビング</a>
+              <a href="sub-campaign.html">貸切体験ダイビング</a>
             </li>
             <li class="drawer__item">
-              <a href="#campaign">ナイトダイビング</a>
+              <a href="sub-campaign.html">ナイトダイビング</a>
             </li>
             <li class="drawer__item drawer__item--bold">
-              <a href="#about">私たちについて</a>
+              <a href="sub-about.html">私たちについて</a>
             </li>
             <li class="drawer__item drawer__item--bold">
-              <a href="#information">ダイビング情報</a>
+              <a href="sub-information.html">ダイビング情報</a>
             </li>
             <li class="drawer__item">
-              <a href="#information">ライセンス講習</a>
+              <a href="sub-information.html">ライセンス講習</a>
             </li>
             <li class="drawer__item">
-              <a href="#information">体験ダイビング</a>
+              <a href="sub-information.html">体験ダイビング</a>
             </li>
             <li class="drawer__item">
-              <a href="#information">ファンダイビング</a>
+              <a href="sub-information.html">ファンダイビング</a>
             </li>
             <li class="drawer__item drawer__item--bold">
-              <a href="#blog">ブログ</a>
+              <a href="sub-blog.html">ブログ</a>
             </li>
           </ul>
           <ul class="drawer__items-right">
             <li class="drawer__item drawer__item--bold">
-              <a href="#voice">お客様の声</a>
+              <a href="sub-voice.html">お客様の声</a>
             </li>
             <li class="drawer__item drawer__item--bold">
-              <a href="#price">料金一覧</a>
+              <a href="sub-price.html">料金一覧</a>
             </li>
             <li class="drawer__item">
-              <a href="#price">ライセンス講習</a>
+              <a href="sub-price.html">ライセンス講習</a>
             </li>
             <li class="drawer__item">
-              <a href="#price">体験ダイビング</a>
+              <a href="sub-price.html">体験ダイビング</a>
             </li>
             <li class="drawer__item">
-              <a href="#price">ファンダイビング</a>
+              <a href="sub-price.html">ファンダイビング</a>
             </li>
             <li class="drawer__item drawer__item--bold">
-              <a href="#faq">よくある質問</a>
+              <a href="sub-faq.html">よくある質問</a>
             </li>
             <li class="drawer__item drawer__item--bold">
               <a href="sub-privacy-policy.html">プライバシー<br />ポリシー</a>
             </li>
             <li class="drawer__item drawer__item--bold">
-              <a href="#contact">利用規約</a>
+              <a href="sub-terms-of-service.html">利用規約</a>
             </li>
             <li class="drawer__item drawer__item--bold">
-              <a href="#contact">お問い合わせ</a>
+              <a href="sub-contact-page.html">お問い合わせ</a>
             </li>
           </ul>
         </div>
@@ -218,7 +218,7 @@
     <div class="breadcrumb breadcrumb-layout">
       <div class="breadcrumb__inner inner">
         <ul class="breadcrumb__list">
-          <li class="breadcrumb__item"><a href="#">TOP&nbsp;&nbsp;></a></li>
+          <li class="breadcrumb__item"><a href="#">TOP&nbsp;&nbsp;＞</a></li>
           <li class="breadcrumb__item"><a href="#">&nbsp;お問い合わせ</a></li>
         </ul>
       </div>
@@ -249,10 +249,10 @@
               </label>
               <input class="form__input" type="tel" id="phone" name="phone" placeholder="000-0000-0000" required>
             </li>
-            <!----- お問合せ項目 ----->
+            <!----- お問い合わせ項目 ----->
             <li class="form__item form__item--contact">
               <label class="form__label">
-                お問合せ項目<span class="Form__Label-required">必須</span>
+                お問い合わせ項目<span class="Form__Label-required">必須</span>
               </label>
               <div class="form__contact-container">
                 <label class="form__contact-checkbox checkbox">
@@ -272,20 +272,27 @@
             <!----- キャンペーン ----->
             <li class="form__item form__item--campaign">
               <label class="form__label" for="campaign">キャンペーン</label>
-              <input class="form__input form__input--campaign" type="text" id="campaign" name="campaign" placeholder="キャンペーン内容を選択">
-              <span></span>
+              <select class="form__select form__select--campaign" name="color">
+                <option value="">キャンペーン内容を選択</option>
+                <option value="whale">ライセンス取得</option>
+                <option value="bear">貸切体験ダイビング</option>
+                <option value="snake">ナイトダイビング</option>
+                <option value="iguana">貸切ファンダイビング</option>
+                <span></span>
+              </select>
             </li>
-            <!----- お問合せ内容 ----->
+            <!----- お問い合わせ内容 ----->
             <li class="form__item form__item--message">
               <label class="form__label" for="message">
-                お問合せ内容<span class="Form__Label-required">必須</span>
+                お問い合わせ内容<span class="Form__Label-required">必須</span>
               </label>
               <textarea class="form__textarea" id="message" name="message" rows="4" cols="50" required></textarea>
             </li>
           </ul>
           <!----- チェックボックス ----->
           <label class="form__checkbox checkbox">
-            <input class="form__input" type="checkbox" name="term" value="accept"><p class="form__checkbox-text">個人情報の取り扱いについて同意のうえ送信します。</p>
+            <p class="form__checkbox-text">個人情報の取り扱いについて同意のうえ送信します。</p>
+            <input class="form__input" type="checkbox" name="term" value="accept">
             <span class="checkbox__checkmark checkbox__checkmark--big"></span>
           </label>
           <!----- 送信ボタン ----->
@@ -323,69 +330,69 @@
           <div class="footer__left">
             <ul class="footer__items">
               <div class="footer__item footer__item--bold">
-                <a href="#campaign">キャンペーン</a>
+                <a href="sub-campaign.html">キャンペーン</a>
               </div>
               <li class="footer__item">
-                <a href="#campaign">ライセンス取得</a>
+                <a href="sub-campaign.html">ライセンス取得</a>
               </li>
               <li class="footer__item">
-                <a href="#campaign">貸切体験ダイビング</a>
+                <a href="sub-campaign.html">貸切体験ダイビング</a>
               </li>
               <li class="footer__item">
-                <a href="#campaign">ナイトダイビング</a>
+                <a href="sub-campaign.html">ナイトダイビング</a>
               </li>
               <li class="footer__item footer__item--bold">
-                <a href="#about">私たちについて</a>
+                <a href="sub-about.html">私たちについて</a>
               </li>
             </ul>
             <ul class="footer__items footer__items_second">
               <li class="footer__item footer__item--bold">
-                <a href="#information">ダイビング情報</a>
+                <a href="sub-information.html">ダイビング情報</a>
               </li>
               <li class="footer__item">
-                <a href="#information">ライセンス講習</a>
+                <a href="sub-information.html">ライセンス講習</a>
               </li>
               <li class="footer__item">
-                <a href="#information">体験ダイビング</a>
+                <a href="sub-information.html">体験ダイビング</a>
               </li>
               <li class="footer__item">
-                <a href="#information">ファンダイビング</a>
+                <a href="sub-information.html">ファンダイビング</a>
               </li>
               <li class="footer__item footer__item--bold">
-                <a href="#blog">ブログ</a>
+                <a href="sub-blog.html">ブログ</a>
               </li>
             </ul>
           </div>
           <div class="footer__right">
             <ul class="footer__items">
               <li class="footer__item footer__item--bold">
-                <a href="#voice">お客様の声</a>
+                <a href="sub-voice.html">お客様の声</a>
               </li>
               <li class="footer__item footer__item--bold">
-                <a href="#news">料金一覧</a>
+                <a href="sub-price.html">料金一覧</a>
               </li>
               <li class="footer__item">
-                <a href="#price">ライセンス講習</a>
+                <a href="sub-price.html">ライセンス講習</a>
               </li>
               <li class="footer__item">
-                <a href="#price">体験ダイビング</a>
+                <a href="sub-price.html">体験ダイビング</a>
               </li>
               <li class="footer__item">
-                <a href="#price">ファンダイビング</a>
+                <a href="sub-price.html">ファンダイビング</a>
               </li>
             </ul>
             <ul class="footer__items">
               <li class="footer__item footer__item--bold">
-                <a href="#blog">よくある質問</a>
+                <a href="sub-blog.html">よくある質問</a>
               </li>
               <li class="footer__item footer__item--bold">
                 <a href="sub-privacy-policy.html">プライバシー<span><br /></span>ポリシー</a>
               </li>
               <li class="footer__item footer__item--bold">
-                <a href="#blog">利用規約</a>
+                <a href="sub-terms-of-service.html">利用規約</a>
               </li>
               <li class="footer__item footer__item--bold">
-                <a href="#contact">お問い合わせ</a>
+                <a href="sub-contact-page.html">お問い合わせ</a>
               </li>
             </ul>
           </div>

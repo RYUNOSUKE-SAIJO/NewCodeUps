@@ -1,0 +1,76 @@
+@use "global" as *;
+
+.sub-404 {
+  padding-top: myrem(80);
+  background: url(../images/common/sub-404-bg.png) no-repeat 35% 82% /92%;
+  padding-bottom: myrem(44) ;
+  @include mq('md') {
+    padding-top: myrem(90);
+    background: url(../images/common/sub-404-bg.png) no-repeat 25% 100% /48%;
+    padding-bottom: myrem(148) ;
+  }
+}
+
+.sub-404-layout {
+
+}
+
+.sub-404__inner {
+
+}
+
+.sub-404__slide-img {
+
+}
+
+.sub-404__container {
+  text-align: center;
+}
+
+.sub-404__main-title {
+  text-indent: 0.5em;
+  margin-top: myrem(48);
+  font-size: myrem(80);
+  letter-spacing: myrem(40);
+  color: $white;
+  font-family: $english-2;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  @include mq('md') {
+    margin-top: myrem(119);
+    font-size: myrem(160);
+    letter-spacing: myrem(80);
+  }
+}
+
+.sub-404__text {
+  margin-top: myrem(0);
+  color: $white;
+  text-align: center;
+  font-family: $english-2;
+  font-size: myrem(16);
+  font-style: normal;
+  font-weight: 400;
+  line-height: myrem(24);
+  @include mq('md') {
+    margin-top: myrem(24);
+  }
+}
+
+.sub-404-fish {
+
+}
+
+.md-none {
+
+}
+
+.sub-404__btn {
+  margin-top: myrem(38);
+  text-align: center;
+  @include mq('md') {
+    margin-top: myrem(80);
+  }
+}
+

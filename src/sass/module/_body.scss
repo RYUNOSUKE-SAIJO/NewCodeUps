@@ -4,3 +4,7 @@ body.is-active {
   height: 100%;
   overflow: hidden;
 }
+
+body.body--sub-404 {
+  background-color: $blue;
+}

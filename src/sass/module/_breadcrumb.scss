@@ -14,3 +14,7 @@
   line-height: normal;
   letter-spacing: myrem(0.5);
 }
+
+.breadcrumb__item.breadcrumb__item--white {
+  color: $white;
+}

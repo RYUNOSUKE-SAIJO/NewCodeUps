@@ -25,6 +25,10 @@
   transform: scale(1.05);
 }
 
+.side-contents__article-left {
+  flex-shrink: 0;
+}
+
 .side-contents__article-left img {
   max-width: myrem(121);
   aspect-ratio: 121 / 90;

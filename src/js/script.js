@@ -14,7 +14,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
 
         function closeDrawer() {
             $(".js-drawer,.js-hamburger").fadeOut();
-            $(".js-header").removeClass("is-active");
+            $(".js-header,.js-hamburger").removeClass("is-active");
         }
     });
 
@@ -59,8 +59,8 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
 
 
     // 画像アニメーション //
-    var box = $('.information__left_img,.voice_card_img,.price__img'),
-    speed = 700;  
+    var box = $('.information__left-img,.voice-card__img,.price__img,.tab-contents__panel-right'),
+    speed = 500;  
 
 //.colorboxの付いた全ての要素に対して下記の処理を行う
     box.each(function(){
@@ -74,7 +74,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         //inviewを使って背景色が画面に現れたら処理をする
         color.on('inview', function(){
             if(counter == 0){
-            $(this).delay(200).animate({'width':'100%'},speed,function(){
+            $(this).delay(100).animate({'width':'100%'},speed,function(){
                 image.css('opacity','1');
                 $(this).css({'left':'0' , 'right':'auto'});
                 $(this).animate({'width':'0%'},speed);

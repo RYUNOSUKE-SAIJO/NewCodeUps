@@ -73,30 +73,32 @@ input::placeholder {
 // キャンペーンのスタイル
 
 .form__item--campaign {
-    position: relative;
 }
 
 .form__item--campaign input::placeholder {
   color: $black;
 }
 
-.form__item--campaign span {
-  position: absolute;
+.form__select {
+  position: relative;
+  width: 100%;
+  padding: myrem(8) myrem(16);
+  border: 1px solid $blue;
+  margin-top: myrem(16);
   display: block;
-  background: url(../images/common/form__item--campaign-arrow.webp) no-repeat center center / contain;
-  top: myrem(78);
-  right: myrem(8);
-  width: myrem(12);
-  height: myrem(12);
+  background: url(../images/common/form__item--campaign-arrow.webp) no-repeat calc(100% - myrem(9)) / myrem(12);
   @include mq('md') {
-      top: 46%;
+    margin-left: auto;
+    margin-top: 0;
+    width: 68.5%;
   }
 }
 
-.form__input.form__input--campaign {
+.form__select.form__select--campaign {
   padding: myrem(9) myrem(8);
   font-size: myrem(12);
 }
+
 
 // お問い合わせ項目のスタイル
 

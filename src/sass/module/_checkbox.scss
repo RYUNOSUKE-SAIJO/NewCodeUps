@@ -39,7 +39,7 @@
   position: absolute;
   border: solid $blue;
   border-width: 0 2px 2px 0;
-  left: myrem(2);
+  left: myrem(3);
   top: myrem(-1);
   width: myrem(6);
   height: myrem(10);
@@ -52,8 +52,8 @@
   position: absolute;
   border: solid $blue;
   border-width: 0 2px 2px 0;
-  left: myrem(6);
-  top: myrem(2);
+  left: myrem(7);
+  top: myrem(3);
   width: myrem(6);
   height: myrem(10);
   transform: rotate(45deg);
@@ -63,6 +63,7 @@
 /* チェックが入ったとき */
 
 .checkbox input:checked + .checkbox__checkmark:after {
-  opacity: 1; /* 透明を解除 */
+  opacity: 1;
 }
+
 

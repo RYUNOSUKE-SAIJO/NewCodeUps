@@ -41,6 +41,7 @@
     width: 100%;
 }
 
+// 外枠白 //
 .btn::after {
     content: "";
     position: absolute;
@@ -55,6 +56,7 @@
 .btn span {
     position: relative;
     padding: 0 myrem(48) 0 0;
+    text-transform: capitalize;
 }
 
 .btn span::after {
@@ -76,6 +78,38 @@
     background-image: url("../images/common/btn-arrow-blue.svg");
 }
 
+// sub-404 //
+
+.btn.btn--sub-404 {
+    color: $blue;
+    background-color: $white;
+}
+
+.btn.btn--sub-404:hover {
+    color: $white;
+}
+
+.btn.btn--sub-404::before {
+    background-color: $white;
+}
+
+.btn.btn--sub-404:hover::before {
+    color: $blue;
+    background-color: $white;
+}
+
+// 外枠白 //
+.btn.btn--sub-404::after {
+    border: 1px solid $white;
+}
+
+.btn.btn--sub-404 span::after {
+    background-image: url("../images/common/btn-arrow-blue.svg");
+}
+
+.btn.btn--sub-404:hover span::after {
+    background-image: url("../images/common/btn-arrow.svg");
+}
 
 
 
