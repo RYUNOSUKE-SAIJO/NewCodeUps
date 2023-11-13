@@ -2,18 +2,22 @@
 
 .tab-contents__tab-area {
   display: flex;
+  justify-content: space-around;
+  gap: myrem(20);
+  @include mq('md') {
   justify-content: space-between;
+  }
 }
 
 .tab-contents__tab {
   background-color: #DDF0F1;
-  max-width: myrem(102);
   width: 100%;
   padding-top: myrem(10);
   padding-bottom: myrem(10);
   justify-content: center;
   align-items: center;
   text-align: center;
+  box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.25);
   @include mq('md') {
     display: flex;
     max-width: myrem(300);
@@ -36,19 +40,19 @@
 
 .tab-contents__tab span.tab-name1 {
   @include mq('md') {
-    background: url(../images/common/sub-info-tab-name-1.webp) no-repeat center center /contain;
+    background: url(../images/common/sub-info-tab-name-1.svg) no-repeat center center /contain;
   }
 }
 
 .tab-contents__tab span.tab-name2 {
   @include mq('md') {
-    background: url(../images/common/sub-info-tab-name-2.webp) no-repeat center center /contain;
+    background: url(../images/common/sub-info-tab-name-2.svg) no-repeat center center /contain;
   }
 }
 
 .tab-contents__tab span.tab-name3 {
   @include mq('md') {
-    background: url(../images/common/sub-info-tab-name-3.webp) no-repeat center center /contain;
+    background: url(../images/common/sub-info-tab-name-3.svg) no-repeat center center /contain;
   }
 }
 
@@ -80,9 +84,10 @@
 }
 
 .tab-contents__panel {
-  display: none;
-  padding: myrem(24);
-  border: myrem(1) solid $blue;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  // transition: opacity 0.5s linear, height 0.5s linear;
 }
 
 .tab-contents__panel-container {
@@ -164,9 +169,12 @@ input[name="tab-btn"] {
 // is-active //
 
 .tab-contents__panel.is-active {
-  display: block;
-}
-
+    opacity: 1;
+    transition: opacity 1s linear;
+    height: auto;
+    padding: myrem(24);
+    border: myrem(1) solid $blue;
+  }
 
 // animation //
 

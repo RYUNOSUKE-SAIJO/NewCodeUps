@@ -97,6 +97,8 @@
 // pagenavi //
 
 .sub-blog-detail__pagenavi {
+  display: flex;
+  justify-content: center;
   margin-top: myrem(40);
   padding-inline: myrem(94);
   @include mq('md') {
