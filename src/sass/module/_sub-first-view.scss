@@ -1,7 +1,7 @@
 @use "global" as *;
 
 .sub-first-view {
-  width: 100vw;
+  width: 100%;
   height: myrem(460);
   @include mq('md') {
     height: myrem(548);

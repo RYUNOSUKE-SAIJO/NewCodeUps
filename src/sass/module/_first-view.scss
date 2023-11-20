@@ -1,7 +1,7 @@
 @use "global" as *;
 
 .first-view {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
 }
 
@@ -9,6 +9,7 @@
     position: relative;
     width: 100%;
     height: inherit;
+    
 }
 
 .first-view__slide-img{

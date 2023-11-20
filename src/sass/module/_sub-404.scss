@@ -2,11 +2,11 @@
 
 .sub-404 {
   padding-top: myrem(80);
-  background: url(../images/common/sub-404-bg.png) no-repeat 35% 82% /92%;
+  background: url(../images/common/sub-404-bg.svg) no-repeat 35% 82% /92%;
   padding-bottom: myrem(44) ;
   @include mq('md') {
     padding-top: myrem(90);
-    background: url(../images/common/sub-404-bg.png) no-repeat 25% 100% /48%;
+    background: url(../images/common/sub-404-bg.svg) no-repeat 25% 100% /48%;
     padding-bottom: myrem(148) ;
   }
 }

@@ -2,6 +2,7 @@
 
 .campaign {
     position: relative;
+    overflow: hidden;
 }
 
 .campaign__cards {
@@ -65,7 +66,7 @@
     display: block;
     width: myrem(80);
     height: myrem(80);
-    background: url(../images/common/campaign-right.png) no-repeat center center / contain;
+    background: url(../images/common/campaign-right.svg) no-repeat center center / contain;
 }
 
 .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
@@ -73,5 +74,5 @@
     display: block;
     width: myrem(80);
     height: myrem(80);
-    background: url(../images/common/campaign-left.png) no-repeat center center / contain;
+    background: url(../images/common/campaign-left.svg) no-repeat center center / contain;
 }

@@ -86,7 +86,7 @@ input::placeholder {
   border: 1px solid $blue;
   margin-top: myrem(16);
   display: block;
-  background: url(../images/common/form__item--campaign-arrow.webp) no-repeat calc(100% - myrem(9)) / myrem(12);
+  background: url(../images/common/form__item--campaign-arrow.jpg) no-repeat calc(100% - myrem(9)) / myrem(12);
   @include mq('md') {
     margin-left: auto;
     margin-top: 0;
