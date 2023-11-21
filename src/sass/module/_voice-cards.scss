@@ -2,15 +2,11 @@
 
 .voice-cards {
     display: grid;
+    row-gap: myrem(40);
     @include mq('md') {
-        gap: myrem(40);
+        row-gap: myrem(80);
+        column-gap: myrem(40);
         grid-template-columns: repeat(2,auto);
     }
 }
 
-.voice-cards.voice-cards--wide-gap {
-    gap: myrem(42);
-    @include mq('md') {
-        gap: myrem(80) myrem(40);
-    }
-}
