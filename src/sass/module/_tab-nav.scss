@@ -18,6 +18,8 @@
   text-align: center;
   color: $blue;
   background-color: $white;
+  transition: opacity 0.3s;
+  cursor: pointer;
 }
 
 .tab-nav__tab p {
@@ -32,4 +34,12 @@
 .tab-nav__tab.is-active {
   background-color: $blue;
   color: $white;
+}
+
+// hover //
+
+.tab-nav__tab:hover {
+  opacity: 0.8;
+  transition: transform 0.1s linear;
+  transform: scale(1.05);
 }

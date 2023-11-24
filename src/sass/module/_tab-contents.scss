@@ -18,6 +18,7 @@
   align-items: center;
   text-align: center;
   box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.25);
+  transition: opacity 0.3s;
   @include mq('md') {
     display: flex;
     max-width: myrem(300);
@@ -195,4 +196,12 @@ div.tab-contents__panel-right div.color {
 div.tab-contents__panel-right img {
     display: block;
     width: 100%;
+}
+
+// hover //
+
+.tab-contents__tab:hover {
+  opacity: 0.8;
+  transition: transform 0.1s linear;
+  transform: scale(1.05);
 }

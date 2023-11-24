@@ -32,6 +32,7 @@
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  transition: transform 0.1s linear;
 }
 
 .page-numbers.sp-none {
@@ -112,4 +113,12 @@
   top: myrem(23);
   transform: rotate(-45deg);
   width: myrem(13);
+}
+
+// hover //
+
+.page-numbers:hover {
+  opacity: 0.8;
+  transition: transform 0.1s linear;
+  transform: scale(1.05);
 }
