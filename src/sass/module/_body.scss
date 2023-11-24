@@ -1,5 +1,9 @@
 @use "global" as *;
 
+body {
+  position: relative;
+}
+
 body.is-active {
   height: 100%;
   overflow: hidden;

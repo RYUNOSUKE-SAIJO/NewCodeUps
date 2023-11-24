@@ -2,27 +2,18 @@
 
 .to-top {
 	position: fixed;
+	width: myrem(48);
+  height: myrem(48);
 	right: myrem(16);
 	bottom: myrem(16);
-	display: none;
 	z-index: 10;
+	opacity: 1;
+	transition: opacity 0.3s ease, visibility 0.3s ease;
+	transition: background-color 0.3s ease, color 0.3s ease;
 	@include mq('md') {
 		right: myrem(20);
 		bottom: myrem(20);
-	}
-}
-
-.to-top img {
-    width: myrem(48);
-    height: myrem(48);
-	display: block;
-    opacity: 1;
-	@include mq('md') {
 		width: myrem(80);
 		height: myrem(80);
 	}
-}
-
-.to-top a:hover {
-	opacity: 1;
 }
