@@ -126,21 +126,8 @@ jQuery(function ($) {
         });
     });
 
-    // トップに戻るボタン //
 
-    // スクロールしたら「トップに戻る」ボタンが表示される
-    // const toTopButton = $(".js-to-top");
-    // const scrollHeight = 50;
-    // toTopButton.hide();
-    // $(window).scroll(function () {
-    //     if ($(this).scrollTop() > 50) {
-    //     toTopButton.fadeIn();
-    //     } else {
-    //     toTopButton.fadeOut();
-    //     }
-    // });
-
-    // トップへ戻るボタン
+    // トップに戻るボタン
     $(window).on("scroll", function () {
         let scrollHeight = $(document).height();
         let scrollPosition = $(window).height() + $(window).scrollTop();
