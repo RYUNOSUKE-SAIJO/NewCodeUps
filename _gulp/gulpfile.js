@@ -116,6 +116,34 @@ const imgImagemin = () => {
   return (
     src(srcPath.img)
       // 変更があった画像のみ処理対象に
+      .pipe(changed(destWpPath.img))
+      .pipe(
+        imagemin(
+          [
+            // JPEG画像の圧縮設定
+            imageminMozjpeg({
+              quality: 80, // 圧縮品質（0〜100）
+            }),
+            // PNG画像の圧縮設定
+            imageminPngquant(),
+            // SVG画像の圧縮設定
+            imageminSvgo({
+              plugins: [
+                {
+                  removeViewbox: false, // viewBox属性を削除しない
+                },
+              ],
+            }),
+          ],
+          {
+            verbose: true, // 圧縮情報を表示
+          }
+        )
+      )
+      .pipe(dest(destWpPath.img))
+      .pipe(webp()) //webpに変換
+      // 圧縮済みの画像ファイルを出力先に保存
+      .pipe(dest(destWpPath.img))
       .pipe(changed(destPath.img))
       // 画像を圧縮
       .pipe(
@@ -142,11 +170,9 @@ const imgImagemin = () => {
         )
       )
       .pipe(dest(destPath.img))
-      .pipe(dest(destWpPath.img))
-      .pipe(webp())//webpに変換
+      .pipe(webp()) //webpに変換
       // 圧縮済みの画像ファイルを出力先に保存
       .pipe(dest(destPath.img))
-      .pipe(dest(destWpPath.img))
   );
 };
 
@@ -175,9 +201,9 @@ const jsBabel = () => {
 
 const browserSyncOption = {
   notify: false,
-  // server: "../dist/", // ローカルサーバーのルートディレクトリ
+  server: "../dist/", // ローカルサーバーのルートディレクトリ
   //WordPressの場合は↓を有効にする。その場合、↑(server)はコメントアウトする。
-  proxy: "codeupswordpress.local", // ローカルサーバーのURL（WordPress）
+  // proxy: "codeupswordpress.local", // ローカルサーバーのURL（WordPress）
 };
 const browserSyncFunc = () => {
   browserSync.init(browserSyncOption);
