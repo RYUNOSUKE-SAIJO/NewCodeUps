@@ -16,14 +16,16 @@
       </picture>
     </section>
 
+    <!----- パンくず ----->
+    <?php if (function_exists('bcn_display')) : ?>
     <div class="breadcrumb breadcrumb-layout">
       <div class="breadcrumb__inner inner">
         <ul class="breadcrumb__list">
-          <li class="breadcrumb__item"><a href="#">TOP&nbsp;&nbsp;＞</a></li>
-          <li class="breadcrumb__item"><a href="#">&nbsp;ダイビング情報</a></li>
+          <?php bcn_display(); ?>
         </ul>
       </div>
     </div>
+    <?php endif; ?>
 
     <section class="sub-information sub-information-layout">
       <div class="sub-information__inner inner">

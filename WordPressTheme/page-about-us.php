@@ -17,14 +17,16 @@
       </picture>
     </section>
 
+    <!----- パンくず ----->
+    <?php if (function_exists('bcn_display')) : ?>
     <div class="breadcrumb breadcrumb-layout">
       <div class="breadcrumb__inner inner">
         <ul class="breadcrumb__list">
-          <li class="breadcrumb__item"><a href="#">TOP&nbsp;&nbsp;＞</a></li>
-          <li class="breadcrumb__item"><a href="#">&nbsp;私たち</a></li>
+          <?php bcn_display(); ?>
         </ul>
       </div>
     </div>
+    <?php endif; ?>
 
     <div class="sub-about about sub-about-layout">
       <div class="about__inner inner">

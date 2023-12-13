@@ -16,15 +16,16 @@
       </picture>
     </section>
 
-      <div class="breadcrumb breadcrumb-layout">
-        <div class="breadcrumb__inner inner">
-          <ul class="breadcrumb__list">
-            <li class="breadcrumb__item"><a href="#">TOP&nbsp;&nbsp;＞</a></li>
-            <li class="breadcrumb__item"><a href="#">&nbsp;お問い合わせ&nbsp;&nbsp;＞</a></li>
-            <li class="breadcrumb__item"><a href="#">&nbsp;送信完了</a></li>
-          </ul>
-        </div>
+    <!----- パンくず ----->
+    <?php if (function_exists('bcn_display')) : ?>
+    <div class="breadcrumb breadcrumb-layout">
+      <div class="breadcrumb__inner inner">
+        <ul class="breadcrumb__list">
+          <?php bcn_display(); ?>
+        </ul>
       </div>
+    </div>
+    <?php endif; ?>
 
     <div class="sub-contact-page sub-contact-page-layout">
       <div class="sub-contact-page__inner inner">

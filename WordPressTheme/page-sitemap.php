@@ -16,14 +16,16 @@
       </picture>
     </section>
 
+    <!----- パンくず ----->
+    <?php if (function_exists('bcn_display')) : ?>
     <div class="breadcrumb breadcrumb-layout">
       <div class="breadcrumb__inner inner">
         <ul class="breadcrumb__list">
-          <li class="breadcrumb__item"><a href="#">TOP&nbsp;&nbsp;＞</a></li>
-          <li class="breadcrumb__item"><a href="#">&nbsp;サイトマップ</a></li>
+          <?php bcn_display(); ?>
         </ul>
       </div>
     </div>
+    <?php endif; ?>
 
     <div class="sub-site-map sub-site-map-layout">
       <div class="sub-site-map__inner inner">

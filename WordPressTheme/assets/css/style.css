@@ -2907,7 +2907,7 @@ div.tab-contents__panel-right img {
 	transition: opacity 0.3s;
 }
 
-.tab-nav__tab p {
+.tab-nav__tab a {
 	font-family: "Noto Sans JP", sans-serif;
 	font-size: 0.875rem;
 	font-style: normal;

@@ -16,14 +16,16 @@
       </picture>
     </section>
 
-      <div class="breadcrumb breadcrumb-layout">
-        <div class="breadcrumb__inner inner">
-          <ul class="breadcrumb__list">
-            <li class="breadcrumb__item"><a href="#">TOP&nbsp;&nbsp;＞</a></li>
-            <li class="breadcrumb__item"><a href="#">&nbsp;料金一覧</a></li>
-          </ul>
-        </div>
+    <!----- パンくず ----->
+    <?php if (function_exists('bcn_display')) : ?>
+    <div class="breadcrumb breadcrumb-layout">
+      <div class="breadcrumb__inner inner">
+        <ul class="breadcrumb__list">
+          <?php bcn_display(); ?>
+        </ul>
       </div>
+    </div>
+    <?php endif; ?>
 
     <div class="sub-price sub-price-layout">
       <div class="sub-price__inner inner">
