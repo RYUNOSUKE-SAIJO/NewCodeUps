@@ -22,6 +22,7 @@
 .campaign__btn {
     margin-top: myrem(38);
     text-align: center;
+    padding-bottom: myrem(3);
     @include mq('md') {
         margin-top: myrem(80);
     }
