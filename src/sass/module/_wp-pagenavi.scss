@@ -5,12 +5,12 @@
   justify-content: center;
 }
 
-.page-numbers.current {
+.wp-pagenavi span.current {
   position: relative;
   display: inline-block;
   margin: 0 myrem(6);
   border: myrem(1) solid $blue;
-  padding: myrem(8.5) myrem(12);
+  padding: myrem(8.5) myrem(14);
   font-family: $english-2;
   font-size: myrem(16);
   font-style: normal;
@@ -20,7 +20,7 @@
   color: $white;
 }
 
-.page-numbers {
+.wp-pagenavi a {
   position: relative;
   display: inline-block;
   margin: 0 myrem(6);
@@ -35,90 +35,25 @@
   transition: transform 0.1s linear;
 }
 
-.page-numbers.sp-none {
+.wp-pagenavi a.sp-none {
   display: none;
   @include mq('md') {
     display: block;
   }
 }
 
-.page-numbers.prev {
-  position: relative;
-  width: myrem(38);
-  height: myrem(38);
-  border: myrem(1) solid $blue;
-  padding: 0;
-  margin-right: auto;
-  margin-left: 0;
-  @include mq('md') {
-      margin-right: myrem(34);
-  }
+.wp-pagenavi .previouspostslink,
+.wp-pagenavi .nextpostslink {
+  margin: 0 myrem(40);
 }
 
-.page-numbers.prev::before {
-  background-color: $blue;
-  content: "";
-  display: inline-block;
-  height: myrem(1);
-  left: myrem(11);
-  position: absolute;
-  top: myrem(14);
-  transform: rotate(135deg);
-  width: myrem(13);
-}
 
-.page-numbers.prev::after {
-  background-color: $blue;
-  content: "";
-  display: inline-block;
-  height: myrem(1);
-  left: myrem(11);
-  position: absolute;
-  top: myrem(23);
-  transform: rotate(45deg);
-  width: myrem(13);
-}
-
-.page-numbers.next {
-  width: myrem(38);
-  height: myrem(38);
-  border: myrem(1) solid $blue;
-  padding: 0;
-  margin-left: auto;
-  margin-right: 0;
-  @include mq('md') {
-      margin-left: myrem(34);
-  }
-}
-
-.page-numbers.next::before {
-  background-color: $blue;
-  content: "";
-  display: inline-block;
-  height: myrem(1);
-  left: myrem(12);
-  position: absolute;
-  top: myrem(14);
-  transform: rotate(-135deg);
-  width: myrem(13);
-}
-
-.page-numbers.next::after {
-  background-color: $blue;
-  content: "";
-  display: inline-block;
-  height: myrem(1);
-  left: myrem(12);
-  position: absolute;
-  top: myrem(23);
-  transform: rotate(-45deg);
-  width: myrem(13);
-}
 
 // hover //
 
-.page-numbers:hover {
+.wp-pagenavi a:hover {
   opacity: 0.8;
   transition: transform 0.1s linear;
   transform: scale(1.05);
+  border: myrem(1) solid $blue;
 }

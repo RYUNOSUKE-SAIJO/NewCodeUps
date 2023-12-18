@@ -33,15 +33,21 @@
         <!----- main-contents ----->
         <div class="sub-blog__main-contents">
           <ul class="sub-blog__cards blog-cards blog-cards--two-column">
+            <!-- ループ開始 -->
+            <?php if (have_posts()): while (have_posts()): the_post(); ?>
             <li class="blog-cards__card blog-card">
-              <a href="sub-blog-detail.html" class="blog-card__link">
+              <a href="<?php the_permalink(); ?>" class="blog-card__link">
                 <div class="blog-card__img">
-                  <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/blog-1.jpg" alt="珊瑚礁" />
+                  <?php if (has_post_thumbnail()) : ?>
+                    <?php the_post_thumbnail('full'); ?>
+                    <?php else : ?>
+                  <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/noimage.jpg" alt="noimage画像" />
+                  <?php endif; ?>
                 </div>
                 <div class="blog-card__body">
-                  <time class="blog-card__date" datetime="2023-11-17">2023/11/17</time>
+                  <time class="blog-card__date" datetime="<?php the_time('c'); ?>"><?php the_time('Y.m.d'); ?></time>
                   <div class="blog-card__title blog-card__title--resize">
-                    <p>ライセンス取得</p>
+                    <p><?php the_title(); ?></p>
                   </div>
                   <div class="blog-card__text blog-card__text--narrow">
                     <p>
@@ -51,179 +57,12 @@
                 </div>
               </a>
             </li>
-            <li class="blog-cards__card blog-card">
-              <a href="sub-blog-detail.html" class="blog-card__link">
-                <div class="blog-card__img">
-                  <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/blog-2.jpg" alt="ウミガメ" />
-                </div>
-                <div class="blog-card__body">
-                  <time class="blog-card__date" datetime="2023-11-17">2023/11/17</time>
-                  <div class="blog-card__title blog-card__title--resize">
-                    <p>ウミガメと泳ぐ</p>
-                  </div>
-                  <div class="blog-card__text blog-card__text--narrow">
-                    <p>
-                      ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br />ここにテキストが入ります。ここにテキストが入ります。ここにテキスト
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </li>
-            <li class="blog-cards__card blog-card">
-              <a href="sub-blog-detail.html" class="blog-card__link">
-                <div class="blog-card__img">
-                  <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/blog-3.jpg" alt="カクレクマノミ" />
-                </div>
-                <div class="blog-card__body">
-                  <time class="blog-card__date" datetime="2023-11-17">2023/11/17</time>
-                  <div class="blog-card__title blog-card__title--resize">
-                    <p>カクレクマノミ</p>
-                  </div>
-                  <div class="blog-card__text blog-card__text--narrow">
-                    <p>
-                      ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br />ここにテキストが入ります。ここにテキストが入ります。ここにテキスト
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </li>
-            <li class="blog-cards__card blog-card">
-              <a href="sub-blog-detail.html" class="blog-card__link">
-                <div class="blog-card__img">
-                  <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/blog-4.jpg" alt="黄色の熱帯魚" />
-                </div>
-                <div class="blog-card__body">
-                  <time class="blog-card__date" datetime="2023-11-17">2023/11/17</time>
-                  <div class="blog-card__title blog-card__title--resize">
-                    <p>ライセンス取得</p>
-                  </div>
-                  <div class="blog-card__text blog-card__text--narrow">
-                    <p>
-                      ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br />ここにテキストが入ります。ここにテキストが入ります。ここにテキスト
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </li>
-            <li class="blog-cards__card blog-card">
-              <a href="sub-blog-detail.html" class="blog-card__link">
-                <div class="blog-card__img">
-                  <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/blog-5.jpg" alt="白い熱帯魚" />
-                </div>
-                <div class="blog-card__body">
-                  <time class="blog-card__date" datetime="2023-11-17">2023/11/17</time>
-                  <div class="blog-card__title blog-card__title--resize">
-                    <p>ウミガメと泳ぐ</p>
-                  </div>
-                  <div class="blog-card__text blog-card__text--narrow">
-                    <p>
-                      ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br />ここにテキストが入ります。ここにテキストが入ります。ここにテキスト
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </li>
-            <li class="blog-cards__card blog-card">
-              <a href="sub-blog-detail.html" class="blog-card__link">
-                <div class="blog-card__img">
-                  <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/blog-6.jpg" alt="くらげ" />
-                </div>
-                <div class="blog-card__body">
-                  <time class="blog-card__date" datetime="2023-11-17">2023/11/17</time>
-                  <div class="blog-card__title blog-card__title--resize">
-                    <p>カクレクマノミ</p>
-                  </div>
-                  <div class="blog-card__text blog-card__text--narrow">
-                    <p>
-                      ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br />ここにテキストが入ります。ここにテキストが入ります。ここにテキスト
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </li>
-            <li class="blog-cards__card blog-card sp-none">
-              <a href="sub-blog-detail.html" class="blog-card__link">
-                <div class="blog-card__img">
-                  <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/blog-3.jpg" alt="カクレクマノミ" />
-                </div>
-                <div class="blog-card__body">
-                  <time class="blog-card__date" datetime="2023-11-17">2023/11/17</time>
-                  <div class="blog-card__title blog-card__title--resize">
-                    <p>カクレクマノミ</p>
-                  </div>
-                  <div class="blog-card__text blog-card__text--narrow">
-                    <p>
-                      ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br />ここにテキストが入ります。ここにテキストが入ります。ここにテキスト
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </li>
-            <li class="blog-cards__card blog-card sp-none">
-              <a href="sub-blog-detail.html" class="blog-card__link">
-                <div class="blog-card__img">
-                  <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/blog-4.jpg" alt="黄色の熱帯魚" />
-                </div>
-                <div class="blog-card__body">
-                  <time class="blog-card__date" datetime="2023-11-17">2023/11/17</time>
-                  <div class="blog-card__title blog-card__title--resize">
-                    <p>ライセンス取得</p>
-                  </div>
-                  <div class="blog-card__text blog-card__text--narrow">
-                    <p>
-                      ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br />ここにテキストが入ります。ここにテキストが入ります。ここにテキスト
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </li>
-            <li class="blog-cards__card blog-card sp-none">
-              <a href="sub-blog-detail.html" class="blog-card__link">
-                <div class="blog-card__img">
-                  <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/blog-5.jpg" alt="白い熱帯魚" />
-                </div>
-                <div class="blog-card__body">
-                  <time class="blog-card__date" datetime="2023-11-17">2023/11/17</time>
-                  <div class="blog-card__title blog-card__title--resize">
-                    <p>ウミガメと泳ぐ</p>
-                  </div>
-                  <div class="blog-card__text blog-card__text--narrow">
-                    <p>
-                      ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br />ここにテキストが入ります。ここにテキストが入ります。ここにテキスト
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </li>
-            <li class="blog-cards__card blog-card sp-none">
-              <a href="sub-blog-detail.html" class="blog-card__link">
-                <div class="blog-card__img">
-                  <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/blog-6.jpg" alt="くらげ" />
-                </div>
-                <div class="blog-card__body">
-                  <time class="blog-card__date" datetime="2023-11-17">2023/11/17</time>
-                  <div class="blog-card__title blog-card__title--resize">
-                    <p>カクレクマノミ</p>
-                  </div>
-                  <div class="blog-card__text blog-card__text--narrow">
-                    <p>
-                      ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br />ここにテキストが入ります。ここにテキストが入ります。ここにテキスト
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </li>
+            <?php endwhile; endif; ?>
+            <!-- ループ終了 -->
           </ul>
           <!----- pagination ----->
           <div class="sub-blog__pagenavi wp-pagenavi">
-            <a class="page-numbers prev" rel="prev" href="#"></a>
-            <span class="page-numbers current">1</span>
-            <a class="page-numbers" href="#">2</a>
-            <a class="page-numbers" href="#">3</a>
-            <a class="page-numbers" href="#">4</a>
-            <a class="page-numbers sp-none" href="#">5</a>
-            <a class="page-numbers sp-none" href="#">6</a>
-            <a class="page-numbers next" href="#"></a>
+            <?php wp_pagenavi(); ?>
           </div>
         </div>
         <!----- side-contents ----->

@@ -47,10 +47,10 @@
             <?php the_post(); ?>
             <div class="sub-campaign__card campaign-card campaign-card--wide">
               <!----- アイキャッチ画像 ----->
-              <?php if(has_post_thumbnail()): ?>
-              <?php the_post_thumbnail(); ?>
-              <?php else : ?>
-              <img class="campaign-card__img campaign-card__img--wide" src="<?php echo get_template_directory_uri(); ?>/assets/images/common/campaign1.jpg" alt="鮮やかな魚群" />
+              <?php if (has_post_thumbnail()) : ?>
+                <?php the_post_thumbnail('full'); ?>
+                <?php else : ?>
+              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/noimage.jpg" alt="noimage画像" />
               <?php endif; ?>
               <div class="campaign-card__body campaign-card__body--wide">
                 <!----- タグ  (taxonomy) ----->
