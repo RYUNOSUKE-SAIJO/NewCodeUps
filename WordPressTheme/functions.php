@@ -37,18 +37,12 @@ function my_setup() {
 }
 add_action( 'after_setup_theme', 'my_setup' );
 
-
-//ウィジェットの追加
-// function my_widget_init() {
-//   register_sidebar(
-//     array(
-//       'name' => 'サイドバー', // 表示するエリア名
-//       'id'   => 'sidebar', // id
-//       'before_widget' => '<div id="%1$s" class="widget %2$s">',
-//       'after_widget'  => '</div>',
-//       'before_title'  => '<div class="widget-title">',
-//       'after_title'   => '</div>'
-//     )
-//   );
-// }
-// add_action('widgets_init', 'my_widget_init');
+//カスタム投稿表示件数（キャンペーン）
+function change_posts_per_page($query) {
+    if ( is_admin() || ! $query->is_main_query() )
+        return;
+    if ( $query->is_archive('campaign') ) { //カスタム投稿タイプを指定
+        $query->set( 'posts_per_page', '4' ); //表示件数を指定
+    }
+}
+add_action( 'pre_get_posts', 'change_posts_per_page' );

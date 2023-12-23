@@ -487,7 +487,11 @@ a {
 }
 
 .blog-card__text {
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 8;
+	display: -webkit-box;
 	margin-top: 1.25rem;
+	overflow: hidden;
 }
 
 .blog-card__text p {
@@ -682,6 +686,7 @@ body.body--sub-404 {
 	display: flex;
 	flex-direction: column;
 	height: 98%;
+	margin-left: 0.25rem;
 }
 
 .campaign-card__img {
@@ -820,6 +825,14 @@ body.body--sub-404 {
 	line-height: 1;
 }
 
+.campaign-card.campaign-card--wide img {
+	-o-object-fit: cover;
+	aspect-ratio: 280/188;
+	height: 100%;
+	object-fit: cover;
+	width: 100%;
+}
+
 .campaign-card__under-block {
 	display: none;
 }
@@ -834,9 +847,11 @@ body.body--sub-404 {
 
 .campaign-card__date {
 	color: #408F95;
+	display: flex;
 	font-family: "Lato", sans-serif;
 	font-size: 1rem;
 	font-weight: 700;
+	justify-content: center;
 	line-height: 1.125;
 	margin-top: 2rem;
 	text-align: center;
@@ -2087,19 +2102,16 @@ div.information__left-img img {
 	width: 100%;
 }
 
-.side-contents__article-item {
-	margin-top: 1.5rem;
-}
-
-.side-contents__article-link {
+.wpost-item {
 	box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
 	display: flex;
 	gap: 1rem;
+	margin-top: 1.5rem;
 	padding: 1rem;
 	transition: transform 0.1s linear;
 }
 
-.side-contents__article-item:hover {
+.wpost-item:hover {
 	opacity: 0.7;
 	transform: scale(1.05);
 	transition: transform 0.1s linear;
@@ -2109,7 +2121,7 @@ div.information__left-img img {
 	flex-shrink: 0;
 }
 
-.side-contents__article-left img {
+.wpost-item-img {
 	-o-object-fit: cover;
 	aspect-ratio: 121/90;
 	max-width: 7.5625rem;
@@ -2130,7 +2142,7 @@ div.information__left-img img {
 	line-height: 1.5;
 }
 
-.side-contents__article-date {
+.wpost-item-date {
 	color: #0D2936;
 	font-family: "Gotu", sans-serif;
 	font-size: 0.75rem;
@@ -2139,7 +2151,7 @@ div.information__left-img img {
 	line-height: 1.5;
 }
 
-.side-contents__article-title {
+.wpost-item-title {
 	color: #0D2936;
 	font-family: "Noto Sans JP", sans-serif;
 	font-size: 1rem;
@@ -2903,18 +2915,16 @@ div.tab-contents__panel-right img {
 	border: 0.0625rem solid #408F95;
 	color: #408F95;
 	cursor: pointer;
-	padding: 0.3125rem 0;
-	text-align: center;
-	transition: opacity 0.3s;
-}
-
-.tab-nav__tab a {
+	display: block;
 	font-family: "Noto Sans JP", sans-serif;
 	font-size: 0.875rem;
 	font-style: normal;
 	font-weight: 400;
 	line-height: 1.5714285714;
+	padding: 0.3125rem 0;
+	text-align: center;
 	text-transform: uppercase;
+	transition: opacity 0.3s;
 }
 
 .tab-nav__tab.is-active {
@@ -2923,9 +2933,9 @@ div.tab-contents__panel-right img {
 }
 
 .tab-nav__tab:hover {
-	opacity: 0.8;
-	transform: scale(1.05);
-	transition: transform 0.1s linear;
+	background-color: #408F95;
+	color: #fff;
+	transition: 0.1s ease-out;
 }
 
 .to-top {
@@ -3009,8 +3019,10 @@ div.tab-contents__panel-right img {
 }
 
 .voice-card__img {
+	-o-object-fit: cover;
 	aspect-ratio: 151/117;
 	height: 100%;
+	object-fit: cover;
 	width: 100%;
 }
 
@@ -3471,6 +3483,10 @@ html {
 	width: 100%;
 }
 
+.campaign-card.campaign-card--wide img {
+	aspect-ratio: 520/347;
+}
+
 .campaign-card__under-block {
 	display: block;
 	margin-top: 1.5rem;
@@ -3478,10 +3494,6 @@ html {
 
 .campaign-card__price--wide {
 	gap: 2.5rem;
-}
-
-.campaign-card__img--wide {
-	aspect-ratio: 520/347;
 }
 
 .campaign-card__body--wide {
@@ -3493,7 +3505,7 @@ html {
 	padding: 0rem 1.5rem 2.5rem 1.5rem;
 }
 
-.campaign-card__title--wide p {
+.campaign-card__title--wide {
 	font-size: 1.5rem;
 }
 
@@ -4191,8 +4203,8 @@ textarea {
 }
 
 .tab-nav__tab-area {
-	gap: 0 2rem;
-	grid-template-columns: repeat(4, 10.125rem);
+	gap: 1rem 2rem;
+	grid-template-columns: repeat(5, 10.125rem);
 	justify-content: normal;
 }
 
@@ -4204,6 +4216,7 @@ textarea {
 }
 
 .voice-card {
+	max-width: 32.5rem;
 	padding: 1.5rem;
 }
 

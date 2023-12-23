@@ -33,12 +33,17 @@
         <!----- tab ----->
         <div class="sub-voice__tab-nav tab-nav">
           <div class="tab-nav__tab-area">
-            <!----- カスタム投稿のスラッグ"campaign"のリンクを取得 ----->
-            <a class="tab-nav__tab is-active" href="<?php echo get_post_type_archive_link('voice') ?>">all</a>
-            <?php $genre_terms = get_terms( 'voice_category', array( 'hide_empty' => false ) ); ?>
-            <?php foreach ( $genre_terms as $genre_term ) : ?>
-              <!----- 各タブのリンクを投稿に合わせて取得 ----->
-              <a class="tab-nav__tab" href="<?php echo esc_url( get_term_link( $genre_term, 'voice_category' ) ); ?>"><?php echo esc_html( $genre_term->name ); ?></a>
+            <!----- get_queried_object();でゲットした内容から、$voice_category_itemに名前部分だけを取得させてる ----->
+            <?php
+              $voice_category_items = get_queried_object();
+              $voice_category_item = $voice_category_items->name;
+            ?>
+            <!----- カスタム投稿のスラッグ"voice"のリンクを取得 ----->
+            <a class="tab-nav__tab" href="<?php echo get_post_type_archive_link('voice') ?>">all</a>
+            <?php $genre_terms = get_terms('voice_category', array('hide_empty' => false)); ?>
+            <?php foreach ($genre_terms as $genre_term) : ?>
+              <!----- 先程取得した、$voice_category_item と $genre_term->name が一致した場合、tab-nav__tab に is-active を付与している ----->
+              <a class="tab-nav__tab <?php if ($voice_category_item === $genre_term->name) { echo "is-active"; } ?>" href="<?php echo esc_url(get_term_link($genre_term, 'voice_category')); ?>"><?php echo esc_html($genre_term->name); ?></a>
             <?php endforeach; ?>
           </div>
         </div>

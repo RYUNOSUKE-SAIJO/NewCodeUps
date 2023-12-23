@@ -6,13 +6,24 @@
   gap: myrem(16) myrem(22);
   justify-content: center;
   @include mq('md') {
-    grid-template-columns: repeat(4,myrem(162));
-    gap: 0 myrem(32);
+    grid-template-columns: repeat(5,myrem(162));
+    gap: myrem(16) myrem(32);
     justify-content: normal;
   }
 }
 
+// .tab-nav__tab {
+//   padding: myrem(5) 0;
+//   border: myrem(1) solid $blue;
+//   text-align: center;
+//   color: $blue;
+//   background-color: $white;
+//   transition: opacity 0.3s;
+//   cursor: pointer;
+// }
+
 .tab-nav__tab {
+  display: block;
   padding: myrem(5) 0;
   border: myrem(1) solid $blue;
   text-align: center;
@@ -20,9 +31,6 @@
   background-color: $white;
   transition: opacity 0.3s;
   cursor: pointer;
-}
-
-.tab-nav__tab a {
   font-family: $japanese;
   font-size: myrem(14);
   font-style: normal;
@@ -39,7 +47,7 @@
 // hover //
 
 .tab-nav__tab:hover {
-  opacity: 0.8;
-  transition: transform 0.1s linear;
-  transform: scale(1.05);
+  background-color: $blue;
+  color: $white;
+  transition: 0.1s ease-out;
 }

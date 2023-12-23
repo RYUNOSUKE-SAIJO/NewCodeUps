@@ -76,6 +76,10 @@
 
 .blog-card__text {
     margin-top: myrem(20);
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 8; 
 }
 
 .blog-card__text p {

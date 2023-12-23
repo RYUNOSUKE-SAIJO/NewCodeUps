@@ -33,15 +33,21 @@
         <!----- タブ ----->
         <div class="sub-campaign__tab-nav tab-nav">
           <div class="tab-nav__tab-area">
+            <!----- get_queried_object();でゲットした内容から、$campaign_category_itemに名前部分だけを取得させてる ----->
+            <?php
+              $campaign_category_items = get_queried_object();
+              $campaign_category_item = $campaign_category_items->name;
+            ?>
             <!----- カスタム投稿のスラッグ"campaign"のリンクを取得 ----->
-            <a class="tab-nav__tab is-active" href="<?php echo get_post_type_archive_link('campaign') ?>">all</a>
-            <?php $genre_terms = get_terms( 'campaign_category', array( 'hide_empty' => false ) ); ?>
-            <?php foreach ( $genre_terms as $genre_term ) : ?>
-              <!----- 各タブのリンクを投稿に合わせて取得 ----->
-              <a class="tab-nav__tab" href="<?php echo esc_url( get_term_link( $genre_term, 'campaign_category' ) ); ?>"><?php echo esc_html( $genre_term->name ); ?></a>
+            <a class="tab-nav__tab" href="<?php echo get_post_type_archive_link('campaign') ?>">all</a>
+            <?php $genre_terms = get_terms('campaign_category', array('hide_empty' => false)); ?>
+            <?php foreach ($genre_terms as $genre_term) : ?>
+              <!----- 先程取得した、$campaign_category_item と $genre_term->name が一致した場合、tab-nav__tab に is-active を付与している ----->
+              <a class="tab-nav__tab <?php if ($campaign_category_item === $genre_term->name) { echo "is-active"; } ?>" href="<?php echo esc_url(get_term_link($genre_term, 'campaign_category')); ?>"><?php echo esc_html($genre_term->name); ?></a>
             <?php endforeach; ?>
           </div>
         </div>
+
         <div class="sub-campaign__cards campaign-cards">
         <!-- ループ開始 -->
         <?php if (have_posts()) : ?>

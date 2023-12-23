@@ -1,6 +1,7 @@
 
 <aside class="sub-blog__side-contents side-contents">
   <div class="side-contents__inner">
+    <!----- 人気記事 ----->
     <div class="side-contents__article">
       <div class="side-contents__header side-contents-header">
         <h3 class="side-contents-header__title">人気記事</h3>
@@ -8,60 +9,68 @@
       <?php
       if ( function_exists('wpp_get_mostpopular') ) {
           wpp_get_mostpopular(array(
-            'limit' => 5,
+            'limit' => 3,
             'range' => 'last24hours',
             'thumbnail_width' => 121,
             'thumbnail_height' => 90,
-            'stats_views' => 0,
-            'wpp_start' => '<div class="wpost-items m_ranking">',
-            'wpp_end' => '</div>',
-            'post_html' => '<div class="wpost-item">
-              <div class="wpost-item-img">{thumb}</div>
-              <div class="wpost-item-body"><div class="wpost-item-title">{title}</div></div>
+            'stats_views' => 1,
+            'stats_date' => 1,
+            'wpp_date' => 'Y-m-d',
+            'wpp_start' => '<ul class="wpost-items m_ranking">',
+            'wpp_end' => '</ul>',
+            'post_html' =>
+              '<div class="wpost-item">
+                <div class="wpost-item-img">{thumb}</div>
+                <div class="wpost-item-body">
+                  <div class="wpost-item-date">{date}</div>
+                  <div class="wpost-item-title">{title}</div>
+                </div>
               </div>'
           ));
       }
       ?>
-      <!-- <ul class="side-contents__article-items">
-        <li class="side-contents__article-item">
-          <a class="side-contents__article-link" href="#">
-            <div class="side-contents__article-left">
-              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/blog-4.jpg" alt="黄色の熱帯魚">
-            </div>
-            <div class="side-contents__article-right">
-              <time datetime="2023-11-17">2023/11/17</time>
-              <p class="side-contents__article-title">ライセンス取得</p>
-            </div>
-          </a>
-        </li>
-        <li class="side-contents__article-item">
-          <a class="side-contents__article-link" href="#">
-            <div class="side-contents__article-left">
-              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/blog-2.jpg" alt="ウミガメと泳ぐ">
-            </div>
-            <div class="side-contents__article-right">
-              <time datetime="2023-11-17">2023/11/17</time>
-              <p class="side-contents__article-title">ウミガメと泳ぐ</p>
-            </div>
-          </a>
-        </li>
-        <li class="side-contents__article-item">
-          <a class="side-contents__article-link" href="#">
-            <div class="side-contents__article-left">
-              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/blog-3.jpg" alt="カクレクマノミ">
-            </div>
-            <div class="side-contents__article-right">
-              <time datetime="2023-11-17">2023/11/17</time>
-              <p class="side-contents__article-title">カクレクマノミ</p>
-            </div>
-          </a>
-        </li>
-      </ul> -->
     </div>
+    <!----- 口コミ記事（新着） ----->
     <div class="side-contents__voice">
       <div class="side-contents__header side-contents-header">
         <h3 class="side-contents-header__title">口コミ</h3>
       </div>
+
+      <div class="wpost-items">
+      <?php $recent_query = new WP_Query(
+        array(
+          'post_type' => 'post',
+          'posts_per_page' => 1,
+          'orderby' => 'date',
+          'order' => 'DESC',
+        )
+      );
+      ?>
+      <?php if ($recent_query->have_posts()) : ?>
+        <?php while($recent_query->have_posts()) : ?>
+          <?php $recent_query->the_post(); ?>
+          <!-- wpost-item -->
+          <a class="wpost-item" href="<?php the_permalink(); ?>">
+            <div class="wpost-item-img">
+              <?php if(has_post_thumbnail()) : ?>
+              <?php the_post_thumbnail(); ?>
+              <?php else : ?>
+              <img src="<?php echo get_template_directory_uri(); ?>/img/noimg.png" alt="">
+              <?php endif; ?>
+            </div>
+            <div class="wpost-item-body">
+              <div class="wpost-item-title"><?php the_title(); ?></div>
+            </div><!-- /wpost-item-body -->
+          </a><!-- /wpost-item -->
+
+        <?php endwhile; ?>
+      <?php endif; ?>
+      <?php wp_reset_postdata(); ?>
+
+      </div><!-- /wpost-items -->
+
+
+
       <div class="side-contents__voice-container">
         <div class="side-contents__voice-img">
           <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/side-contents__voice.jpg" alt="カップル">
@@ -73,6 +82,7 @@
         </div>
       </div>
     </div>
+    <!----- キャンペーン記事（新着） ----->
     <div class="side-contents__campaign">
       <div class="side-contents__header side-contents-header">
         <h3 class="side-contents-header__title">キャンペーン</h3>
@@ -127,6 +137,7 @@
         <a href="sub-campaign.html" class="btn"><span>View more</span></a>
       </div>
     </div>
+    <!----- 年別・月別アーカイブ ----->
     <div class="side-contents__archive">
       <div class="side-contents__header side-contents-header side-contents-header--archive">
         <h3 class="side-contents-header__title">アーカイブ</h3>

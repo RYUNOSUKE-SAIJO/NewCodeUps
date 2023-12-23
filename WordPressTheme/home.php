@@ -33,7 +33,7 @@
         <!----- main-contents ----->
         <div class="sub-blog__main-contents">
           <ul class="sub-blog__cards blog-cards blog-cards--two-column">
-            <!-- ループ開始 -->
+            <!-- メインループ -->
             <?php if (have_posts()): while (have_posts()): the_post(); ?>
             <li class="blog-cards__card blog-card">
               <a href="<?php the_permalink(); ?>" class="blog-card__link">
@@ -58,7 +58,7 @@
               </a>
             </li>
             <?php endwhile; endif; ?>
-            <!-- ループ終了 -->
+            <!--/メインループ -->
           </ul>
           <!----- pagination ----->
           <div class="sub-blog__pagenavi wp-pagenavi">

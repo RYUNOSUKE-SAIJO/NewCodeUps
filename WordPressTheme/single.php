@@ -31,18 +31,20 @@
     <div class="sub-blog-detail  sub-blog-detail-layout">
       <div class="sub-blog-detail__inner inner">
         <div class="sub-blog-detail__main-contents">
-          <?php if (have_posts()): while (have_posts()): the_post(); ?>
-            <time class="sub-blog-detail__date" datetime="<?php the_time('c'); ?>"><?php the_time('Y.m.d'); ?></time>
-            <h2 class="sub-blog-detail__header"><?php the_title(); ?></h2>
-            <?php the_content(); ?>
-          <?php endwhile; endif; ?>
-          <div class="sub-blog-detail__pagenavi wp-pagenavi">
-            <?php if (get_previous_post()):?>
-              <?php previous_post_link('%link', '<'); ?>
+          <div class="sub-blog-detail__content-area">
+            <?php if (have_posts()): while (have_posts()): the_post(); ?>
+              <time class="sub-blog-detail__date" datetime="<?php the_time('c'); ?>"><?php the_time('Y.m.d'); ?></time>
+              <h2 class="sub-blog-detail__header"><?php the_title(); ?></h2>
+              <?php the_content(); ?>
+            <?php endwhile; endif; ?>
+            <div class="sub-blog-detail__pagenavi wp-pagenavi">
+              <?php if (get_previous_post()):?>
+                <?php previous_post_link('%link', '<'); ?>
+                <?php endif; ?>
+                <?php if (get_next_post()):?>
+                <?php next_post_link('%link', '>'); ?>
               <?php endif; ?>
-              <?php if (get_next_post()):?>
-              <?php next_post_link('%link', '>'); ?>
-            <?php endif; ?>
+            </div>
           </div>
         </div>
 
