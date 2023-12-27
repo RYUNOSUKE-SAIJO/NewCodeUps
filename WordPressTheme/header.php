@@ -9,19 +9,22 @@
   <?php wp_head(); ?>
 </head>
 
+  <!----- 変数にハイフンは使えない・ページのスラッグに使用している名前を（''）内に入れること ----->
 <?php
 $top = esc_url( home_url( '/' ) );
 $campaign = esc_url( home_url( '/campaign/' ) );
-$about = esc_url( home_url( '/about-us/' ) );
+$about = esc_url( home_url( '/about/' ) );
 $information = esc_url( home_url( '/information/' ) );
 $blog = esc_url( home_url( '/blog/' ) );
 $voice = esc_url( home_url( '/voice/' ) );
 $price = esc_url( home_url( '/price/' ) );
 $faq = esc_url( home_url( '/faq/' ) );
 $contact = esc_url( home_url( '/contact/' ) );
-$privacy = esc_url( home_url( '/privacy-policy/' ) );
-$terms = esc_url( home_url( '/terms-of-service/' ) );
+$privacy_policy = esc_url( home_url( '/privacy-policy/' ) );
+$terms_of_service = esc_url( home_url( '/terms-of-service/' ) );
 $sitemap = esc_url( home_url( '/sitemap/' ) );
+$contact_thanks = esc_url( home_url( '/$contact-thanks/' ) );
+$contact_error = esc_url( home_url( '/$contact-error/' ) );
 ?>
 
 <body>
@@ -176,10 +179,10 @@ $sitemap = esc_url( home_url( '/sitemap/' ) );
               <a href="<?php echo $faq; ?>">よくある質問</a>
             </li>
             <li class="drawer__item drawer__item--bold">
-              <a href="<?php echo $privacy; ?>">プライバシー<br />ポリシー</a>
+              <a href="<?php echo $privacy_policy; ?>">プライバシー<br />ポリシー</a>
             </li>
             <li class="drawer__item drawer__item--bold">
-              <a href="<?php echo $terms; ?>">利用規約</a>
+              <a href="<?php echo $terms_of_service; ?>">利用規約</a>
             </li>
             <li class="drawer__item drawer__item--bold">
               <a href="<?php echo $contact; ?>">お問い合わせ</a>

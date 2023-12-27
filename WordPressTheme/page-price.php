@@ -37,20 +37,23 @@
                   src="<?php echo get_theme_file_uri(); ?>/assets/images/common/sub-price-table-header-img-pc.svg" alt="白鯨">
                 <p class="sub-price-table__header-title">ライセンス講習</p>
               </div>
-              <table class="sub-price-table__table">
-                <tr>
-                  <td class="sub-price-table__course">オープンウォーター<br class="md-none">ダイバーコース</td>
-                  <td class="sub-price-table__price">¥50,000</td>
-                </tr>
-                <tr>
-                  <td class="sub-price-table__course">アドバンスド<br class="md-none">オープンウォーターコース</td>
-                  <td class="sub-price-table__price">¥60,000</td>
-                </tr>
-                <tr>
-                  <td class="sub-price-table__course">レスキュー＋EFRコース</td>
-                  <td class="sub-price-table__price">¥70,000</td>
-                </tr>
-              </table>
+
+              <!----- ここからSCFで繰り返し表示 ----->
+              <div class="sub-price-table__table">
+                <?php
+                $priceTable = SCF::get( $priceList, 'price_list_1' );
+                if ($priceTable) {
+                  foreach ($priceTable as $priceItem) {
+                    $course = esc_html($priceItem['course_1']);
+                    $price = esc_html($priceItem['price_1']);
+                ?>
+                    <td class="sub-price-table__course"><?php echo $course; ?></td>
+                    <td class="sub-price-table__price"><?php echo $price; ?></td>
+                <?php
+                  }
+                }
+                ?>
+              </div>
             </div>
             <div class="sub-price-table__container">
               <div class="sub-price-table__header">
