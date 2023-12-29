@@ -462,18 +462,21 @@
                 <p>ライセンス講習</p>
               </div>
               <div class="price__content">
+                <?php
+                $priceTable = SCF::get_option_meta( 'price-list_option', 'price_list_1' );
+                if ($priceTable) {
+                  foreach ($priceTable as $priceItem) {
+                    $course = esc_html($priceItem['course_1']);
+                    $price = esc_html($priceItem['price_1']);
+                ?>
                 <div class="price__content-block">
-                  <p>オープンウォーターダイバーコース</p>
-                  <p class="price__content-price">¥50,000</p>
+                  <p class="price__content-block"><?php echo $course; ?></p>
+                  <p class="price__content-price"><?php echo $price; ?></p>
                 </div>
-                <div class="price__content-block">
-                  <p>アドバンスドオープンウォーターコース</p>
-                  <p class="price__content-price">¥60,000</p>
-                </div>
-                <div class="price__content-block">
-                  <p>レスキュー＋EFRコース</p>
-                  <p class="price__content-price">¥70,000</p>
-                </div>
+                <?php
+                  }
+                }
+                ?>
               </div>
             </div>
             <div class="price__block">

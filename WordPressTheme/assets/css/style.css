@@ -2172,6 +2172,7 @@ div.information__left-img img {
 .side-contents__voice-img img {
 	-o-object-fit: cover;
 	aspect-ratio: 294/218;
+	height: 100%;
 	object-fit: cover;
 	width: 100%;
 }
@@ -2227,11 +2228,19 @@ div.information__left-img img {
 	margin-top: 5.4375rem;
 }
 
-.side-contents__archive-years {
+.side-contents__archive-container {
 	margin-top: 1.5rem;
 }
 
-.side-contents__archive-year,
+summary {
+	color: #408F95;
+	font-family: "Noto Sans JP", sans-serif;
+	font-size: 1.5rem;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+
 .side-contents__archive-month {
 	color: #408F95;
 	display: block;
@@ -2240,6 +2249,7 @@ div.information__left-img img {
 	font-style: normal;
 	font-weight: 400;
 	line-height: normal;
+	margin-top: 0.1875rem;
 }
 
 .side-contents__archive-year summary:hover {
@@ -2249,14 +2259,6 @@ div.information__left-img img {
 
 .side-contents__archive-months {
 	text-indent: 1.4em;
-}
-
-.side-contents__archive-month {
-	margin-top: 3px;
-}
-
-details[open] .side-contents__archive-months {
-	animation: fadeIn 0.5s ease;
 }
 
 .side-contents__inner.side-contents__inner--narrow {
@@ -4326,20 +4328,6 @@ html {
 
 html {
 	font-size: 4.2666666667vw;
-}
-
-}
-
-@keyframes fadeIn {
-
-0% {
-	opacity: 0; /* 透明 */
-	transform: translateY(-10px); /* 上から表示 */
-}
-
-100% {
-	opacity: 1;
-	transform: none;
 }
 
 }

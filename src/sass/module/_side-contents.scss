@@ -82,6 +82,7 @@
 .side-contents__voice-img img {
   aspect-ratio: 294 / 218;
   width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -148,12 +149,21 @@
   }
 }
 
-.side-contents__archive-years {
+.side-contents__archive-container {
   margin-top: myrem(24);
 }
 
-.side-contents__archive-year,
+summary {
+  color: $blue;
+  font-family: $japanese;
+  font-size: myrem(24);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
 .side-contents__archive-month {
+  margin-top: myrem(3);
   display: block;
   color: $blue;
   font-family: $japanese;
@@ -173,25 +183,7 @@
   text-indent: 1.4em;
 }
 
-.side-contents__archive-month {
-  margin-top: 3px;
-}
 
-// archive-animation
-
-details[open] .side-contents__archive-months {
-  animation: fadeIn 0.5s ease;
-}
-@keyframes fadeIn {
-  0% {
-    opacity: 0; /* 透明 */
-    transform: translateY(-10px); /* 上から表示 */
-  }
-  100% {
-    opacity: 1;
-    transform: none;
-  }
-}
 
 // sub-blog-detail //
 

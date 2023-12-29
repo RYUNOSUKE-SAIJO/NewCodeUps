@@ -83,9 +83,13 @@
                   <!----- SALE期間 ----->
                   <time class="campaign-card__date">
                     <?php the_field('sale_year'); ?>
+                    <p>/&nbsp;</p>
                     <?php the_field('sale_month'); ?>
+                    <p>/</p>
                     <?php the_field('sale_day'); ?>
+                    <p>&nbsp;〜&nbsp;</p>
                     <?php the_field('sale_end_month'); ?>
+                    <p>/</p>
                     <?php the_field('sale_end_day'); ?>
                   </time>
                   <p class="campaign-card__contact-text">

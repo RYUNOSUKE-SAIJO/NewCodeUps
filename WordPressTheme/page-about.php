@@ -64,23 +64,21 @@
           </div>
           <div class="gallery__wrap">
             <ul class="gallery__container">
+              <?php
+                $galleryList = SCF::get_option_meta( 'gallery_option', 'gallery-list' );
+                foreach ($galleryList as $fields) {
+                  $imgUrl = wp_get_attachment_image_src($fields['gallery_item'], 'full');
+              ?>
               <li class="gallery__item">
-                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery1.jpg" alt="赤い熱帯魚群">
+                <?php if ($fields['gallery_item'] === "") { ?>
+                  <img src="<?php echo get_template_directory_uri(); ?>/img/noImage.jpg">
+                <?php } else { ?>
+                  <img src="<?php echo $imgUrl[0]; ?>" alt="ギャラリーの写真">
+                <?php
+                }
+                ?>
               </li>
-              <li class="gallery__item">
-                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery2.jpg" alt="透き通った海に浮かぶ船">
-              </li>
-              <li class="gallery__item">
-                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery3.jpg" alt="鮮やかな縞模様の熱帯魚">
-              </li>
-              <li class="gallery__item">
-                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery4.jpg" alt="黄色の熱帯魚">
-              </li>
-              <li class="gallery__item">
-                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery5.jpg" alt="白い熱帯魚群">
-              </li>
-              <li class="gallery__item">
-                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery6.jpg" alt="珊瑚礁の周囲を泳ぐ黄色の熱帯魚">
+              <?php } ?>
               </li>
             </ul>
           </div>

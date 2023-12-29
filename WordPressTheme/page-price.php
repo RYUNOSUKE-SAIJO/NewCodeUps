@@ -37,23 +37,24 @@
                   src="<?php echo get_theme_file_uri(); ?>/assets/images/common/sub-price-table-header-img-pc.svg" alt="白鯨">
                 <p class="sub-price-table__header-title">ライセンス講習</p>
               </div>
-
-              <!----- ここからSCFで繰り返し表示 ----->
-              <div class="sub-price-table__table">
+              <table class="sub-price-table__table">
+                <!----- SCF(繰り返し1) ----->
                 <?php
-                $priceTable = SCF::get( $priceList, 'price_list_1' );
+                $priceTable = SCF::get_option_meta( 'price-list_option', 'price-list_1' );
                 if ($priceTable) {
                   foreach ($priceTable as $priceItem) {
                     $course = esc_html($priceItem['course_1']);
                     $price = esc_html($priceItem['price_1']);
                 ?>
+                  <tr>
                     <td class="sub-price-table__course"><?php echo $course; ?></td>
                     <td class="sub-price-table__price"><?php echo $price; ?></td>
+                  </tr>
                 <?php
                   }
                 }
                 ?>
-              </div>
+              </table>
             </div>
             <div class="sub-price-table__container">
               <div class="sub-price-table__header">
@@ -62,22 +63,22 @@
                 <p class="sub-price-table__header-title">体験ダイビング</p>
               </div>
               <table class="sub-price-table__table">
-                <tr>
-                  <td class="sub-price-table__course">ビーチ体験ダイビング<br class="md-none">(半日)</td>
-                  <td class="sub-price-table__price">¥7,000</td>
-                </tr>
-                <tr>
-                  <td class="sub-price-table__course">ビーチ体験ダイビング<br class="md-none">(1日)</td>
-                  <td class="sub-price-table__price">¥14,000</td>
-                </tr>
-                <tr>
-                  <td class="sub-price-table__course">ボート体験ダイビング<br class="md-none">(半日)</td>
-                  <td class="sub-price-table__price">¥10,000</td>
-                </tr>
-                <tr>
-                  <td class="sub-price-table__course">ボート体験ダイビング<br class="md-none">(1日)</td>
-                  <td class="sub-price-table__price">¥18,000</td>
-                </tr>
+                <!----- SCF(繰り返し2) ----->
+                <?php
+                $priceTable = SCF::get_option_meta( 'price-list_option', 'price-list_2' );
+                if ($priceTable) {
+                  foreach ($priceTable as $priceItem) {
+                    $course = esc_html($priceItem['course_2']);
+                    $price = esc_html($priceItem['price_2']);
+                ?>
+                  <tr>
+                    <td class="sub-price-table__course"><?php echo $course; ?></td>
+                    <td class="sub-price-table__price"><?php echo $price; ?></td>
+                  </tr>
+                <?php
+                  }
+                }
+                ?>
               </table>
             </div>
             <div class="sub-price-table__container">
@@ -87,22 +88,22 @@
                 <p class="sub-price-table__header-title">ファンダイビング</p>
               </div>
               <table class="sub-price-table__table">
-                <tr>
-                  <td class="sub-price-table__course">ビーチダイビング<br class="md-none">(2ダイブ)</td>
-                  <td class="sub-price-table__price">¥14,000</td>
-                </tr>
-                <tr>
-                  <td class="sub-price-table__course">ボートダイビング<br class="md-none">(2ダイブ)</td>
-                  <td class="sub-price-table__price">¥18,000</td>
-                </tr>
-                <tr>
-                  <td class="sub-price-table__course">スペシャルダイビング<br class="md-none">(2ダイブ)</td>
-                  <td class="sub-price-table__price">¥24,000</td>
-                </tr>
-                <tr>
-                  <td class="sub-price-table__course">ナイトダイビング<br class="md-none">(1ダイブ)</td>
-                  <td class="sub-price-table__price">¥10,000</td>
-                </tr>
+                <!----- SCF(繰り返し3) ----->
+                <?php
+                $priceTable = SCF::get_option_meta( 'price-list_option', 'price-list_3' );
+                if ($priceTable) {
+                  foreach ($priceTable as $priceItem) {
+                    $course = esc_html($priceItem['course_3']);
+                    $price = esc_html($priceItem['price_3']);
+                ?>
+                  <tr>
+                    <td class="sub-price-table__course"><?php echo $course; ?></td>
+                    <td class="sub-price-table__price"><?php echo $price; ?></td>
+                  </tr>
+                <?php
+                  }
+                }
+                ?>
               </table>
             </div>
             <div class="sub-price-table__container">
@@ -112,18 +113,22 @@
                 <p class="sub-price-table__header-title">スペシャルダイビング</p>
               </div>
               <table class="sub-price-table__table">
-                <tr>
-                  <td class="sub-price-table__course">貸切ダイビング<br class="md-none">(2ダイブ)</td>
-                  <td class="sub-price-table__price">¥50,000</td>
-                </tr>
-                <tr>
-                  <td class="sub-price-table__course">1日ダイビング<br class="md-none">(3ダイブ)</td>
-                  <td class="sub-price-table__price">¥60,000</td>
-                </tr>
-                <tr>
-                  <td class="sub-price-table__course">ナイトダイビング<br class="md-none">(2ダイブ)</td>
-                  <td class="sub-price-table__price">¥70,000</td>
-                </tr>
+                <!----- SCF(繰り返し4) ----->
+                <?php
+                $priceTable = SCF::get_option_meta( 'price-list_option', 'price-list_4' );
+                if ($priceTable) {
+                  foreach ($priceTable as $priceItem) {
+                    $course = esc_html($priceItem['course_4']);
+                    $price = esc_html($priceItem['price_4']);
+                ?>
+                  <tr>
+                    <td class="sub-price-table__course"><?php echo $course; ?></td>
+                    <td class="sub-price-table__price"><?php echo $price; ?></td>
+                  </tr>
+                <?php
+                  }
+                }
+                ?>
               </table>
             </div>
           </div>

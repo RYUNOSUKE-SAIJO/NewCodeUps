@@ -158,4 +158,24 @@ jQuery(function ($) {
     }, 500, "swing");
     return false;
   });
+
+  //サイドバー（アーカイブ）
+  $(document).ready(function () {
+    // 最初のdetails要素にopen属性を追加する
+    $("details:first").attr("open", "");
+
+    // 「details」の状態が変化した際にアニメーションを追加
+    $("details").on("toggle", function () {
+      var $archiveMonths = $(this).find(".side-contents__archive-months");
+      console.log($archiveMonths); // 追加
+
+      if ($(this).attr("open")) {
+        // 「open」属性がついた場合のアニメーション
+        $archiveMonths.stop().slideDown();
+      } else {
+        // 「open」属性が取られた場合のアニメーション
+        $archiveMonths.stop().slideUp();
+      }
+    });
+  });
 });
