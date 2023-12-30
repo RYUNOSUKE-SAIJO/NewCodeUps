@@ -47,174 +47,53 @@
         <div class="campaign__cards">
           <div class="swiper mySwiper campaign__swiper js-campaign-swiper">
             <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <div class="campaign__card campaign-card">
-                  <img class="campaign-card__img" src="<?php echo get_theme_file_uri(); ?>/assets/images/common/campaign1.jpg" alt="鮮やかな魚群" />
-                  <div class="campaign-card__body">
-                    <div class="campaign-card__tag">
-                      <p>ライセンス講習</p>
-                    </div>
-                    <div class="campaign-card__title">
-                      <p>ライセンス取得</p>
-                    </div>
-                  </div>
-                  <div class="campaign-card__info">
-                    <div class="campaign-card__content">
-                      <div class="campaign-card__description">
-                        <p>全部コミコミ(お一人様)</p>
+                <?php
+                $args = [
+                  'post_type' => 'campaign',
+                  'posts_per_page' => 8
+                ];
+                $campaign_query = new WP_Query($args); ?>
+                <!-- ループ開始 -->
+                <?php if ($campaign_query -> have_posts()) : ?>
+                  <?php while ($campaign_query -> have_posts()) : ?>
+                  <?php $campaign_query -> the_post(); ?>
+                  <div class="swiper-slide">
+                    <div class="campaign__card campaign-card">
+                      <!----- アイキャッチ画像 ----->
+                      <div class="campaign-card__img">
+                        <?php if (has_post_thumbnail()) : ?>
+                          <?php the_post_thumbnail('full'); ?>
+                          <?php else : ?>
+                        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/noimage.jpg" alt="noimage画像" />
+                        <?php endif; ?>
                       </div>
-                      <div class="campaign-card__price">
-                        <div class="campaign-card__price-left">¥56,000</div>
-                        <div class="campaign-card__price-right">¥46,000</div>
+                      <div class="campaign-card__body">
+                        <!----- タグ  (taxonomy) ----->
+                        <div class="campaign-card__tag">
+                          <p><?php echo esc_html( get_the_terms( get_the_ID(), 'campaign_category' )[0]->name ); ?></p>
+                        </div>
+                        <!----- タイトル ----->
+                        <div class="campaign-card__title">
+                          <p><?php the_title(); ?></p>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="campaign__card campaign-card">
-                  <img class="campaign-card__img" src="<?php echo get_theme_file_uri(); ?>/assets/images/common/campaign2.jpg" alt="透き通る海に浮かぶ船" />
-                  <div class="campaign-card__body">
-                    <div class="campaign-card__tag">
-                      <p>体験ダイビング</p>
-                    </div>
-                    <div class="campaign-card__title">
-                      <p>貸切体験ダイビング</p>
-                    </div>
-                  </div>
-                  <div class="campaign-card__info">
-                    <div class="campaign-card__content">
-                      <div class="campaign-card__description">
-                        <p>全部コミコミ(お一人様)</p>
-                      </div>
-                      <div class="campaign-card__price">
-                        <div class="campaign-card__price-left">¥24,000</div>
-                        <div class="campaign-card__price-right">¥18,000</div>
+                      <div class="campaign-card__info">
+                        <div class="campaign-card__content">
+                          <div class="campaign-card__description">
+                            <p>全部コミコミ(お一人様)</p>
+                          </div>
+                          <!----- 価格 ----->
+                          <div class="campaign-card__price">
+                            <div class="campaign-card__price-left"><?php the_field('before_sale'); ?></div>
+                            <div class="campaign-card__price-right"><?php the_field('after_sale'); ?></div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="campaign__card campaign-card">
-                  <img class="campaign-card__img" src="<?php echo get_theme_file_uri(); ?>/assets/images/common/campaign3.jpg" alt="暗い海を漂うクラゲ" />
-                  <div class="campaign-card__body">
-                    <div class="campaign-card__tag">
-                      <p>体験ダイビング</p>
-                    </div>
-                    <div class="campaign-card__title">
-                      <p>ナイトダイビング</p>
-                    </div>
-                  </div>
-                  <div class="campaign-card__info">
-                    <div class="campaign-card__content">
-                      <div class="campaign-card__description">
-                        <p>全部コミコミ(お一人様)</p>
-                      </div>
-                      <div class="campaign-card__price">
-                        <div class="campaign-card__price-left">¥1,0000</div>
-                        <div class="campaign-card__price-right">¥8,000</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="campaign__card campaign-card">
-                  <img class="campaign-card__img" src="<?php echo get_theme_file_uri(); ?>/assets/images/common/campaign4.jpg" alt="海面に顔を出すダイバーたち" />
-                  <div class="campaign-card__body">
-                    <div class="campaign-card__tag">
-                      <p>ファンダイビング</p>
-                    </div>
-                    <div class="campaign-card__title">
-                      <p>貸切ファンダイビング</p>
-                    </div>
-                  </div>
-                  <div class="campaign-card__info">
-                    <div class="campaign-card__content">
-                      <div class="campaign-card__description">
-                        <p>全部コミコミ(お一人様)</p>
-                      </div>
-                      <div class="campaign-card__price">
-                        <div class="campaign-card__price-left">¥20,000</div>
-                        <div class="campaign-card__price-right">¥16,000</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="campaign__card campaign-card">
-                  <img class="campaign-card__img" src="<?php echo get_theme_file_uri(); ?>/assets/images/common/campaign1.jpg" alt="鮮やかな魚群" />
-                  <div class="campaign-card__body">
-                    <div class="campaign-card__tag">
-                      <p>ライセンス講習</p>
-                    </div>
-                    <div class="campaign-card__title">
-                      <p>ライセンス取得</p>
-                    </div>
-                  </div>
-                  <div class="campaign-card__info">
-                    <div class="campaign-card__content">
-                      <div class="campaign-card__description">
-                        <p>全部コミコミ(お一人様)</p>
-                      </div>
-                      <div class="campaign-card__price">
-                        <div class="campaign-card__price-left">¥56,000</div>
-                        <div class="campaign-card__price-right">¥46,000</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="campaign__card campaign-card">
-                  <img class="campaign-card__img" src="<?php echo get_theme_file_uri(); ?>/assets/images/common/campaign2.jpg" alt="透き通る海に浮かぶ船" />
-                  <div class="campaign-card__body">
-                    <div class="campaign-card__tag">
-                      <p>体験ダイビング</p>
-                    </div>
-                    <div class="campaign-card__title">
-                      <p>貸切体験ダイビング</p>
-                    </div>
-                  </div>
-                  <div class="campaign-card__info">
-                    <div class="campaign-card__content">
-                      <div class="campaign-card__description">
-                        <p>全部コミコミ(お一人様)</p>
-                      </div>
-                      <div class="campaign-card__price">
-                        <div class="campaign-card__price-left">¥24,000</div>
-                        <div class="campaign-card__price-right">¥18,000</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="campaign__card campaign-card">
-                  <img class="campaign-card__img" src="<?php echo get_theme_file_uri(); ?>/assets/images/common/campaign3.jpg" alt="暗い海を漂うクラゲ" />
-                  <div class="campaign-card__body">
-                    <div class="campaign-card__tag">
-                      <p>体験ダイビング</p>
-                    </div>
-                    <div class="campaign-card__title">
-                      <p>ナイトダイビング</p>
-                    </div>
-                  </div>
-                  <div class="campaign-card__info">
-                    <div class="campaign-card__content">
-                      <div class="campaign-card__description">
-                        <p>全部コミコミ(お一人様)</p>
-                      </div>
-                      <div class="campaign-card__price">
-                        <div class="campaign-card__price-left">¥1,0000</div>
-                        <div class="campaign-card__price-right">¥8,000</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                  <?php wp_reset_postdata(); ?>
+                <?php endwhile; endif; ?>
+                <!-- ループ終了 -->
             </div>
           </div>
         </div>

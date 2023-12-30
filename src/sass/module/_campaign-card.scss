@@ -9,15 +9,12 @@
     flex-direction: column;
 }
 
-.campaign-card__img {
+.campaign-card__img img {
     aspect-ratio: 280 / 188;
     object-fit: cover;
     @include mq('md') {
         aspect-ratio: 333 / 223;
     }
-}
-
-.campaign-card__img img {
     width: 100%;
     height: auto;
     object-fit: cover;
