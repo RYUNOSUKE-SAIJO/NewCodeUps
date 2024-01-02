@@ -31,7 +31,10 @@
   background-color: $blue;
   text-align: left;
   @include mq('md') {
-    padding: myrem(26) myrem(40);
+    padding-top: myrem(26);
+    padding-bottom: myrem(26);
+    padding-right: myrem(80);
+    padding-left: myrem(40);
   }
 }
 

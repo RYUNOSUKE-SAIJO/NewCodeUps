@@ -145,21 +145,19 @@ input::placeholder {
 // checkboxのスタイル
 
 .form__checkbox {
-  text-align: left;
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: center;
   position: relative;
   margin-top: myrem(40);
   cursor: pointer;
   user-select: none;
-  padding-inline: myrem(30);
+  margin-inline: myrem(40);
+  // padding-inline: myrem(30);
   @include mq('md') {
-      text-align: center;
       margin-top: myrem(80);
       padding-inline: myrem(0);
+      margin-inline: myrem(0);
   }
 }
+
 
 .form__checkbox-text {
   color: $navy;
@@ -181,4 +179,48 @@ input::placeholder {
 }
 
 
+// WP //
 
+
+// コンテンツ側（今回は右側の要素）
+.wpcf7-form-control-wrap {
+  display: block;
+  width: 100%;
+  margin-top: myrem(16);
+    @include mq('md') {
+    width: 68.5%;
+    margin-left: auto;
+    margin-top: 0;
+  }
+}
+
+//　テキストボックス
+.wpcf7-form-control.wpcf7-text {
+  width: 100%;
+}
+
+//ドロップダウンメニュー
+.wpcf7-form-control.wpcf7-select {
+  width: 100%;
+  position: relative;
+  padding: myrem(9) myrem(8);
+  border: 1px solid $blue;
+  font-size: myrem(12);
+  display: block;
+  background: url(../images/common/form__item--campaign-arrow.jpg) no-repeat calc(100% - myrem(9)) / myrem(12);
+}
+
+//テキストエリア
+.wpcf7-form-control.wpcf7-textarea {
+  resize: auto;
+  max-height: 100%;
+  height: myrem(200);
+  @include mq('md') {
+    width: myrem(480);
+    height: myrem(200);
+  }
+}
+
+.form__checkbox > .wpcf7-form-control-wrap  {
+  margin-top: myrem(0);
+}

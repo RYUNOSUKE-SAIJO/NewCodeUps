@@ -1,6 +1,8 @@
 <?php get_header(); ?>
 
   <main>
+
+    <!----- first-view ----->
     <section class="first-view">
       <div class="first-view__inner">
         <div class="swiper first-view__swiper js-fv-swiper">
@@ -38,6 +40,7 @@
       </div>
     </section>
 
+    <!----- campaign ----->
     <section class="campaign campaign-layout">
       <div class="campaign__inner inner">
         <div class="campaign__section-title section-title">
@@ -107,6 +110,7 @@
       </div>
     </section>
 
+    <!----- about ----->
     <section class="about about-layout">
       <div class="about__inner inner">
         <div class="about__section-title section-title">
@@ -144,6 +148,7 @@
       </div>
     </section>
 
+    <!----- information ----->
     <section class="information information-layout">
       <div class="information__inner inner">
         <div class="information__section-title section-title">
@@ -175,6 +180,7 @@
       </div>
     </section>
 
+    <!----- blog ----->
     <section class="blog blog-layout">
       <div class="blog__inner inner">
         <div class="blog__section-title section-title">
@@ -182,60 +188,38 @@
           <h2 class="section-title__sub section-title__sub--white">ブログ</h2>
         </div>
         <div class="blog__cards blog-cards">
-          <div class="blog-cards__card blog-card">
-            <a href="sub-blog.html" class="blog-card__link">
-              <div class="blog-card__img">
-                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/blog-1.jpg" alt="珊瑚礁" />
-              </div>
-              <div class="blog-card__body">
-                <time class="blog-card__date" datetime="2023-11-27">2023.11.17</time>
-                <div class="blog-card__title">
-                  <p>ライセンス取得</p>
+          <?php
+            $args = [
+              'post_type' => 'post',
+              'posts_per_page' => 3
+            ];
+            $blog_query = new WP_Query($args); ?>
+            <!-- ループ開始 -->
+            <?php if ($blog_query -> have_posts()): while ($blog_query -> have_posts()): $blog_query -> the_post(); ?>
+            <li class="blog-cards__card blog-card">
+              <a href="<?php the_permalink(); ?>" class="blog-card__link">
+                <div class="blog-card__img">
+                  <?php if (has_post_thumbnail()) : ?>
+                    <?php the_post_thumbnail('full'); ?>
+                    <?php else : ?>
+                  <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/noimage.jpg" alt="noimage画像" />
+                  <?php endif; ?>
                 </div>
-                <div class="blog-card__text">
-                  <p>
-                    ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br />ここにテキストが入ります。ここにテキストが入ります。ここにテキスト
-                  </p>
+                <div class="blog-card__body">
+                  <time class="blog-card__date" datetime="<?php the_time('c'); ?>"><?php the_time('Y.m.d'); ?></time>
+                  <div class="blog-card__title blog-card__title--resize">
+                    <p><?php the_title(); ?></p>
+                  </div>
+                  <div class="blog-card__text blog-card__text--narrow">
+                    <p>
+                      ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br />ここにテキストが入ります。ここにテキストが入ります。ここにテキスト
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </a>
-          </div>
-          <div class="blog-cards__card blog-card">
-            <a href="sub-blog.html" class="blog-card__link">
-              <div class="blog-card__img">
-                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/blog-2.jpg" alt="ウミガメ" />
-              </div>
-              <div class="blog-card__body">
-                <time class="blog-card__date" datetime="2023-11-27">2023.11.17</time>
-                <div class="blog-card__title">
-                  <p>ウミガメと泳ぐ</p>
-                </div>
-                <div class="blog-card__text">
-                  <p>
-                    ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br />ここにテキストが入ります。ここにテキストが入ります。ここにテキスト
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="blog-cards__card blog-card">
-            <a href="sub-blog.html" class="blog-card__link">
-              <div class="blog-card__img">
-                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/blog-3.jpg" alt="カクレクマノミ" />
-              </div>
-              <div class="blog-card__body">
-                <time class="blog-card__date" datetime="2023-11-27">2023.11.17</time>
-                <div class="blog-card__title">
-                  <p>カクレクマノミ</p>
-                </div>
-                <div class="blog-card__text">
-                  <p>
-                    ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br />ここにテキストが入ります。ここにテキストが入ります。ここにテキスト
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
+              </a>
+            </li>
+            <?php endwhile; endif; ?>
+            <!--/メインループ -->
         </div>
         <div class="blog__btn">
           <a href="sub-blog.html" class="btn"><span>View more</span></a>
@@ -246,6 +230,7 @@
       </div>
     </section>
 
+    <!----- voice ----->
     <section class="voice voice-layout">
       <div class="voice__inner inner">
         <div class="voice__section-title section-title">
@@ -253,64 +238,52 @@
           <h2 class="section-title__sub">お客様の声</h2>
         </div>
         <div class="voice__cards voice-cards">
-          <div class="voice-cards__card voice-card">
-            <div class="voice-card__header">
-              <div class="voice-card__header-left">
-                <div class="voice-card__top">
-                  <div class="voice-card__gender">
-                    <p>20代(女性)</p>
+          <?php
+            $args = [
+              'post_type' => 'voice',
+              'posts_per_page' => 2
+            ];
+            $voice_query = new WP_Query($args); ?>
+          <!-- ループ開始 -->
+          <?php if ($voice_query -> have_posts()): while ($voice_query -> have_posts()): $voice_query -> the_post(); ?>
+            <div class="voice-cards__card voice-card">
+              <div class="voice-card__header">
+                <div class="voice-card__header-left">
+                  <div class="voice-card__top">
+                    <!----- 年代・性別 ----->
+                    <div class="voice-card__gender">
+                      <p><?php the_field('voice_gender'); ?></p>
+                    </div>
+                    <!----- タグ（taxonomy） ----->
+                    <div class="voice-card__tag">
+                      <p><?php echo esc_html( get_the_terms( get_the_ID(), 'voice_category' )[0]->name ); ?></p>
+                    </div>
                   </div>
-                  <div class="voice-card__tag">
-                    <p>ライセンス講習</p>
+                  <!----- タイトル ----->
+                  <div class="voice-card__title">
+                    <p><?php the_title(); ?></p>
                   </div>
                 </div>
-                <div class="voice-card__title">
-                  <p>ここにタイトルが入ります。ここにタイトル</p>
+                <div class="voice-card__header-right">
+                  <!----- アイキャッチ画像 ----->
+                  <div class="voice-card__img">
+                    <?php if (has_post_thumbnail()) : ?>
+                      <?php the_post_thumbnail(); ?>
+                      <?php else : ?>
+                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/noimage.jpg" alt="noimage画像" />
+                    <?php endif; ?>
+                  </div>
                 </div>
               </div>
-              <div class="voice-card__header-right">
-                <div class="voice-card__img">
-                  <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/voice-img-1.jpg" alt="麦わら帽子を被った女性" />
+              <div class="voice-card__body">
+                <!----- 本文 ----->
+                <div class="voice-card__text">
+                  <p><?php the_field('voice_text'); ?></p>
                 </div>
               </div>
             </div>
-            <div class="voice-card__body">
-              <div class="voice-card__text">
-                <p>
-                  ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br />ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br />ここにテキストが入ります。ここにテキストが入ります。
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="voice-cards__card voice-card">
-            <div class="voice-card__header">
-              <div class="voice-card__header-left">
-                <div class="voice-card__top">
-                  <div class="voice-card__gender">
-                    <p>20代(男性)</p>
-                  </div>
-                  <div class="voice-card__tag">
-                    <p>ファンダイビング</p>
-                  </div>
-                </div>
-                <div class="voice-card__title">
-                  <p>ここにタイトルが入ります。ここにタイトル</p>
-                </div>
-              </div>
-              <div class="voice-card__header-right">
-                <div class="voice-card__img">
-                  <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/voice-img-2.jpg" alt="ポーズをとっている男性" />
-                </div>
-              </div>
-            </div>
-            <div class="voice-card__body">
-              <div class="voice-card__text">
-                <p>
-                  ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br />ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br />ここにテキストが入ります。ここにテキストが入ります。
-                </p>
-              </div>
-            </div>
-          </div>
+          <?php endwhile; endif; ?>
+          <!-- ループ終了 -->
         </div>
         <div class="voice__btn">
           <a href="sub-voice.html" class="btn"><span>View more</span></a>
@@ -324,6 +297,7 @@
       </div>
     </section>
 
+    <!----- price ----->
     <section class="price price-layout">
       <div class="price__inner inner">
         <div class="price__section-title section-title">
@@ -342,7 +316,7 @@
               </div>
               <div class="price__content">
                 <?php
-                $priceTable = SCF::get_option_meta( 'price-list_option', 'price_list_1' );
+                $priceTable = SCF::get_option_meta( 'price-list_option', 'price-list_1' );
                 if ($priceTable) {
                   foreach ($priceTable as $priceItem) {
                     $course = esc_html($priceItem['course_1']);
@@ -363,22 +337,21 @@
                 <p>体験ダイビング</p>
               </div>
               <div class="price__content">
+                <?php
+                $priceTable = SCF::get_option_meta( 'price-list_option', 'price-list_2' );
+                if ($priceTable) {
+                  foreach ($priceTable as $priceItem) {
+                    $course = esc_html($priceItem['course_2']);
+                    $price = esc_html($priceItem['price_2']);
+                ?>
                 <div class="price__content-block">
-                  <p>ビーチ体験ダイビング(半日)</p>
-                  <p class="price__content-price">¥7,000</p>
+                  <p class="price__content-block"><?php echo $course; ?></p>
+                  <p class="price__content-price"><?php echo $price; ?></p>
                 </div>
-                <div class="price__content-block">
-                  <p>ビーチ体験ダイビング(1日)</p>
-                  <p class="price__content-price">¥14,000</p>
-                </div>
-                <div class="price__content-block">
-                  <p>ボート体験ダイビング(半日)</p>
-                  <p class="price__content-price">¥10,000</p>
-                </div>
-                <div class="price__content-block">
-                  <p>ボート体験ダイビング(1日)</p>
-                  <p class="price__content-price">¥18,000</p>
-                </div>
+                <?php
+                  }
+                }
+                ?>
               </div>
             </div>
             <div class="price__block">
@@ -386,22 +359,21 @@
                 <p>ファンダイビング</p>
               </div>
               <div class="price__content">
+                <?php
+                $priceTable = SCF::get_option_meta( 'price-list_option', 'price-list_3' );
+                if ($priceTable) {
+                  foreach ($priceTable as $priceItem) {
+                    $course = esc_html($priceItem['course_3']);
+                    $price = esc_html($priceItem['price_3']);
+                ?>
                 <div class="price__content-block">
-                  <p>ビーチダイビング(2ダイブ)</p>
-                  <p class="price__content-price">¥14,000</p>
+                  <p class="price__content-block"><?php echo $course; ?></p>
+                  <p class="price__content-price"><?php echo $price; ?></p>
                 </div>
-                <div class="price__content-block">
-                  <p>ボートダイビング(2ダイブ)</p>
-                  <p class="price__content-price">¥18,000</p>
-                </div>
-                <div class="price__content-block">
-                  <p>スペシャルダイビング(2ダイブ)</p>
-                  <p class="price__content-price">¥24,000</p>
-                </div>
-                <div class="price__content-block">
-                  <p>ナイトダイビング(1ダイブ)</p>
-                  <p class="price__content-price">¥10,000</p>
-                </div>
+                <?php
+                  }
+                }
+                ?>
               </div>
             </div>
             <div class="price__block">
@@ -409,14 +381,21 @@
                 <p>スペシャルダイビング</p>
               </div>
               <div class="price__content">
+                <?php
+                $priceTable = SCF::get_option_meta( 'price-list_option', 'price-list_4' );
+                if ($priceTable) {
+                  foreach ($priceTable as $priceItem) {
+                    $course = esc_html($priceItem['course_4']);
+                    $price = esc_html($priceItem['price_4']);
+                ?>
                 <div class="price__content-block">
-                  <p>貸切ダイビング(2ダイブ)</p>
-                  <p class="price__content-price">¥24,000</p>
+                  <p class="price__content-block"><?php echo $course; ?></p>
+                  <p class="price__content-price"><?php echo $price; ?></p>
                 </div>
-                <div class="price__content-block">
-                  <p>1日ダイビング(3ダイブ)</p>
-                  <p class="price__content-price">¥32,000</p>
-                </div>
+                <?php
+                  }
+                }
+                ?>
               </div>
             </div>
           </div>
@@ -430,6 +409,7 @@
       </div>
     </section>
 
+    <!----- contact ----->
     <section class="contact contact-layout">
       <div class="contact__inner inner">
         <div class="contact__container">
@@ -479,9 +459,11 @@
       </div>
     </section>
 
+    <!----- to-top ----->
     <div class="to-top js-to-top" id="page-top">
       <a href="#"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/go-top.svg" alt="トップへボタン" /></a>
     </div>
+    
   </main>
 
 <?php get_footer(); ?>

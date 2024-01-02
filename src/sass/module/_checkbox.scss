@@ -1,12 +1,160 @@
 @use "global" as *;
 
-.checkbox input {
-  display: none;
+// .checkbox input {
+//   display: none;
+// }
+
+// .checkbox-cl01 ok {
+//   position: relative;
+//   display: block;
+//   height: myrem(14);
+//   width: myrem(14);
+//   border: solid myrem(2) $blue;
+//   box-sizing: border-box;
+//   margin-right: myrem(10);
+//   margin-top: myrem(4);
+//   flex-shrink: 0;
+//   @include mq('md') {
+//       margin-right: myrem(16);
+//   }
+// }
+
+// .checkbox-cl01.checkbox-cl01--big {
+//   position: relative;
+//   display: block;
+//   height: myrem(22);
+//   width: myrem(22);
+//   border: solid myrem(2) $blue;
+//   box-sizing: border-box;
+//   margin-right: myrem(10);
+//   margin-top: myrem(2);
+//   flex-shrink: 0;
+//   @include mq('md') {
+//       margin-right: myrem(16);
+//   }
+// }
+
+// .checkbox-cl01:after {
+//   content: "";
+//   position: absolute;
+//   border: solid $blue;
+//   border-width: 0 2px 2px 0;
+//   left: myrem(3);
+//   top: myrem(-1);
+//   width: myrem(6);
+//   height: myrem(10);
+//   transform: rotate(45deg);
+//   opacity: 0;
+// }
+
+// .checkbox-cl01.checkbox-cl01--big:after {
+//   content: "";
+//   position: absolute;
+//   border: solid $blue;
+//   border-width: 0 2px 2px 0;
+//   left: myrem(7);
+//   top: myrem(3);
+//   width: myrem(6);
+//   height: myrem(10);
+//   transform: rotate(45deg);
+//   opacity: 0;
+// }
+
+// /* チェックが入ったとき */
+
+// .checkbox input:checked + .checkbox-cl01:after {
+//   opacity: 1;
+// }
+
+// .checkbox-cl01 input {
+//   display: none;
+// }
+
+// // ラベル文字の左側の余白：チェックボックの枠が入るスペース＋ラベル文字との余白
+// .checkbox-cl01 input + span {
+//   padding-left: 28px;
+//   display: inline-block;
+//   position: relative;
+// }
+
+// // チェックボックスの枠とチェックマークの共通書式
+// .checkbox-cl01 input + span::after,
+// .checkbox-cl01 input + span::before {
+//   content: "";
+//   display: block;
+//   position: absolute;
+//   top: 0;
+// }
+
+// // チェックボックスの枠 ok
+// .checkbox-cl01 input + span::before {
+//   position: relative;
+//   display: block;
+//   height: myrem(14);
+//   width: myrem(14);
+//   border: solid myrem(2) $blue;
+//   box-sizing: border-box;
+//   margin-right: myrem(10);
+//   margin-top: myrem(4);
+//   flex-shrink: 0;
+//   @include mq('md') {
+//       margin-right: myrem(16);
+//   }
+// }
+
+// // チェックマークにチェックされる前は消えてる
+// .checkbox-cl01 input + span::after {
+//   content: "";
+//   position: absolute;
+//   border: solid $blue;
+//   border-width: 0 2px 2px 0;
+//   left: myrem(3);
+//   top: myrem(-1);
+//   width: myrem(6);
+//   height: myrem(10);
+//   transform: rotate(45deg);
+//   opacity: 0;
+// }
+
+// // チェックマークにチェックが付いた時
+// .checkbox-cl01 input:checked + span::after {
+//   display: block;
+// }
+
+
+
+// WP(チェックボックス関連のみ) // 
+
+input[type="radio"]:checked + .wpcf7-list-item-label {
+
 }
 
-.checkbox__checkmark {
+.wpcf7-form-control.wpcf7-checkbox {
+  display: flex;
+  flex-direction: column;
+}
+
+span.wpcf7-list-item {
   position: relative;
-  display: block;
+}
+
+.wpcf7-list-item-label {
+  cursor: pointer; /* labelにhoverした時にカーソルを表示させる */
+  font-size: 16px; /* 項目のフォントサイズ */
+  position: relative;
+}
+
+
+  /* ラジオチェックボックス */
+
+.wpcf7-list-item-label::before {
+  /* ラジオチェックボックス */
+  content: "";
+  display: inline-block;
+  position: relative;
+  top: myrem(-4);
+  vertical-align: middle;
+  position: relative;
   height: myrem(14);
   width: myrem(14);
   border: solid myrem(2) $blue;
@@ -19,8 +167,36 @@
   }
 }
 
-.checkbox__checkmark.checkbox__checkmark--big {
-  position: relative;
+input[type="radio"]:checked + .wpcf7-list-item-label::after {
+  /* ラジオチェック  */
+  content: "";
+  position: absolute;
+  border: solid #C94800;
+  border-width: 0 2px 2px 0;
+  left: myrem(3);
+  top: myrem(2);
+  width: myrem(6);
+  height: myrem(10);
+  transform: rotate(45deg);
+}
+
+
+  /* チェックボックス */
+
+input[type="checkbox"] {
+  opacity: 0; /* デフォルトのチェックボックスを見えなくする */
+  position: absolute;
+}
+
+input[type="checkbox"] + .wpcf7-list-item-label {
+
+}
+
+input[type="checkbox"] + .wpcf7-list-item-label::before {
+  /* チェックボックス */
+  position: absolute;
+  top: myrem(-4);
+  left: myrem(-40);
   display: block;
   height: myrem(22);
   width: myrem(22);
@@ -34,36 +210,19 @@
   }
 }
 
-.checkbox__checkmark:after {
+input[type="checkbox"]:checked + .wpcf7-list-item-label::after {
+  /* チェック（チェックボックス）  */
   content: "";
   position: absolute;
-  border: solid $blue;
+  border: solid #C94800;
   border-width: 0 2px 2px 0;
-  left: myrem(3);
-  top: myrem(-1);
-  width: myrem(6);
-  height: myrem(10);
+  left: myrem(-34);
+  top: myrem(-2);
+  width: myrem(10);
+  height: myrem(16);
   transform: rotate(45deg);
-  opacity: 0;
 }
 
-.checkbox__checkmark.checkbox__checkmark--big:after {
-  content: "";
-  position: absolute;
-  border: solid $blue;
-  border-width: 0 2px 2px 0;
-  left: myrem(7);
-  top: myrem(3);
-  width: myrem(6);
-  height: myrem(10);
-  transform: rotate(45deg);
-  opacity: 0;
-}
 
-/* チェックが入ったとき */
-
-.checkbox input:checked + .checkbox__checkmark:after {
-  opacity: 1;
-}
 
 
