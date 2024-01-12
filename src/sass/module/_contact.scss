@@ -33,7 +33,7 @@
     transform: translateX(-50%);
     max-width: myrem(295);
     height: myrem(1);
-    background-color: $blue;
+    background-color: $orange;
     @include mq('md') {
         top: myrem(86);
         max-width: myrem(440);
@@ -115,7 +115,7 @@
         content: "";
         width: myrem(1);
         height: myrem(255);
-        background-color: $blue;
+        background-color: $orange;
         top: myrem(6);
         left: myrem(80);
     }
@@ -143,7 +143,7 @@
 
 .contact__info-text p {
     font-size: myrem(14);
-    color: $blue;
+    color: $orange;
     line-height : calc(18 / 14);
     font-family: $japanese;
     font-weight: 400;

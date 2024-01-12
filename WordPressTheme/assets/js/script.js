@@ -59,7 +59,7 @@ jQuery(function ($) {
   var box = $(".information__left-img,.voice-card__img,.price__img,.tab-contents__panel-right"),
     speed = 500;
 
-  //.colorboxの付いた全ての要素に対して下記の処理を行う
+  // .colorboxの付いた全ての要素に対して下記の処理を行う
   box.each(function () {
     $(this).append('<div class="color"></div>');
     var color = $(this).find($(".color")),
@@ -67,13 +67,16 @@ jQuery(function ($) {
     var counter = 0;
     image.css("opacity", "0");
     color.css("width", "0%");
-    //inviewを使って背景色が画面に現れたら処理をする
+    // inviewを使って背景色が画面に現れたら処理をする
     color.on("inview", function () {
       if (counter == 0) {
         $(this).delay(100).animate({
           width: "100%"
         }, speed, function () {
-          image.css("opacity", "1");
+          // ふわっとさせるアニメーションを追加
+          image.animate({
+            opacity: 1
+          }, speed);
           $(this).css({
             left: "0",
             right: "auto"
@@ -160,22 +163,13 @@ jQuery(function ($) {
   });
 
   //サイドバー（アーカイブ）
+  //サイドバー（アーカイブ）
   $(document).ready(function () {
-    // 最初のdetails要素にopen属性を追加する
-    $("details:first").attr("open", "");
-
-    // 「details」の状態が変化した際にアニメーションを追加
-    $("details").on("toggle", function () {
-      var $archiveMonths = $(this).find(".side-contents__archive-months");
-      console.log($archiveMonths); // 追加
-
-      if ($(this).attr("open")) {
-        // 「open」属性がついた場合のアニメーション
-        $archiveMonths.stop().slideDown();
-      } else {
-        // 「open」属性が取られた場合のアニメーション
-        $archiveMonths.stop().slideUp();
-      }
+    $(".js-archive__title:first").addClass("open");
+    $(".side-contents__archive-months:first").css("display", "block");
+    $(".js-archive__title").click(function () {
+      $(this).next(".side-contents__archive-months").slideToggle();
+      $(this).toggleClass("open");
     });
   });
 });

@@ -28,7 +28,7 @@
   position: relative;
   padding: myrem(16);
   cursor: pointer;
-  background-color: $blue;
+  background-color: $orange;
   text-align: left;
   @include mq('md') {
     padding-top: myrem(26);
@@ -79,7 +79,7 @@
 
 //最初は消しておく、jsの方で（display:block;）が付与される//
 .accordion__content {
-  border: myrem(1) solid $blue;
+  border: myrem(1) solid $orange;
   margin-inline: auto;
   padding: myrem(19);
   display: none;

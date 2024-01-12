@@ -10,7 +10,7 @@
 }
 
 .tab-contents__tab {
-  background-color: #DDF0F1;
+  background-color: #f1dedd;
   width: 100%;
   padding-top: myrem(10);
   padding-bottom: myrem(10);
@@ -35,7 +35,7 @@
     width: myrem(64);
     height: myrem(64);
     margin-right: myrem(8);
-    color: $blue;
+    color: $orange;
   }
 }
 
@@ -58,7 +58,7 @@
 }
 
 .tab-contents__tab p {
-  color: $blue;
+  color: $orange;
   font-family: $japanese;
   font-size: myrem(14);
   font-style: normal;
@@ -117,7 +117,7 @@
   position: absolute;
   width: 100%;
   height: myrem(1);
-  background-color: $blue;
+  background-color: $orange;
   left: 0;
   bottom: myrem(-8);
 }
@@ -154,7 +154,7 @@ input[name="tab-btn"] {
 
 .tab-contents__tab-area input:checked + .tab-contents__tab {
   transition: 0.3s;
-  background-color: $blue;
+  background-color: $orange;
 }
 
 .tab-contents__tab-area input:checked + .tab-contents__tab p {
@@ -162,9 +162,17 @@ input[name="tab-btn"] {
   color: $white;
 }
 
-.tab-contents__tab-area input:checked + .tab-contents__tab span {
+.tab-contents__tab-area input:nth-of-type(1):checked + .tab-contents__tab span {
   transition: 0.15s;
-  filter: invert(0%) sepia(0%) saturate(7444%) hue-rotate(50deg) brightness(500%) contrast(200%);
+  background: url(../images/common/sub-info-tab-name-1-white.svg) no-repeat center center /contain;
+}
+.tab-contents__tab-area input:nth-of-type(2):checked + .tab-contents__tab span {
+  transition: 0.15s;
+  background: url(../images/common/sub-info-tab-name-2-white.svg) no-repeat center center /contain;
+}
+.tab-contents__tab-area input:nth-of-type(3):checked + .tab-contents__tab span {
+  transition: 0.15s;
+  background: url(../images/common/sub-info-tab-name-3-white.svg) no-repeat center center /contain;
 }
 
 // is-active //
@@ -174,7 +182,7 @@ input[name="tab-btn"] {
     transition: opacity 1s linear;
     height: auto;
     padding: myrem(24);
-    border: myrem(1) solid $blue;
+    border: myrem(1) solid $orange;
   }
 
 // animation //
@@ -190,7 +198,7 @@ div.tab-contents__panel-right div.color {
     width: 100%;
     height: 100%;
     z-index: 2;
-    background-color: #408F95;
+    background-color: $orange;
 }
 
 div.tab-contents__panel-right img {
@@ -201,7 +209,23 @@ div.tab-contents__panel-right img {
 // hover //
 
 .tab-contents__tab:hover {
-  opacity: 0.8;
-  transition: transform 0.1s linear;
-  transform: scale(1.05);
+  background-color: $orange;
+  transition: 0.1s ease-out;
+}
+.tab-contents__tab:hover p {
+  color: $white;
+  transition: 0.1s ease-out;
+}
+
+.tab-contents__tab:nth-of-type(1):hover > span  {
+  background: url(../images/common/sub-info-tab-name-1-white.svg) no-repeat center center /contain;
+  transition: 0.1s ease-out;
+}
+.tab-contents__tab:nth-of-type(2):hover > span {
+  background: url(../images/common/sub-info-tab-name-2-white.svg) no-repeat center center /contain;
+  transition: 0.1s ease-out;
+}
+.tab-contents__tab:nth-of-type(3):hover > span {
+  background: url(../images/common/sub-info-tab-name-3-white.svg) no-repeat center center /contain;
+  transition: 0.1s ease-out;
 }

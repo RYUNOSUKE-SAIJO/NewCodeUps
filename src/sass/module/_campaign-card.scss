@@ -54,7 +54,7 @@
 .campaign-card__tag {
     display: inline-block;
     padding: myrem(4) myrem(12);
-    border: 1px solid $blue;
+    border: 1px solid $orange;
     @include mq('md') {
         padding: myrem(7) myrem(16);
     }
@@ -62,7 +62,7 @@
 
 .campaign-card__tag p {
     font-size: myrem(12);
-    color: $blue;
+    color: $orange;
     line-height : 1.5;
     font-family: $japanese;
     font-weight: 400;
@@ -85,7 +85,7 @@
     content: "";
     width: 100%;
     height: myrem(1);
-    background-color: $blue;
+    background-color: $orange;
     @include mq('md') {
         top: myrem(36);
     }
@@ -99,7 +99,7 @@
     content: "";
     width: 100%;
     height: myrem(1);
-    background-color: $blue;
+    background-color: $orange;
     @include mq('md') {
         top: myrem(32);
     }
@@ -168,7 +168,7 @@
 
 .campaign-card__price-right {
     font-size: myrem(32);
-    color: $blue;
+    color: $orange;
     line-height : 1;
     font-family:  'Lato', sans-serif;
     font-weight: 700;
@@ -245,7 +245,7 @@
     margin-top: myrem(32);
     text-align: center;
     font-size: myrem(16);
-    color: $blue;
+    color: $orange;
     line-height : calc(18 / 16);
     font-family: $english-2;
     font-weight: 700;
@@ -255,7 +255,7 @@
     margin-top: myrem(7);
     font-size: myrem(14);
     text-align: center;
-    color: $blue;
+    color: $orange;
     line-height : calc(18 / 14);
     font-family: $japanese;
     font-weight: 400;

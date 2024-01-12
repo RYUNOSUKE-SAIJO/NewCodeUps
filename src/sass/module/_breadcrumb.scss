@@ -18,3 +18,31 @@
 .breadcrumb__item.breadcrumb__item--white {
   color: $white;
 }
+
+
+// WP  //
+.breadcrumb__list > span:after {
+  content: '＞';
+  padding: 0 0.4em;
+  color: #000;
+}
+
+.breadcrumb__list > span:last-child:after {
+  content: '';
+}
+
+
+// WP 404 //
+.breadcrumb__list.breadcrumb__list-white span {
+  color: #fff;
+}
+
+.breadcrumb__list.breadcrumb__list-white > span:after {
+  content: '＞';
+  padding: 0 0.4em;
+  color: #fff;
+}
+
+.breadcrumb__list.breadcrumb__list-white > span:last-child:after {
+  content: '';
+}

@@ -50,9 +50,7 @@
                     <p><?php the_title(); ?></p>
                   </div>
                   <div class="blog-card__text blog-card__text--narrow">
-                    <p>
-                      ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br />ここにテキストが入ります。ここにテキストが入ります。ここにテキスト
-                    </p>
+                    <p><?php echo wp_trim_words(get_the_content(), 80, '…'); ?></p>
                   </div>
                 </div>
               </a>

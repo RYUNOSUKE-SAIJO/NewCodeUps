@@ -52,14 +52,6 @@
                 }
               }
               ?>
-              <li class="accordion__item js-accordion__item">
-                <div class="accordion__title js-accordion__title">
-                  <p class="accordion__title-text">ここに質問が入ります。</p>
-                </div>
-                <div class="accordion__content js-accordion__content">
-                  <p class="accordion__content-text">ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります</p>
-                </div>
-              </li>
             </ul>
           </div>
         </div>

@@ -1,3 +1,21 @@
+  <!----- 変数にハイフンは使えない・ページのスラッグに使用している名前を（''）内に入れること ----->
+<?php
+$top = esc_url( home_url( '/' ) );
+$campaign = esc_url( home_url( '/campaign/' ) );
+$about = esc_url( home_url( '/about/' ) );
+$information = esc_url( home_url( '/information/' ) );
+$blog = esc_url( home_url( '/blog/' ) );
+$voice = esc_url( home_url( '/voice/' ) );
+$price = esc_url( home_url( '/price/' ) );
+$faq = esc_url( home_url( '/faq/' ) );
+$contact = esc_url( home_url( '/contact/' ) );
+$privacy_policy = esc_url( home_url( '/privacy-policy/' ) );
+$terms_of_service = esc_url( home_url( '/terms-of-service/' ) );
+$sitemap = esc_url( home_url( '/sitemap/' ) );
+$contact_thanks = esc_url( home_url( '/$contact-thanks/' ) );
+$contact_error = esc_url( home_url( '/$contact-error/' ) );
+?>
+
 
 <aside class="sub-blog__side-contents side-contents">
   <div class="side-contents__inner">
@@ -55,15 +73,15 @@
               <img src="<?php echo get_template_directory_uri(); ?>/img/noimg.png" alt="<?php the_title(); ?>の画像">
               <?php endif; ?>
             </div>
-            <p class="side-contents__voice-tag">30代(カップル)</p>
+            <p class="side-contents__voice-tag"><?php the_field('voice_gender'); ?></p>
             <p class="side-contents__voice-title"><?php the_title(); ?></p>
-            <div class="side-contents__voice-btn">
-              <a href="" class="btn"><span>View more</span></a>
-            </div>
           </div>
         <?php endwhile; ?>
       <?php endif; ?>
       <?php wp_reset_postdata(); ?>
+    <div class="side-contents__voice-btn">
+      <a href="<?php echo $voice; ?>" class="btn"><span>View more</span></a>
+    </div>
     </div>
     <!----- キャンペーン記事（新着） ----->
     <div class="side-contents__campaign">
@@ -71,7 +89,7 @@
         <h3 class="side-contents-header__title">キャンペーン</h3>
       </div>
       <ul class="side-contents__campaign-cards">
-        <a href="sub-campaign.html" class="side-contents__card-link">
+        
         <?php $campaign_query = new WP_Query(
           array(
             'post_type' => 'campaign',  //campaignから持ってくる
@@ -84,6 +102,7 @@
         <?php if ($campaign_query->have_posts()) : ?>
         <?php while($campaign_query->have_posts()) : ?>
         <?php $campaign_query->the_post(); ?>
+        <a href="<?php echo $campaign; ?>" class="side-contents__card-link">
           <li class="side-contents__campaign-card campaign-card campaign-card--resize">
             <div class="campaign-card__img campaign-card__img--resize">
               <!----- アイキャッチ画像 ----->
@@ -118,7 +137,7 @@
       <?php wp_reset_postdata(); ?>
       </ul>
       <div class="side-contents__campaign-btn">
-        <a href="sub-campaign.html" class="btn"><span>View more</span></a>
+        <a href="<?php echo $campaign; ?>" class="btn"><span>View more</span></a>
       </div>
     </div>
     <!----- 年別・月別アーカイブ ----->
@@ -127,71 +146,84 @@
         <h3 class="side-contents-header__title">アーカイブ</h3>
       </div>
       <div class="side-contents__archive-container">
-        <ul class="side-contents__archive-years">
-          <?php
-          // 現在の年を取得
-          $current_year = date('Y');
-          // 過去3年分のアーカイブをループで処理
-          for ($year = $current_year; $year >= $current_year - 2; $year--) {
-            $archive_link = get_year_link($year);
-            $args = array(
-              'post_type' => 'post',
-              'post_status' => 'publish',
-              'date_query' => array(
-                array(
-                  'year' => $year,
-                ),
+        <?php
+        // 現在の年を取得
+        $current_year = date('Y');
+        // 過去3年分のアーカイブをループで処理
+        for ($year = $current_year; $year >= $current_year - 2; $year--) {
+          $archive_link = get_year_link($year);
+          // クエリの設定
+          $args = array(
+            'post_type' => 'post',
+            'post_status' => 'publish',
+            'date_query' => array(
+              array(
+                'year' => $year,
               ),
-            );
-            $query = new WP_Query($args);
-            if ($query->have_posts()) {
-              // この年が現在の年かどうかを判定
-              $is_current_year = ($year === $current_year);
-          ?>
-              <li class="side-contents__archive-year">
-              <details>
-                <summary><?php echo $year; ?></summary>
-                  <ul class="side-contents__archive-months">
-                  <?php
-                  // 各月ごとにアーカイブを処理
-                  for ($month = 12; $month >= 1; $month--) {
-                    $archive_link = get_month_link($year, $month);
-                    $args = array(
-                      'post_type' => 'post',
-                      'post_status' => 'publish',
-                      'date_query' => array(
-                        array(
-                          'year' => $year,
-                          'month' => $month,
-                        ),
-                      ),
-                    );
-                    $query = new WP_Query($args);
-                    if ($query->have_posts()) {
-                      // 月のラベルを生成
-                      $month_label = date('n月', mktime(0, 0, 0, $month, 1, $year)); // 記事数を取得
-                      $post_count = $query->found_posts;
-                    ?>
-                    <li class="side-contents__archive-month">
-                      <a href="<?php echo $archive_link; ?>">
-                        <details>
-                          <summary><?php echo $month_label; ?>(<?php echo $post_count; ?>)</summary>
-                        </details>
-                      </a>
-                    </li>
-                  <?php
-                    }
-                  }
-                  ?>
-                  </ul>
-              </details>
-              </li>
+            ),
+          );
+          // クエリを実行
+          $query = new WP_Query($args);
+          // 記事が存在する場合の処理
+          if ($query->have_posts()) {
+            // この年が現在の年かどうかを判定
+            $is_current_year = ($year === $current_year);
+        ?>
+        <div class="side-contents__archive-year">
+          <div class="js-archive" open>
+            <div class="side-contents__archive-title js-archive__title">
+              <?php echo $year; ?>
+            </div>
+            <div class="side-contents__archive-months js-archive__content">
+              <?php
+              // 各月ごとにアーカイブを処理
+              for ($month = 12; $month >= 1; $month--) {
+                // この月のアーカイブページへのリンクを取得
+                $archive_link = get_month_link($year, $month);
+                // クエリの設定
+                $args = array(
+                  'post_type' => 'post',
+                  'post_status' => 'publish',
+                  'date_query' => array(
+                    array(
+                      'year' => $year,
+                      'month' => $month,
+                    ),
+                  ),
+                );
+                // クエリを実行
+                $query = new WP_Query($args);
+                // 記事が存在する場合の処理
+                if ($query->have_posts()) {
+                  // 月のラベルを生成
+                  $month_label = date('n月', mktime(0, 0, 0, $month, 1, $year)); // 記事数を取得
+                  $post_count = $query->found_posts;
+                ?>
+                <div class="side-contents__archive-month">
+                  <a href="<?php echo $archive_link; ?>">
+                    <div class="js-archive">
+                      <div class="side-contents__archive-title js-archive__title"><?php echo $month_label; ?>(<?php echo $post_count; ?>)</div><!-- 記事数を表示 -->
+                    </div>
+                  </a>
+                </div>
+              <?php
+                }
+              }
+              ?>
+            </div>
+          </div>
+        </div>
           <?php
             }
           }
           ?>
-        </ul>
       </div>
     </div>
+
+
+
+
+
+
   </div>
 </aside>

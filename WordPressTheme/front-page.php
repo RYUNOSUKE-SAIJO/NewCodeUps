@@ -7,34 +7,38 @@
       <div class="first-view__inner">
         <div class="swiper first-view__swiper js-fv-swiper">
           <div class="swiper-wrapper">
+            <!----- ACFでグループを利用した場合の書き方 ----->
+            <?php $first_view_sp = get_field('first-view_sp'); ?>
+            <?php $first_view_pc = get_field('first-view_pc'); ?>
+            <?php $first_view_alt = get_field('first-view_alt'); ?>
             <div class="swiper-slide">
               <picture class="first-view__slide-img">
-                <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/first-view-sp.jpg" media="(max-width: 768px)" />
-                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/first-view.jpg" alt="ウミガメ" />
+                <source srcset="<?php echo $first_view_sp['sp_1']; ?>" media="(max-width: 768px)" />
+                <img src="<?php echo $first_view_pc['pc_1']; ?>" alt="<?php echo $first_view_alt['alt_1']; ?>" />
               </picture>
             </div>
             <div class="swiper-slide">
               <picture class="first-view__slide-img">
-                <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/fv-sp-1.jpg" media="(max-width: 768px)" />
-                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/fv-pc-1.jpg" alt="綺麗なビーチ" />
+                <source srcset="<?php echo $first_view_sp['sp_2']; ?>" media="(max-width: 768px)" />
+                <img src="<?php echo $first_view_pc['pc_2']; ?>" alt="<?php echo $first_view_alt['alt_2']; ?>" />
               </picture>
             </div>
             <div class="swiper-slide">
               <picture class="first-view__slide-img">
-                <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/fv-sp-2.jpg" media="(max-width: 768px)" />
-                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/fv-pc-2.jpg" alt="海に浮かぶ船" />
+                <source srcset="<?php echo $first_view_sp['sp_3']; ?>" media="(max-width: 768px)" />
+                <img src="<?php echo $first_view_pc['pc_3']; ?>" alt="<?php echo $first_view_alt['alt_3']; ?>" />
               </picture>
             </div>
             <div class="swiper-slide">
               <picture class="first-view__slide-img">
-                <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/fv-sp-3.jpg" media="(max-width: 768px)" />
-                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/fv-pc-3.jpg" alt="海中を泳ぐウミガメ" />
+                <source srcset="<?php echo $first_view_sp['sp_4']; ?>" media="(max-width: 768px)" />
+                <img src="<?php echo $first_view_pc['pc_4']; ?>" alt="<?php echo $first_view_alt['alt_4']; ?>" />
               </picture>
             </div>
           </div>
           <div class="first-view__title-wrap">
-            <h2 class="first-view__main-title">diving</h2>
-            <p class="first-view__sub-title">into the ocean</p>
+            <h2 class="first-view__main-title">lagoon</h2>
+            <p class="first-view__sub-title">feeling the sea</p>
           </div>
         </div>
       </div>
@@ -133,9 +137,7 @@
           </div>
           <div class="about__content-right">
             <div class="about__description">
-              <p>
-                ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br />ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキスト
-              </p>
+              <p><span>水の中の幻想、写真で味わう。</span><br>ギャラリーページに足を踏み入れると、水中の幻想が写真から広がります。<br>ダイビングの美と冒険が、写真を通して優しく、けれども力強く伝わる瞬間。まるで水中にいるような錯覚が広がります。</p>
             </div>
             <div class="about__btn">
               <a href="sub-about.html" class="btn"><span>View more</span></a>

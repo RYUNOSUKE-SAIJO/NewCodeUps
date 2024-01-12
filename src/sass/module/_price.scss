@@ -2,7 +2,7 @@
 
 .price {
     position: relative;
-    background-color: #DDF0F1;
+    background-color: #f1dedd;
 }
 
 .price__inner {
@@ -68,7 +68,7 @@
     left: 0;
     width: 100%;
     height: myrem(1);
-    background-color: $blue;
+    background-color: $orange;
 }
 
 .price__index p {
@@ -136,7 +136,7 @@
     width: 100%;
     height: 100%;
     z-index: 2;
-    background-color: #408F95;
+    background-color: $orange;
 }
 
 .price__img img {

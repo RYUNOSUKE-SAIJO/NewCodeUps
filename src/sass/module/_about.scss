@@ -69,7 +69,7 @@
 
 .about__main-title h3 {
     font-size: myrem(40);
-    color: $blue;
+    color: $orange;
     line-height : 1;
     font-family: $english;
     font-weight: 400;
@@ -84,6 +84,17 @@
     margin-top: myrem(16);
     @include mq('md') {
         margin-top: myrem(32);
+    }
+}
+
+.about__description span {
+    font-size: myrem(24);
+    color: $navy;
+    line-height : calc(24 / 16);
+    font-family: $japanese;
+    font-weight: 500;
+    @include mq('md') {
+        color: $white;
     }
 }
 

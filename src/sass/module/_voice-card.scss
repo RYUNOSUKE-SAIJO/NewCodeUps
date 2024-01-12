@@ -51,7 +51,7 @@
 .voice-card__tag {
     display: inline-block;
     padding: myrem(4) myrem(12);
-    border: solid myrem(1) $blue;
+    border: solid myrem(1) $orange;
     @include mq('md') {
         margin-left: auto;
         padding: myrem(6) myrem(16);
@@ -60,7 +60,7 @@
 
 .voice-card__tag p {
     font-size: myrem(12);
-    color: $blue;
+    color: $orange;
     line-height : calc(22 / 12);
     font-family: $japanese;
     font-weight: 400;
@@ -82,7 +82,7 @@
     left: 0;
     width: 100%;
     height: myrem(1);
-    background-color: $blue;
+    background-color: $orange;
     @include mq('md') {
         top: myrem(66);
     }
@@ -156,7 +156,7 @@ div.voice-card__img div.color {
     width: 100%;
     height: 100%;
     z-index: 2;
-    background-color: #408F95;
+    background-color: $orange;
 }
 
 div.voice-card__img  img {

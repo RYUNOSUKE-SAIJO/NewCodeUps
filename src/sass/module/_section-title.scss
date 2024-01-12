@@ -18,14 +18,14 @@
 }
 
 .section-title__main::first-letter {
-    color: $blue;
+    color: $orange;
     text-transform: uppercase;
 }
 
 .section-title__sub {
     text-align: center;
     font-size: myrem(12);
-    color: $blue;
+    color: $orange;
     line-height : calc( 18 / 12);
     font-family: $japanese;
     font-weight: 400;
@@ -66,7 +66,7 @@
 
 .section-title__sub--contact {
     font-size: myrem(12);
-    color: $blue;
+    color: $orange;
     line-height : 1;
     font-family: $japanese;
     font-weight: 400;

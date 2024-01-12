@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   padding: myrem(22) 0;
-  border-bottom: $blue myrem(2) dotted;
+  border-bottom: $orange myrem(2) dotted;
   @include mq('md') {
     flex-direction: row;
     padding: myrem(38) 0;
@@ -45,7 +45,7 @@ input[type="tel"],
 textarea {
     width: 100%;
     padding: myrem(8) myrem(16);
-    border: 1px solid $blue;
+    border: 1px solid $orange;
     margin-top: myrem(16);
     @include mq('md') {
       margin-left: auto;
@@ -55,7 +55,7 @@ textarea {
 }
 
 input::placeholder {
-  color: #DDF0F1;
+  color: #f1dedd;
 }
 
 // エラーの表示
@@ -83,7 +83,7 @@ input::placeholder {
   position: relative;
   width: 100%;
   padding: myrem(8) myrem(16);
-  border: 1px solid $blue;
+  border: 1px solid $orange;
   margin-top: myrem(16);
   display: block;
   background: url(../images/common/form__item--campaign-arrow.jpg) no-repeat calc(100% - myrem(9)) / myrem(12);
@@ -179,6 +179,8 @@ input::placeholder {
 }
 
 
+
+
 // WP //
 
 
@@ -194,7 +196,7 @@ input::placeholder {
   }
 }
 
-//　テキストボックス
+// テキストボックス
 .wpcf7-form-control.wpcf7-text {
   width: 100%;
 }
@@ -204,10 +206,10 @@ input::placeholder {
   width: 100%;
   position: relative;
   padding: myrem(9) myrem(8);
-  border: 1px solid $blue;
+  border: 1px solid $orange;
   font-size: myrem(12);
   display: block;
-  background: url(../images/common/form__item--campaign-arrow.jpg) no-repeat calc(100% - myrem(9)) / myrem(12);
+  background: url(../images/common/contact-form_arrow.svg) no-repeat calc(100% - myrem(9)) / myrem(12);
 }
 
 //テキストエリア
@@ -223,4 +225,11 @@ input::placeholder {
 
 .form__checkbox > .wpcf7-form-control-wrap  {
   margin-top: myrem(0);
+}
+
+// 未記入欄のエラー表示
+
+input.wpcf7-not-valid, textarea.wpcf7-not-valid, select.wpcf7-not-valid {
+  background: rgba(201, 72, 0, 0.20);
+  border: 1px solid #C94800;
 }

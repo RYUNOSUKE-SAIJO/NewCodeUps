@@ -9,6 +9,7 @@ function load_custom_scripts_and_styles() {
 
     // CSS
     wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css');
+		wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
     wp_enqueue_style('theme-style', get_theme_file_uri('/assets/css/style.css'), array(), '1.0.0');
 
     // JavaScript
@@ -90,3 +91,30 @@ add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
 function wpcf7_autop_return_false() {
   return false;
 } 
+
+
+// Contact Form7の送信ボタンをクリックした後の遷移先設定
+add_action( 'wp_footer', 'add_origin_thanks_page' );
+	function add_origin_thanks_page() {
+	$thanks = home_url('/contact-thanks/');
+		echo <<< EOC
+			<script>
+				var thanksPage = {
+					370: '{$thanks}',
+				};
+			document.addEventListener( 'wpcf7mailsent', function( event ) {
+				location = thanksPage[event.detail.contactFormId];
+			}, false );
+			</script>
+		EOC;
+  }
+
+// パンくず //
+		function my_bcn_breadcrumb_title($title, $this_type, $this_id)
+	{
+		if (is_singular('post')) :
+			$title = 'ブログ詳細';
+		endif;
+		return $title;
+	};
+	add_filter('bcn_breadcrumb_title', 'my_bcn_breadcrumb_title', 10, 3);

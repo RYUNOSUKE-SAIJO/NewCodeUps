@@ -1,7 +1,7 @@
 @use "global" as *;
 
 .information {
-    background-color: #DDF0F1;
+    background-color: #f1dedd;
     position: relative;
 }
 
@@ -61,7 +61,7 @@
     display: inline-block;
     width: 100%;
     height: myrem(1);
-    background-color: $blue;
+    background-color: $orange;
     @include mq('md') {
         top: myrem(96);
     }
@@ -114,7 +114,7 @@ div.information__left-img div.color {
     width: 100%;
     height: 100%;
     z-index: 2;
-    background-color: #408F95;
+    background-color: $orange;
 }
 
 div.information__left-img img {

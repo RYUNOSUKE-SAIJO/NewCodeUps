@@ -8,7 +8,7 @@
     z-index: 5000;
     width: 100vw;
     height: 100vh;
-    background-color: rgba($color: $blue, $alpha: 1.0);
+    background-color: rgba($color: $orange, $alpha: 1.0);
     overflow: scroll;
     padding-bottom: myrem(100);
     @include mq('md') {

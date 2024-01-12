@@ -37,7 +37,7 @@
   left: 0;
   width: 100%;
   height: myrem(1);
-  background-color: $blue;
+  background-color: $orange;
 }
 
 // WP想定 //
@@ -87,7 +87,7 @@
 .sub-blog-detail__content-area li::before  {
   content: "";
   position: absolute;
-  background: url(../images/common/sub-blog-detail-list.jpg) no-repeat center center / contain;
+  background: url(../images/common/hitode-blog-detail.svg) no-repeat center center / contain;
   width: myrem(18);
   height: myrem(18);
   top: myrem(2);
@@ -98,6 +98,7 @@
 
 .sub-blog-detail__pagenavi {
   display: flex;
+  gap: myrem(80);
   justify-content: center;
   margin-top: myrem(40);
   padding-inline: myrem(94);

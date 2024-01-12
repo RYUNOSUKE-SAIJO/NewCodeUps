@@ -9,7 +9,7 @@
 //   display: block;
 //   height: myrem(14);
 //   width: myrem(14);
-//   border: solid myrem(2) $blue;
+//   border: solid myrem(2) $orange;
 //   box-sizing: border-box;
 //   margin-right: myrem(10);
 //   margin-top: myrem(4);
@@ -24,7 +24,7 @@
 //   display: block;
 //   height: myrem(22);
 //   width: myrem(22);
-//   border: solid myrem(2) $blue;
+//   border: solid myrem(2) $orange;
 //   box-sizing: border-box;
 //   margin-right: myrem(10);
 //   margin-top: myrem(2);
@@ -37,7 +37,7 @@
 // .checkbox-cl01:after {
 //   content: "";
 //   position: absolute;
-//   border: solid $blue;
+//   border: solid $orange;
 //   border-width: 0 2px 2px 0;
 //   left: myrem(3);
 //   top: myrem(-1);
@@ -50,7 +50,7 @@
 // .checkbox-cl01.checkbox-cl01--big:after {
 //   content: "";
 //   position: absolute;
-//   border: solid $blue;
+//   border: solid $orange;
 //   border-width: 0 2px 2px 0;
 //   left: myrem(7);
 //   top: myrem(3);
@@ -92,7 +92,7 @@
 //   display: block;
 //   height: myrem(14);
 //   width: myrem(14);
-//   border: solid myrem(2) $blue;
+//   border: solid myrem(2) $orange;
 //   box-sizing: border-box;
 //   margin-right: myrem(10);
 //   margin-top: myrem(4);
@@ -106,7 +106,7 @@
 // .checkbox-cl01 input + span::after {
 //   content: "";
 //   position: absolute;
-//   border: solid $blue;
+//   border: solid $orange;
 //   border-width: 0 2px 2px 0;
 //   left: myrem(3);
 //   top: myrem(-1);
@@ -157,7 +157,7 @@ span.wpcf7-list-item {
   position: relative;
   height: myrem(14);
   width: myrem(14);
-  border: solid myrem(2) $blue;
+  border: solid myrem(2) $orange;
   box-sizing: border-box;
   margin-right: myrem(10);
   margin-top: myrem(4);
@@ -173,8 +173,8 @@ input[type="radio"]:checked + .wpcf7-list-item-label::after {
   position: absolute;
   border: solid #C94800;
   border-width: 0 2px 2px 0;
-  left: myrem(3);
-  top: myrem(2);
+  left: myrem(4);
+  top: myrem(1);
   width: myrem(6);
   height: myrem(10);
   transform: rotate(45deg);
@@ -200,7 +200,7 @@ input[type="checkbox"] + .wpcf7-list-item-label::before {
   display: block;
   height: myrem(22);
   width: myrem(22);
-  border: solid myrem(2) $blue;
+  border: solid myrem(2) $orange;
   box-sizing: border-box;
   margin-right: myrem(10);
   margin-top: myrem(2);

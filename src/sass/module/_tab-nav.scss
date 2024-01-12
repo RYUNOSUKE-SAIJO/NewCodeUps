@@ -14,9 +14,9 @@
 
 // .tab-nav__tab {
 //   padding: myrem(5) 0;
-//   border: myrem(1) solid $blue;
+//   border: myrem(1) solid $orange;
 //   text-align: center;
-//   color: $blue;
+//   color: $orange;
 //   background-color: $white;
 //   transition: opacity 0.3s;
 //   cursor: pointer;
@@ -25,9 +25,9 @@
 .tab-nav__tab {
   display: block;
   padding: myrem(5) 0;
-  border: myrem(1) solid $blue;
+  border: myrem(1) solid $orange;
   text-align: center;
-  color: $blue;
+  color: $orange;
   background-color: $white;
   transition: opacity 0.3s;
   cursor: pointer;
@@ -40,14 +40,14 @@
 }
 
 .tab-nav__tab.is-active {
-  background-color: $blue;
+  background-color: $orange;
   color: $white;
 }
 
 // hover //
 
 .tab-nav__tab:hover {
-  background-color: $blue;
+  background-color: $orange;
   color: $white;
   transition: 0.1s ease-out;
 }

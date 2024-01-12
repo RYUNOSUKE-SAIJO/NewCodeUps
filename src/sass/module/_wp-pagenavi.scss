@@ -9,14 +9,14 @@
   position: relative;
   display: inline-block;
   margin: 0 myrem(6);
-  border: myrem(1) solid $blue;
+  border: myrem(1) solid $orange;
   padding: myrem(8.5) myrem(14);
   font-family: $english-2;
   font-size: myrem(16);
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  background-color: $blue;
+  background-color: $orange;
   color: $white;
 }
 
@@ -24,8 +24,8 @@
   position: relative;
   display: inline-block;
   margin: 0 myrem(6);
-  border: myrem(1) solid $blue;
-  color: $blue;
+  border: myrem(1) solid $orange;
+  color: $orange;
   padding: myrem(8.5) myrem(14);
   font-family: $english-2;
   font-size: myrem(16);
@@ -52,8 +52,9 @@
 // hover //
 
 .wp-pagenavi a:hover {
-  opacity: 0.8;
-  transition: transform 0.1s linear;
-  transform: scale(1.05);
-  border: myrem(1) solid $blue;
+  background-color: $orange;
+  color: $white;
+  transition: 0.1s ease-out;
 }
+
+

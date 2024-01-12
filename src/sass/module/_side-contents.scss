@@ -153,34 +153,48 @@
   margin-top: myrem(24);
 }
 
-summary {
-  color: $blue;
+.side-contents__archive-title {
+  position: relative;
+  color: $orange;
   font-family: $japanese;
   font-size: myrem(24);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  text-indent: 1.4em;
+}
+
+.side-contents__archive-title::before {
+  height: myrem(24);
+  content: "";
+  position: absolute;
+  // top: 47%;
+  top: myrem(15);
+  left: myrem(2);
+  transform: translateY(-50%);
+  background: url(../images/common/toggle.svg) no-repeat center center / contain;
+  width: myrem(24);
+  margin-right: 20px;
+  transition: all;
+}
+
+.side-contents__archive-title.open::before {
+  transform: translateY(-40%) rotate(90deg);
 }
 
 .side-contents__archive-month {
   margin-top: myrem(3);
-  display: block;
-  color: $blue;
-  font-family: $japanese;
-  font-size: myrem(24);
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
 }
 
 
-.side-contents__archive-year summary:hover {
+.side-contents__archive-title:hover {
   cursor: pointer;
   opacity: 0.7;
 }
 
 .side-contents__archive-months {
-  text-indent: 1.4em;
+  margin-left: 1.4em;
+  display: none;
 }
 
 
@@ -201,9 +215,6 @@ summary {
 .side-contents__campaign-cards.side-contents__campaign-cards--gap {
   gap: myrem(44);
 }
-
-
-
 
 
 

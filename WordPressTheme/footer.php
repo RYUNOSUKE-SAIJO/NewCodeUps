@@ -90,7 +90,7 @@ $contact_error = esc_url( home_url( '/$contact-error/' ) );
             </ul>
             <ul class="footer__items">
               <li class="footer__item footer__item--bold">
-                <a href="<?php echo $blog; ?>">よくある質問</a>
+                <a href="<?php echo $faq; ?>">よくある質問</a>
               </li>
               <li class="footer__item footer__item--bold">
                 <a href="<?php echo $privacy_policy; ?>">プライバシー<span><br /></span>ポリシー</a>

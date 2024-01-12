@@ -6,7 +6,7 @@
   padding-right: 0;
   padding-left: myrem(74);
   padding-bottom: myrem(6);
-  border-left: myrem(8) $blue solid;
+  border-left: myrem(8) $orange solid;
   @include mq('md') {
     padding-left: myrem(74);
   }
@@ -37,7 +37,7 @@
   padding-right: 0;
   padding-left: myrem(74);
   padding-bottom: myrem(6);
-  border-left: myrem(8) $blue solid;
+  border-left: myrem(8) $orange solid;
   @include mq('md') {
     padding-left: myrem(74);
   }
