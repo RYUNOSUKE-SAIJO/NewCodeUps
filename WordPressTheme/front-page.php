@@ -1,10 +1,34 @@
+  <!----- 変数にハイフンは使えない・ページのスラッグに使用している名前を（''）内に入れること ----->
+<?php
+$top = esc_url( home_url( '/' ) );
+$campaign = esc_url( home_url( '/campaign/' ) );
+$about = esc_url( home_url( '/about/' ) );
+$information = esc_url( home_url( '/information/' ) );
+$blog = esc_url( home_url( '/blog/' ) );
+$voice = esc_url( home_url( '/voice/' ) );
+$price = esc_url( home_url( '/price/' ) );
+$faq = esc_url( home_url( '/faq/' ) );
+$contact = esc_url( home_url( '/contact/' ) );
+$privacy_policy = esc_url( home_url( '/privacy-policy/' ) );
+$terms_of_service = esc_url( home_url( '/terms-of-service/' ) );
+$sitemap = esc_url( home_url( '/sitemap/' ) );
+$contact_thanks = esc_url( home_url( '/$contact-thanks/' ) );
+$contact_error = esc_url( home_url( '/$contact-error/' ) );
+?>
+
+
 <?php get_header(); ?>
 
   <main>
-
     <!----- first-view ----->
     <section class="first-view">
       <div class="first-view__inner">
+        <!----- オープニングアニメーション ----->
+        <div class="opening">
+          <span class="opening__mask"></span>
+          <img class="opening__logo" src="<?php echo get_theme_file_uri(); ?>/assets/images/common/header-logo.svg" alt="ロゴ">
+        </div>
+        <!----- スワイパー ----->
         <div class="swiper first-view__swiper js-fv-swiper">
           <div class="swiper-wrapper">
             <!----- ACFでグループを利用した場合の書き方 ----->
@@ -12,28 +36,28 @@
             <?php $first_view_pc = get_field('first-view_pc'); ?>
             <?php $first_view_alt = get_field('first-view_alt'); ?>
             <div class="swiper-slide">
-              <picture class="first-view__slide-img">
+              <div class="first-view__slide-img">
                 <source srcset="<?php echo $first_view_sp['sp_1']; ?>" media="(max-width: 768px)" />
                 <img src="<?php echo $first_view_pc['pc_1']; ?>" alt="<?php echo $first_view_alt['alt_1']; ?>" />
-              </picture>
+              </div>
             </div>
             <div class="swiper-slide">
-              <picture class="first-view__slide-img">
+              <div class="first-view__slide-img">
                 <source srcset="<?php echo $first_view_sp['sp_2']; ?>" media="(max-width: 768px)" />
                 <img src="<?php echo $first_view_pc['pc_2']; ?>" alt="<?php echo $first_view_alt['alt_2']; ?>" />
-              </picture>
+              </div>
             </div>
             <div class="swiper-slide">
-              <picture class="first-view__slide-img">
+              <div class="first-view__slide-img">
                 <source srcset="<?php echo $first_view_sp['sp_3']; ?>" media="(max-width: 768px)" />
                 <img src="<?php echo $first_view_pc['pc_3']; ?>" alt="<?php echo $first_view_alt['alt_3']; ?>" />
-              </picture>
+              </div>
             </div>
             <div class="swiper-slide">
-              <picture class="first-view__slide-img">
+              <div class="first-view__slide-img">
                 <source srcset="<?php echo $first_view_sp['sp_4']; ?>" media="(max-width: 768px)" />
                 <img src="<?php echo $first_view_pc['pc_4']; ?>" alt="<?php echo $first_view_alt['alt_4']; ?>" />
-              </picture>
+              </div>
             </div>
           </div>
           <div class="first-view__title-wrap">
@@ -51,7 +75,8 @@
           <p class="section-title__main">campaign</p>
           <h2 class="section-title__sub">キャンペーン</h2>
         </div>
-        <div class="campaign__cards">
+        <ul class="campaign__cards">
+          <!----- スワイパー ----->
           <div class="swiper mySwiper campaign__swiper js-campaign-swiper">
             <div class="swiper-wrapper">
                 <?php
@@ -65,7 +90,7 @@
                   <?php while ($campaign_query -> have_posts()) : ?>
                   <?php $campaign_query -> the_post(); ?>
                   <div class="swiper-slide">
-                    <div class="campaign__card campaign-card">
+                    <li class="campaign__card campaign-card">
                       <!----- アイキャッチ画像 ----->
                       <div class="campaign-card__img">
                         <?php if (has_post_thumbnail()) : ?>
@@ -96,20 +121,20 @@
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </>
                   </div>
                   <?php wp_reset_postdata(); ?>
                 <?php endwhile; endif; ?>
                 <!-- ループ終了 -->
             </div>
           </div>
-        </div>
+        </ul>
         <div class="swiper__button-wrap">
           <div class="swiper-button-next"></div>
           <div class="swiper-button-prev"></div>
         </div>
         <div class="campaign__btn">
-          <a href="sub-campaign.html" class="btn"><span>View more</span></a>
+          <a href="<?php echo $campaign; ?>" class="btn"><span>View more</span></a>
         </div>
       </div>
     </section>
@@ -123,7 +148,7 @@
         </div>
         <div class="about__view">
           <div class="about__view-vertical">
-            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/about1.jpg" alt="屋根上のシーサー" />
+            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/about1.jpg" alt="海中のクラゲ" />
           </div>
           <div class="about__view-side">
             <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/about2.jpg" alt="海中の熱帯魚" />
@@ -140,7 +165,7 @@
               <p><span>水の中の幻想、写真で味わう。</span><br>ギャラリーページに足を踏み入れると、水中の幻想が写真から広がります。<br>ダイビングの美と冒険が、写真を通して優しく、けれども力強く伝わる瞬間。まるで水中にいるような錯覚が広がります。</p>
             </div>
             <div class="about__btn">
-              <a href="sub-about.html" class="btn"><span>View more</span></a>
+              <a href="<?php echo $about; ?>" class="btn"><span>View more</span></a>
             </div>
           </div>
         </div>
@@ -169,12 +194,10 @@
                 <p>ライセンス講習</p>
               </div>
               <div class="information__text">
-                <p>
-                  当店はダイビングライセンス（Cカード）世界最大の教育機関PADIの「正規店」として店舗登録されています。<br />正規登録店として、安心安全に初めての方でも安心安全にライセンス取得をサポート致します。
-                </p>
+                <p>当店はダイビングライセンス（Cカード）世界最大の教育機関PADIの「正規店」として店舗登録されています。<br />正規登録店として、安心安全に初めての方でも安心安全にライセンス取得をサポート致します。</p>
               </div>
               <div class="information__btn">
-                <a href="sub-information.html" class="btn"><span>View more</span></a>
+                <a href="<?php echo $information; ?>" class="btn"><span>View more</span></a>
               </div>
             </div>
           </div>
@@ -190,41 +213,39 @@
           <h2 class="section-title__sub section-title__sub--white">ブログ</h2>
         </div>
         <div class="blog__cards blog-cards">
-          <?php
-            $args = [
-              'post_type' => 'post',
-              'posts_per_page' => 3
-            ];
-            $blog_query = new WP_Query($args); ?>
-            <!-- ループ開始 -->
-            <?php if ($blog_query -> have_posts()): while ($blog_query -> have_posts()): $blog_query -> the_post(); ?>
-            <li class="blog-cards__card blog-card">
-              <a href="<?php the_permalink(); ?>" class="blog-card__link">
-                <div class="blog-card__img">
-                  <?php if (has_post_thumbnail()) : ?>
-                    <?php the_post_thumbnail('full'); ?>
-                    <?php else : ?>
-                  <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/noimage.jpg" alt="noimage画像" />
-                  <?php endif; ?>
+        <?php
+          $args = [
+            'post_type' => 'post',
+            'posts_per_page' => 3
+          ];
+          $blog_query = new WP_Query($args); ?>
+          <!-- ループ開始 -->
+          <?php if ($blog_query -> have_posts()): while ($blog_query -> have_posts()): $blog_query -> the_post(); ?>
+          <li class="blog-cards__card blog-card">
+            <a href="<?php the_permalink(); ?>" class="blog-card__link">
+              <div class="blog-card__img">
+                <?php if (has_post_thumbnail()) : ?>
+                  <?php the_post_thumbnail('full'); ?>
+                  <?php else : ?>
+                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/noimage.jpg" alt="noimage画像" />
+                <?php endif; ?>
+              </div>
+              <div class="blog-card__body">
+                <time class="blog-card__date" datetime="<?php the_time('c'); ?>"><?php the_time('Y.m.d'); ?></time>
+                <div class="blog-card__title blog-card__title--resize">
+                  <p><?php the_title(); ?></p>
                 </div>
-                <div class="blog-card__body">
-                  <time class="blog-card__date" datetime="<?php the_time('c'); ?>"><?php the_time('Y.m.d'); ?></time>
-                  <div class="blog-card__title blog-card__title--resize">
-                    <p><?php the_title(); ?></p>
-                  </div>
-                  <div class="blog-card__text blog-card__text--narrow">
-                    <p>
-                      ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br />ここにテキストが入ります。ここにテキストが入ります。ここにテキスト
-                    </p>
-                  </div>
+                <div class="blog-card__text blog-card__text--narrow">
+                  <p><?php echo wp_trim_words(get_the_content(), 80, '…'); ?></p>
                 </div>
-              </a>
-            </li>
-            <?php endwhile; endif; ?>
-            <!--/メインループ -->
+              </div>
+            </a>
+          </li>
+          <?php endwhile; endif; ?>
+          <!--/メインループ -->
         </div>
         <div class="blog__btn">
-          <a href="sub-blog.html" class="btn"><span>View more</span></a>
+          <a href="<?php echo $blog; ?>" class="btn"><span>View more</span></a>
         </div>
       </div>
       <div class="blog__fish">
@@ -288,7 +309,7 @@
           <!-- ループ終了 -->
         </div>
         <div class="voice__btn">
-          <a href="sub-voice.html" class="btn"><span>View more</span></a>
+          <a href="<?php echo $voice; ?>" class="btn"><span>View more</span></a>
         </div>
         <div class="voice__fish">
           <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/voice-fish.svg" alt="魚群の装飾" />
@@ -403,7 +424,7 @@
           </div>
         </div>
         <div class="price__btn">
-          <a href="sub-price.html" class="btn"><span>View more</span></a>
+          <a href="<?php echo $price; ?>" class="btn"><span>View more</span></a>
         </div>
       </div>
       <div class="price__fish">
@@ -450,7 +471,7 @@
                 <p>ご予約・お問い合わせはコチラ</p>
               </div>
               <div class="contact__btn">
-                <a href="sub-contact-page.html" class="btn"><span>contact&nbsp;us</span></a>
+                <a href="<?php echo $contact; ?>" class="btn"><span>contact&nbsp;us</span></a>
               </div>
             </div>
           </div>

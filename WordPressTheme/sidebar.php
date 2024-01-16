@@ -31,7 +31,7 @@ $contact_error = esc_url( home_url( '/$contact-error/' ) );
             'range' => 'last24hours',
             'thumbnail_width' => 121,
             'thumbnail_height' => 90,
-            'stats_views' => 1,
+            'stats_views' => 3,
             'stats_date' => 1,
             'wpp_date' => 'Y-m-d',
             'wpp_start' => '<ul class="wpost-items m_ranking">',
@@ -219,11 +219,5 @@ $contact_error = esc_url( home_url( '/$contact-error/' ) );
           ?>
       </div>
     </div>
-
-
-
-
-
-
   </div>
 </aside>

@@ -23,11 +23,11 @@ jQuery(function ($) {
   var swiper = new Swiper(".js-fv-swiper", {
     loop: true,
     effect: "fade",
-    speed: 1000
-    // autoplay: {
-    //     delay: 5000,
-    //     disableOnInteraction: false,
-    // },
+    speed: 3000,
+    autoplay: {
+      delay: 8000,
+      disableOnInteraction: false
+    }
   });
 
   // campaign swiper //
@@ -170,6 +170,34 @@ jQuery(function ($) {
     $(".js-archive__title").click(function () {
       $(this).next(".side-contents__archive-months").slideToggle();
       $(this).toggleClass("open");
+    });
+  });
+
+  // GSAP //
+
+  window.addEventListener("load", function () {
+    var openingTL = gsap.timeline();
+    openingTL.fromTo(".opening__logo", {
+      autoAlpha: 0
+    }, {
+      autoAlpha: 1,
+      delay: 0.5
+    }).to(".opening__logo", {
+      duration: 0.5,
+      autoAlpha: 0,
+      scale: 1.1,
+      filter: "blur(5px)"
+    }, "+=1").to(".opening__mask", {
+      duration: 1.5,
+      scaleX: 0,
+      ease: "power4.inOut"
+    }, "-=.2").to(".first-view__slide-img", {
+      duration: 1.5,
+      clipPath: "inset(0 0% 0 0)",
+      ease: "power4.inOut",
+      stagger: 0
+    }, "-=.8").set(".opening", {
+      autoAlpha: 0
     });
   });
 });

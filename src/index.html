@@ -34,6 +34,8 @@
   <script defer src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script defer src="./assets/js/jquery.inview.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/split-type"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
   <script defer src="./assets/js/script.js"></script>
 </head>
 
@@ -198,31 +200,36 @@
   <main>
     <section class="first-view">
       <div class="first-view__inner">
+        <div class="opening">
+          <span class="opening__mask"></span>
+          <img class="opening__logo" src="./assets/images/common/header-logo.svg" alt="ロゴ">
+        </div>
+        <!----- スワイパー ----->
         <div class="swiper first-view__swiper js-fv-swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <picture class="first-view__slide-img">
+              <div class="first-view__slide-img">
                 <source srcset="./assets/images/common/first-view-sp.jpg" media="(max-width: 768px)" />
                 <img src="./assets/images/common/first-view.jpg" alt="ウミガメ" />
-              </picture>
+              </div>
             </div>
             <div class="swiper-slide">
-              <picture class="first-view__slide-img">
+              <div class="first-view__slide-img">
                 <source srcset="./assets/images/common/fv-sp-1.jpg" media="(max-width: 768px)" />
                 <img src="./assets/images/common/fv-pc-1.jpg" alt="綺麗なビーチ" />
-              </picture>
+              </div>
             </div>
             <div class="swiper-slide">
-              <picture class="first-view__slide-img">
+              <div class="first-view__slide-img">
                 <source srcset="./assets/images/common/fv-sp-2.jpg" media="(max-width: 768px)" />
                 <img src="./assets/images/common/fv-pc-2.jpg" alt="海に浮かぶ船" />
-              </picture>
+              </div>
             </div>
             <div class="swiper-slide">
-              <picture class="first-view__slide-img">
+              <div class="first-view__slide-img">
                 <source srcset="./assets/images/common/fv-sp-3.jpg" media="(max-width: 768px)" />
                 <img src="./assets/images/common/fv-pc-3.jpg" alt="海中を泳ぐウミガメ" />
-              </picture>
+              </div>
             </div>
           </div>
           <div class="first-view__title-wrap">
@@ -239,11 +246,11 @@
           <p class="section-title__main">campaign</p>
           <h2 class="section-title__sub">キャンペーン</h2>
         </div>
-        <div class="campaign__cards">
+        <ul class="campaign__cards">
           <div class="swiper mySwiper campaign__swiper js-campaign-swiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <div class="campaign__card campaign-card">
+                <li class="campaign__card campaign-card">
                   <div class="campaign-card__img">
                     <img class="campaign-card__img" src="./assets/images/common/campaign1.jpg" alt="鮮やかな魚群" />
                   </div>
@@ -266,10 +273,10 @@
                       </div>
                     </div>
                   </div>
-                </div>
+                </li>
               </div>
               <div class="swiper-slide">
-                <div class="campaign__card campaign-card">
+                <li class="campaign__card campaign-card">
                   <img class="campaign-card__img" src="./assets/images/common/campaign2.jpg" alt="透き通る海に浮かぶ船" />
                   <div class="campaign-card__body">
                     <div class="campaign-card__tag">
@@ -290,10 +297,10 @@
                       </div>
                     </div>
                   </div>
-                </div>
+                </li>
               </div>
               <div class="swiper-slide">
-                <div class="campaign__card campaign-card">
+                <li class="campaign__card campaign-card">
                   <img class="campaign-card__img" src="./assets/images/common/campaign3.jpg" alt="暗い海を漂うクラゲ" />
                   <div class="campaign-card__body">
                     <div class="campaign-card__tag">
@@ -314,10 +321,10 @@
                       </div>
                     </div>
                   </div>
-                </div>
+                </li>
               </div>
               <div class="swiper-slide">
-                <div class="campaign__card campaign-card">
+                <li class="campaign__card campaign-card">
                   <img class="campaign-card__img" src="./assets/images/common/campaign4.jpg" alt="海面に顔を出すダイバーたち" />
                   <div class="campaign-card__body">
                     <div class="campaign-card__tag">
@@ -338,10 +345,10 @@
                       </div>
                     </div>
                   </div>
-                </div>
+                </li>
               </div>
               <div class="swiper-slide">
-                <div class="campaign__card campaign-card">
+                <li class="campaign__card campaign-card">
                   <img class="campaign-card__img" src="./assets/images/common/campaign1.jpg" alt="鮮やかな魚群" />
                   <div class="campaign-card__body">
                     <div class="campaign-card__tag">
@@ -362,10 +369,10 @@
                       </div>
                     </div>
                   </div>
-                </div>
+                </li>
               </div>
               <div class="swiper-slide">
-                <div class="campaign__card campaign-card">
+                <li class="campaign__card campaign-card">
                   <img class="campaign-card__img" src="./assets/images/common/campaign2.jpg" alt="透き通る海に浮かぶ船" />
                   <div class="campaign-card__body">
                     <div class="campaign-card__tag">
@@ -386,10 +393,10 @@
                       </div>
                     </div>
                   </div>
-                </div>
+                </li>
               </div>
               <div class="swiper-slide">
-                <div class="campaign__card campaign-card">
+                <li class="campaign__card campaign-card">
                   <img class="campaign-card__img" src="./assets/images/common/campaign3.jpg" alt="暗い海を漂うクラゲ" />
                   <div class="campaign-card__body">
                     <div class="campaign-card__tag">
@@ -410,11 +417,11 @@
                       </div>
                     </div>
                   </div>
-                </div>
+                </li>
               </div>
             </div>
           </div>
-        </div>
+        </ul>
         <div class="swiper__button-wrap">
           <div class="swiper-button-next"></div>
           <div class="swiper-button-prev"></div>

@@ -33,16 +33,16 @@
           <div class="site-map__left">
             <ul class="site-map__items site-map__items--1">
               <div class="site-map__item site-map__item--navy site-map__item--bold">
-                <a href="sub-campaign.html">キャンペーン</a>
+                <a href="<?php echo $campaign; ?>">キャンペーン</a>
               </div>
               <li class="site-map__item site-map__item--navy">
-                <a href="sub-campaign.html">ライセンス取得</a>
+                <a href="<?php echo $campaign; ?>">ライセンス取得</a>
               </li>
               <li class="site-map__item site-map__item--navy">
-                <a href="sub-campaign.html">貸切体験ダイビング</a>
+                <a href="<?php echo $campaign; ?>">貸切体験ダイビング</a>
               </li>
               <li class="site-map__item site-map__item--navy">
-                <a href="sub-campaign.html">ナイトダイビング</a>
+                <a href="<?php echo $campaign; ?>">ナイトダイビング</a>
               </li>
               <li class="site-map__item site-map__item--navy site-map__item--bold">
                 <a href="sub-about.html">私たちについて</a>
@@ -95,7 +95,7 @@
                 <a href="sub-blog.html">利用規約</a>
               </li>
               <li class="site-map__item site-map__item--navy site-map__item--bold">
-                <a href="sub-contact-page.html">お問い合わせ</a>
+                <a href="<?php echo $contact; ?>">お問い合わせ</a>
               </li>
             </ul>
           </div>
@@ -142,7 +142,7 @@
                 <p>ご予約・お問い合わせはコチラ</p>
               </div>
               <div class="contact__btn">
-                <a href="sub-contact-page.html" class="btn"><span>contact&nbsp;us</span></a>
+                <a href="<?php echo $contact; ?>" class="btn"><span>contact&nbsp;us</span></a>
               </div>
             </div>
           </div>

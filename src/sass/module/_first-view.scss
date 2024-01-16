@@ -14,6 +14,7 @@
 
 .first-view__slide-img{
     height: 100vh;
+    clip-path: inset(0 100% 0 0);
 }
 
 .first-view__slide-img img {
@@ -39,12 +40,11 @@
 .first-view__main-title {
     font-size: myrem(40);
     color: $white;
-    letter-spacing: 0.5em;
+    letter-spacing: 0.25em;
     font-family: $english;
     font-weight: 400;
     line-height: 1.25;
     text-transform: uppercase;
-    text-indent: 0.5em;
     @include mq('md') {
         font-size: myrem(80);
     }
@@ -58,5 +58,52 @@
     line-height: 1;
     margin-top: myrem(8);
     letter-spacing: 0.1em;
+    padding: myrem(4) 0;
 }
 
+// GSAP
+
+.opening{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.opening__mask{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #de786b;
+    z-index: 10000;
+    transform-origin: top right;
+}
+.opening__logo{
+    display: block;
+    width: myrem(100);
+    z-index: 10001;
+    opacity: 0;
+}
+
+// zoom
+
+@keyframes zoomUp {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.15);
+    }
+    }
+    .swiper-slide-active .first-view__slide-img,
+    .swiper-slide-duplicate-active .first-view__slide-img,
+    .swiper-slide-prev .first-view__slide-img {
+    animation: zoomUp 16s linear 0s normal both;
+}

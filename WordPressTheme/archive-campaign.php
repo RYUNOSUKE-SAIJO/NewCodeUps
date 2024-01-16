@@ -24,7 +24,7 @@ $contact_error = esc_url( home_url( '/$contact-error/' ) );
     <section class="sub-first-view">
       <div class="sub-first-view__inner">
         <picture class="sub-first-view__slide-img">
-          <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/sub-campaign-fv-sp.jpg" media="(max-width: 768px)" />
+          <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/sub-campaign-fv-pc.jpg" media="(max-width: 768px)" />
           <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/sub-campaign-fv-pc.jpg" alt="黄色の熱帯魚" />
         </picture>
         <div class="sub-first-view__title-wrap">
@@ -170,7 +170,7 @@ $contact_error = esc_url( home_url( '/$contact-error/' ) );
                 <p>ご予約・お問い合わせはコチラ</p>
               </div>
               <div class="contact__btn">
-                <a href="sub-contact-page.html" class="btn"><span>contact&nbsp;us</span></a>
+                <a href="<?php echo $contact; ?>" class="btn"><span>contact&nbsp;us</span></a>
               </div>
             </div>
           </div>

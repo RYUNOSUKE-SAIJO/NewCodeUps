@@ -113,6 +113,12 @@ $contact_error = esc_url( home_url( '/$contact-error/' ) );
     </div>
   </footer>
   <?php wp_footer(); ?>
+
+  <!----- jQuery ----->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vegas/2.4.4/vegas.min.js"></script>
+  <!--自作のJS-->
+  <script src="js/script.js"></script>
 </body>
 
 </html>

@@ -1,22 +1,24 @@
 <?php 
 
 function load_custom_scripts_and_styles() {
-  // Favicon
+    // Favicon
     echo '<link rel="icon" href="' . esc_url(get_site_icon_url()) . '" />';
 
-    // Google Fonts (2つ以上ある場合は１つずつ書く)
-    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Gotu&family=Lato:wght@400;700&family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap');
+    // Google Fonts
+    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Gotu&family=Lato:wght@400;700&family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap', array(), null );
 
     // CSS
     wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css');
-		wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+    wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
     wp_enqueue_style('theme-style', get_theme_file_uri('/assets/css/style.css'), array(), '1.0.0');
 
     // JavaScript
     wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-3.6.0.js', array(), '3.6.0', true);
     wp_enqueue_script('inview-js', get_theme_file_uri('/assets/js/jquery.inview.min.js'), array('jquery'), '1.0.0', true);
     wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js', array(), '8.0.0', true);
-    wp_enqueue_script('custom-js', get_theme_file_uri('/assets/js/script.js'), array('jquery'), '1.0.0', true);
+    wp_enqueue_script('split-type', 'https://unpkg.com/split-type', array(), null, true);
+    wp_enqueue_script('gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js', array(), '3.12.4', true);
+    wp_enqueue_script('custom-js-script', get_theme_file_uri('/assets/js/script.js'), array('jquery', 'split-type', 'gsap'), '1.0.0', true);
 }
 add_action('wp_enqueue_scripts', 'load_custom_scripts_and_styles');
 

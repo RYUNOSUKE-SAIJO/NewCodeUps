@@ -125,7 +125,7 @@
                 <p>ご予約・お問い合わせはコチラ</p>
               </div>
               <div class="contact__btn">
-                <a href="sub-contact-page.html" class="btn"><span>contact&nbsp;us</span></a>
+                <a href="<?php echo $contact; ?>" class="btn"><span>contact&nbsp;us</span></a>
               </div>
             </div>
           </div>

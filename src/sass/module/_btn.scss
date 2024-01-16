@@ -134,3 +134,39 @@ div.wpcf7 .wpcf7-spinner {
 .wpcf7-sent.invalid .wpcf7-response-output {
     display: none;
 }
+
+
+// コンタクトフォーム用
+
+.btn.wp-btn {
+    padding: 0;
+    width: 100%;
+}
+
+.btn.wp-btn span {
+    padding: 0;
+}
+
+.btn.wp-btn span::after {
+    padding: 0;
+    display: inline-block;
+    position: absolute;
+    content: "";
+    background-image: url("../images/common/btn-arrow.svg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: myrem(40);
+    height: 100%;
+    top: 45%;
+    transform: translateY(-50%);
+    right: myrem(47);
+}
+
+.btn.wp-btn:hover span::after {
+    background-image: url("../images/common/btn-arrow-blue.svg");
+}
+
+.wpcf7-form-control.wpcf7-submit {
+    padding: myrem(15.2) myrem(96) myrem(15.2) myrem(74);
+}

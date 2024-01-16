@@ -93,7 +93,7 @@
           </label>
           <!----- 送信ボタン ----->
           <div class="form__btn">
-            <a href="sub-contact-page.html" class="btn"><span>Send</span></a>
+            <a href="<?php echo $contact; ?>" class="btn"><span>Send</span></a>
           </div>
         </form>
       </div>
