@@ -25,8 +25,8 @@ jQuery(function ($) {
     effect: "fade",
     speed: 3000,
     autoplay: {
-        delay: 8000,
-        disableOnInteraction: false,
+      delay: 8000,
+      disableOnInteraction: false,
     },
   });
 
@@ -176,40 +176,58 @@ jQuery(function ($) {
     });
   });
 
+  // GSAP //
 
-    // GSAP //
-
-    window.addEventListener("load", function () {
-        const openingTL = gsap.timeline();
-        openingTL
-        .fromTo(
-        ".opening__logo",
-        { autoAlpha: 0 },
-        { autoAlpha: 1, delay: 0.5 }
-        )
-        .to(
+  window.addEventListener("load", function () {
+    const openingTL = gsap.timeline();
+    openingTL
+      .fromTo(".opening__logo", { autoAlpha: 0 }, { autoAlpha: 1, delay: 0.5 })
+      .to(
         ".opening__logo",
         { duration: 0.5, autoAlpha: 0, scale: 1.1, filter: "blur(5px)" },
         "+=1"
-        )
-        .to(
+      )
+      .to(
         ".opening__mask",
         { duration: 1.5, scaleX: 0, ease: "power4.inOut" },
         "-=.2"
-        )
-        .to(
+      )
+      .to(
         ".first-view__slide-img",
         {
-            duration: 1.5,
-            clipPath: "inset(0 0% 0 0)",
-            ease: "power4.inOut",
-            stagger: 0,
+          duration: 1.5,
+          clipPath: "inset(0 0% 0 0)",
+          ease: "power4.inOut",
+          stagger: 0,
         },
         "-=.8"
-        )
-        .set(".opening", { autoAlpha: 0 });
-    });
+      )
+      .set(".opening", { autoAlpha: 0 });
+  });
 
+
+  // タブメニュー
+  $(".js-tab-menu").on("click", function () {
+    $(".js-tab-menu").removeClass("is-active");
+    $(".js-tab-content").removeClass("is-active");
+    $(this).addClass("is-active");
+    var number = $(this).data("number");
+    $("#" + number).addClass("is-active");
+  });
+
+  //別ページからタブメニューへダイレクトリンク
+  $(document).ready(function () {
+    var hash = window.location.hash;
+    if (hash) {
+      // ハッシュに基づいてタブをアクティブにする
+      $(".js-tab-menu").removeClass("is-active");
+      $(".js-tab-content").removeClass("is-active");
+      $('.js-tab-menu[data-number="' + hash.substring(1) + '"]').addClass(
+        "is-active"
+      );
+      $(hash).addClass("is-active");
+    }
+  });
 
 
 
@@ -221,3 +239,11 @@ jQuery(function ($) {
 
 
 });
+
+
+
+
+
+
+
+

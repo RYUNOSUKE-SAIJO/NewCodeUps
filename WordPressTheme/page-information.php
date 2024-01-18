@@ -27,62 +27,51 @@
     </div>
     <?php endif; ?>
 
+
     <section class="sub-information sub-information-layout">
+      <!----- タブ切り替え ----->
       <div class="sub-information__inner inner">
-        <div class="sub-information__tab-contents tab-contents">
-          <div class="tab-contents__tab-area">
-            <input id="tab-1" type="radio" class="tab-btn" name="tab-btn" checked>
-            <label for="tab-1" class="tab-contents__tab js-tab-contents__tab"><span class="tab-name1"></span>
-              <p>ライセンス<br>講習</p>
-            </label>
-            <input id="tab-2" type="radio" class="tab-btn" name="tab-btn">
-            <label for="tab-2" class="tab-contents__tab js-tab-contents__tab"><span class="tab-name2"></span>
-              <p>ファン<br>ダイビング</p>
-            </label>
-            <input id="tab-3" type="radio" class="tab-btn" name="tab-btn">
-            <label for="tab-3" class="tab-contents__tab js-tab-contents__tab"><span class="tab-name3"></span>
-              <p>体験<br>ダイビング</p>
-            </label>
-          </div>
+        <div class="sub-information__tab tab">
+          <!----- タブメニュー ----->
+          <ul class="tab__menu">
+            <li class="tab__menu-item js-tab-menu is-active" data-number="tab01" data-url="/path-to-ライセンス講習"><span class="tab-name1"></span><p>ライセンス<br>講習</p></li>
+            <li class="tab__menu-item js-tab-menu" data-number="tab02"><span class="tab-name2"></span><p>ファン<br>ダイビング</p></li>
+            <li class="tab__menu-item js-tab-menu" data-number="tab03"><span class="tab-name3"></span><p>体験<br>ダイビング</p></li>
+          </ul>
+          <!----- タブコンテンツ ----->
           <!----- ACFでグループを利用した場合の書き方 ----->
           <?php $information_1 = get_field('information_1'); ?>
           <?php $information_2 = get_field('information_2'); ?>
           <?php $information_3 = get_field('information_3'); ?>
-          <div class="tab-contents__panel-area">
-            <div class="tab-contents__panel js-tab-contents__panel is-active">
-              <div class="tab-contents__panel-container">
-                <div class="tab-contents__panel-left">
-                  <h3 class="tab-contents__panel-header">ライセンス講習</h3>
-                  <p class="tab-contents__panel-text"><?php echo $information_1['information_text_1']; ?></p>
-                </div>
-                <div class="tab-contents__panel-right">
-                  <img src="<?php echo $information_1['information_img_1']; ?>" alt="透き通る海に浮かぶダイバーたち">
-                </div>
+          <ul class="tab__content">
+            <li id="tab01" class="tab__content-item js-tab-content is-active">
+              <div class="tab__content-item-left">
+                <h3 class="tab__content-item-header">ライセンス講習</h3>
+                <p class="tab__content-item-text"><?php echo $information_1['information_text_1']; ?></p>
               </div>
-            </div>
-            <div class="tab-contents__panel js-tab-contents__panel">
-              <div class="tab-contents__panel-container">
-                <div class="tab-contents__panel-left">
-                  <h3 class="tab-contents__panel-header">ファンダイビング</h3>
-                  <p class="tab-contents__panel-text"><?php echo $information_2['information_text_2']; ?></p>
-                </div>
-                <div class="tab-contents__panel-right">
-                  <img src="<?php echo $information_2['information_img_2']; ?>" alt="透き通る海に浮かぶダイバーたち">
-                </div>
+              <div class="tab__content-item-right">
+                <img src="<?php echo $information_1['information_img_1']; ?>" alt="透き通る海に浮かぶダイバーたち">
               </div>
-            </div>
-            <div class="tab-contents__panel js-tab-contents__panel">
-              <div class="tab-contents__panel-container">
-                <div class="tab-contents__panel-left">
-                  <h3 class="tab-contents__panel-header">体験ダイビング</h3>
-                  <p class="tab-contents__panel-text"><?php echo $information_3['information_text_3']; ?></p>
-                </div>
-                <div class="tab-contents__panel-right">
-                  <img src="<?php echo $information_3['information_img_3']; ?>" alt="透き通る海に浮かぶダイバーたち">
-                </div>
+            </li>
+            <li id="tab02" class="tab__content-item js-tab-content">
+              <div class="tab__content-item-left">
+                <h3 class="tab__content-item-header">ファンダイビング</h3>
+                <p class="tab__content-item-text"><?php echo $information_2['information_text_2']; ?></p>
               </div>
-            </div>
-          </div>
+              <div class="tab__content-item-right">
+                <img src="<?php echo $information_2['information_img_2']; ?>" alt="透き通る海に浮かぶダイバーたち">
+              </div>
+            </li>
+            <li id="tab03" class="tab__content-item js-tab-content">
+              <div class="tab__content-item-left">
+                <h3 class="tab__content-item-header">体験ダイビング</h3>
+                <p class="tab__content-item-text"><?php echo $information_3['information_text_3']; ?></p>
+              </div>
+              <div class="tab__content-item-right">
+                <img src="<?php echo $information_3['information_img_3']; ?>" alt="透き通る海に浮かぶダイバーたち">
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
     </section>

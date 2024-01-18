@@ -1,12 +1,5 @@
 @use "global" as *;
 
-.sub-blog-detail__inner {
-  @include mq('md') {
-    display: flex;
-    gap: myrem(80);
-  }
-}
-
 .sub-blog-detail__date {
   color: $navy;
   font-family: $english;

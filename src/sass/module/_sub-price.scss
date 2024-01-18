@@ -1,6 +1,10 @@
 @use "global" as *;
 
+.sub-price__inner.inner {
+    max-width: myrem(750);
+}
+
 .sub-price__table {
-  max-width: myrem(700);
   margin-inline: auto;
 }
+

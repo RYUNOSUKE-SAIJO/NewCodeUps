@@ -1,6 +1,7 @@
 @use "global" as *;
 
-.tab-contents__tab-area {
+// タブ //
+.tab__menu {
   display: flex;
   justify-content: space-around;
   gap: myrem(20);
@@ -9,7 +10,7 @@
   }
 }
 
-.tab-contents__tab {
+.tab__menu-item {
   background-color: #f1dedd;
   width: 100%;
   padding-top: myrem(10);
@@ -27,7 +28,8 @@
   }
 }
 
-.tab-contents__tab span {
+// 左側の装飾
+.tab__menu-item span {
   display: none;
   @include mq('md') {
     flex-shrink: 0; 
@@ -39,25 +41,26 @@
   }
 }
 
-.tab-contents__tab span.tab-name1 {
+.tab__menu-item span.tab-name1 {
   @include mq('md') {
     background: url(../images/common/sub-info-tab-name-1.svg) no-repeat center center /contain;
   }
 }
 
-.tab-contents__tab span.tab-name2 {
+.tab__menu-item span.tab-name2 {
   @include mq('md') {
     background: url(../images/common/sub-info-tab-name-2.svg) no-repeat center center /contain;
   }
 }
 
-.tab-contents__tab span.tab-name3 {
+.tab__menu-item span.tab-name3 {
   @include mq('md') {
     background: url(../images/common/sub-info-tab-name-3.svg) no-repeat center center /contain;
   }
 }
 
-.tab-contents__tab p {
+// タブの名前
+.tab__menu-item p {
   color: $orange;
   font-family: $japanese;
   font-size: myrem(14);
@@ -69,29 +72,25 @@
   }
 }
 
-.tab-contents__tab br {
+.tab__menu-item br {
   @include mq('md') {
     display: none;
   }
 }
 
-// panel //
 
-.tab-contents__panel-area {
+// コンテンツ //
+.tab__content {
   margin-top: myrem(16);
   @include mq('md') {
     margin-top: myrem(24);
   }
 }
 
-.tab-contents__panel {
+.tab__content-item {
   opacity: 0;
   height: 0;
   overflow: hidden;
-  // transition: opacity 0.5s linear, height 0.5s linear;
-}
-
-.tab-contents__panel-container {
   display: flex;
   flex-direction: column;
   gap: myrem(8);
@@ -102,7 +101,7 @@
   }
 }
 
-.tab-contents__panel-header {
+.tab__content-item-header {
   position: relative;
   color: $navy;
   font-family: $japanese;
@@ -112,7 +111,8 @@
   line-height: 1;
 }
 
-.tab-contents__panel-header::after {
+// 下線
+.tab__content-item-header::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -122,7 +122,7 @@
   bottom: myrem(-8);
 }
 
-.tab-contents__panel-text {
+.tab__content-item-text {
   margin-top: myrem(16);
   color: #000;
   font-family: $japanese;
@@ -132,11 +132,11 @@
   line-height: 1.5; 
 }
 
-.tab-contents__panel-right {
+.tab__content-item-right {
   flex-shrink: 0;
 }
 
-.tab-contents__panel-right img {
+.tab__content-item-right img {
   aspect-ratio: 297 / 189;
   width: 100%;
   object-fit: cover;
@@ -146,52 +146,73 @@
   }
 }
 
-input[name="tab-btn"] {
-    display: none;
-}
 
 // checked //
 
-.tab-contents__tab-area input:checked + .tab-contents__tab {
+.tab__menu-item-area input:checked + .tab__menu-item {
   transition: 0.3s;
   background-color: $orange;
 }
 
-.tab-contents__tab-area input:checked + .tab-contents__tab p {
+.tab__menu-item-area input:checked + .tab__menu-item p {
   transition: 0.3s;
   color: $white;
 }
 
-.tab-contents__tab-area input:nth-of-type(1):checked + .tab-contents__tab span {
+.tab__menu-item-area input:nth-of-type(1):checked + .tab__menu-item span {
   transition: 0.15s;
   background: url(../images/common/sub-info-tab-name-1-white.svg) no-repeat center center /contain;
 }
-.tab-contents__tab-area input:nth-of-type(2):checked + .tab-contents__tab span {
+.tab__menu-item-area input:nth-of-type(2):checked + .tab__menu-item span {
   transition: 0.15s;
   background: url(../images/common/sub-info-tab-name-2-white.svg) no-repeat center center /contain;
 }
-.tab-contents__tab-area input:nth-of-type(3):checked + .tab-contents__tab span {
+.tab__menu-item-area input:nth-of-type(3):checked + .tab__menu-item span {
   transition: 0.15s;
   background: url(../images/common/sub-info-tab-name-3-white.svg) no-repeat center center /contain;
 }
 
-// is-active //
+// is-active
+.tab__menu-item.is-active {
+  background-color: $orange;
+}
 
-.tab-contents__panel.is-active {
-    opacity: 1;
-    transition: opacity 1s linear;
-    height: auto;
-    padding: myrem(24);
-    border: myrem(1) solid $orange;
-  }
+.tab__menu-item.is-active p {
+  color: $white;
+}
 
-// animation //
+.tab__menu-item:nth-of-type(1).is-active > span  {
+  background: url(../images/common/sub-info-tab-name-1-white.svg) no-repeat center center /contain;
+  transition: 0.1s ease-out;
+}
 
-div.tab-contents__panel-right {
+.tab__menu-item:nth-of-type(2).is-active > span {
+  background: url(../images/common/sub-info-tab-name-2-white.svg) no-repeat center center /contain;
+  transition: 0.1s ease-out;
+}
+
+.tab__menu-item:nth-of-type(3).is-active > span {
+  background: url(../images/common/sub-info-tab-name-3-white.svg) no-repeat center center /contain;
+  transition: 0.1s ease-out;
+}
+
+.tab__content-item.is-active {
+  opacity: 1;
+  transition: opacity 1s linear;
+  height: auto;
+  padding: myrem(24);
+  border: myrem(1) solid $orange;
+}
+
+
+
+// InView animation //
+
+div.tab__content-item-right {
     position: relative;
 }
 
-div.tab-contents__panel-right div.color {
+div.tab__content-item-right div.color {
     position: absolute;
     top: 0;
     right: 0;
@@ -201,31 +222,31 @@ div.tab-contents__panel-right div.color {
     background-color: $orange;
 }
 
-div.tab-contents__panel-right img {
+div.tab__content-item-right img {
     display: block;
     width: 100%;
 }
 
 // hover //
 
-.tab-contents__tab:hover {
+.tab__menu-item:hover {
   background-color: $orange;
   transition: 0.1s ease-out;
 }
-.tab-contents__tab:hover p {
+.tab__menu-item:hover p {
   color: $white;
   transition: 0.1s ease-out;
 }
 
-.tab-contents__tab:nth-of-type(1):hover > span  {
+.tab__menu-item:nth-of-type(1):hover > span  {
   background: url(../images/common/sub-info-tab-name-1-white.svg) no-repeat center center /contain;
   transition: 0.1s ease-out;
 }
-.tab-contents__tab:nth-of-type(2):hover > span {
+.tab__menu-item:nth-of-type(2):hover > span {
   background: url(../images/common/sub-info-tab-name-2-white.svg) no-repeat center center /contain;
   transition: 0.1s ease-out;
 }
-.tab-contents__tab:nth-of-type(3):hover > span {
+.tab__menu-item:nth-of-type(3):hover > span {
   background: url(../images/common/sub-info-tab-name-3-white.svg) no-repeat center center /contain;
   transition: 0.1s ease-out;
 }

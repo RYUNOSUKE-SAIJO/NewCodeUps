@@ -1,8 +1,0 @@
-@use "global" as *;
-
-.gallery-layout {
-  margin-top: myrem(36);
-  @include mq('md') {
-    margin-top: myrem(120);
-  }
-}

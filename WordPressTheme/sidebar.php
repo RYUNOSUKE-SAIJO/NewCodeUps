@@ -17,7 +17,7 @@ $contact_error = esc_url( home_url( '/$contact-error/' ) );
 ?>
 
 
-<aside class="sub-blog__side-contents side-contents">
+<aside class="sub-blog-two-column__side-contents side-contents">
   <div class="side-contents__inner">
     <!----- 人気記事 ----->
     <div class="side-contents__article">
@@ -202,7 +202,7 @@ $contact_error = esc_url( home_url( '/$contact-error/' ) );
                 <div class="side-contents__archive-month">
                   <a href="<?php echo $archive_link; ?>">
                     <div class="js-archive">
-                      <div class="side-contents__archive-title js-archive__title"><?php echo $month_label; ?>(<?php echo $post_count; ?>)</div><!-- 記事数を表示 -->
+                      <div class="side-contents__archive-title side-contents__archive-title--month js-archive__title"><?php echo $month_label; ?>(<?php echo $post_count; ?>)</div><!-- 記事数を表示 -->
                     </div>
                   </a>
                 </div>

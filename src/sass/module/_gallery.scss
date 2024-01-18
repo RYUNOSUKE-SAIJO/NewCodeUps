@@ -89,12 +89,9 @@
 // object-fit: cover;の場合
 
 .gallery__modal-img {
-  width: 63.8vw;
+  width: 80vw;
   position: relative;
   margin: 0 auto;
-  @include mq('md') {
-    height: 76.3vh;
-  }
 }
 
 .gallery__modal-img img {
@@ -102,7 +99,7 @@
   height: 100%;
   object-fit: contain;
   @include mq('md') {
-    object-fit: cover;
+    object-fit: contain;
     aspect-ratio: 920 / 586;
   }
 }

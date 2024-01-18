@@ -57,13 +57,13 @@ $contact_error = esc_url( home_url( '/$contact-error/' ) );
                 <a href="<?php echo $information; ?>">ダイビング情報</a>
               </li>
               <li class="footer__item">
-                <a href="<?php echo $information; ?>">ライセンス講習</a>
+                <a href="<?php echo $information; ?>#tab01">ライセンス講習</a>
               </li>
               <li class="footer__item">
-                <a href="<?php echo $information; ?>">体験ダイビング</a>
+                <a href="<?php echo $information; ?>#tab01">ファンダイビング</a>
               </li>
               <li class="footer__item">
-                <a href="<?php echo $information; ?>">ファンダイビング</a>
+                <a href="<?php echo $information; ?>#tab01">体験ダイビング</a>
               </li>
               <li class="footer__item footer__item--bold">
                 <a href="<?php echo $blog; ?>">ブログ</a>

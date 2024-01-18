@@ -226,63 +226,51 @@
     </div>
 
     <section class="sub-information sub-information-layout">
+      <!----- タブ切り替え ----->
       <div class="sub-information__inner inner">
-        <div class="sub-information__tab-contents tab-contents">
-          <div class="tab-contents__tab-area">
-            <input id="tab-1" type="radio" class="tab-btn" name="tab-btn" checked>
-            <label for="tab-1" class="tab-contents__tab js-tab-contents__tab"><span class="tab-name1"></span>
-              <p>ライセンス<br>講習</p>
-            </label>
-            <input id="tab-2" type="radio" class="tab-btn" name="tab-btn">
-            <label for="tab-2" class="tab-contents__tab js-tab-contents__tab"><span class="tab-name2"></span>
-              <p>ファン<br>ダイビング</p>
-            </label>
-            <input id="tab-3" type="radio" class="tab-btn" name="tab-btn">
-            <label for="tab-3" class="tab-contents__tab js-tab-contents__tab"><span class="tab-name3"></span>
-              <p>体験<br>ダイビング</p>
-            </label>
-          </div>
-          <div class="tab-contents__panel-area">
-            <div class="tab-contents__panel js-tab-contents__panel is-active">
-              <div class="tab-contents__panel-container">
-                <div class="tab-contents__panel-left">
-                  <h3 class="tab-contents__panel-header">ライセンス講習</h3>
-                  <p class="tab-contents__panel-text">
-                    泳げない人も、ちょっと水が苦手な人も、ダイビングを「安全に」楽しんでいただけるよう、スタッフがサポートいたします！スキューバダイビングを楽しむためには最低限の知識とスキルが要求されます。知識やスキルと言ってもそんなに難しい事ではなく、安全に楽しむ事を目的としたものです。プロダイバーの指導のもと知識とスキルを習得しCカードを取得して、ダイバーになろう！
-                  </p>
-                </div>
-                <div class="tab-contents__panel-right">
-                  <img src="./assets/images/common/sub-info-tab-1.jpg" alt="透き通る海に浮かぶダイバーたち">
-                </div>
+        <div class="sub-information__tab tab">
+          <!----- タブメニュー ----->
+          <ul class="tab__menu">
+            <li class="tab__menu-item js-tab-menu is-active" data-number="tab01" data-url="/path-to-ライセンス講習"><span class="tab-name1"></span><p>ライセンス<br>講習</p></li>
+            <li class="tab__menu-item js-tab-menu" data-number="tab02"><span class="tab-name2"></span><p>ファン<br>ダイビング</p></li>
+            <li class="tab__menu-item js-tab-menu" data-number="tab03"><span class="tab-name3"></span><p>体験<br>ダイビング</p></li>
+          </ul>
+          <!----- タブコンテンツ ----->
+          <ul class="tab__content">
+            <li id="tab01" class="tab__content-item js-tab-content is-active">
+              <div class="tab__content-item-left">
+                <h3 class="tab__content-item-header">ライセンス講習</h3>
+                <p class="tab__content-item-text">
+                  泳げない人も、ちょっと水が苦手な人も、ダイビングを「安全に」楽しんでいただけるよう、スタッフがサポートいたします！スキューバダイビングを楽しむためには最低限の知識とスキルが要求されます。知識やスキルと言ってもそんなに難しい事ではなく、安全に楽しむ事を目的としたものです。プロダイバーの指導のもと知識とスキルを習得しCカードを取得して、ダイバーになろう！
+                </p>
               </div>
-            </div>
-            <div class="tab-contents__panel js-tab-contents__panel">
-              <div class="tab-contents__panel-container">
-                <div class="tab-contents__panel-left">
-                  <h3 class="tab-contents__panel-header">ファンダイビング</h3>
-                  <p class="tab-contents__panel-text">
-                    ブランクダイバー、ライセンスを取り立ての方も安心！沖縄本島を代表する「青の洞窟」（真栄田岬）やケラマ諸島などメジャーなポイントはモチロンのこと、最北端「辺戸岬」や最南端の「大渡海岸」等もご用意！
-                  </p>
-                </div>
-                <div class="tab-contents__panel-right">
-                  <img src="./assets/images/common/sub-info-tab-2.jpg" alt="透き通る海に浮かぶダイバーたち">
-                </div>
+              <div class="tab__content-item-right">
+                <img src="./assets/images/common/sub-info-tab-1.jpg" alt="透き通る海に浮かぶダイバーたち">
               </div>
-            </div>
-            <div class="tab-contents__panel js-tab-contents__panel">
-              <div class="tab-contents__panel-container">
-                <div class="tab-contents__panel-left">
-                  <h3 class="tab-contents__panel-header">体験ダイビング</h3>
-                  <p class="tab-contents__panel-text">
-                    ブランクダイバー、ライセンスを取り立ての方も安心！沖縄本島を代表する「青の洞窟」（真栄田岬）やケラマ諸島などメジャーなポイントはモチロンのこと、最北端「辺戸岬」や最南端の「大渡海岸」等もご用意！
-                  </p>
-                </div>
-                <div class="tab-contents__panel-right">
-                  <img src="./assets/images/common/sub-info-tab-3.jpg" alt="透き通る海に浮かぶダイバーたち">
-                </div>
+            </li>
+            <li id="tab02" class="tab__content-item js-tab-content">
+              <div class="tab__content-item-left">
+                <h3 class="tab__content-item-header">ファンダイビング</h3>
+                <p class="tab__content-item-text">
+                  ブランクダイバー、ライセンスを取り立ての方も安心！沖縄本島を代表する「青の洞窟」（真栄田岬）やケラマ諸島などメジャーなポイントはモチロンのこと、最北端「辺戸岬」や最南端の「大渡海岸」等もご用意！
+                </p>
               </div>
-            </div>
-          </div>
+              <div class="tab__content-item-right">
+                <img src="./assets/images/common/sub-info-tab-2.jpg" alt="透き通る海に浮かぶダイバーたち">
+              </div>
+            </li>
+            <li id="tab03" class="tab__content-item js-tab-content">
+              <div class="tab__content-item-left">
+                <h3 class="tab__content-item-header">体験ダイビング</h3>
+                <p class="tab__content-item-text">
+                  ブランクダイバー、ライセンスを取り立ての方も安心！沖縄本島を代表する「青の洞窟」（真栄田岬）やケラマ諸島などメジャーなポイントはモチロンのこと、最北端「辺戸岬」や最南端の「大渡海岸」等もご用意！
+                </p>
+              </div>
+              <div class="tab__content-item-right">
+                <img src="./assets/images/common/sub-info-tab-3.jpg" alt="透き通る海に浮かぶダイバーたち">
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
@@ -383,13 +371,13 @@
                 <a href="sub-information.html">ダイビング情報</a>
               </li>
               <li class="footer__item">
-                <a href="sub-information.html">ライセンス講習</a>
+                <a href="./sub-information.html#tab01">ライセンス講習</a>
               </li>
               <li class="footer__item">
-                <a href="sub-information.html">体験ダイビング</a>
+                <a href="./sub-information.html#tab02">ファンダイビング</a>
               </li>
               <li class="footer__item">
-                <a href="sub-information.html">ファンダイビング</a>
+                <a href="./sub-information.html#tab03">体験ダイビング</a>
               </li>
               <li class="footer__item footer__item--bold">
                 <a href="sub-blog.html">ブログ</a>

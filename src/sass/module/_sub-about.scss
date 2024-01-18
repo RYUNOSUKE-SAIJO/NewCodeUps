@@ -11,3 +11,10 @@
     top: myrem(620);
   }
 }
+
+.sub-about__gallery {
+    margin-top: myrem(36);
+  @include mq('md') {
+    margin-top: myrem(120);
+  }
+}

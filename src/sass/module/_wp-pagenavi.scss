@@ -10,7 +10,7 @@
   display: inline-block;
   margin: 0 myrem(6);
   border: myrem(1) solid $orange;
-  padding: myrem(8.5) myrem(14);
+  padding: myrem(9) myrem(14) myrem(8);
   font-family: $english-2;
   font-size: myrem(16);
   font-style: normal;
@@ -26,7 +26,7 @@
   margin: 0 myrem(6);
   border: myrem(1) solid $orange;
   color: $orange;
-  padding: myrem(8.5) myrem(14);
+  padding: myrem(9) myrem(14) myrem(8);
   font-family: $english-2;
   font-size: myrem(16);
   font-style: normal;
@@ -46,6 +46,21 @@
 .wp-pagenavi .nextpostslink {
   margin: 0 myrem(40);
 }
+
+// .wp-pagenavi .previouspostslink::after {
+//   content: "";
+//   background: url(../images/common/wp-navi-arrow-left.svg) no-repeat center center / cover;
+//   top: 5px;
+//   left: 3px;
+//   width: 50px;
+//   height: 50px;
+//   display: inline-block;
+// }
+
+// .wp-pagenavi .previouspostslink {
+
+// }
+
 
 
 

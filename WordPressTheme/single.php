@@ -28,9 +28,9 @@
     </div>
     <?php endif; ?>
 
-    <div class="sub-blog-detail  sub-blog-detail-layout">
-      <div class="sub-blog-detail__inner inner">
-        <div class="sub-blog-detail__main-contents">
+    <div class="sub-blog-single  sub-blog-single-layout">
+      <div class="sub-blog-single__sub-blog-two-column sub-blog-two-column inner">
+        <div class="sub-blog-two-column__sub-blog-detail sub-blog-detail">
           <div class="sub-blog-detail__content-area">
             <?php if (have_posts()): while (have_posts()): the_post(); ?>
               <time class="sub-blog-detail__date" datetime="<?php the_time('c'); ?>"><?php the_time('Y.m.d'); ?></time>
@@ -47,7 +47,6 @@
             </div>
           </div>
         </div>
-
         <!----- side-contents ----->
         <?php get_sidebar(); ?>
       </div>

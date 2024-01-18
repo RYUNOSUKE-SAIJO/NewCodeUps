@@ -182,10 +182,13 @@
   transform: translateY(-40%) rotate(90deg);
 }
 
+.side-contents__archive-title.side-contents__archive-title--month.open::before {
+  transform: translateY(-40%) rotate(0deg);
+}
+
 .side-contents__archive-month {
   margin-top: myrem(3);
 }
-
 
 .side-contents__archive-title:hover {
   cursor: pointer;

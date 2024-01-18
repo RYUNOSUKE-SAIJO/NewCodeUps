@@ -29,10 +29,10 @@
     <?php endif; ?>
 
     <div class="sub-blog  sub-blog-layout">
-      <div class="sub-blog__inner inner">
+      <div class="sub-blog__two-column sub-blog-two-column inner">
         <!----- main-contents ----->
-        <div class="sub-blog__main-contents">
-          <ul class="sub-blog__cards blog-cards blog-cards--two-column">
+        <div class="sub-blog-two-column__main-contents">
+          <ul class="sub-blog-two-column__cards blog-cards blog-cards--two-column">
             <!-- メインループ -->
             <?php if (have_posts()): while (have_posts()): the_post(); ?>
             <li class="blog-cards__card blog-card">
@@ -61,7 +61,7 @@
             <!--/メインループ -->
           </ul>
           <!----- pagination ----->
-          <div class="sub-blog__pagenavi wp-pagenavi">
+          <div class="sub-blog-two-column__pagenavi wp-pagenavi">
             <?php wp_pagenavi(); ?>
           </div>
         </div>

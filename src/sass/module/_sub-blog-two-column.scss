@@ -1,0 +1,30 @@
+@use "global" as *;
+
+.sub-blog-two-column {
+  padding: 0 myrem(20);
+  @include mq('md') {
+    display: flex;
+    gap: myrem(80);
+  }
+}
+
+.sub-blog-two-column__main-contents {
+  @include mq('md') {
+      max-width: myrem(706);
+  }
+}
+
+.sub-blog-two-column__pagenavi {
+  margin-top: myrem(80);
+  @include mq('md') {
+    margin-top: myrem(89);
+  }
+}
+
+.sub-blog-two-column__side-contents {
+  margin-top: myrem(77);
+  @include mq('md') {
+    margin-top: 0;
+    width: 100%;
+  }
+}
