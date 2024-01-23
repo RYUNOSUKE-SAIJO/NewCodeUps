@@ -1,3 +1,23 @@
+  <!----- 変数にハイフンは使えない・ページのスラッグに使用している名前を（''）内に入れること ----->
+<?php
+$top = esc_url( home_url( '/' ) );
+$campaign = esc_url( home_url( '/campaign/' ) );
+$about = esc_url( home_url( '/about/' ) );
+$information = esc_url( home_url( '/information/' ) );
+$blog = esc_url( home_url( '/blog/' ) );
+$voice = esc_url( home_url( '/voice/' ) );
+$price = esc_url( home_url( '/price/' ) );
+$faq = esc_url( home_url( '/faq/' ) );
+$contact = esc_url( home_url( '/contact/' ) );
+$privacy_policy = esc_url( home_url( '/privacy-policy/' ) );
+$terms_of_service = esc_url( home_url( '/terms-of-service/' ) );
+$sitemap = esc_url( home_url( '/sitemap/' ) );
+$contact_thanks = esc_url( home_url( '/$contact-thanks/' ) );
+$contact_error = esc_url( home_url( '/$contact-error/' ) );
+?>
+
+
+
 <?php get_header(); ?>
   <main>
     <section class="sub-first-view">
@@ -59,7 +79,7 @@
                 <p class="tab__content-item-text"><?php echo $information_2['information_text_2']; ?></p>
               </div>
               <div class="tab__content-item-right">
-                <img src="<?php echo $information_2['information_img_2']; ?>" alt="透き通る海に浮かぶダイバーたち">
+                <img src="<?php echo $information_2['information_img_2']; ?>" alt="マンタと泳ぐダイバー">
               </div>
             </li>
             <li id="tab03" class="tab__content-item js-tab-content">
@@ -68,7 +88,7 @@
                 <p class="tab__content-item-text"><?php echo $information_3['information_text_3']; ?></p>
               </div>
               <div class="tab__content-item-right">
-                <img src="<?php echo $information_3['information_img_3']; ?>" alt="透き通る海に浮かぶダイバーたち">
+                <img src="<?php echo $information_3['information_img_3']; ?>" alt="グループで海上に浮かぶダイバーたち">
               </div>
             </li>
           </ul>

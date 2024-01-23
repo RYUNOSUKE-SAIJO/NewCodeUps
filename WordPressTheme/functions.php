@@ -41,15 +41,21 @@ function my_setup() {
 add_action( 'after_setup_theme', 'my_setup' );
 
 
-//カスタム投稿表示件数（キャンペーン）
+
+	//投稿表示件数（キャンペーン）
 function change_posts_per_page($query) {
     if ( is_admin() || ! $query->is_main_query() )
         return;
     if ( $query->is_archive('campaign') ) { //カスタム投稿タイプを指定
         $query->set( 'posts_per_page', '4' ); //表示件数を指定
     }
+		//投稿表示件数（お客様の声）
+    if ( $query->is_archive('voice') ) { //カスタム投稿タイプを指定
+        $query->set( 'posts_per_page', '4' ); //表示件数を指定
+    }
 }
 add_action( 'pre_get_posts', 'change_posts_per_page' );
+
 
 
 //Smart Custom Fields(SCF)

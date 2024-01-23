@@ -1,9 +1,9 @@
   <!----- 変数にハイフンは使えない・ページのスラッグに使用している名前を（''）内に入れること ----->
 <?php
 $top = esc_url( home_url( '/' ) );
-$campaign = esc_url( home_url( '/campaign/' ) );
+$campaign = esc_url( home_url( 'campaign' ) );
 $about = esc_url( home_url( '/about/' ) );
-$information = esc_url( home_url( '/information/' ) );
+$information = esc_url( home_url( 'information' ) );
 $blog = esc_url( home_url( '/blog/' ) );
 $voice = esc_url( home_url( '/voice/' ) );
 $price = esc_url( home_url( '/price/' ) );
@@ -40,13 +40,13 @@ $contact_error = esc_url( home_url( '/$contact-error/' ) );
                 <a href="<?php echo $campaign; ?>">キャンペーン</a>
               </li>
               <li class="footer__item">
-                <a href="<?php echo $campaign; ?>">ライセンス取得</a>
+                <a href="<?php echo $campaign; ?>_category/campaign_1/">ライセンス取得</a>
               </li>
               <li class="footer__item">
-                <a href="<?php echo $campaign; ?>">貸切体験ダイビング</a>
+                <a href="<?php echo $campaign; ?>_category/campaign_2/">貸切体験ダイビング</a>
               </li>
               <li class="footer__item">
-                <a href="<?php echo $campaign; ?>">ナイトダイビング</a>
+                <a href="<?php echo $campaign; ?>_category/campaign_3/">ナイトダイビング</a>
               </li>
               <li class="footer__item footer__item--bold">
                 <a href="<?php echo $about; ?>">私たちについて</a>
@@ -60,10 +60,10 @@ $contact_error = esc_url( home_url( '/$contact-error/' ) );
                 <a href="<?php echo $information; ?>#tab01">ライセンス講習</a>
               </li>
               <li class="footer__item">
-                <a href="<?php echo $information; ?>#tab01">ファンダイビング</a>
+                <a href="<?php echo $information; ?>#tab02">ファンダイビング</a>
               </li>
               <li class="footer__item">
-                <a href="<?php echo $information; ?>#tab01">体験ダイビング</a>
+                <a href="<?php echo $information; ?>#tab03">体験ダイビング</a>
               </li>
               <li class="footer__item footer__item--bold">
                 <a href="<?php echo $blog; ?>">ブログ</a>
@@ -79,13 +79,16 @@ $contact_error = esc_url( home_url( '/$contact-error/' ) );
                 <a href="<?php echo $price; ?>">料金一覧</a>
               </li>
               <li class="footer__item">
-                <a href="<?php echo $price; ?>">ライセンス講習</a>
+                <a href="<?php echo $price; ?>#price01">ライセンス講習</a>
               </li>
               <li class="footer__item">
-                <a href="<?php echo $price; ?>">体験ダイビング</a>
+                <a href="<?php echo $price; ?>#price02">体験ダイビング</a>
               </li>
               <li class="footer__item">
-                <a href="<?php echo $price; ?>">ファンダイビング</a>
+                <a href="<?php echo $price; ?>#price03">ファンダイビング</a>
+              </li>
+              <li class="footer__item">
+                <a href="<?php echo $price; ?>#price04">スペシャルダイビング</a>
               </li>
             </ul>
             <ul class="footer__items">
@@ -97,6 +100,9 @@ $contact_error = esc_url( home_url( '/$contact-error/' ) );
               </li>
               <li class="footer__item footer__item--bold">
                 <a href="<?php echo $terms_of_service; ?>">利用規約</a>
+              </li>
+              <li class="footer__item footer__item--bold">
+                <a href="<?php echo $sitemap; ?>">サイトマップ</a>
               </li>
               <li class="footer__item footer__item--bold">
                 <a href="<?php echo $contact; ?>">お問い合わせ</a>
@@ -115,10 +121,10 @@ $contact_error = esc_url( home_url( '/$contact-error/' ) );
   <?php wp_footer(); ?>
 
   <!----- jQuery ----->
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vegas/2.4.4/vegas.min.js"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vegas/2.4.4/vegas.min.js"></script> -->
   <!--自作のJS-->
-  <script src="js/script.js"></script>
+  <!-- <script src="js/script.js"></script> -->
 </body>
 
 </html>

@@ -342,12 +342,12 @@ $contact_error = esc_url( home_url( '/$contact-error/' ) );
                 $priceTable = SCF::get_option_meta( 'price-list_option', 'price-list_1' );
                 if ($priceTable) {
                   foreach ($priceTable as $priceItem) {
-                    $course = esc_html($priceItem['course_1']);
-                    $price = esc_html($priceItem['price_1']);
+                    $courseName = esc_html($priceItem['course_1']);
+                    $coursePrice = esc_html($priceItem['price_1']);
                 ?>
                 <div class="price__content-block">
-                  <p class="price__content-block"><?php echo $course; ?></p>
-                  <p class="price__content-price"><?php echo $price; ?></p>
+                  <p class="price__content-block"><?php echo $courseName; ?></p>
+                  <p class="price__content-price"><?php echo $coursePrice; ?></p>
                 </div>
                 <?php
                   }
@@ -364,12 +364,12 @@ $contact_error = esc_url( home_url( '/$contact-error/' ) );
                 $priceTable = SCF::get_option_meta( 'price-list_option', 'price-list_2' );
                 if ($priceTable) {
                   foreach ($priceTable as $priceItem) {
-                    $course = esc_html($priceItem['course_2']);
-                    $price = esc_html($priceItem['price_2']);
+                    $courseName = esc_html($priceItem['course_2']);
+                    $coursePrice = esc_html($priceItem['price_2']);
                 ?>
                 <div class="price__content-block">
-                  <p class="price__content-block"><?php echo $course; ?></p>
-                  <p class="price__content-price"><?php echo $price; ?></p>
+                  <p class="price__content-block"><?php echo $courseName; ?></p>
+                  <p class="price__content-price"><?php echo $coursePrice; ?></p>
                 </div>
                 <?php
                   }
@@ -386,12 +386,12 @@ $contact_error = esc_url( home_url( '/$contact-error/' ) );
                 $priceTable = SCF::get_option_meta( 'price-list_option', 'price-list_3' );
                 if ($priceTable) {
                   foreach ($priceTable as $priceItem) {
-                    $course = esc_html($priceItem['course_3']);
-                    $price = esc_html($priceItem['price_3']);
+                    $courseName = esc_html($priceItem['course_3']);
+                    $coursePrice = esc_html($priceItem['price_3']);
                 ?>
                 <div class="price__content-block">
-                  <p class="price__content-block"><?php echo $course; ?></p>
-                  <p class="price__content-price"><?php echo $price; ?></p>
+                  <p class="price__content-block"><?php echo $courseName; ?></p>
+                  <p class="price__content-price"><?php echo $coursePrice; ?></p>
                 </div>
                 <?php
                   }
@@ -408,12 +408,12 @@ $contact_error = esc_url( home_url( '/$contact-error/' ) );
                 $priceTable = SCF::get_option_meta( 'price-list_option', 'price-list_4' );
                 if ($priceTable) {
                   foreach ($priceTable as $priceItem) {
-                    $course = esc_html($priceItem['course_4']);
-                    $price = esc_html($priceItem['price_4']);
+                    $courseName = esc_html($priceItem['course_4']);
+                    $coursePrice = esc_html($priceItem['price_4']);
                 ?>
                 <div class="price__content-block">
-                  <p class="price__content-block"><?php echo $course; ?></p>
-                  <p class="price__content-price"><?php echo $price; ?></p>
+                  <p class="price__content-block"><?php echo $courseName; ?></p>
+                  <p class="price__content-price"><?php echo $coursePrice; ?></p>
                 </div>
                 <?php
                   }

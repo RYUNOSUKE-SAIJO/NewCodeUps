@@ -1,3 +1,21 @@
+  <!----- 変数にハイフンは使えない・ページのスラッグに使用している名前を（''）内に入れること ----->
+<?php
+$top = esc_url( home_url( '/' ) );
+$campaign = esc_url( home_url( '/campaign/' ) );
+$about = esc_url( home_url( '/about/' ) );
+$information = esc_url( home_url( '/information/' ) );
+$blog = esc_url( home_url( '/blog/' ) );
+$voice = esc_url( home_url( '/voice/' ) );
+$price = esc_url( home_url( '/price/' ) );
+$faq = esc_url( home_url( '/faq/' ) );
+$contact = esc_url( home_url( '/contact/' ) );
+$privacy_policy = esc_url( home_url( '/privacy-policy/' ) );
+$terms_of_service = esc_url( home_url( '/terms-of-service/' ) );
+$sitemap = esc_url( home_url( '/sitemap/' ) );
+$contact_thanks = esc_url( home_url( '/$contact-thanks/' ) );
+$contact_error = esc_url( home_url( '/$contact-error/' ) );
+?>
+
 <?php get_header(); ?>
 
   <main>

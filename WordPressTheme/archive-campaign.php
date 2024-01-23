@@ -63,7 +63,7 @@ $contact_error = esc_url( home_url( '/$contact-error/' ) );
           </div>
         </div>
         <div class="sub-campaign__cards campaign-cards">
-        <!-- ループ開始 -->
+        <!-- メインループ開始 -->
         <?php if (have_posts()) : ?>
           <?php while (have_posts()) : ?>
             <?php the_post(); ?>

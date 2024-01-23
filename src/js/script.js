@@ -100,16 +100,6 @@ jQuery(function ($) {
     }
   });
 
-  // タブ切替 //
-  $(".js-tab-contents__tab").on("click", function () {
-    $(".js-tab-contents__tab,.js-tab-contents__panel").removeClass("is-active");
-
-    $(this).addClass("is-active");
-
-    var index = $(".js-tab-contents__tab").index(this);
-    $(".js-tab-contents__panel").eq(index).addClass("is-active");
-  });
-
   // アコーディオン //
 
   $(function () {
@@ -205,7 +195,6 @@ jQuery(function ($) {
       .set(".opening", { autoAlpha: 0 });
   });
 
-
   // タブメニュー
   $(".js-tab-menu").on("click", function () {
     $(".js-tab-menu").removeClass("is-active");
@@ -228,6 +217,50 @@ jQuery(function ($) {
       $(hash).addClass("is-active");
     }
   });
+
+$(document).ready(function () {
+  var hash = window.location.hash;
+  if (hash) {
+    // ハッシュに基づいてタブをアクティブにする
+    $(".js-tab-menu").removeClass("is-active");
+    $(".js-tab-content").removeClass("is-active");
+    $('.js-tab-menu[data-number="' + hash.substring(1) + '"]').addClass(
+      "is-active"
+    );
+    $(hash).addClass("is-active");
+
+    // ページ内リンクの場合、指定の位置（100px上）で表示
+    if ($(hash).length > 0) {
+      var targetOffset = $(hash).offset().top - 500;
+      $("html, body").animate({ scrollTop: targetOffset }, 300);
+    }
+  }
+});
+
+$(document).ready(function () {
+  var hash = window.location.hash;
+  if (hash) {
+    // ハッシュに基づいてタブをアクティブにする
+    $(".js-tab-menu").removeClass("is-active");
+    $(".js-tab-content").removeClass("is-active");
+    $('.js-tab-menu[data-number="' + hash.substring(1) + '"]').addClass(
+      "is-active"
+    );
+    $(hash).addClass("is-active");
+
+    // ページ内リンクの場合、指定の位置（100px上）で表示
+    if ($(hash).length > 0) {
+      var targetOffset = $(hash).offset().top - 500;
+      $("html, body").animate({ scrollTop: targetOffset }, 300);
+    }
+  }
+});
+
+
+
+
+
+
 
 
 

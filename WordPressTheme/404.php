@@ -52,7 +52,7 @@ $contact_error = esc_url( home_url( '/$contact-error/' ) );
 
     <div class="to-top js-to-top" id="page-top">
       <a href="">
-        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/go-top.svg" alt="トップへボタン" />
+        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/go-top-white.svg" alt="トップへボタン" />
       </a>
     </div>
   </main>

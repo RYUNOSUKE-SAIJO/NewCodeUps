@@ -189,6 +189,10 @@ a {
 	margin-top: 3rem;
 }
 
+.sub-blog-single-layout {
+	margin-top: 2.9375rem;
+}
+
 .sub-campaign-layout {
 	margin-top: 5rem;
 }
@@ -239,10 +243,6 @@ a {
 
 .voice-layout {
 	margin-top: 5rem;
-}
-
-.sub-blog-single-layout {
-	margin-top: 2.9375rem;
 }
 
 .about__view {
@@ -3472,6 +3472,10 @@ html {
 	margin-top: 9.375rem;
 }
 
+.sub-blog-single-layout {
+	margin-top: 9.375rem;
+}
+
 .sub-campaign-layout {
 	margin-top: 11.125rem;
 }
@@ -3522,10 +3526,6 @@ html {
 
 .voice-layout {
 	margin-top: 8.75rem;
-}
-
-.sub-blog-single-layout {
-	margin-top: 9.375rem;
 }
 
 .about__inner {

@@ -1,3 +1,23 @@
+  <!----- 変数にハイフンは使えない・ページのスラッグに使用している名前を（''）内に入れること ----->
+<?php
+$top = esc_url( home_url( '/' ) );
+$campaign = esc_url( home_url( '/campaign/' ) );
+$about = esc_url( home_url( '/about/' ) );
+$information = esc_url( home_url( '/information/' ) );
+$blog = esc_url( home_url( '/blog/' ) );
+$voice = esc_url( home_url( '/voice/' ) );
+$price = esc_url( home_url( '/price/' ) );
+$faq = esc_url( home_url( '/faq/' ) );
+$contact = esc_url( home_url( '/contact/' ) );
+$privacy_policy = esc_url( home_url( '/privacy-policy/' ) );
+$terms_of_service = esc_url( home_url( '/terms-of-service/' ) );
+$sitemap = esc_url( home_url( '/sitemap/' ) );
+$contact_thanks = esc_url( home_url( '/$contact-thanks/' ) );
+$contact_error = esc_url( home_url( '/$contact-error/' ) );
+?>
+
+
+
 <?php get_header(); ?>
 
   <main>
@@ -55,7 +75,7 @@
         <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/sub-about-fish.svg" alt="魚群の装飾" />
       </div>
 
-      <section class="sub-about__gallery gallery gallery-layout">
+      <section class="sub-about__gallery gallery">
         <div class="gallery__inner inner">
           <div class="gallery__section-title section-title">
             <p class="section-title__main section-title__main--indent">gallery</p>
