@@ -47,25 +47,27 @@ $contact_error = esc_url( home_url( '/contact-error/' ) );
     <ul class="accordion__list">
       <?php
       $faqData = SCF::get_option_meta('faq_option', 'faq-list');
-      if ($faqData && is_array($faqData) && !empty($faqData[0]['question'])) :
+      if ($faqData && is_array($faqData)) :
         foreach ($faqData as $faqItem) :
+          if (!empty($faqItem['question']) && !empty($faqItem['answer'])) :
       ?>
-          <li class="accordion__item js-accordion__item">
-            <div class="accordion__title js-accordion__title">
-              <p class="accordion__title-text"><?php echo esc_html($faqItem['question']); ?></p>
-            </div>
-            <div class="accordion__content js-accordion__content">
-              <p class="accordion__content-text"><?php echo esc_html($faqItem['answer']); ?></p>
-            </div>
-          </li>
-      <?php
-        endforeach; else:
-      ?>
-          <p class="accordion__content--nopost">Coming Soon...</p>
-      <?php endif; ?>
+            <li class="accordion__item js-accordion__item">
+              <div class="accordion__title js-accordion__title">
+                <p class="accordion__title-text"><?php echo esc_html($faqItem['question']); ?></p>
+              </div>
+              <div class="accordion__content js-accordion__content">
+                <p class="accordion__content-text"><?php echo esc_html($faqItem['answer']); ?></p>
+              </div>
+            </li>
+      <?php endif; endforeach; endif; ?>
     </ul>
+    <?php if (empty($faqData) || !is_array($faqData) || empty($faqData[0]['question'])): ?>
+      <p class="accordion__content--nopost">Coming Soon...</p>
+    <?php endif; ?>
   </div>
 </div>
+
+
 
 
 
