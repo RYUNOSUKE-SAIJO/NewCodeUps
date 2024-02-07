@@ -17,11 +17,11 @@
     }
 }
 
-// .blog-cards.blog-cards--two-column::after {
-//     content: "";
-//     position: absolute;
-//     background: url(../images/common/side-contents-波線.jpg);
-//     width: 100%;
-//     height: 100%;
-//     bottom: 100px;
-// }
+.blog-cards--two-column--nopost {
+    text-align: center;
+    font-size: myrem(50);
+    font-weight: 500;
+    @include mq('md') {
+        width: 220%;
+    }
+}

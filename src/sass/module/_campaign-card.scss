@@ -134,10 +134,17 @@
     margin-top: myrem(8);
     display: flex;
     align-items: center;
+}
+
+.campaign-card__price.with-gap {
     gap: myrem(16);
     @include mq('md') {
         gap: myrem(24);
     }
+}
+
+.campaign-card__price.without-gap {
+    gap: 0;
 }
 
 .campaign-card__price-left {

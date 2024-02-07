@@ -12,12 +12,12 @@ $contact = esc_url( home_url( '/contact/' ) );
 $privacy_policy = esc_url( home_url( '/privacy-policy/' ) );
 $terms_of_service = esc_url( home_url( '/terms-of-service/' ) );
 $sitemap = esc_url( home_url( '/sitemap/' ) );
-$contact_thanks = esc_url( home_url( '/$contact-thanks/' ) );
-$contact_error = esc_url( home_url( '/$contact-error/' ) );
+$contact_thanks = esc_url( home_url( '/contact-thanks/' ) );
+$contact_error = esc_url( home_url( '/contact-error/' ) );
 ?>
 
 
-<aside class="sub-blog-two-column__side-contents side-contents">
+<aside class="side-contents side-contents--layout">
   <div class="side-contents__inner">
     <!----- 人気記事 ----->
     <div class="side-contents__article">
@@ -150,7 +150,7 @@ $contact_error = esc_url( home_url( '/$contact-error/' ) );
         // 現在の年を取得
         $current_year = date('Y');
         // 過去3年分のアーカイブをループで処理
-        for ($year = $current_year; $year >= $current_year - 2; $year--) {
+        for ($year = $current_year; $year >= $current_year - 2; $year--) :
           $archive_link = get_year_link($year);
           // クエリの設定
           $args = array(
@@ -165,7 +165,7 @@ $contact_error = esc_url( home_url( '/$contact-error/' ) );
           // クエリを実行
           $query = new WP_Query($args);
           // 記事が存在する場合の処理
-          if ($query->have_posts()) {
+          if ($query->have_posts()) :
             // この年が現在の年かどうかを判定
             $is_current_year = ($year === $current_year);
         ?>
@@ -177,7 +177,7 @@ $contact_error = esc_url( home_url( '/$contact-error/' ) );
             <div class="side-contents__archive-months js-archive__content">
               <?php
               // 各月ごとにアーカイブを処理
-              for ($month = 12; $month >= 1; $month--) {
+              for ($month = 12; $month >= 1; $month--) :
                 // この月のアーカイブページへのリンクを取得
                 $archive_link = get_month_link($year, $month);
                 // クエリの設定
@@ -194,7 +194,7 @@ $contact_error = esc_url( home_url( '/$contact-error/' ) );
                 // クエリを実行
                 $query = new WP_Query($args);
                 // 記事が存在する場合の処理
-                if ($query->have_posts()) {
+                if ($query->have_posts()) :
                   // 月のラベルを生成
                   $month_label = date('n月', mktime(0, 0, 0, $month, 1, $year)); // 記事数を取得
                   $post_count = $query->found_posts;
@@ -206,17 +206,15 @@ $contact_error = esc_url( home_url( '/$contact-error/' ) );
                     </div>
                   </a>
                 </div>
-              <?php
-                }
-              }
-              ?>
+              <?php endif; ?>
+              <?php endfor; ?>
+            <?php wp_reset_postdata(); ?>
             </div>
           </div>
         </div>
-          <?php
-            }
-          }
-          ?>
+        <?php endif; ?>
+        <?php endfor; ?>
+      <?php wp_reset_postdata(); ?>
       </div>
     </div>
   </div>

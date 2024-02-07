@@ -12,8 +12,8 @@ $contact = esc_url( home_url( '/contact/' ) );
 $privacy_policy = esc_url( home_url( '/privacy-policy/' ) );
 $terms_of_service = esc_url( home_url( '/terms-of-service/' ) );
 $sitemap = esc_url( home_url( '/sitemap/' ) );
-$contact_thanks = esc_url( home_url( '/$contact-thanks/' ) );
-$contact_error = esc_url( home_url( '/$contact-error/' ) );
+$contact_thanks = esc_url( home_url( '/contact-thanks/' ) );
+$contact_error = esc_url( home_url( '/contact-error/' ) );
 ?>
 
 
@@ -35,30 +35,19 @@ $contact_error = esc_url( home_url( '/$contact-error/' ) );
             <?php $first_view_sp = get_field('first-view_sp'); ?>
             <?php $first_view_pc = get_field('first-view_pc'); ?>
             <?php $first_view_alt = get_field('first-view_alt'); ?>
+            <?php 
+              for ($i = 1; $i <= 4; $i++) {
+                $sp_key = "sp_" . $i;
+                $pc_key = "pc_" . $i;
+                $alt_key = "alt_" . $i;
+            ?>
             <div class="swiper-slide">
               <div class="first-view__slide-img">
-                <source srcset="<?php echo $first_view_sp['sp_1']; ?>" media="(max-width: 768px)" />
-                <img src="<?php echo $first_view_pc['pc_1']; ?>" alt="<?php echo $first_view_alt['alt_1']; ?>" />
+                <source srcset="<?php echo $first_view_sp[$sp_key]; ?>" media="(max-width: 768px)" />
+                <img src="<?php echo $first_view_pc[$pc_key]; ?>" alt="<?php echo $first_view_alt[$alt_key]; ?>" />
               </div>
             </div>
-            <div class="swiper-slide">
-              <div class="first-view__slide-img">
-                <source srcset="<?php echo $first_view_sp['sp_2']; ?>" media="(max-width: 768px)" />
-                <img src="<?php echo $first_view_pc['pc_2']; ?>" alt="<?php echo $first_view_alt['alt_2']; ?>" />
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="first-view__slide-img">
-                <source srcset="<?php echo $first_view_sp['sp_3']; ?>" media="(max-width: 768px)" />
-                <img src="<?php echo $first_view_pc['pc_3']; ?>" alt="<?php echo $first_view_alt['alt_3']; ?>" />
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="first-view__slide-img">
-                <source srcset="<?php echo $first_view_sp['sp_4']; ?>" media="(max-width: 768px)" />
-                <img src="<?php echo $first_view_pc['pc_4']; ?>" alt="<?php echo $first_view_alt['alt_4']; ?>" />
-              </div>
-            </div>
+            <?php } ?>
           </div>
           <div class="first-view__title-wrap">
             <h2 class="first-view__main-title">lagoon</h2>
@@ -112,19 +101,26 @@ $contact_error = esc_url( home_url( '/$contact-error/' ) );
                       <div class="campaign-card__info">
                         <div class="campaign-card__content">
                           <div class="campaign-card__description">
-                            <p>全部コミコミ(お一人様)</p>
+                            <p>全部コミコミ( お一人様 )</p>
                           </div>
                           <!----- 価格 ----->
-                          <div class="campaign-card__price">
-                            <div class="campaign-card__price-left"><?php the_field('before_sale'); ?></div>
-                            <div class="campaign-card__price-right"><?php the_field('after_sale'); ?></div>
+                          <div class="campaign-card__price <?php echo !empty(get_field('before_sale')) ? 'with-gap' : 'without-gap'; ?>">
+                            <?php
+                              $before_sale_value = get_field('before_sale');
+                              if (!empty($before_sale_value)) {
+                                echo '<div class="campaign-card__price-left">' . $before_sale_value . '</div>';
+                              }
+                            ?>
+                            <div class="campaign-card__price-right">
+                              <?php the_field('after_sale'); ?>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </>
+                    <li>
                   </div>
-                  <?php wp_reset_postdata(); ?>
-                <?php endwhile; endif; ?>
+                  <?php endwhile; endif; ?>
+                <?php wp_reset_postdata(); ?>
                 <!-- ループ終了 -->
             </div>
           </div>
@@ -242,6 +238,7 @@ $contact_error = esc_url( home_url( '/$contact-error/' ) );
             </a>
           </li>
           <?php endwhile; endif; ?>
+          <?php wp_reset_postdata(); ?>
           <!--/メインループ -->
         </div>
         <div class="blog__btn">
@@ -306,6 +303,7 @@ $contact_error = esc_url( home_url( '/$contact-error/' ) );
               </div>
             </div>
           <?php endwhile; endif; ?>
+          <?php wp_reset_postdata(); ?>
           <!-- ループ終了 -->
         </div>
         <div class="voice__btn">
@@ -431,61 +429,6 @@ $contact_error = esc_url( home_url( '/$contact-error/' ) );
         <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/price-fish.svg" alt="魚群の装飾" />
       </div>
     </section>
-
-    <!----- contact ----->
-    <section class="contact contact-layout">
-      <div class="contact__inner inner">
-        <div class="contact__container">
-          <div class="contact__address">
-            <div class="contact__logo">
-              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/contact-logo.svg" alt="当サイトのロゴ" />
-            </div>
-            <div class="contact__block">
-              <div class="contact__block-left">
-                <p>沖縄県那覇市1-1</p>
-                <p>TEL:0120-000-0000</p>
-                <p>営業時間:8:30-19:00</p>
-                <p>定休日:毎週火曜日</p>
-              </div>
-              <div class="contact__block-right">
-                <div class="contact__iframe-wrap">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3578.9840673359845!2d127.69933508324004!3d26.229707229979176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34e56be7db5cbe23%3A0x90ba6df02740ef48!2z44CSOTAyLTAwNjEg5rKW57iE55yM6YKj6KaH5biC5Y-k5bO277yR5LiB55uu!5e0!3m2!1sja!2sjp!4v1693311687571!5m2!1sja!2sjp"
-                    width="546" height="296" style="border: 0" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="contact__info">
-            <div class="contact__info-wrap">
-              <div class="contact__section-title section-title">
-                <p class="section-title__main section-title__main--contact">
-                  contact
-                </p>
-                <h2 class="section-title__sub section-title__sub--contact">
-                  お問い合わせ
-                </h2>
-              </div>
-              <div class="contact__info-text">
-                <p>ご予約・お問い合わせはコチラ</p>
-              </div>
-              <div class="contact__btn">
-                <a href="<?php echo $contact; ?>" class="btn"><span>contact&nbsp;us</span></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="contact__fish">
-        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/fish-treat-right.svg" alt="魚群の装飾" />
-      </div>
-    </section>
-
-    <!----- to-top ----->
-    <div class="to-top js-to-top" id="page-top">
-      <a href="#"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/go-top.svg" alt="トップへボタン" /></a>
-    </div>
     
   </main>
 

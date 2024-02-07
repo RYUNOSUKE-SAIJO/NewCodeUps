@@ -12,8 +12,8 @@ $contact = esc_url( home_url( '/contact/' ) );
 $privacy_policy = esc_url( home_url( '/privacy-policy/' ) );
 $terms_of_service = esc_url( home_url( '/terms-of-service/' ) );
 $sitemap = esc_url( home_url( '/sitemap/' ) );
-$contact_thanks = esc_url( home_url( '/$contact-thanks/' ) );
-$contact_error = esc_url( home_url( '/$contact-error/' ) );
+$contact_thanks = esc_url( home_url( '/contact-thanks/' ) );
+$contact_error = esc_url( home_url( '/contact-error/' ) );
 ?>
 
 

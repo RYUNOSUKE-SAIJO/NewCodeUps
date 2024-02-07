@@ -12,8 +12,8 @@ $contact = esc_url( home_url( '/contact/' ) );
 $privacy_policy = esc_url( home_url( '/privacy-policy/' ) );
 $terms_of_service = esc_url( home_url( '/terms-of-service/' ) );
 $sitemap = esc_url( home_url( '/sitemap/' ) );
-$contact_thanks = esc_url( home_url( '/$contact-thanks/' ) );
-$contact_error = esc_url( home_url( '/$contact-error/' ) );
+$contact_thanks = esc_url( home_url( '/contact-thanks/' ) );
+$contact_error = esc_url( home_url( '/contact-error/' ) );
 ?>
 
 
@@ -35,16 +35,8 @@ $contact_error = esc_url( home_url( '/$contact-error/' ) );
       </picture>
     </section>
 
-    <!----- パンくず ----->
-    <?php if (function_exists('bcn_display')) : ?>
-    <div class="breadcrumb breadcrumb-layout">
-      <div class="breadcrumb__inner inner">
-        <ul class="breadcrumb__list">
-          <?php bcn_display(); ?>
-        </ul>
-      </div>
-    </div>
-    <?php endif; ?>
+<!----- パンくず ----->
+<?php get_template_part('breadcrumb') ?>
 
     <div class="sub-contact-page sub-contact-page-layout">
       <div class="sub-contact-page__inner inner">

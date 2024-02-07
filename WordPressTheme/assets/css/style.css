@@ -180,6 +180,10 @@ a {
 	margin-top: 5rem;
 }
 
+.side-contents--layout {
+	margin-top: 4.8125rem;
+}
+
 .sub-about-layout {
 	margin-top: 3.625rem;
 	position: relative;
@@ -415,6 +419,12 @@ a {
 	line-height: normal;
 }
 
+.accordion__content--nopost {
+	font-size: 3.125rem;
+	font-weight: 500;
+	text-align: center;
+}
+
 .blog-card {
 	background-color: #fff;
 	box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
@@ -525,6 +535,12 @@ a {
 	display: grid;
 	justify-content: center;
 	position: relative;
+}
+
+.blog-cards--two-column--nopost {
+	font-size: 3.125rem;
+	font-weight: 500;
+	text-align: center;
 }
 
 .blog {
@@ -865,9 +881,16 @@ div.wpcf7 .wpcf7-spinner {
 .campaign-card__price {
 	align-items: center;
 	display: flex;
-	gap: 1rem;
 	justify-content: center;
 	margin-top: 0.5rem;
+}
+
+.campaign-card__price.with-gap {
+	gap: 1rem;
+}
+
+.campaign-card__price.without-gap {
+	gap: 0;
 }
 
 .campaign-card__price-left {
@@ -2299,6 +2322,7 @@ div.information__left-img img {
 	aspect-ratio: 121/90;
 	max-width: 7.5625rem;
 	object-fit: cover;
+	width: 100%;
 }
 
 .side-contents__article-right {
@@ -3306,6 +3330,13 @@ div.tab__content-item-right img {
 	line-height: 1.5;
 }
 
+.voice-card--nopost {
+	font-size: 3.125rem;
+	font-weight: 500;
+	margin-top: 6.25rem;
+	text-align: center;
+}
+
 div.voice-card__img {
 	position: relative;
 }
@@ -3462,6 +3493,11 @@ html {
 
 .price-layout {
 	margin-top: 8.75rem;
+}
+
+.side-contents--layout {
+	margin-top: 0;
+	width: 100%;
 }
 
 .sub-about-layout {
@@ -3654,6 +3690,10 @@ html {
 	grid-template-columns: repeat(2, minmax(20.8125rem, 1fr));
 }
 
+.blog-cards--two-column--nopost {
+	width: 220%;
+}
+
 .blog::after {
 	background: url(../images/common/blog__bg.jpg) no-repeat center center/cover;
 	content: "";
@@ -3727,7 +3767,7 @@ html {
 	line-height: 1.5;
 }
 
-.campaign-card__price {
+.campaign-card__price.with-gap {
 	gap: 1.5rem;
 }
 

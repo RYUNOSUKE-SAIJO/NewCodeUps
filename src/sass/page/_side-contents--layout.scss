@@ -1,0 +1,9 @@
+@use "global" as *;
+
+.side-contents--layout {
+  margin-top: myrem(77);
+  @include mq('md') {
+    margin-top: 0;
+    width: 100%;
+  }
+}

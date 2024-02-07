@@ -23,29 +23,21 @@ $contact = esc_url( home_url( '/contact/' ) );
 $privacy_policy = esc_url( home_url( '/privacy-policy/' ) );
 $terms_of_service = esc_url( home_url( '/terms-of-service/' ) );
 $sitemap = esc_url( home_url( '/sitemap/' ) );
-$contact_thanks = esc_url( home_url( '/$contact-thanks/' ) );
-$contact_error = esc_url( home_url( '/$contact-error/' ) );
+$contact_thanks = esc_url( home_url( '/contact-thanks/' ) );
+$contact_error = esc_url( home_url( '/contact-error/' ) );
 ?>
 
 <body>
   <header class="header js-header header-layout">
     <div class="header__inner">
-      <?php if (is_front_page()) : ?>
-      <h1 class="header__logo">
-        <?php else : ?>
-        <div class="header__logo">
-          <?php endif; ?>
-          <a class="header__logo-link" href="<?php echo $top; ?>">
-            <picture class="header__logo-img">
-              <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/header-logo-sp.svg" alt="CodeUps" media="(max-width: 768px)" />
-              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/header-logo.svg" alt="CodeUps" />
-            </picture>
-          </a>
-      <?php if (is_front_page()) : ?>
-      </h1>
-        <?php else : ?>
-          </div>
-          <?php endif; ?>
+      <?php echo is_front_page() ? '<h1 class="header__logo">' : '<div class="header__logo">'; ?>
+        <a class="header__logo-link" href="<?php echo $top; ?>">
+          <picture class="header__logo-img">
+            <source srcset="<?= get_theme_file_uri(); ?>/assets/images/common/header-logo-sp.svg" alt="CodeUps" media="(max-width: 768px)" />
+            <img src="<?= get_theme_file_uri(); ?>/assets/images/common/header-logo.svg" alt="CodeUps" />
+          </picture>
+        </a>
+      <?php echo is_front_page() ? '</h1>' : '</div>'; ?>
       <div class="header__hamburger hamburger js-hamburger">
         <div class="hamburger__container">
           <span></span>
