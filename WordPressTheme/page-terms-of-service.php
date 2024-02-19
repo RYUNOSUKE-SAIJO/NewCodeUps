@@ -37,7 +37,7 @@ $contact_error = esc_url( home_url( '/contact-error/' ) );
     </section>
 
 <!----- パンくず ----->
-<?php get_template_part('breadcrumb') ?>
+<?php get_template_part('inc/breadcrumb') ?>
 
     <!-- ループ開始 -->
     <?php if (have_posts()): while (have_posts()): the_post(); ?>

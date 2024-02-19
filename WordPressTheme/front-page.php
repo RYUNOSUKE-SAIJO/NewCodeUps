@@ -106,9 +106,9 @@ $contact_error = esc_url( home_url( '/contact-error/' ) );
                           <!----- 価格 ----->
                           <div class="campaign-card__price <?php echo !empty(get_field('before_sale')) ? 'with-gap' : 'without-gap'; ?>">
                             <?php
-                              $before_sale_value = get_field('before_sale');
-                              if (!empty($before_sale_value)) {
-                                echo '<div class="campaign-card__price-left">' . $before_sale_value . '</div>';
+                              $beforeSale = get_field('before_sale');
+                              if (!empty($beforeSale)) {
+                                echo '<div class="campaign-card__price-left">' . $beforeSale . '</div>';
                               }
                             ?>
                             <div class="campaign-card__price-right">

@@ -38,7 +38,7 @@ $contact_error = esc_url( home_url( '/contact-error/' ) );
     </section>
 
 <!----- パンくず ----->
-<?php get_template_part('breadcrumb') ?>
+<?php get_template_part('inc/breadcrumb') ?>
 
     <div class="sub-campaign sub-campaign-layout">
       <div class="sub-campaign__inner inner">
@@ -90,27 +90,26 @@ $contact_error = esc_url( home_url( '/contact-error/' ) );
                   <!----- 価格 ----->
                   <div class="campaign-card__price campaign-card--wide <?php echo empty(get_field('before_sale')) ? 'without-gap' : 'with-gap'; ?>">
                     <?php
-                      $before_sale_value = get_field('before_sale');
-                      if (!empty($before_sale_value)) {
-                        echo '<div class="campaign-card__price-left">' . $before_sale_value . '</div>';
+                      $campaignPrice = get_field('campaign_price');
+                      $beforeSale = get_field('before_sale');
+                      if (!empty($beforeSale)) {
+                        echo '<div class="campaign-card__price-left">' . $beforeSale . '</div>';
                       }
                     ?>
                     <div class="campaign-card__price-right">
                       <?php the_field('after_sale'); ?>
                     </div>
                   </div>
-                </div>
-                <div class="campaign-card__under-block">
                   <!----- 本文 ----->
                   <p class="campaign-card__text">
                     <?php the_field('campaign_content'); ?>
                   </p>
                   <!----- SALE期間 ----->
                   <time class="campaign-card__date">
-                    <?php the_field('sale_year'); ?>
+                    <?php the_field('sale_start'); ?>
                     <?php the_field('sale_month'); ?>
                     <?php the_field('sale_day'); ?>
-                    <?php the_field('sale_end_month'); ?>
+                    <?php the_field('sale_end'); ?>
                     <?php the_field('sale_end_day'); ?>
                   </time>
                   <p class="campaign-card__contact-text">
@@ -118,7 +117,7 @@ $contact_error = esc_url( home_url( '/contact-error/' ) );
                   </p>
                   <!----- ボタン ----->
                   <div class="campaign-card__btn-wrap">
-                    <a href="<?php the_permalink(); ?>" class="btn"><span>contact&nbsp;us</span></a>
+                    <a href="<?php echo $contact; ?>" class="btn"><span>contact&nbsp;us</span></a>
                   </div>
                 </div>
               </div>

@@ -67,6 +67,7 @@ $contact_error = esc_url( home_url( '/contact-error/' ) );
           <?php $voice_query->the_post(); ?>
           <div class="side-contents__voice-container">
             <div class="side-contents__voice-img">
+              <!----- アイキャッチ画像（条件分岐） ----->
               <?php if(has_post_thumbnail()) : ?>
               <?php the_post_thumbnail(); ?>
               <?php else : ?>
@@ -79,9 +80,9 @@ $contact_error = esc_url( home_url( '/contact-error/' ) );
         <?php endwhile; ?>
       <?php endif; ?>
       <?php wp_reset_postdata(); ?>
-    <div class="side-contents__voice-btn">
-      <a href="<?php echo $voice; ?>" class="btn"><span>View more</span></a>
-    </div>
+      <div class="side-contents__voice-btn">
+        <a href="<?php echo $voice; ?>" class="btn"><span>View more</span></a>
+      </div>
     </div>
     <!----- キャンペーン記事（新着） ----->
     <div class="side-contents__campaign">
@@ -105,7 +106,7 @@ $contact_error = esc_url( home_url( '/contact-error/' ) );
         <a href="<?php echo $campaign; ?>" class="side-contents__card-link">
           <li class="side-contents__campaign-card campaign-card campaign-card--resize">
             <div class="campaign-card__img campaign-card__img--resize">
-              <!----- アイキャッチ画像 ----->
+              <!----- アイキャッチ画像（条件分岐） ----->
               <?php if (has_post_thumbnail()) : ?>
               <?php the_post_thumbnail('full'); ?>
               <?php else : ?>

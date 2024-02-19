@@ -38,7 +38,7 @@ $contact_error = esc_url( home_url( '/contact-error/' ) );
     </section>
 
     <!----- パンくず ----->
-    <?php get_template_part('breadcrumb') ?>
+    <?php get_template_part('inc/breadcrumb') ?>
 
     <div class="sub-about about sub-about-layout">
       <div class="about__inner inner">

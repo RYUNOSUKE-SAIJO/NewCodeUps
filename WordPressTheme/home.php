@@ -36,7 +36,7 @@ $contact_error = esc_url( home_url( '/contact-error/' ) );
     </section>
 
 <!----- パンくず ----->
-<?php get_template_part('breadcrumb') ?>
+<?php get_template_part('inc/breadcrumb') ?>
 
     <div class="sub-blog  sub-blog-layout">
       <div class="sub-blog__two-column sub-blog-two-column inner">
