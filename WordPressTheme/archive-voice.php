@@ -64,7 +64,15 @@ $contact_error = esc_url( home_url( '/contact-error/' ) );
                     <div class="voice-card__top">
                       <!----- 年代・性別 ----->
                       <div class="voice-card__gender">
-                        <p><?php the_field('voice_gender'); ?></p>
+                        <p>
+                          <?php
+                            $voiceGroup = get_field('voice_group');	
+                            if( $voiceGroup ): ?>
+                            <!-- グループの内容ここから -->
+                            <?php echo $voiceGroup['voice_gender']; ?>
+                            （<?php echo $voiceGroup['voice_age']; ?>）
+                          <?php endif; ?>
+                        </p>
                       </div>
                       <!----- タグ（taxonomy） ----->
                       <div class="voice-card__tag">

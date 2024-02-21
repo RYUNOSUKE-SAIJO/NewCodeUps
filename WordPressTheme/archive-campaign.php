@@ -81,26 +81,16 @@ $contact_error = esc_url( home_url( '/contact-error/' ) );
                   <div class="campaign-card__description">
                     <p>全部コミコミ(お一人様)</p>
                   </div>
-                
                   <!----- 価格 ----->
-                  <div class="campaign-card__price campaign-card--wide <?php echo empty(get_field('before_sale')) ? 'without-gap' : 'with-gap'; ?>">
-                    <?php
-                      $campaignPrice = get_field('campaign_price');
-                      if( $campaignPrice ): ?>
-                        <!-- グループの内容ここから -->
-                        <?php
-                          $beforeSale = get_field('before_sale');
-                          if (!empty($beforeSale)) {
-                            echo '<div class="campaign-card__price-left">' . $beforeSale . '</div>';
-                          }
-                        ?>
-                      <div class="campaign-card__price-right">
-                        <?php the_field('after_sale'); ?>
+                  <?php if ($campaignPrice = get_field('campaign_price')) : ?>
+                      <div class="campaign-card__price campaign-card--wide <?php echo empty($campaignPrice['before_sale']) ? 'without-gap' : 'with-gap'; ?>">
+                          <?php if (!empty($campaignPrice['before_sale'])) : ?>
+                          <div class="campaign-card__price-left"><?php echo $campaignPrice['before_sale']; ?></div>
+                          <?php endif; ?>
+                          <div class="campaign-card__price-right"><?php echo $campaignPrice['after_sale']; ?></div>
                       </div>
-                    <?php endif; ?>
-                  </div>
+                  <?php endif; ?>
                 </div>
-                
                 <div class="campaign-card__under-block">
                   <!----- 本文 ----->
                   <p class="campaign-card__text">
@@ -114,6 +104,7 @@ $contact_error = esc_url( home_url( '/contact-error/' ) );
                       <!-- グループの内容ここから -->
                       <?php echo $group_name['sale_start']; ?>
                       <?php echo $group_name['sale_end']; ?>
+                      <!-- グループの内容ここまで -->
                     <?php endif; ?>
                   </time>
                   <p class="campaign-card__contact-text">
