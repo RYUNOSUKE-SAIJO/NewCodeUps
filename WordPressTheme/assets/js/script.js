@@ -138,14 +138,16 @@ var swiper = new Swiper(".js-campaign-swiper", {
   =============================================== */
   $(".gallery__item > img").click(function () {
     var src = $(this).attr("src");
-    var cap = $(this).attr("alt");
     $(".js-gallery__modal-block").fadeIn().css("display", "flex");
     $("#popup").attr("src", src);
   });
-  $(".js-gallery__modal-block").click(function (e) {
-    // モーダルの外側をクリックした場合にのみモーダルを閉じる
-    if (e.target === this) {
-      $(this).fadeOut(); // フェードアウトさせる
+
+  $(".js-gallery__modal-block, #popup").click(function (e) {
+    if (
+      $(e.target).hasClass("js-gallery__modal-block") ||
+      $(e.target).is("#popup")
+    ) {
+      $(".js-gallery__modal-block").fadeOut();
     }
   });
 

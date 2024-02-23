@@ -27,7 +27,7 @@ $contact_error = esc_url( home_url( '/contact-error/' ) );
           <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/sub-blog-fv-pc.jpg" alt="黄色の熱帯魚" />
         </picture>
         <div class="sub-first-view__title-wrap">
-          <h1 class="sub-first-view__main-title">blog</h1>
+          <h1 class="sub-first-view__main-title"><?php the_archive_title(); ?></h1>
         </div>
       </div>
       <picture class="sub-first-view-fish">

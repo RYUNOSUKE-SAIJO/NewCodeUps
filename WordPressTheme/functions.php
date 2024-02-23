@@ -117,12 +117,65 @@ add_action( 'wp_footer', 'add_origin_thanks_page' );
 		EOC;
   }
 
-// パンくず //
-		function my_bcn_breadcrumb_title($title, $this_type, $this_id)
-	{
-		if (is_singular('post')) :
-			$title = 'ブログ詳細';
-		endif;
-		return $title;
-	};
-	add_filter('bcn_breadcrumb_title', 'my_bcn_breadcrumb_title', 10, 3);
+
+//管理画面のブロックエディターを消去する
+function remove_wysiwyg() {
+    remove_post_type_support( 'campaign', 'editor' );
+    remove_post_type_support( 'voice', 'editor' );
+    //複数ある場合は追記する
+}
+add_action( 'init' , 'remove_wysiwyg' );
+
+
+function Change_menulabel() {
+	global $menu;
+	global $submenu;
+	$name = 'ブログ';
+	$menu[5][0] = $name;
+	$submenu['edit.php'][5][0] = $name.'一覧';
+	$submenu['edit.php'][10][0] = '新しい'.$name;
+}
+
+function Change_objectlabel() {
+	global $wp_post_types;
+	$name = 'ブログ';
+	$labels = &$wp_post_types['post']->labels;
+	$labels->name = $name;
+	$labels->singular_name = $name;
+	$labels->add_new = _x('追加', $name);
+	$labels->add_new_item = $name.'の新規追加';
+	$labels->edit_item = $name.'の編集';
+	$labels->new_item = '新規'.$name;
+	$labels->view_item = $name.'を表示';
+	$labels->search_items = $name.'を検索';
+	$labels->not_found = $name.'が見つかりませんでした';
+	$labels->not_found_in_trash = 'ゴミ箱に'.$name.'は見つかりませんでした';
+}
+add_action( 'init', 'Change_objectlabel' );
+add_action( 'admin_menu', 'Change_menulabel' );
+
+
+
+//date.phpのアーカイブタイトル変更
+add_filter('get_the_archive_title', function ($title) {
+  if (is_category()) {
+    $title = single_cat_title('', false);
+  } elseif (is_tag()) {
+    $title = single_tag_title('', false);
+  } elseif (is_tax()) {
+    $title = single_term_title('', false);
+  } elseif (is_post_type_archive()) {
+    $title = post_type_archive_title('', false);
+  } elseif (is_year()) {
+    $title = get_the_time('Y年'); // 年アーカイブのときのタイトル
+  } elseif (is_month()) {
+    $title = get_the_time('Y年n月'); // 月アーカイブのときのタイトル
+  } elseif (is_search()) {
+    $title = '検索結果：' . esc_html(get_search_query(false));
+  } elseif (is_404()) {
+    $title = '「404」ページが見つかりません';
+  } else {
+
+  }
+  return $title;
+});
