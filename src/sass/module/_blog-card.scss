@@ -14,7 +14,7 @@
 .blog-card:hover {
     cursor: pointer;
     opacity: 0.7;
-    transition-duration: 0.1s; 
+    transition-duration: 0.1s;
 }
 
 .blog-card__link {
@@ -36,7 +36,7 @@
 
 .blog-card:hover .blog-card__img img{
     transform: scale(1.2);
-    transition-duration: 0.1s; 
+    transition-duration: 0.1s;
 }
 
 .blog-card__body {
@@ -79,7 +79,7 @@
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 8; 
+    -webkit-line-clamp: 8;
 }
 
 .blog-card__text p {

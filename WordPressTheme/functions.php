@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 function load_custom_scripts_and_styles() {
     // Favicon

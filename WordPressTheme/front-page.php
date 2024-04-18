@@ -1,23 +1,23 @@
   <!----- 変数にハイフンは使えない・ページのスラッグに使用している名前を（''）内に入れること ----->
-<?php
-$top = esc_url( home_url( '/' ) );
-$campaign = esc_url( home_url( '/campaign/' ) );
-$about = esc_url( home_url( '/about/' ) );
-$information = esc_url( home_url( '/information/' ) );
-$blog = esc_url( home_url( '/blog/' ) );
-$voice = esc_url( home_url( '/voice/' ) );
-$price = esc_url( home_url( '/price/' ) );
-$faq = esc_url( home_url( '/faq/' ) );
-$contact = esc_url( home_url( '/contact/' ) );
-$privacy_policy = esc_url( home_url( '/privacy-policy/' ) );
-$terms_of_service = esc_url( home_url( '/terms-of-service/' ) );
-$sitemap = esc_url( home_url( '/sitemap/' ) );
-$contact_thanks = esc_url( home_url( '/contact-thanks/' ) );
-$contact_error = esc_url( home_url( '/contact-error/' ) );
-?>
+  <?php
+  $top = esc_url(home_url('/'));
+  $campaign = esc_url(home_url('/campaign/'));
+  $about = esc_url(home_url('/about/'));
+  $information = esc_url(home_url('/information/'));
+  $blog = esc_url(home_url('/blog/'));
+  $voice = esc_url(home_url('/voice/'));
+  $price = esc_url(home_url('/price/'));
+  $faq = esc_url(home_url('/faq/'));
+  $contact = esc_url(home_url('/contact/'));
+  $privacy_policy = esc_url(home_url('/privacy-policy/'));
+  $terms_of_service = esc_url(home_url('/terms-of-service/'));
+  $sitemap = esc_url(home_url('/sitemap/'));
+  $contact_thanks = esc_url(home_url('/contact-thanks/'));
+  $contact_error = esc_url(home_url('/contact-error/'));
+  ?>
 
 
-<?php get_header(); ?>
+  <?php get_header(); ?>
 
   <main>
     <!----- first-view ----->
@@ -26,7 +26,7 @@ $contact_error = esc_url( home_url( '/contact-error/' ) );
         <!----- オープニングアニメーション ----->
         <div class="opening">
           <span class="opening__mask"></span>
-          <img class="opening__logo" src="<?php echo get_theme_file_uri(); ?>/assets/images/common/header-logo.svg" alt="ロゴ">
+          <img class="opening__logo" src="<?php echo get_theme_file_uri(); ?>/assets/images/common/LAGOON.svg" alt="ロゴ">
         </div>
         <!----- スワイパー ----->
         <div class="swiper first-view__swiper js-fv-swiper">
@@ -35,18 +35,18 @@ $contact_error = esc_url( home_url( '/contact-error/' ) );
             <?php $first_view_sp = get_field('first-view_sp'); ?>
             <?php $first_view_pc = get_field('first-view_pc'); ?>
             <?php $first_view_alt = get_field('first-view_alt'); ?>
-            <?php 
-              for ($i = 1; $i <= 4; $i++) {
-                $sp_key = "sp_" . $i;
-                $pc_key = "pc_" . $i;
-                $alt_key = "alt_" . $i;
+            <?php
+            for ($i = 1; $i <= 4; $i++) {
+              $sp_key = "sp_" . $i;
+              $pc_key = "pc_" . $i;
+              $alt_key = "alt_" . $i;
             ?>
-            <div class="swiper-slide">
-              <div class="first-view__slide-img">
-                <source srcset="<?php echo $first_view_sp[$sp_key]; ?>" media="(max-width: 768px)" />
-                <img src="<?php echo $first_view_pc[$pc_key]; ?>" alt="<?php echo $first_view_alt[$alt_key]; ?>" />
+              <div class="swiper-slide">
+                <div class="first-view__slide-img">
+                  <source srcset="<?php echo $first_view_sp[$sp_key]; ?>" media="(max-width: 768px)" />
+                  <img src="<?php echo $first_view_pc[$pc_key]; ?>" alt="<?php echo $first_view_alt[$alt_key]; ?>" />
+                </div>
               </div>
-            </div>
             <?php } ?>
           </div>
           <div class="first-view__title-wrap">
@@ -68,30 +68,30 @@ $contact_error = esc_url( home_url( '/contact-error/' ) );
           <!----- スワイパー ----->
           <div class="swiper mySwiper campaign__swiper js-campaign-swiper">
             <div class="swiper-wrapper">
-                <?php
-                $args = [
-                  'post_type' => 'campaign',
-                  'posts_per_page' => 8
-                ];
-                $campaign_query = new WP_Query($args); ?>
-                <!-- ループ開始 -->
-                <?php if ($campaign_query -> have_posts()) : ?>
-                  <?php while ($campaign_query -> have_posts()) : ?>
-                  <?php $campaign_query -> the_post(); ?>
+              <?php
+              $args = [
+                'post_type' => 'campaign',
+                'posts_per_page' => 8
+              ];
+              $campaign_query = new WP_Query($args); ?>
+              <!-- ループ開始 -->
+              <?php if ($campaign_query->have_posts()) : ?>
+                <?php while ($campaign_query->have_posts()) : ?>
+                  <?php $campaign_query->the_post(); ?>
                   <div class="swiper-slide">
                     <li class="campaign__card campaign-card">
                       <!----- アイキャッチ画像 ----->
                       <div class="campaign-card__img">
                         <?php if (has_post_thumbnail()) : ?>
                           <?php the_post_thumbnail('full'); ?>
-                          <?php else : ?>
-                        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/noimage.jpg" alt="noimage画像" />
+                        <?php else : ?>
+                          <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/noimage.jpg" alt="noimage画像" />
                         <?php endif; ?>
                       </div>
                       <div class="campaign-card__body">
                         <!----- タグ  (taxonomy) ----->
                         <div class="campaign-card__tag">
-                          <p><?php echo esc_html( get_the_terms( get_the_ID(), 'campaign_category' )[0]->name ); ?></p>
+                          <p><?php echo esc_html(get_the_terms(get_the_ID(), 'campaign_category')[0]->name); ?></p>
                         </div>
                         <!----- タイトル ----->
                         <div class="campaign-card__title">
@@ -106,10 +106,10 @@ $contact_error = esc_url( home_url( '/contact-error/' ) );
                           <!----- 価格 ----->
                           <div class="campaign-card__price <?php echo !empty(get_field('before_sale')) ? 'with-gap' : 'without-gap'; ?>">
                             <?php
-                              $beforeSale = get_field('before_sale');
-                              if (!empty($beforeSale)) {
-                                echo '<div class="campaign-card__price-left">' . $beforeSale . '</div>';
-                              }
+                            $beforeSale = get_field('before_sale');
+                            if (!empty($beforeSale)) {
+                              echo '<div class="campaign-card__price-left">' . $beforeSale . '</div>';
+                            }
                             ?>
                             <div class="campaign-card__price-right">
                               <?php the_field('after_sale'); ?>
@@ -119,9 +119,10 @@ $contact_error = esc_url( home_url( '/contact-error/' ) );
                       </div>
                     <li>
                   </div>
-                  <?php endwhile; endif; ?>
-                <?php wp_reset_postdata(); ?>
-                <!-- ループ終了 -->
+              <?php endwhile;
+              endif; ?>
+              <?php wp_reset_postdata(); ?>
+              <!-- ループ終了 -->
             </div>
           </div>
         </ul>
@@ -209,35 +210,36 @@ $contact_error = esc_url( home_url( '/contact-error/' ) );
           <h2 class="section-title__sub section-title__sub--white">ブログ</h2>
         </div>
         <div class="blog__cards blog-cards">
-        <?php
+          <?php
           $args = [
             'post_type' => 'post',
             'posts_per_page' => 3
           ];
           $blog_query = new WP_Query($args); ?>
           <!-- ループ開始 -->
-          <?php if ($blog_query -> have_posts()): while ($blog_query -> have_posts()): $blog_query -> the_post(); ?>
-          <li class="blog-cards__card blog-card">
-            <a href="<?php the_permalink(); ?>" class="blog-card__link">
-              <div class="blog-card__img">
-                <?php if (has_post_thumbnail()) : ?>
-                  <?php the_post_thumbnail('full'); ?>
-                  <?php else : ?>
-                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/noimage.jpg" alt="noimage画像" />
-                <?php endif; ?>
-              </div>
-              <div class="blog-card__body">
-                <time class="blog-card__date" datetime="<?php the_time('c'); ?>"><?php the_time('Y.m.d'); ?></time>
-                <div class="blog-card__title blog-card__title--resize">
-                  <p><?php the_title(); ?></p>
-                </div>
-                <div class="blog-card__text blog-card__text--narrow">
-                  <p><?php echo wp_trim_words(get_the_content(), 80, '…'); ?></p>
-                </div>
-              </div>
-            </a>
-          </li>
-          <?php endwhile; endif; ?>
+          <?php if ($blog_query->have_posts()) : while ($blog_query->have_posts()) : $blog_query->the_post(); ?>
+              <li class="blog-cards__card blog-card">
+                <a href="<?php the_permalink(); ?>" class="blog-card__link">
+                  <div class="blog-card__img">
+                    <?php if (has_post_thumbnail()) : ?>
+                      <?php the_post_thumbnail('full'); ?>
+                    <?php else : ?>
+                      <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/noimage.jpg" alt="noimage画像" />
+                    <?php endif; ?>
+                  </div>
+                  <div class="blog-card__body">
+                    <time class="blog-card__date" datetime="<?php the_time('c'); ?>"><?php the_time('Y.m.d'); ?></time>
+                    <div class="blog-card__title blog-card__title--resize">
+                      <p><?php the_title(); ?></p>
+                    </div>
+                    <div class="blog-card__text blog-card__text--narrow">
+                      <p><?php echo wp_trim_words(get_the_content(), 80, '…'); ?></p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+          <?php endwhile;
+          endif; ?>
           <?php wp_reset_postdata(); ?>
           <!--/メインループ -->
         </div>
@@ -259,50 +261,51 @@ $contact_error = esc_url( home_url( '/contact-error/' ) );
         </div>
         <div class="voice__cards voice-cards">
           <?php
-            $args = [
-              'post_type' => 'voice',
-              'posts_per_page' => 2
-            ];
-            $voice_query = new WP_Query($args); ?>
+          $args = [
+            'post_type' => 'voice',
+            'posts_per_page' => 2
+          ];
+          $voice_query = new WP_Query($args); ?>
           <!-- ループ開始 -->
-          <?php if ($voice_query -> have_posts()): while ($voice_query -> have_posts()): $voice_query -> the_post(); ?>
-            <div class="voice-cards__card voice-card">
-              <div class="voice-card__header">
-                <div class="voice-card__header-left">
-                  <div class="voice-card__top">
-                    <!----- 年代・性別 ----->
-                    <div class="voice-card__gender">
-                      <p><?php the_field('voice_gender'); ?></p>
+          <?php if ($voice_query->have_posts()) : while ($voice_query->have_posts()) : $voice_query->the_post(); ?>
+              <div class="voice-cards__card voice-card">
+                <div class="voice-card__header">
+                  <div class="voice-card__header-left">
+                    <div class="voice-card__top">
+                      <!----- 年代・性別 ----->
+                      <div class="voice-card__gender">
+                        <p><?php the_field('voice_gender'); ?></p>
+                      </div>
+                      <!----- タグ（taxonomy） ----->
+                      <div class="voice-card__tag">
+                        <p><?php echo esc_html(get_the_terms(get_the_ID(), 'voice_category')[0]->name); ?></p>
+                      </div>
                     </div>
-                    <!----- タグ（taxonomy） ----->
-                    <div class="voice-card__tag">
-                      <p><?php echo esc_html( get_the_terms( get_the_ID(), 'voice_category' )[0]->name ); ?></p>
+                    <!----- タイトル ----->
+                    <div class="voice-card__title">
+                      <p><?php the_title(); ?></p>
                     </div>
                   </div>
-                  <!----- タイトル ----->
-                  <div class="voice-card__title">
-                    <p><?php the_title(); ?></p>
-                  </div>
-                </div>
-                <div class="voice-card__header-right">
-                  <!----- アイキャッチ画像 ----->
-                  <div class="voice-card__img">
-                    <?php if (has_post_thumbnail()) : ?>
-                      <?php the_post_thumbnail(); ?>
+                  <div class="voice-card__header-right">
+                    <!----- アイキャッチ画像 ----->
+                    <div class="voice-card__img">
+                      <?php if (has_post_thumbnail()) : ?>
+                        <?php the_post_thumbnail(); ?>
                       <?php else : ?>
-                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/noimage.jpg" alt="noimage画像" />
-                    <?php endif; ?>
+                        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/noimage.jpg" alt="noimage画像" />
+                      <?php endif; ?>
+                    </div>
+                  </div>
+                </div>
+                <div class="voice-card__body">
+                  <!----- 本文 ----->
+                  <div class="voice-card__text">
+                    <p><?php the_field('voice_text'); ?></p>
                   </div>
                 </div>
               </div>
-              <div class="voice-card__body">
-                <!----- 本文 ----->
-                <div class="voice-card__text">
-                  <p><?php the_field('voice_text'); ?></p>
-                </div>
-              </div>
-            </div>
-          <?php endwhile; endif; ?>
+          <?php endwhile;
+          endif; ?>
           <?php wp_reset_postdata(); ?>
           <!-- ループ終了 -->
         </div>
@@ -337,16 +340,16 @@ $contact_error = esc_url( home_url( '/contact-error/' ) );
               </div>
               <div class="price__content">
                 <?php
-                $priceTable = SCF::get_option_meta( 'price-list_option', 'price-list_1' );
+                $priceTable = SCF::get_option_meta('price-list_option', 'price-list_1');
                 if ($priceTable) {
                   foreach ($priceTable as $priceItem) {
                     $courseName = esc_html($priceItem['course_1']);
                     $coursePrice = esc_html($priceItem['price_1']);
                 ?>
-                <div class="price__content-block">
-                  <p class="price__content-block"><?php echo $courseName; ?></p>
-                  <p class="price__content-price"><?php echo $coursePrice; ?></p>
-                </div>
+                    <div class="price__content-block">
+                      <p class="price__content-block"><?php echo $courseName; ?></p>
+                      <p class="price__content-price"><?php echo $coursePrice; ?></p>
+                    </div>
                 <?php
                   }
                 }
@@ -359,16 +362,16 @@ $contact_error = esc_url( home_url( '/contact-error/' ) );
               </div>
               <div class="price__content">
                 <?php
-                $priceTable = SCF::get_option_meta( 'price-list_option', 'price-list_2' );
+                $priceTable = SCF::get_option_meta('price-list_option', 'price-list_2');
                 if ($priceTable) {
                   foreach ($priceTable as $priceItem) {
                     $courseName = esc_html($priceItem['course_2']);
                     $coursePrice = esc_html($priceItem['price_2']);
                 ?>
-                <div class="price__content-block">
-                  <p class="price__content-block"><?php echo $courseName; ?></p>
-                  <p class="price__content-price"><?php echo $coursePrice; ?></p>
-                </div>
+                    <div class="price__content-block">
+                      <p class="price__content-block"><?php echo $courseName; ?></p>
+                      <p class="price__content-price"><?php echo $coursePrice; ?></p>
+                    </div>
                 <?php
                   }
                 }
@@ -381,16 +384,16 @@ $contact_error = esc_url( home_url( '/contact-error/' ) );
               </div>
               <div class="price__content">
                 <?php
-                $priceTable = SCF::get_option_meta( 'price-list_option', 'price-list_3' );
+                $priceTable = SCF::get_option_meta('price-list_option', 'price-list_3');
                 if ($priceTable) {
                   foreach ($priceTable as $priceItem) {
                     $courseName = esc_html($priceItem['course_3']);
                     $coursePrice = esc_html($priceItem['price_3']);
                 ?>
-                <div class="price__content-block">
-                  <p class="price__content-block"><?php echo $courseName; ?></p>
-                  <p class="price__content-price"><?php echo $coursePrice; ?></p>
-                </div>
+                    <div class="price__content-block">
+                      <p class="price__content-block"><?php echo $courseName; ?></p>
+                      <p class="price__content-price"><?php echo $coursePrice; ?></p>
+                    </div>
                 <?php
                   }
                 }
@@ -403,16 +406,16 @@ $contact_error = esc_url( home_url( '/contact-error/' ) );
               </div>
               <div class="price__content">
                 <?php
-                $priceTable = SCF::get_option_meta( 'price-list_option', 'price-list_4' );
+                $priceTable = SCF::get_option_meta('price-list_option', 'price-list_4');
                 if ($priceTable) {
                   foreach ($priceTable as $priceItem) {
                     $courseName = esc_html($priceItem['course_4']);
                     $coursePrice = esc_html($priceItem['price_4']);
                 ?>
-                <div class="price__content-block">
-                  <p class="price__content-block"><?php echo $courseName; ?></p>
-                  <p class="price__content-price"><?php echo $coursePrice; ?></p>
-                </div>
+                    <div class="price__content-block">
+                      <p class="price__content-block"><?php echo $courseName; ?></p>
+                      <p class="price__content-price"><?php echo $coursePrice; ?></p>
+                    </div>
                 <?php
                   }
                 }
@@ -429,7 +432,7 @@ $contact_error = esc_url( home_url( '/contact-error/' ) );
         <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/price-fish.svg" alt="魚群の装飾" />
       </div>
     </section>
-    
+
   </main>
 
-<?php get_footer(); ?>
+  <?php get_footer(); ?>

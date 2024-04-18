@@ -1380,7 +1380,7 @@ input[type=checkbox]:checked + .wpcf7-list-item-label::after {
 .opening__logo {
 	display: block;
 	opacity: 0;
-	width: 6.25rem;
+	width: 12.5rem;
 	z-index: 10001;
 }
 

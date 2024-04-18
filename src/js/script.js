@@ -1,13 +1,18 @@
 
 jQuery(function ($) {
   // この中であればWordpressでも「$」が使用可能になる
+  /* ===============================================
+  # ハンバーガー・ドロワーメニュー
+  =============================================== */
   $(".js-hamburger,.js-drawer, .js-drawer a").click(function () {
     $(".js-header,.js-hamburger").toggleClass("is-active");
     $(".js-drawer").fadeToggle(600);
     event.stopPropagation();
   });
 
-  // リサイズ処理 //
+  /* ===============================================
+  # リサイズ処理
+  =============================================== */
   $(window).resize(function () {
     if (window.matchMedia("(min-width: 768px)").matches) {
       closeDrawer();
@@ -19,7 +24,9 @@ jQuery(function ($) {
     }
   });
 
-  // FV swiper //
+  /* ===============================================
+  # FV swiper
+  =============================================== */
   var swiper = new Swiper(".js-fv-swiper", {
     loop: true,
     effect: "fade",
@@ -30,7 +37,9 @@ jQuery(function ($) {
     },
   });
 
-  // campaign swiper //
+  /* ===============================================
+  # campaign swiper
+  =============================================== */
   var swiper = new Swiper(".js-campaign-swiper", {
     loop: true,
     spaceBetween: 24,
@@ -39,8 +48,8 @@ jQuery(function ($) {
     loopAdditionalSlides: 2,
     width: 280,
     autoplay: {
-        delay: 2000,
-        disableOnInteraction: false,
+      delay: 2000,
+      disableOnInteraction: false,
     },
     breakpoints: {
       //ブレークポイントの設定 小さい順に設定する！！
@@ -85,7 +94,9 @@ jQuery(function ($) {
     });
   });
 
-  // modal window //
+  /* ===============================================
+  # modal window
+  =============================================== */
   $(".gallery__item > img").click(function () {
     var src = $(this).attr("src");
     var cap = $(this).attr("alt");
@@ -100,7 +111,9 @@ jQuery(function ($) {
     }
   });
 
-  // アコーディオン //
+  /* ===============================================
+  # アコーディオン
+  =============================================== */
 
   $(function () {
     //アイテムとコンテンツを開きっぱなしにする記述//
@@ -116,7 +129,9 @@ jQuery(function ($) {
     });
   });
 
-  // トップに戻るボタン
+  /* ===============================================
+  # トップに戻るボタン
+  =============================================== */
   $(window).on("scroll", function () {
     let scrollHeight = $(document).height();
     let scrollPosition = $(window).height() + $(window).scrollTop();
@@ -155,8 +170,9 @@ jQuery(function ($) {
     return false;
   });
 
-  //サイドバー（アーカイブ）
-  //サイドバー（アーカイブ）
+  /* ===============================================
+#  サイドバー（アーカイブ）
+=============================================== */
   $(document).ready(function () {
     $(".js-archive__title:first").addClass("open");
     $(".side-contents__archive-months:first").css("display", "block");
@@ -166,7 +182,9 @@ jQuery(function ($) {
     });
   });
 
-  // GSAP //
+  /* ===============================================
+  # GSAP
+  =============================================== */
 
   window.addEventListener("load", function () {
     const openingTL = gsap.timeline();
@@ -195,7 +213,9 @@ jQuery(function ($) {
       .set(".opening", { autoAlpha: 0 });
   });
 
-  // タブメニュー
+  /* ===============================================
+  # タブメニュー
+  =============================================== */
   $(".js-tab-menu").on("click", function () {
     $(".js-tab-menu").removeClass("is-active");
     $(".js-tab-content").removeClass("is-active");
@@ -204,7 +224,9 @@ jQuery(function ($) {
     $("#" + number).addClass("is-active");
   });
 
-  //別ページからタブメニューへダイレクトリンク
+  /* ===============================================
+  # 別ページからタブメニューへダイレクトリンク
+  =============================================== */
   $(document).ready(function () {
     var hash = window.location.hash;
     if (hash) {
@@ -218,59 +240,45 @@ jQuery(function ($) {
     }
   });
 
-$(document).ready(function () {
-  var hash = window.location.hash;
-  if (hash) {
-    // ハッシュに基づいてタブをアクティブにする
-    $(".js-tab-menu").removeClass("is-active");
-    $(".js-tab-content").removeClass("is-active");
-    $('.js-tab-menu[data-number="' + hash.substring(1) + '"]').addClass(
-      "is-active"
-    );
-    $(hash).addClass("is-active");
+  $(document).ready(function () {
+    var hash = window.location.hash;
+    if (hash) {
+      // ハッシュに基づいてタブをアクティブにする
+      $(".js-tab-menu").removeClass("is-active");
+      $(".js-tab-content").removeClass("is-active");
+      $('.js-tab-menu[data-number="' + hash.substring(1) + '"]').addClass(
+        "is-active"
+      );
+      $(hash).addClass("is-active");
 
-    // ページ内リンクの場合、指定の位置（100px上）で表示
-    if ($(hash).length > 0) {
-      var targetOffset = $(hash).offset().top - 500;
-      $("html, body").animate({ scrollTop: targetOffset }, 300);
+      // ページ内リンクの場合、指定の位置（100px上）で表示
+      if ($(hash).length > 0) {
+        var targetOffset = $(hash).offset().top - 500;
+        $("html, body").animate({ scrollTop: targetOffset }, 300);
+      }
     }
-  }
-});
+  });
 
-$(document).ready(function () {
-  var hash = window.location.hash;
-  if (hash) {
-    // ハッシュに基づいてタブをアクティブにする
-    $(".js-tab-menu").removeClass("is-active");
-    $(".js-tab-content").removeClass("is-active");
-    $('.js-tab-menu[data-number="' + hash.substring(1) + '"]').addClass(
-      "is-active"
-    );
-    $(hash).addClass("is-active");
+  $(document).ready(function () {
+    var hash = window.location.hash;
+    if (hash) {
+      // ハッシュに基づいてタブをアクティブにする
+      $(".js-tab-menu").removeClass("is-active");
+      $(".js-tab-content").removeClass("is-active");
+      $('.js-tab-menu[data-number="' + hash.substring(1) + '"]').addClass(
+        "is-active"
+      );
+      $(hash).addClass("is-active");
 
-    // ページ内リンクの場合、指定の位置（100px上）で表示
-    if ($(hash).length > 0) {
-      var targetOffset = $(hash).offset().top - 500;
-      $("html, body").animate({ scrollTop: targetOffset }, 300);
+      // ページ内リンクの場合、指定の位置（100px上）で表示
+      if ($(hash).length > 0) {
+        var targetOffset = $(hash).offset().top - 500;
+        $("html, body").animate({ scrollTop: targetOffset }, 300);
+      }
     }
-  }
-});
+  });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  //終了タグ
 });
 
 
